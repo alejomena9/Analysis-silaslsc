@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silas Vance — Tactical Analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <svg class="brand-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="26" height="26" rx="2" stroke="#3D9B54" stroke-width="1.4"/>
+        <line x1="1" y1="14" x2="27" y2="14" stroke="#3D9B54" stroke-width="1.2"/>
+        <circle cx="14" cy="14" r="4.2" stroke="#3D9B54" stroke-width="1.2"/>
+        <circle cx="14" cy="6" r="1.6" fill="#E8B23D"/>
+        <circle cx="8" cy="9" r="1.6" fill="#E8B23D"/>
+        <circle cx="20" cy="9" r="1.6" fill="#E8B23D"/>
+      </svg>
+      <span class="brand-text">
+        <span class="display" style="display:block;">SILAS VANCE</span>
+        <span class="tagline">Tactical Analysis</span>
+      </span>
+    </a>
+    <nav class="tabs" id="tabs">
+      <a href="#individual">Player Focus</a>
+      <a href="#team-tactics">Team Tactics</a>
+      <a href="#pre-match">Pre-Match</a>
+      <a href="#post-match">Post-Match</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Match Analysis · Lexington SC &amp; Beyond</span>
+      <h1>Reading the game<br>before it <span class="accent">happens.</span></h1>
+      <p class="lede">Tactical breakdowns built the way a coaching staff thinks: systems, key matchups, and the moments that decide a match — before and after kickoff.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#post-match">See the analyses</a>
+        <a class="btn btn-ghost" href="#about">Who I am</a>
+      </div>
+    </div>
+    <div class="pitch">
+      <div class="dot gk" style="left:50%;top:88%;"></div>
+      <div class="dot" style="left:20%;top:70%;"></div>
+      <div class="dot" style="left:40%;top:74%;"></div>
+      <div class="dot" style="left:60%;top:74%;"></div>
+      <div class="dot" style="left:80%;top:70%;"></div>
+      <div class="dot" style="left:30%;top:48%;"></div>
+      <div class="dot" style="left:50%;top:44%;"></div>
+      <div class="dot" style="left:70%;top:48%;"></div>
+      <div class="dot" style="left:22%;top:18%;"></div>
+      <div class="dot" style="left:50%;top:12%;"></div>
+      <div class="dot" style="left:78%;top:18%;"></div>
+      <span class="caption">4-3-3 · base shape referenced across analyses</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAYER FOCUS (INDIVIDUAL) ============ -->
+<section id="individual">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Player Focus</h2>
+        <p class="section-desc">Micro-analysis of individual performances — role, decision-making, and impact within the system.</p>
+      </div>
+      <span class="section-note">01 / Individual</span>
+    </div>
+
+    <div class="card-grid">
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <span class="card-opponent">Player Focus</span>
+            <h3 class="card-title">Michael Adedokun &amp; Marcus Epps</h3>
+          </div>
+          <span class="badge badge-system mono">Wide Forwards</span>
+        </div>
+        <p class="card-conclusion"><span class="label mono">Why they matter —</span> Last season's volume-based system had both full-backs overlapping together, letting Michael and Marcus generate mutual space with inside-out movement. This year's more static shape isolates them individually — same talent, far less connection.</p>
+        <a class="card-link" href="analisis/player-adedokun-epps.html">Read full analysis →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <span class="card-opponent">Player Focus</span>
+            <h3 class="card-title">Braudilio Rodríguez</h3>
+          </div>
+          <span class="badge badge-system mono">Mobile Forward</span>
+        </div>
+        <p class="card-conclusion"><span class="label mono">Why he matters —</span> His ability to rotate across center-forward, #10 and winger is behind Lexington's recent run of wins — his movement opens space for Firmino and late runners like Ferri, as seen against Tampa Bay and San Antonio.</p>
+        <a class="card-link" href="analisis/player-braudilio.html">Read full analysis →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <span class="card-opponent">Player Focus</span>
+            <h3 class="card-title">Nick Firmino</h3>
+          </div>
+          <span class="badge badge-system mono">#10 → False Winger</span>
+        </div>
+        <p class="card-conclusion"><span class="label mono">Why he matters —</span> Moved off a heavily-marked #10 role into a false right-winger position, tucking inside to form a diamond with the two 6s and Braudilio — receiving in space instead of being the one forced to create.</p>
+        <a class="card-link" href="analisis/player-firmino.html">Read full analysis →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM TACTICS ============ -->
+<section id="team-tactics" style="background:var(--bg-alt);">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Team Tactics</h2>
+        <p class="section-desc">Structural shifts in how Lexington sets up as a team — not one player, but the shape and roles around them.</p>
+      </div>
+      <span class="section-note">02 / Team Tactics</span>
+    </div>
+
+    <div class="card-grid">
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <span class="card-opponent">Team Tactics</span>
+            <h3 class="card-title">The Molloy &amp; Ferri Variable</h3>
+          </div>
+          <span class="badge badge-system mono">Rotating Diamond</span>
+        </div>
+        <div class="card-cols">
+          <div class="attack">
+            <span class="label mono">What Changed</span>
+            Dropping the fixed double-6 — Ferri and Aaron no longer sit at the same height at all times, one covers while the other steps forward.
+          </div>
+          <div class="defense">
+            <span class="label mono">Effect</span>
+            Combined with a more mobile Braudilio up top, Lexington now forms a rotating diamond (dropping 6, Firmino as a 10, a tucking winger, and Braudilio) behind the opposing markers.
+          </div>
+        </div>
+        <p class="card-conclusion"><span class="label mono">Conclusion —</span> The interior superiority this creates also opens the flanks for faster, more direct transitions.</p>
+        <a class="card-link" href="analisis/team-molloy-ferri.html">Read full analysis →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRE-MATCH ============ -->
+<section id="pre-match" style="background:var(--bg-alt);">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Pre-Match</h2>
+        <p class="section-desc">Scouting the opponent and the plan going into kickoff — system, threats, and the reading before a ball is kicked.</p>
+      </div>
+      <span class="section-note">03 / Pre-Match</span>
+    </div>
+
+    <div class="card-grid">
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <span class="card-opponent">vs. San Antonio FC</span>
+            <h3 class="card-title">March 29</h3>
+          </div>
+          <span class="badge badge-pre mono">3-4-3 / 5-4-1 def</span>
+        </div>
+        <div class="player-tags">
+          <span class="player-tag">LB #4 — overlaps to the byline</span>
+          <span class="player-tag">DM #55 — space behind him</span>
+          <span class="player-tag">CBs #21/#17 — aerial threat</span>
+        </div>
+        <div class="card-cols">
+          <div class="attack">
+            <span class="label mono">Attack</span>
+            Direct, fast, targets the space behind the full-back — mainly their left, where #4 consistently reaches the byline to cross.
+          </div>
+          <div class="defense">
+            <span class="label mono">Defense</span>
+            Very compact, high-volume low block, but that density opens zone-14 gaps behind the marking midfielders — exploitable with a runner attacking the back of #55.
+          </div>
+        </div>
+        <p class="card-conclusion"><span class="label mono">Prediction —</span> A mobile runner behind their holding midfielders punishes the zone-14 gap and forces an even deeper block.</p>
+        <a class="card-link" href="analisis/pre-san-antonio.html">Read full analysis →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <span class="card-opponent">vs. Louisville City FC</span>
+            <h3 class="card-title">April 1</h3>
+          </div>
+          <span class="badge badge-pre mono">High wing-backs</span>
+        </div>
+        <div class="player-tags">
+          <span class="player-tag">Both fullbacks push very high</span>
+          <span class="player-tag">Crossing is their main threat</span>
+          <span class="player-tag">Dangerous on second balls</span>
+        </div>
+        <div class="card-cols">
+          <div class="attack">
+            <span class="label mono">Attack</span>
+            Heavy crossing from both flanks, constant service into the box, dangerous on second balls off long or switched play.
+          </div>
+          <div class="defense">
+            <span class="label mono">Defense</span>
+            N/A — this read focuses on Lexington's own shape: a full, coordinated retreat is needed to avoid 2v1s on the flank.
+          </div>
+        </div>
+        <p class="card-conclusion"><span class="label mono">Prediction —</span> Win the crosses and the second balls — a partial or late retreat is what Louisville punishes most.</p>
+        <a class="card-link" href="analisis/pre-louisville-april.html">Read full analysis →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <span class="card-opponent">vs. Colorado Springs Switchbacks</span>
+            <h3 class="card-title">April 4</h3>
+          </div>
+          <span class="badge badge-pre mono">Fast transitions</span>
+        </div>
+        <div class="player-tags">
+          <span class="player-tag">CF dangerous in 1v1s</span>
+          <span class="player-tag">Explosive after winning zone 2</span>
+        </div>
+        <div class="card-cols">
+          <div class="attack">
+            <span class="label mono">Attack</span>
+            Two clear scoring routes: crosses into a crowded box, or fast defense-to-attack transitions off recoveries in zone 2.
+          </div>
+          <div class="defense">
+            <span class="label mono">Defense</span>
+            N/A — pre-match read focuses on their attacking patterns.
+          </div>
+        </div>
+        <p class="card-conclusion"><span class="label mono">Prediction —</span> Limit turnovers in zone 2 and defend crosses with numbers — those are their two release valves.</p>
+        <a class="card-link" href="analisis/pre-colorado-springs.html">Read full analysis →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <span class="card-opponent">vs. Louisville FC</span>
+            <h3 class="card-title">July 11 (rematch)</h3>
+          </div>
+          <span class="badge badge-pre mono">Back-three, wing-backs</span>
+        </div>
+        <div class="player-tags">
+          <span class="player-tag">Wing-backs stretch the field</span>
+          <span class="player-tag">High line + immediate press</span>
+        </div>
+        <div class="card-cols">
+          <div class="attack">
+            <span class="label mono">Attack</span>
+            Wing-backs stretch the opposition's width to open interior gaps for their inside forwards; possession-dominant approach.
+          </div>
+          <div class="defense">
+            <span class="label mono">Defense</span>
+            High defensive line, immediate press after losing the ball, tactical fouls to reset if the press is beaten.
+          </div>
+        </div>
+        <p class="card-conclusion"><span class="label mono">Prediction —</span> Break their press before it sets and attack the space their high line leaves behind.</p>
+        <a class="card-link" href="analisis/pre-louisville-july.html">Read full analysis →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <span class="card-opponent">vs. New Mexico FC</span>
+            <h3 class="card-title">July 15</h3>
+          </div>
+          <span class="badge badge-pre mono">High press (leaky)</span>
+        </div>
+        <div class="player-tags">
+          <span class="player-tag">CB #3 — long diagonal passer</span>
+          <span class="player-tag">Winger #5 — target of long balls</span>
+          <span class="player-tag">#10 — near-post runner</span>
+        </div>
+        <div class="card-cols">
+          <div class="attack">
+            <span class="label mono">Attack</span>
+            Long diagonals between center-backs and full-backs targeting the space behind the opposing full-back; #10 attacks the near post on crosses.
+          </div>
+          <div class="defense">
+            <span class="label mono">Defense</span>
+            High press that breaks down often — center-backs ball-watch and lose runners, midfielders don't track theirs, exposing them to crosses into the box.
+          </div>
+        </div>
+        <p class="card-conclusion"><span class="label mono">Prediction —</span> Brown covering at left-back, Braudilio as a second striker, Philip as the target man to pull markers, Zengue at right-back for his crossing.</p>
+        <a class="card-link" href="analisis/pre-new-mexico.html">Read full analysis →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <span class="card-opponent">vs. Oakland Roots</span>
+            <h3 class="card-title">July 22</h3>
+          </div>
+          <span class="badge badge-pre mono">Possession, "U" build-up</span>
+        </div>
+        <div class="player-tags">
+          <span class="player-tag">LCB — long-range switch passer</span>
+          <span class="player-tag">Compact pressing block</span>
+        </div>
+        <div class="card-cols">
+          <div class="attack">
+            <span class="label mono">Attack</span>
+            Comfortable building from the back; if the short game is pressed out, the left center-back switches long to the striker or left winger. Most goals come from crosses with runners crowding the box.
+          </div>
+          <div class="defense">
+            <span class="label mono">Defense</span>
+            Very compact, protects zone 14 well, resets with tactical fouls when beaten — but can sit too tight together, struggling with quick switches behind the full-backs.
+          </div>
+        </div>
+        <p class="card-conclusion"><span class="label mono">Prediction —</span> Draw them into long spells of possession to tire their shifting, then attack behind the full-backs with crosses — the approach that beat them last season.</p>
+        <a class="card-link" href="analisis/pre-oakland-roots.html">Read full analysis →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <span class="card-opponent">vs. FC Tulsa</span>
+            <h3 class="card-title">July 25</h3>
+          </div>
+          <span class="badge badge-pre mono">High volume, both flanks</span>
+        </div>
+        <div class="player-tags">
+          <span class="player-tag">Overloads the box on crosses</span>
+          <span class="player-tag">Weak in defensive transition</span>
+        </div>
+        <div class="card-cols">
+          <div class="attack">
+            <span class="label mono">Attack</span>
+            Sends huge numbers forward from the flanks with crosses and long balls looking for a numerical overload inside the box.
+          </div>
+          <div class="defense">
+            <span class="label mono">Defense</span>
+            Struggles in defensive transition after committing so many players forward — vulnerable immediately after losing the ball.
+          </div>
+        </div>
+        <p class="card-conclusion"><span class="label mono">Prediction —</span> Win the ball and go fast — Goodrum and Braudilio on the break, Marcus/Zengue running the space, Aaron/Firmino/Blaine arriving from deep, plus strong aerial defending at the other end.</p>
+        <a class="card-link" href="analisis/pre-fc-tulsa.html">Read full analysis →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <span class="card-opponent">vs. Monterrey FC</span>
+            <h3 class="card-title">August 1</h3>
+          </div>
+          <span class="badge badge-pre mono">Direct build-up</span>
+        </div>
+        <div class="player-tags">
+          <span class="player-tag">LB — loses runners behind him</span>
+          <span class="player-tag">CBs shadow rather than tackle</span>
+        </div>
+        <div class="card-cols">
+          <div class="attack">
+            <span class="label mono">Attack</span>
+            Builds with 3–4 touches max before going long, skipping zone 2 entirely to hit zone 3 directly.
+          </div>
+          <div class="defense">
+            <span class="label mono">Defense</span>
+            Struggles badly against a coordinated high press in zone 1; the left-back repeatedly loses runners behind him; the high line leaves zone 14 open.
+          </div>
+        </div>
+        <p class="card-conclusion"><span class="label mono">Prediction —</span> Target the left-back's blind side, occupy zone 14 with numbers, and press their zone-1 build-up to force turnovers.</p>
+        <a class="card-link" href="analisis/pre-monterrey.html">Read full analysis →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <span class="card-opponent">vs. Phoenix Rising</span>
+            <h3 class="card-title">August 8</h3>
+          </div>
+          <span class="badge badge-pre mono">4-2-3-1 → 3-2-2-3</span>
+        </div>
+        <div class="player-tags">
+          <span class="player-tag">Comfortable in all three thirds</span>
+          <span class="player-tag">Struggles when actively dispossessed</span>
+        </div>
+        <div class="card-cols">
+          <div class="attack">
+            <span class="label mono">Attack</span>
+            One of the league's best in possession — shifts to a 3-2-2-3 for numerical superiority and circulates the ball comfortably through every third.
+          </div>
+          <div class="defense">
+            <span class="label mono">Defense</span>
+            Two proven routes to beat them: actively dispossess them rather than just pressure the ball (Colorado Springs), or hit them in fast transition (Louisville, scoring in 3–4 passes).
+          </div>
+        </div>
+        <p class="card-conclusion"><span class="label mono">Prediction —</span> Combine both — hold the ball and isolate Epps 1v1, be ruthless in transition, sit compact forcing play down their weaker left side, and use tactical fouls to delay their transitions given the home advantage.</p>
+        <a class="card-link" href="analisis/pre-phoenix-rising.html">Read full analysis →</a>
+      </article>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ POST-MATCH ============ -->
+<section id="post-match">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Post-Match</h2>
+        <p class="section-desc">The full breakdown after the final whistle — system, key players, what happened in each phase, and the result.</p>
+      </div>
+      <span class="section-note">04 / Post-Match</span>
+    </div>
+
+    <div class="card-grid">
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <span class="card-opponent">vs. San Antonio FC</span>
+            <h3 class="card-title">March 29</h3>
+          </div>
+          <span class="badge badge-score mono">0–2 (L)</span>
+        </div>
+        <div class="player-tags">
+          <span class="player-tag">Alfredo — found the pocket</span>
+          <span class="player-tag">Philip — best chance of the game</span>
+          <span class="player-tag">Molloy &amp; Ferri — exposed centrally</span>
+        </div>
+        <span class="badge badge-system mono" style="align-self:flex-start;">3-4-3 / 5-4-1 def</span>
+        <div class="card-cols">
+          <div class="attack">
+            <span class="label mono">Attack</span>
+            Lexington found the exact pocket identified pre-match — behind San Antonio's marking midfielders — creating the clearest chance through Alfredo into Philip, saved off a double stop.
+          </div>
+          <div class="defense">
+            <span class="label mono">Defense</span>
+            Passive and slow all game, worse in the second half; Molloy and Ferri got caught in the middle as San Antonio's full-backs stretched the width.
+          </div>
+        </div>
+        <p class="card-conclusion"><span class="label mono">Conclusion —</span> The pre-match reads were correct, but a passive, low-intensity performance meant Lexington couldn't consistently exploit them, while San Antonio's higher intensity decided the game.</p>
+        <a class="card-link" href="analisis/post-san-antonio.html">Read full analysis →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <span class="card-opponent">vs. Monterrey FC</span>
+            <h3 class="card-title">August 1</h3>
+          </div>
+          <span class="badge badge-score mono">3–2 (W)</span>
+        </div>
+        <div class="player-tags">
+          <span class="player-tag">Tariq — width off the bench</span>
+          <span class="player-tag">Epps — isolated 1v1</span>
+          <span class="player-tag">Goodrum &amp; Molloy — deep runners</span>
+        </div>
+        <span class="badge badge-system mono" style="align-self:flex-start;">Direct build-up</span>
+        <div class="card-cols">
+          <div class="attack">
+            <span class="label mono">Attack</span>
+            Both goals came exactly where the plan pointed — winning the second ball off an organized press, then attacking Monterrey's weaker left side. Tariq's introduction stretched their backline, isolating Epps in his ideal 1v1 spot; the third goal followed from a corner rebound born of that same pressure.
+          </div>
+          <div class="defense">
+            <span class="label mono">Defense</span>
+            Monterrey's two goals came from the exact space flagged pre-match — direct balls behind the right-back after a low-risk build-up designed to avoid the high press.
+          </div>
+        </div>
+        <p class="card-conclusion"><span class="label mono">Conclusion —</span> A comeback win — with the game in hand, an extra midfielder for control (rather than staying exposed in transition) would have been the better closing move.</p>
+        <a class="card-link" href="analisis/post-monterrey.html">Read full analysis →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" style="background:var(--bg-alt);">
+  <div class="wrap about-grid">
+    <div class="about-photo">[ Photo ]</div>
+    <div>
+      <span class="eyebrow">Who I Am</span>
+      <h2 style="font-size:clamp(26px,3.4vw,36px);">Alejandro</h2>
+      <p class="section-desc" style="max-width:none;margin-top:14px;">
+        Exercise Science &amp; Sport Administration student at Georgetown College (Kentucky), heading into his final year.
+        Marketing intern with the Lexington Sporting Club soccer team and a coach with Georgetown Football Club.
+        Background in Systems &amp; Computer Engineering. Working toward a role as a professional or collegiate coach —
+        with a focus on video and performance analysis.
+      </p>
+      <div class="about-tags">
+        <span class="about-tag mono">Lexington Sporting Club — Marketing Intern</span>
+        <span class="about-tag mono">Georgetown Football Club — Coach</span>
+        <span class="about-tag mono">Georgetown College — Exercise Science &amp; Sport Administration</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow">Get In Touch</span>
+      <h2 style="font-size:clamp(26px,3.4vw,36px);">Contact</h2>
+      <p class="section-desc" style="max-width:none;margin-top:14px;">
+        Open to conversations with technical staff, coaches, or clubs interested in match analysis and video work.
+      </p>
+    </div>
+    <div class="contact-list mono">
+      <a href="mailto:hello@example.com">
+        <span>Email</span><span class="arrow">→</span>
+      </a>
+      <a href="https://instagram.com/silasperformancelsc" target="_blank">
+        <span>Instagram — @silasperformancelsc</span><span class="arrow">→</span>
+      </a>
+      <a href="#">
+        <span>TikTok</span><span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>SILAS VANCE — TACTICAL ANALYSIS · SKELETON BUILD</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const tabs = document.getElementById('tabs');
+  toggle.addEventListener('click', () => tabs.classList.toggle('open'));
+  tabs.querySelectorAll('a').forEach(a => a.addEventListener('click', () => tabs.classList.remove('open')));
+</script>
+
+</body>
+</html>
