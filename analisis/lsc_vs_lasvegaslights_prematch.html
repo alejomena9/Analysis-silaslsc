@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LSC vs Las Vegas Lights FC — Análisis Pre-Partido | Alejandro Mena</title>
+<meta name="description" content="Análisis táctico pre-partido: Lexington SC vs Las Vegas Lights FC, USL Championship.">
+</head>
+<body style="margin:0;">
+<div id="lsc-prematch-lvl-root">
+<style>
+  #lsc-prematch-lvl-root {
+    --bg:        #0B0F0C;
+    --bg-panel:  #131A14;
+    --bg-panel-2:#182018;
+    --line:      #283A2C;
+    --line-soft: #1C271F;
+    --text:      #F5F1E9;
+    --text-dim:  #98A398;
+    --green:     #3DDC5A;
+    --green-dim: #2A9E40;
+    --black:     #111111;
+    --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, 'Courier New', monospace;
+
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    border-radius: 4px;
+  }
+  #lsc-prematch-lvl-root * { box-sizing: border-box; }
+  #lsc-prematch-lvl-root a { color: inherit; }
+
+  #lsc-prematch-lvl-root [data-lang="en"] { display: none; }
+  #lsc-prematch-lvl-root.lang-en [data-lang="en"] { display: block; }
+  #lsc-prematch-lvl-root.lang-en [data-lang="en"].inline { display: inline; }
+  #lsc-prematch-lvl-root.lang-en [data-lang="es"] { display: none; }
+
+  #lsc-prematch-lvl-root :focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 3px;
+  }
+
+  .lang-toggle {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 22px;
+    background: rgba(11,15,12,0.88);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .lang-toggle span {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+  }
+  .lang-btn {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    background: none;
+    border: 1px solid var(--line);
+    color: var(--text-dim);
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .lang-btn:hover { border-color: var(--green-dim); color: var(--text); }
+  .lang-btn.active { background: var(--green); border-color: var(--green); color: #06210C; font-weight: 600; }
+
+  .hero {
+    position: relative;
+    padding: 64px 22px 40px;
+    text-align: center;
+    background:
+      radial-gradient(ellipse 120% 80% at 50% -10%, rgba(61,220,90,0.10), transparent 60%),
+      linear-gradient(180deg, #0B0F0C 0%, #090C0A 100%);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  .scoreboard {
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .scoreboard .team { font-size: clamp(20px, 4vw, 30px); color: var(--text-dim); letter-spacing: 0.02em; }
+  .scoreboard .team.home { color: var(--text); }
+  .scoreboard .vs {
+    font-size: clamp(28px, 6vw, 44px);
+    color: var(--green-dim);
+    line-height: 1;
+    letter-spacing: 0.04em;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    font-size: clamp(24px, 4.4vw, 40px);
+    margin: 26px 0 14px;
+    color: var(--text);
+  }
+  .hero .dek {
+    max-width: 560px;
+    margin: 0 auto;
+    color: var(--text-dim);
+    font-size: 15.5px;
+  }
+  .hero .meta {
+    margin-top: 26px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    color: var(--text-dim);
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .hero .meta span:not(:last-child)::after { content: '·'; margin-left: 14px; color: var(--line); }
+
+  .ticker {
+    display: flex;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--line-soft);
+    background: var(--bg-panel);
+    scrollbar-width: none;
+  }
+  .ticker::-webkit-scrollbar { display: none; }
+  .ticker-item {
+    flex: 1 0 auto;
+    min-width: 130px;
+    padding: 18px 20px;
+    text-align: center;
+    border-right: 1px solid var(--line-soft);
+  }
+  .ticker-item:last-child { border-right: none; }
+  .ticker-num {
+    font-family: var(--font-mono);
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--green);
+    font-variant-numeric: tabular-nums;
+  }
+  .ticker-label {
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+
+  .moment {
+    padding: 64px 22px;
+    max-width: 880px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--line-soft);
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .moment.visible { opacity: 1; transform: translateY(0); }
+  .moment:last-of-type { border-bottom: none; }
+
+  .moment-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .moment-index {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--green-dim);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 3px 11px;
+  }
+  .moment-title {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    font-size: clamp(20px, 3vw, 27px);
+    color: var(--text);
+  }
+  .moment p { color: #C9CDC6; font-size: 15.5px; max-width: 66ch; }
+  .moment p + p { margin-top: 14px; }
+
+  .callout {
+    margin-top: 28px;
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--green);
+    border-radius: 6px;
+    padding: 18px 22px;
+  }
+  .callout.alert { border-left-color: var(--text); }
+  .callout .callout-tag {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .callout.alert .callout-tag { color: var(--text); }
+  .callout p { font-size: 14.5px; color: var(--text-dim); margin: 0; max-width: none; }
+
+  .pitch-wrap {
+    margin-top: 34px;
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  .pitch-caption {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    text-align: center;
+    margin-top: 14px;
+    letter-spacing: 0.02em;
+  }
+  .pitch-caption strong { color: var(--green); font-weight: 600; }
+  svg.pitch { width: 100%; height: auto; display: block; }
+  .pitch-line { stroke: var(--line); stroke-width: 1.4; fill: none; }
+  .pitch-defender { fill: var(--green); opacity: 0.9; }
+  .pitch-mid { fill: var(--text); opacity: 0.95; }
+  .pitch-zone { fill: var(--green); opacity: 0; transition: opacity 0.6s ease 0.3s; }
+  .visible .pitch-zone { opacity: 0.16; }
+  .pitch-run {
+    fill: none;
+    stroke-width: 2.6;
+    stroke-linecap: round;
+    stroke-dasharray: 260;
+    stroke-dashoffset: 260;
+    transition: stroke-dashoffset 1.1s ease 0.4s;
+  }
+  .visible .pitch-run { stroke-dashoffset: 0; }
+  .pitch-run.a { stroke: var(--green); }
+  .pitch-run.b { stroke: var(--text); }
+  .pitch-run.c { stroke: var(--text-dim); }
+  .pitch-run.goal {
+    stroke: #E8E4D8; stroke-width: 1.6; stroke-dasharray: 5 4;
+    opacity: 0; transition: opacity 0.4s ease 1.1s;
+  }
+  .visible .pitch-run.goal { opacity: 1; }
+  .pitch-node { fill: var(--text); }
+  .pitch-node.a-node { fill: var(--green); }
+  .pitch-node.b-node { fill: var(--text); }
+  .pitch-node.c-node { fill: var(--text-dim); }
+  .pitch-node.end-node { opacity: 0; transition: opacity 0.3s ease 1.5s; }
+  .visible .pitch-node.end-node { opacity: 1; }
+  .pitch-text {
+    font-family: var(--font-mono);
+    font-size: 6.5px;
+    fill: var(--text-dim);
+    letter-spacing: 0.02em;
+  }
+  .pitch-text.strong { fill: var(--text); font-weight: 600; }
+  .pitch-text.end-label { opacity: 0; transition: opacity 0.3s ease 1.6s; }
+  .visible .pitch-text.end-label { opacity: 1; }
+
+  .timeline { margin-top: 34px; position: relative; padding: 34px 4px 0; }
+  .timeline-track { position: relative; height: 2px; background: var(--line); border-radius: 2px; }
+  .timeline-fill {
+    position: absolute; top: 0; left: 0; height: 2px;
+    background: var(--green-dim); width: 0%;
+    transition: width 1.3s ease 0.2s;
+  }
+  .visible .timeline-fill { width: 100%; }
+  .timeline-pt { position: absolute; top: -5px; width: 12px; height: 12px; border-radius: 50%;
+    border: 2px solid var(--bg-panel); transform: translateX(-50%); }
+  .timeline-pt.n { background: var(--text-dim); }
+  .timeline-pt.w { background: var(--green); }
+  .timeline-pt.l { background: var(--black); border-color: var(--text-dim); }
+  .timeline-pt.d { background: var(--text-dim); }
+  .timeline-label {
+    position: absolute; top: 16px; transform: translateX(-50%);
+    font-family: var(--font-mono); font-size: 10px; color: var(--text-dim);
+    width: 110px; text-align: center; line-height: 1.4;
+  }
+  .timeline-label.stagger { top: 66px; }
+  .timeline-label.stagger::before {
+    content: ''; position: absolute; top: -12px; left: 50%; width: 1px; height: 10px;
+    background: var(--line);
+  }
+  .timeline-label b { display: block; color: var(--text); font-size: 11px; margin-bottom: 2px; }
+  .timeline-wrap-mobile { overflow-x: auto; padding-bottom: 88px; }
+  .timeline-inner { min-width: 760px; position: relative; padding: 0 48px; }
+
+  .card-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+  @media (max-width: 560px) { .card-row { grid-template-columns: 1fr; } }
+  .stat-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .stat-card .name { font-family: var(--font-display); text-transform: uppercase; font-size: 17px; color: var(--text); }
+  .stat-card .role { font-family: var(--font-mono); font-size: 10.5px; color: var(--green); margin: 4px 0 10px; letter-spacing: 0.04em; }
+  .stat-card p { font-size: 13.5px; color: var(--text-dim); margin: 0; }
+  .stat-card .num-row { display: flex; gap: 16px; margin: 8px 0 10px; }
+  .stat-card .num-row div { font-family: var(--font-mono); }
+  .stat-card .num-row .n { font-size: 20px; color: var(--green); font-weight: 600; }
+  .stat-card .num-row .l { font-size: 9.5px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .match-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-top: 14px;
+  }
+  .match-card .mc-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--font-mono); font-size: 11.5px; color: var(--text-dim);
+    margin-bottom: 10px; flex-wrap: wrap; gap: 6px;
+  }
+  .match-card .mc-head .res { font-weight: 600; }
+  .match-card .mc-head .res.w { color: var(--green); }
+  .match-card .mc-head .res.d { color: var(--text-dim); }
+  .match-card .mc-head .res.l { color: var(--text-dim); }
+  .mc-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  @media (max-width: 560px) { .mc-stats { grid-template-columns: repeat(2, 1fr); } }
+  .mc-stat { text-align: center; }
+  .mc-stat .v { font-family: var(--font-mono); font-size: 17px; color: var(--text); font-weight: 600; }
+  .mc-stat .k { font-size: 9.5px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+
+  .closing {
+    padding: 70px 22px 90px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .pull-quote {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 3.6vw, 30px);
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+  }
+  .pull-quote span { color: var(--green); }
+  .closing p.sub { margin-top: 20px; color: var(--text-dim); font-size: 14.5px; max-width: 52ch; margin-left: auto; margin-right: auto; }
+  .byline {
+    margin-top: 40px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+  .byline .name { color: var(--green); }
+
+  @media (prefers-reduced-motion: reduce) {
+    #lsc-prematch-lvl-root .moment,
+    #lsc-prematch-lvl-root .pitch-zone,
+    #lsc-prematch-lvl-root .pitch-run,
+    #lsc-prematch-lvl-root .pitch-node,
+    #lsc-prematch-lvl-root .timeline-fill {
+      transition: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<div class="lang-toggle">
+  <span>LANG</span>
+  <button class="lang-btn active" data-set-lang="es">ES</button>
+  <button class="lang-btn" data-set-lang="en">EN</button>
+</div>
+
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span data-lang="es">USL Championship · Análisis Pre-Partido</span>
+    <span data-lang="en">USL Championship · Pre-Match Analysis</span>
+  </div>
+  <div class="scoreboard">
+    <span class="team home">LSC</span>
+    <span class="vs">VS</span>
+    <span class="team">LVL</span>
+  </div>
+  <h1>
+    <span data-lang="es">Del rombo interior al ataque directo por la derecha</span>
+    <span data-lang="en">From the interior diamond to direct right-side attacks</span>
+  </h1>
+  <p class="dek">
+    <span data-lang="es">Las Vegas domina el balón por dentro con un 4-4-2 en rombo — pero cuando pierden la pelota, el espacio a las espaldas de sus laterales queda completamente abierto. Ahí está la grieta.</span>
+    <span data-lang="en">Las Vegas controls the ball centrally through a 4-4-2 diamond — but when they lose it, the space behind their fullbacks opens up completely. That's the crack.</span>
+  </p>
+  <div class="meta">
+    <span data-lang="es" class="inline">Próximo rival</span>
+    <span data-lang="en" class="inline">Upcoming opponent</span>
+    <span>USL Championship</span>
+    <span data-lang="es" class="inline">Análisis: Alejandro Mena</span>
+    <span data-lang="en" class="inline">Analysis: Alejandro Mena</span>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-item"><div class="ticker-num">1W-2D-1W</div><div class="ticker-label"><span data-lang="es">Últimos 4 partidos</span><span data-lang="en">Last 4 matches</span></div></div>
+  <div class="ticker-item"><div class="ticker-num">53.6%</div><div class="ticker-label">Field Tilt</div></div>
+  <div class="ticker-item"><div class="ticker-num">43%</div><div class="ticker-label"><span data-lang="es">Ataque x derecha</span><span data-lang="en">Attack via right</span></div></div>
+  <div class="ticker-item"><div class="ticker-num">10</div><div class="ticker-label"><span data-lang="es">Goles — J. Rodríguez</span><span data-lang="en">Goals — J. Rodríguez</span></div></div>
+  <div class="ticker-item"><div class="ticker-num" style="font-size:15px;"><span data-lang="es">ESPALDA LATERAL</span><span data-lang="en">BEHIND FULLBACKS</span></div><div class="ticker-label"><span data-lang="es">Debilidad clave</span><span data-lang="en">Key weakness</span></div></div>
+</div>
+
+<section class="moment" data-moment>
+  <div class="moment-head">
+    <span class="moment-index">01</span>
+    <h2 class="moment-title">
+      <span data-lang="es">Estructura Ofensiva: 4-4-2 en Rombo</span>
+      <span data-lang="en">Offensive Structure: 4-4-2 Diamond</span>
+    </h2>
+  </div>
+  <p data-lang="es">Las Vegas Lights juega con un 4-4-2 en rombo, no en línea plana. Ybarra ("6") se ubica más retrasado como base de contención, dos volantes ocupan los carriles interiores, y Christian Pinzón ("11") juega como el vértice ofensivo del rombo — el jugador que constantemente busca el pase entre líneas y conecta la salida con el ataque.</p>
+  <p data-lang="en">Las Vegas Lights play a 4-4-2 diamond, not a flat line. Ybarra ("6") sits deeper as the holding base, two midfielders occupy the interior channels, and Christian Pinzón ("11") plays as the diamond's advanced tip — the player constantly looking for the pass between the lines, connecting build-up to attack.</p>
+
+  <div class="pitch-wrap">
+    <svg class="pitch" viewBox="0 0 400 240" aria-hidden="true">
+      <rect class="pitch-line" x="4" y="4" width="392" height="232" rx="3"/>
+      <line class="pitch-line" x1="200" y1="4" x2="200" y2="236"/>
+      <circle class="pitch-line" cx="200" cy="120" r="28"/>
+      <circle cx="200" cy="120" r="2" fill="#283A2C"/>
+      <rect class="pitch-line" x="334" y="52" width="62" height="136"/>
+      <rect class="pitch-line" x="375" y="89" width="21" height="62"/>
+      <circle cx="355" cy="120" r="2" fill="#283A2C"/>
+      <rect x="396" y="107" width="3" height="26" fill="none" stroke="#283A2C" stroke-width="1.4"/>
+
+      <circle class="pitch-defender" cx="305" cy="35" r="8"/>
+      <circle class="pitch-defender" cx="312" cy="90" r="8"/>
+      <circle class="pitch-defender" cx="312" cy="150" r="8"/>
+      <circle class="pitch-defender" cx="305" cy="205" r="8"/>
+      <circle class="pitch-defender" cx="270" cy="120" r="8"/>
+      <text class="pitch-text strong" x="270" y="123" text-anchor="middle" fill="#0B0F0C">6</text>
+      <circle class="pitch-defender" cx="235" cy="80" r="8"/>
+      <circle class="pitch-defender" cx="235" cy="160" r="8"/>
+      <circle class="pitch-mid" cx="195" cy="120" r="8"/>
+      <text class="pitch-text strong" x="195" y="123" text-anchor="middle" fill="#0B0F0C">11</text>
+      <circle class="pitch-defender" cx="150" cy="100" r="8"/>
+      <circle class="pitch-defender" cx="150" cy="140" r="8"/>
+
+      <text class="pitch-text" x="270" y="16" text-anchor="middle">LVL 4-4-2 DIAMOND (ROMBO)</text>
+      <text class="pitch-text strong" x="195" y="103" text-anchor="middle">PINZÓN — VÉRTICE</text>
+    </svg>
+    <div class="pitch-caption">
+      <span data-lang="es"><strong>Fig. 1</strong> — Rombo interior: Ybarra en la base, dos volantes en los carriles interiores, Pinzón como vértice ofensivo.</span>
+      <span data-lang="en"><strong>Fig. 1</strong> — Interior diamond: Ybarra at the base, two shuttlers in the half-spaces, Pinzón as the advanced tip.</span>
+    </div>
+  </div>
+</section>
+
+<section class="moment" data-moment>
+  <div class="moment-head">
+    <span class="moment-index">02</span>
+    <h2 class="moment-title">
+      <span data-lang="es">Salida de Balón: Construcción 2-3-1-4</span>
+      <span data-lang="en">Build-up: 2-3-1-4 Construction</span>
+    </h2>
+  </div>
+  <p data-lang="es">En construcción, Las Vegas se transforma en un 2-3-1-4: los dos centrales se quedan cortos y fijos como base, la línea de tres interior se mueve por el carril central buscando el pase entre líneas, y ambos laterales suben con fuerza para dar la amplitud que el rombo no ofrece naturalmente. Los dos delanteros fijan a los centrales rivales para mantener el medio liberado.</p>
+  <p data-lang="en">In build-up, Las Vegas shifts into a 2-3-1-4: the two center backs stay short and fixed as the base, the interior line of three works the central channel looking for the pass between the lines, and both fullbacks push hard to provide the width the diamond doesn't naturally offer. Both forwards pin the opposing center backs to keep the middle open.</p>
+
+  <div class="pitch-wrap">
+    <svg class="pitch" viewBox="0 0 400 240" aria-hidden="true">
+      <rect class="pitch-line" x="4" y="4" width="392" height="232" rx="3"/>
+      <line class="pitch-line" x1="200" y1="4" x2="200" y2="236"/>
+      <circle class="pitch-line" cx="200" cy="120" r="28"/>
+      <circle cx="200" cy="120" r="2" fill="#283A2C"/>
+      <rect class="pitch-line" x="334" y="52" width="62" height="136"/>
+      <rect class="pitch-line" x="375" y="89" width="21" height="62"/>
+      <circle cx="355" cy="120" r="2" fill="#283A2C"/>
+      <rect x="396" y="107" width="3" height="26" fill="none" stroke="#283A2C" stroke-width="1.4"/>
+
+      <circle class="pitch-defender" cx="358" cy="90" r="8"/>
+      <circle class="pitch-defender" cx="358" cy="150" r="8"/>
+      <text class="pitch-text" x="358" y="205" text-anchor="middle">CB · CB</text>
+
+      <circle class="pitch-defender" cx="290" cy="70" r="8"/>
+      <circle class="pitch-defender" cx="278" cy="120" r="8"/>
+      <circle class="pitch-defender" cx="290" cy="170" r="8"/>
+      <text class="pitch-text" x="278" y="55" text-anchor="middle">6 / 8 / 8</text>
+
+      <circle class="pitch-mid" cx="215" cy="120" r="8"/>
+      <text class="pitch-text strong" x="215" y="105" text-anchor="middle">11</text>
+
+      <path class="pitch-run a" d="M 355 195 C 300 150, 220 70, 130 40"/>
+      <circle class="pitch-node a-node" cx="355" cy="195" r="7"/>
+      <circle class="pitch-node a-node end-node" cx="130" cy="40" r="7"/>
+      <text class="pitch-text strong" x="355" y="217" text-anchor="middle">RB</text>
+      <text class="pitch-text strong end-label" x="130" y="24" text-anchor="middle">RB (AMPLITUD)</text>
+    </svg>
+    <div class="pitch-caption">
+      <span data-lang="es"><strong>Fig. 2</strong> — Los centrales sostienen la base mientras el lateral realiza el recorrido completo hacia el ataque; el 43% de las acciones ofensivas nacen por la derecha.</span>
+      <span data-lang="en"><strong>Fig. 2</strong> — Center backs hold the base while the fullback makes the full run forward; 43% of offensive actions start on the right.</span>
+    </div>
+  </div>
+</section>
+
+<section class="moment" data-moment>
+  <div class="moment-head">
+    <span class="moment-index">03</span>
+    <h2 class="moment-title">
+      <span data-lang="es">Debilidad Clave: Espacio a las Espaldas</span>
+      <span data-lang="en">Key Weakness: Space in Behind</span>
+    </h2>
+  </div>
+  <p data-lang="es">Esta es la grieta más clara. Porque ambos laterales suben con fuerza para dar amplitud, y los volantes interiores del rombo tienen recorridos largos para recuperar posición, el espacio a las espaldas de los laterales queda abierto en cuanto pierden el balón. Ninguno de los dos centrales es especialmente cómodo defendiendo a campo abierto — son fuertes en el uno contra uno, pero sufren ante velocidad.</p>
+  <p data-lang="en">This is the clearest crack. Because both fullbacks push high to provide width, and the diamond's interior midfielders have long recovery runs, the space behind the fullbacks opens up the moment they lose the ball. Neither center back is especially comfortable defending in open space — strong in the duel, but they struggle against pace.</p>
+
+  <div class="pitch-wrap">
+    <svg class="pitch" viewBox="0 0 400 240" aria-hidden="true">
+      <rect class="pitch-line" x="4" y="4" width="392" height="232" rx="3"/>
+      <line class="pitch-line" x1="200" y1="4" x2="200" y2="236"/>
+      <circle class="pitch-line" cx="200" cy="120" r="28"/>
+      <circle cx="200" cy="120" r="2" fill="#283A2C"/>
+      <rect class="pitch-line" x="334" y="52" width="62" height="136"/>
+      <rect class="pitch-line" x="375" y="89" width="21" height="62"/>
+      <circle cx="355" cy="120" r="2" fill="#283A2C"/>
+      <rect x="396" y="107" width="3" height="26" fill="none" stroke="#283A2C" stroke-width="1.4"/>
+
+      <rect class="pitch-zone" x="255" y="30" width="60" height="55"/>
+      <text class="pitch-text strong" x="285" y="24" text-anchor="middle">ESPACIO LIBRE</text>
+
+      <circle class="pitch-defender" cx="358" cy="95" r="8"/>
+      <circle class="pitch-defender" cx="358" cy="150" r="8"/>
+
+      <circle class="pitch-defender" cx="150" cy="35" r="8"/>
+      <text class="pitch-text" x="150" y="20" text-anchor="middle">RB (ADELANTADO)</text>
+
+      <circle class="pitch-defender" cx="290" cy="120" r="8"/>
+
+      <path class="pitch-run b" d="M 130 200 C 190 170, 240 100, 280 55"/>
+      <circle class="pitch-node b-node" cx="130" cy="200" r="7"/>
+      <circle class="pitch-node b-node end-node" cx="280" cy="55" r="6"/>
+      <text class="pitch-text strong" x="130" y="220" text-anchor="middle">DELANTERO LSC</text>
+
+      <path class="pitch-run goal" d="M 355 100 C 320 85, 300 65, 282 56"/>
+      <text class="pitch-text end-label" x="355" y="88" text-anchor="middle">PASE FILTRADO</text>
+    </svg>
+    <div class="pitch-caption">
+      <span data-lang="es"><strong>Fig. 3</strong> — El espacio detrás del lateral queda libre porque el interior no llega a tiempo a cubrir; un pase filtrado habilita la llegada de un delantero rápido.</span>
+      <span data-lang="en"><strong>Fig. 3</strong> — Space behind the fullback stays open because the interior mid can't recover in time; a through ball sets up a fast forward's run.</span>
+    </div>
+  </div>
+
+  <div class="callout alert">
+    <span class="callout-tag" data-lang="es">Alerta para ellos / Oportunidad para LSC</span>
+    <span class="callout-tag" data-lang="en">Alert for them / Opportunity for LSC</span>
+    <p data-lang="es">Un delantero rápido y móvil atacando ese espacio en el momento exacto de la pérdida del balón es la forma más efectiva de castigar esta estructura.</p>
+    <p data-lang="en">A fast, mobile forward attacking that space the instant they lose the ball is the most effective way to punish this structure.</p>
+  </div>
+</section>
+
+<section class="moment" data-moment>
+  <div class="moment-head">
+    <span class="moment-index">04</span>
+    <h2 class="moment-title">
+      <span data-lang="es">Ataque Cargado por el Costado Derecho</span>
+      <span data-lang="en">Attack Loaded Down the Right</span>
+    </h2>
+  </div>
+  <p data-lang="es">Una vez que Pinzón recibe entre líneas, Las Vegas busca de inmediato el cambio de orientación hacia la derecha — su zona preferida, con el 43% de las acciones ofensivas del equipo. Es una combinación entre el lateral y el interior derecho, buscando profundidad antes de que el bloque rival se reordene.</p>
+  <p data-lang="en">Once Pinzón receives between the lines, Las Vegas immediately looks to switch the point of attack to the right — their preferred zone, generating 43% of the team's offensive actions. It's a combination between the fullback and the right-sided interior midfielder, looking for depth before the opposing block can reset.</p>
+
+  <div class="card-row">
+    <div class="stat-card">
+      <div class="name">Themi Antonoglou</div>
+      <div class="role" data-lang="es">LATERAL — AMPLITUD Y GOL</div>
+      <div class="role" data-lang="en">FULLBACK — WIDTH AND GOALS</div>
+      <p data-lang="es">Aporta gol y ocasiones desde una posición defensiva; líder del equipo en ocasiones creadas.</p>
+      <p data-lang="en">Contributes goals and chances from a defensive role; team leader in chances created.</p>
+    </div>
+    <div class="stat-card">
+      <div class="name">Christian Pinzón</div>
+      <div class="role" data-lang="es">#11 — DISTRIBUCIÓN A LA DERECHA</div>
+      <div class="role" data-lang="en">#11 — DISTRIBUTION TO THE RIGHT</div>
+      <p data-lang="es">El cambio de orientación hacia la derecha nace, en gran parte, de sus pases entre líneas.</p>
+      <p data-lang="en">The switch of play to the right largely originates from his passes between the lines.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="callout-tag" data-lang="es">Recomendación</span>
+    <span class="callout-tag" data-lang="en">Recommendation</span>
+    <p data-lang="es">Cerrar el carril derecho con ayudas tempranas del interior izquierdo de LSC, evitando que Antonoglou y el resto del circuito derecho reciban con espacio y de cara al arco.</p>
+    <p data-lang="en">Close the right channel early with support from LSC's left-sided interior midfielder, preventing Antonoglou and the right-side circuit from receiving in space, facing goal.</p>
+  </div>
+</section>
+
+<section class="moment" data-moment>
+  <div class="moment-head">
+    <span class="moment-index">05</span>
+    <h2 class="moment-title">
+      <span data-lang="es">Jugadores Clave y Forma Reciente</span>
+      <span data-lang="en">Key Players and Recent Form</span>
+    </h2>
+  </div>
+  <p data-lang="es">Dominan el balón en zonas de ataque (top-10 de la liga en Field Tilt) pero no siempre lo traducen en gol — último lugar de la liga en toques dentro del área rival. Necesitan un momento de calidad individual: un inicio rápido, una intervención tardía, o un error a balón parado del rival.</p>
+  <p data-lang="en">They dominate the ball in attacking zones (top-10 in the league for Field Tilt) but don't always convert it into goals — dead last in the league for touches inside the opposition box. They need a moment of individual quality: a fast start, a late intervention, or a set-piece error from the opponent.</p>
+
+  <div class="card-row">
+    <div class="stat-card">
+      <div class="name">Johnny Rodríguez</div>
+      <div class="role" data-lang="es">MÁXIMO GOLEADOR 2026</div>
+      <div class="role" data-lang="en">TOP SCORER 2026</div>
+      <div class="num-row">
+        <div><div class="n">10</div><div class="l" data-lang="es">Goles</div><div class="l" data-lang="en">Goals</div></div>
+        <div><div class="n">87'</div><div class="l" data-lang="es">Gol ganador vs BRK</div><div class="l" data-lang="en">Winner vs BRK</div></div>
+      </div>
+      <p data-lang="es">Decisivo en los tramos finales del partido.</p>
+      <p data-lang="en">Decisive in the closing stages of matches.</p>
+    </div>
+    <div class="stat-card">
+      <div class="name">Oalex Anderson</div>
+      <div class="role" data-lang="es">ESPECIALISTA EN INICIOS RÁPIDOS</div>
+      <div class="role" data-lang="en">FAST-START SPECIALIST</div>
+      <div class="num-row">
+        <div><div class="n">5</div><div class="l" data-lang="es">Goles</div><div class="l" data-lang="en">Goals</div></div>
+        <div><div class="n">&lt;1'</div><div class="l" data-lang="es">2 goles</div><div class="l" data-lang="en">2 goals</div></div>
+      </div>
+      <p data-lang="es">Anotó dentro del primer minuto en dos partidos distintos esta temporada.</p>
+      <p data-lang="en">Scored inside the opening minute in two separate matches this season.</p>
+    </div>
+  </div>
+
+  <div class="timeline-wrap-mobile">
+    <div class="timeline-inner">
+      <div class="timeline">
+        <div class="timeline-track"><div class="timeline-fill"></div></div>
+        <div class="timeline-pt n" style="left:0%"></div>
+        <div class="timeline-pt w" style="left:25%"></div>
+        <div class="timeline-pt d" style="left:50%"></div>
+        <div class="timeline-pt d" style="left:75%"></div>
+        <div class="timeline-pt w" style="left:100%"></div>
+
+        <div class="timeline-label" style="left:0%"><b data-lang="es">Forma</b><b data-lang="en">Form</b><span data-lang="es">Últimos 4</span><span data-lang="en">Last 4</span></div>
+        <div class="timeline-label" style="left:25%"><b>25 jul</b><span data-lang="es">1–0 Detroit (V)</span><span data-lang="en">1–0 Detroit (A)</span></div>
+        <div class="timeline-label stagger" style="left:50%"><b>1 ago</b><span data-lang="es">1–1 Phoenix (L)</span><span data-lang="en">1–1 Phoenix (H)</span></div>
+        <div class="timeline-label" style="left:75%"><b>5 ago</b><span data-lang="es">0–0 Oakland (L)</span><span data-lang="en">0–0 Oakland (H)</span></div>
+        <div class="timeline-label stagger" style="left:100%"><b>15 ago</b><span data-lang="es">2–1 Brooklyn (L)</span><span data-lang="en">2–1 Brooklyn (H)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="match-card">
+    <div class="mc-head"><span>DET 0–1 LVL</span><span class="res w" data-lang="es">VICTORIA · 25 JUL</span><span class="res w" data-lang="en">WIN · JUL 25</span></div>
+    <div class="mc-stats">
+      <div class="mc-stat"><div class="v">0:40</div><div class="k" data-lang="es">Gol Anderson</div><div class="k" data-lang="en">Anderson goal</div></div>
+      <div class="mc-stat"><div class="v">5</div><div class="k" data-lang="es">Atajadas Henry</div><div class="k" data-lang="en">Henry saves</div></div>
+      <div class="mc-stat"><div class="v">40.7%</div><div class="k" data-lang="es">Posesión</div><div class="k" data-lang="en">Possession</div></div>
+    </div>
+  </div>
+  <div class="match-card">
+    <div class="mc-head"><span>LVL 1–1 PHX</span><span class="res d" data-lang="es">EMPATE · 1 AGO</span><span class="res d" data-lang="en">DRAW · AUG 1</span></div>
+    <div class="mc-stats">
+      <div class="mc-stat"><div class="v">1</div><div class="k" data-lang="es">Gol Antonoglou</div><div class="k" data-lang="en">Antonoglou goal</div></div>
+      <div class="mc-stat"><div class="v">OG</div><div class="k" data-lang="es">Empate rival</div><div class="k" data-lang="en">Rival's equalizer</div></div>
+      <div class="mc-stat"><div class="v">—</div><div class="k" data-lang="es">Calor extremo</div><div class="k" data-lang="en">Extreme heat</div></div>
+    </div>
+  </div>
+  <div class="match-card">
+    <div class="mc-head"><span>LVL 0–0 OAK</span><span class="res d" data-lang="es">EMPATE · 5 AGO</span><span class="res d" data-lang="en">DRAW · AUG 5</span></div>
+    <div class="mc-stats">
+      <div class="mc-stat"><div class="v">15</div><div class="k" data-lang="es">Remates</div><div class="k" data-lang="en">Shots</div></div>
+      <div class="mc-stat"><div class="v">9</div><div class="k" data-lang="es">Remates rival</div><div class="k" data-lang="en">Rival shots</div></div>
+      <div class="mc-stat"><div class="v">2</div><div class="k" data-lang="es">Palos</div><div class="k" data-lang="en">Woodwork</div></div>
+    </div>
+  </div>
+  <div class="match-card">
+    <div class="mc-head"><span>LVL 2–1 BRK</span><span class="res w" data-lang="es">VICTORIA · 15 AGO</span><span class="res w" data-lang="en">WIN · AUG 15</span></div>
+    <div class="mc-stats">
+      <div class="mc-stat"><div class="v">4'</div><div class="k" data-lang="es">Gol rival</div><div class="k" data-lang="en">Rival goal</div></div>
+      <div class="mc-stat"><div class="v">69'</div><div class="k" data-lang="es">Empate Anderson</div><div class="k" data-lang="en">Anderson equalizer</div></div>
+      <div class="mc-stat"><div class="v">87'</div><div class="k" data-lang="es">Gol Rodríguez</div><div class="k" data-lang="en">Rodríguez goal</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <p class="pull-quote" data-lang="es">Presionar la salida, atacar el <span>espacio detrás del lateral</span>, y no perder concentración en los <span>primeros y últimos minutos</span>.</p>
+  <p class="pull-quote" data-lang="en">Press the build-up, attack the <span>space behind the fullback</span>, and never lose focus in the <span>first and final minutes</span>.</p>
+  <p class="sub" data-lang="es">Las Vegas domina el balón por dentro con un rombo bien organizado. Su grieta está en la transición defensiva, no en la construcción — ahí es donde debe vivir nuestro plan de ataque.</p>
+  <p class="sub" data-lang="en">Las Vegas controls the ball centrally through a well-organized diamond. Their crack is in defensive transition, not build-up — that's where our attacking plan should live.</p>
+  <div class="byline">
+    <span data-lang="es">Análisis táctico por </span><span data-lang="en">Tactical analysis by </span><span class="name">Alejandro Mena</span>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function() {
+  const root = document.getElementById('lsc-prematch-lvl-root');
+
+  root.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.getAttribute('data-set-lang');
+      root.classList.toggle('lang-en', lang === 'en');
+      root.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b === btn));
+    });
+  });
+
+  const moments = root.querySelectorAll('[data-moment]');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.25 });
+  moments.forEach(m => io.observe(m));
+})();
+</script>
+</div>
+</body>
+</html>
