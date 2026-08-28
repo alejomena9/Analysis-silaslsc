@@ -31,7 +31,7 @@
     margin: 0;
   }
   .lscx-mono { font-family: 'IBM Plex Mono', monospace; }
-
+ 
   /* ---- lang toggle ---- */
   .lscx-langbar {
     position: sticky; top: 0; z-index: 50;
@@ -49,13 +49,13 @@
     transition: all 0.2s ease;
   }
   .lscx-langbtn.active { background: #3DDC5A; color: #111111; border-color: #3DDC5A; font-weight: 600; }
-
+ 
   [data-lang-content] { display: none; }
   .lscx-wrap[data-lang="es"] [data-lang-content="es"] { display: block; }
   .lscx-wrap[data-lang="en"] [data-lang-content="en"] { display: block; }
   .lscx-wrap[data-lang="es"] span[data-lang-content="es"],
   .lscx-wrap[data-lang="en"] span[data-lang-content="en"] { display: inline; }
-
+ 
   /* ---- hero ---- */
   .lscx-hero { padding: 64px 24px 40px; max-width: 980px; margin: 0 auto; }
   .lscx-eyebrow {
@@ -65,7 +65,7 @@
   .lscx-hero h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 700; line-height: 1.05; margin-bottom: 18px; }
   .lscx-hero h1 .lscx-vs { color: rgba(245,241,233,0.4); font-weight: 400; }
   .lscx-hero-sub { color: rgba(245,241,233,0.65); font-size: 16px; max-width: 640px; }
-
+ 
   .lscx-scoreboard {
     display: flex; align-items: center; justify-content: space-between; gap: 24px;
     margin-top: 36px; padding: 22px 26px;
@@ -77,7 +77,7 @@
   .lscx-sb-team .lscx-sb-tag { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(245,241,233,0.5); margin-top: 4px; }
   .lscx-sb-mid { font-family: 'IBM Plex Mono', monospace; text-align: center; color: rgba(245,241,233,0.7); font-size: 13px; }
   .lscx-sb-mid .lscx-sb-date { color: #3DDC5A; font-weight: 600; margin-bottom: 4px; }
-
+ 
   /* ---- ticker ---- */
   .lscx-ticker {
     border-top: 1px solid rgba(245,241,233,0.12);
@@ -89,7 +89,7 @@
     font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: rgba(245,241,233,0.7);
   }
   .lscx-ticker-inner b { color: #3DDC5A; }
-
+ 
   /* ---- section ---- */
   .lscx-section { max-width: 980px; margin: 0 auto; padding: 56px 24px; }
   .lscx-section-num {
@@ -97,22 +97,22 @@
   }
   .lscx-section h2 { font-size: clamp(24px, 3.4vw, 34px); margin-bottom: 18px; }
   .lscx-section p { color: rgba(245,241,233,0.78); font-size: 16px; max-width: 720px; }
-
+ 
   /* ---- reveal ---- */
   .lscx-reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .lscx-reveal.lscx-in { opacity: 1; transform: translateY(0); }
-
+ 
   /* ---- pitch svg ---- */
   .lscx-pitch-wrap { margin: 28px 0; background: #131A14; border: 1px solid rgba(245,241,233,0.12); border-radius: 10px; padding: 18px; }
   .lscx-pitch-wrap svg { width: 100%; height: auto; display: block; }
   .lscx-pitch-caption { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(245,241,233,0.55); margin-top: 10px; text-align: center; }
-
+ 
   /* ---- stat cards ---- */
   .lscx-statgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: 24px; }
   .lscx-statcard { background: #131A14; border: 1px solid rgba(245,241,233,0.12); border-radius: 10px; padding: 18px; text-align: center; }
   .lscx-statcard .lscx-statval { font-family: 'Oswald', sans-serif; font-size: 30px; color: #3DDC5A; }
   .lscx-statcard .lscx-statlabel { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(245,241,233,0.55); margin-top: 6px; letter-spacing: 0.04em; }
-
+ 
   /* ---- match cards (recent form timeline) ---- */
   .lscx-timeline { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
   .lscx-matchcard {
@@ -124,21 +124,21 @@
   .lscx-matchcard .lscx-mc-detail { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(245,241,233,0.55); }
   .lscx-mc-result { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; padding: 4px 10px; border-radius: 6px; }
   .lscx-mc-result.loss { background: rgba(17,17,17,0.6); color: #F5F1E9; border: 1px solid rgba(245,241,233,0.25); }
-
+ 
   /* ---- callouts ---- */
   .lscx-callout { border-left: 3px solid #3DDC5A; background: #131A14; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 18px 0; }
   .lscx-callout.risk { border-left-color: #F5F1E9; }
   .lscx-callout .lscx-callout-label { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; color: #3DDC5A; margin-bottom: 8px; }
   .lscx-callout.risk .lscx-callout-label { color: rgba(245,241,233,0.7); }
   .lscx-callout p { margin: 0; color: rgba(245,241,233,0.85); }
-
+ 
   /* ---- weapons table ---- */
   .lscx-weapons { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; }
   .lscx-weapons th { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(245,241,233,0.5); text-align: left; padding: 10px 12px; border-bottom: 1px solid rgba(245,241,233,0.2); }
   .lscx-weapons td { padding: 12px; border-bottom: 1px solid rgba(245,241,233,0.08); vertical-align: top; color: rgba(245,241,233,0.85); }
   .lscx-weapons td.lscx-w-name { font-family: 'Oswald', sans-serif; font-size: 15px; color: #F5F1E9; }
   .lscx-w-num { color: #3DDC5A; font-family: 'IBM Plex Mono', monospace; }
-
+ 
   /* ---- pull quote / byline ---- */
   .lscx-pullquote { max-width: 780px; margin: 60px auto; padding: 0 24px; text-align: center; }
   .lscx-pullquote blockquote {
@@ -147,7 +147,7 @@
   }
   .lscx-pullquote blockquote .lscx-hl { color: #3DDC5A; }
   .lscx-byline { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(245,241,233,0.5); }
-
+ 
   @media (max-width: 640px) {
     .lscx-scoreboard { flex-direction: column; }
   }
@@ -155,12 +155,12 @@
 </head>
 <body>
 <div class="lscx-wrap" data-lang="es" id="lscxRoot">
-
+ 
   <div class="lscx-langbar">
     <button class="lscx-langbtn active" data-setlang="es">ES</button>
     <button class="lscx-langbtn" data-setlang="en">EN</button>
   </div>
-
+ 
   <!-- HERO -->
   <section class="lscx-hero">
     <div class="lscx-eyebrow" data-lang-content="es">Pre-partido · USL Championship</div>
@@ -168,7 +168,7 @@
     <h1>LSC <span class="lscx-vs">vs.</span> Colorado Springs Switchbacks FC</h1>
     <p class="lscx-hero-sub" data-lang-content="es">Colorado construye todo su juego a través de Speedy Williams y ataca con velocidad por las bandas — pero su lateral izquierdo ha sido el patrón exacto detrás de sus últimas tres derrotas de visitante.</p>
     <p class="lscx-hero-sub" data-lang-content="en">Colorado builds everything through Speedy Williams and attacks with speed down the flanks — but their left-back channel has been the exact pattern behind their last three away losses.</p>
-
+ 
     <div class="lscx-scoreboard">
       <div class="lscx-sb-team">
         <div class="lscx-sb-name">Lexington SC</div>
@@ -185,7 +185,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- TICKER -->
   <div class="lscx-ticker">
     <div class="lscx-ticker-inner">
@@ -197,7 +197,7 @@
       <span class="lscx-mono">2-3-5 <span data-lang-content="es">→ ataque</span><span data-lang-content="en">→ attack</span></span>
     </div>
   </div>
-
+ 
   <!-- SECTION 1: STRUCTURE -->
   <section class="lscx-section lscx-reveal">
     <div class="lscx-section-num">01</div>
@@ -205,7 +205,7 @@
     <h2 data-lang-content="en">Colorado's structure</h2>
     <p data-lang-content="es">Fuera de posesión, Colorado se cierra en un 4-1-4-1 compacto, marcando hombre a hombre en el mediocampo. En posesión, el sistema se transforma en un 2-3-5: ambos laterales suben, y el que queda del lado contrario al balón se convierte en interior para formar el "tres" de salida junto al mediocentro.</p>
     <p data-lang-content="en">Out of possession, Colorado sets up in a compact 4-1-4-1, man-marking through midfield. In possession, the system morphs into a 2-3-5: both fullbacks push forward, and the one on the ball-far side tucks inside as an interior to form the buildup "three" alongside the holding midfielder.</p>
-
+ 
     <div class="lscx-pitch-wrap">
       <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" id="lscxPitch1">
         <rect x="4" y="4" width="392" height="232" fill="none" stroke="#F5F1E9" stroke-opacity="0.3" stroke-width="1.2"/>
@@ -215,10 +215,10 @@
         <rect x="334" y="60" width="62" height="120" fill="none" stroke="#F5F1E9" stroke-opacity="0.3" stroke-width="1"/>
         <!-- 4-1-4-1 shape (static, out of possession) -->
         <g id="lscxShape441">
-          <circle cx="60" cy="200" r="8" fill="#111111" stroke="#F5F1E9" stroke-width="0.4"/>
+          <circle cx="60" cy="200" r="8" fill="#111111" stroke="#3DDC5A" stroke-width="1.5"/>
           <circle cx="60" cy="155" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
           <circle cx="60" cy="85" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
-          <circle cx="60" cy="40" r="8" fill="#111111" stroke="#3DDC5A" stroke-opacity="1.5"/>
+          <circle cx="60" cy="40" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
           <circle cx="100" cy="120" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
           <circle cx="150" cy="200" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
           <circle cx="150" cy="155" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
@@ -226,13 +226,13 @@
           <circle cx="150" cy="40" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
           <circle cx="200" cy="120" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
         </g>
-        <text x="60" y="42" text-anchor="middle" fill="#3DDC5A" font-size="9" font-family="IBM Plex Mono, monospace">LB</text>
+        <text x="60" y="222" text-anchor="middle" fill="#3DDC5A" font-size="9" font-family="IBM Plex Mono, monospace">LB</text>
       </svg>
       <div class="lscx-pitch-caption" data-lang-content="es">4-1-4-1 fuera de posesión — el lateral izquierdo (verde) es el punto de recuperación más lento</div>
       <div class="lscx-pitch-caption" data-lang-content="en">4-1-4-1 out of possession — the left back (green) is the slowest recovery point</div>
     </div>
   </section>
-
+ 
   <!-- SECTION 2: THE WEAKNESS -->
   <section class="lscx-section lscx-reveal">
     <div class="lscx-section-num">02</div>
@@ -240,7 +240,7 @@
     <h2 data-lang-content="en">The crack behind the left back</h2>
     <p data-lang-content="es">Con el lateral izquierdo empujado tan alto en el 2-3-5, el espacio detrás de él queda expuesto en cuanto Colorado pierde el balón. No es casualidad: los goles decisivos ante New Mexico United y Phoenix Rising llegaron exactamente por ese canal.</p>
     <p data-lang-content="en">With the left back pushed so high in the 2-3-5, the space behind him is exposed the moment Colorado loses the ball. It's not a coincidence: the decisive goals against New Mexico United and Phoenix Rising came through that exact channel.</p>
-
+ 
     <div class="lscx-pitch-wrap">
       <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
         <rect x="4" y="4" width="392" height="232" fill="none" stroke="#F5F1E9" stroke-opacity="0.3" stroke-width="1.2"/>
@@ -269,7 +269,7 @@
       <div class="lscx-pitch-caption" data-lang-content="es">Carrera de Epps/Zengue hacia el espacio detrás del lateral izquierdo de Colorado en transición</div>
       <div class="lscx-pitch-caption" data-lang-content="en">Epps/Zengue run into the space behind Colorado's left back in transition</div>
     </div>
-
+ 
     <div class="lscx-timeline">
       <div class="lscx-matchcard">
         <div>
@@ -297,7 +297,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- SECTION 3: SET PIECES / STAT CARDS -->
   <section class="lscx-section lscx-reveal">
     <div class="lscx-section-num">03</div>
@@ -305,7 +305,7 @@
     <h2 data-lang-content="en">Aerial danger</h2>
     <p data-lang-content="es">Colorado genera mucho volumen de centros y corners, y su defensor Isaiah Foster ha anotado esta temporada tanto de corner como de un saque de banda largo. Hay que marcarlo estrictamente en las jugadas a balón parado.</p>
     <p data-lang-content="en">Colorado generates heavy crossing and corner volume, and defender Isaiah Foster has scored this season from both a corner and a long throw-in. He needs to be marked strictly on set pieces.</p>
-
+ 
     <div class="lscx-statgrid">
       <div class="lscx-statcard">
         <div class="lscx-statval">71</div>
@@ -329,20 +329,20 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- SECTION 4: ROUTE DIAGNOSIS -->
   <section class="lscx-section lscx-reveal">
     <div class="lscx-section-num">04</div>
     <h2 data-lang-content="es">Diagnóstico de ruta</h2>
     <h2 data-lang-content="en">Route diagnosis</h2>
-
+ 
     <div class="lscx-callout">
       <div class="lscx-callout-label" data-lang-content="es">OPORTUNIDAD</div>
       <div class="lscx-callout-label" data-lang-content="en">OPPORTUNITY</div>
       <p data-lang-content="es">El canal detrás del lateral izquierdo es una debilidad estructural repetible. La ruta más rápida a gol para LSC es un balón vertical inmediato hacia ese espacio en cuanto se recupera el balón, aprovechando la velocidad de Epps y Zengue en transición.</p>
       <p data-lang-content="en">The channel behind the left back is a repeatable structural weakness. LSC's fastest route to goal is an immediate vertical ball into that space the moment possession is won, using the pace of Epps and Zengue in transition.</p>
     </div>
-
+ 
     <div class="lscx-callout risk">
       <div class="lscx-callout-label" data-lang-content="es">RIESGO</div>
       <div class="lscx-callout-label" data-lang-content="en">RISK</div>
@@ -350,13 +350,13 @@
       <p data-lang-content="en">Colorado commits heavy numbers to crosses from both flanks, and their center backs — especially Isaiah Foster — are a real goal threat when they join the attack. Late-arriving defenders must be tracked, not just the strikers.</p>
     </div>
   </section>
-
+ 
   <!-- SECTION 5: KEY WEAPONS -->
   <section class="lscx-section lscx-reveal">
     <div class="lscx-section-num">05</div>
     <h2 data-lang-content="es">Jugadores clave</h2>
     <h2 data-lang-content="en">Key weapons</h2>
-
+ 
     <table class="lscx-weapons">
       <thead>
         <tr>
@@ -396,7 +396,7 @@
       </tbody>
     </table>
   </section>
-
+ 
   <!-- PULL QUOTE -->
   <div class="lscx-pullquote lscx-reveal">
     <blockquote>
@@ -405,9 +405,9 @@
     </blockquote>
     <div class="lscx-byline">ALEJANDRO MENA · LSC VIDEO ANALYSIS</div>
   </div>
-
+ 
 </div>
-
+ 
 <script>
 (function() {
   var root = document.getElementById('lscxRoot');
@@ -420,7 +420,7 @@
       btn.classList.add('active');
     });
   });
-
+ 
   var reveals = root.querySelectorAll('.lscx-reveal');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function(entries) {
