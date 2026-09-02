@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LSC vs. Sporting JAX — Scouting Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  #lscjax-sep2026 {
+    --green: #3DDC5A;
+    --black: #111111;
+    --bone: #F5F1E9;
+    --bg: #0B0F0C;
+    --panel: #131A14;
+    --panel2: #171F19;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--bone);
+    line-height: 1.6;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  #lscjax-sep2026 * { box-sizing: border-box; }
+  #lscjax-sep2026 h1, #lscjax-sep2026 h2, #lscjax-sep2026 h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin: 0;
+  }
+  #lscjax-sep2026 .mono { font-family: 'IBM Plex Mono', monospace; }
+  #lscjax-sep2026 .lang-en, #lscjax-sep2026.lang-es .lang-en { display: none; }
+  #lscjax-sep2026.lang-en .lang-en { display: inline; }
+  #lscjax-sep2026.lang-en .lang-es { display: none; }
+  #lscjax-sep2026 .lang-en[data-block], #lscjax-sep2026.lang-es .lang-en[data-block] { display: none; }
+  #lscjax-sep2026.lang-en .lang-en[data-block] { display: block; }
+  #lscjax-sep2026.lang-en .lang-es[data-block] { display: none; }
+  #lscjax-sep2026 .lang-es[data-block] { display: block; }
+
+  /* ---- sticky toggle ---- */
+  #lscjax-sep2026 .lang-toggle {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; justify-content: flex-end; gap: 0;
+    background: rgba(11,15,12,0.92);
+    backdrop-filter: blur(6px);
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(245,241,233,0.08);
+  }
+  #lscjax-sep2026 .lang-toggle button {
+    font-family: 'IBM Plex Mono', monospace;
+    background: transparent;
+    border: 1px solid rgba(245,241,233,0.25);
+    color: var(--bone);
+    padding: 6px 14px;
+    font-size: 12px;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+  }
+  #lscjax-sep2026 .lang-toggle button:first-child { border-radius: 4px 0 0 4px; }
+  #lscjax-sep2026 .lang-toggle button:last-child { border-radius: 0 4px 4px 0; border-left: none; }
+  #lscjax-sep2026 .lang-toggle button.active { background: var(--green); color: var(--black); border-color: var(--green); font-weight: 600; }
+
+  /* ---- hero ---- */
+  #lscjax-sep2026 .hero {
+    padding: 48px 20px 32px;
+    text-align: center;
+    background: radial-gradient(circle at 50% 0%, rgba(61,220,90,0.10), transparent 60%);
+  }
+  #lscjax-sep2026 .hero .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--green);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    margin-bottom: 10px;
+  }
+  #lscjax-sep2026 .hero h1 { font-size: clamp(26px, 5vw, 42px); color: var(--bone); }
+  #lscjax-sep2026 .scoreboard {
+    display: flex; align-items: center; justify-content: center; gap: 24px;
+    margin: 28px auto 12px; max-width: 560px;
+  }
+  #lscjax-sep2026 .team-block { flex: 1; text-align: center; }
+  #lscjax-sep2026 .team-name { font-family: 'Oswald', sans-serif; font-size: 20px; text-transform: uppercase; }
+  #lscjax-sep2026 .team-tag { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(245,241,233,0.55); margin-top: 4px; }
+  #lscjax-sep2026 .vs { font-family: 'IBM Plex Mono', monospace; color: var(--green); font-size: 14px; }
+  #lscjax-sep2026 .meta-row {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 18px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(245,241,233,0.65);
+    margin-top: 8px;
+  }
+  #lscjax-sep2026 .meta-row span { border-left: 2px solid var(--green); padding-left: 8px; }
+  #lscjax-sep2026 .meta-row span:first-child { border-left: none; padding-left: 0; }
+
+  /* ---- ticker ---- */
+  #lscjax-sep2026 .ticker {
+    display: flex; overflow-x: auto; gap: 0;
+    border-top: 1px solid rgba(245,241,233,0.1);
+    border-bottom: 1px solid rgba(245,241,233,0.1);
+    background: var(--panel);
+  }
+  #lscjax-sep2026 .ticker-item {
+    flex: 1 0 140px; text-align: center; padding: 16px 10px;
+    border-right: 1px solid rgba(245,241,233,0.08);
+  }
+  #lscjax-sep2026 .ticker-item:last-child { border-right: none; }
+  #lscjax-sep2026 .ticker-value { font-family: 'Oswald', sans-serif; font-size: 24px; color: var(--green); }
+  #lscjax-sep2026 .ticker-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(245,241,233,0.6); margin-top: 4px; }
+
+  /* ---- moments ---- */
+  #lscjax-sep2026 .moment {
+    padding: 56px 20px;
+    max-width: 880px; margin: 0 auto;
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  #lscjax-sep2026 .moment.revealed { opacity: 1; transform: translateY(0); }
+  #lscjax-sep2026 .moment-num {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--green); font-size: 13px; margin-bottom: 6px;
+  }
+  #lscjax-sep2026 .moment h2 { font-size: clamp(20px, 3.4vw, 28px); margin-bottom: 16px; }
+  #lscjax-sep2026 .moment p { color: rgba(245,241,233,0.85); font-size: 15.5px; margin-bottom: 14px; }
+  #lscjax-sep2026 .pitch-wrap {
+    background: var(--panel); border: 1px solid rgba(245,241,233,0.08);
+    border-radius: 8px; padding: 12px; margin: 20px 0;
+  }
+  #lscjax-sep2026 .pitch-wrap svg { width: 100%; height: auto; display: block; }
+  #lscjax-sep2026 .pitch-caption { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(245,241,233,0.5); text-align: center; margin-top: 8px; }
+
+  /* ---- callouts ---- */
+  #lscjax-sep2026 .callout {
+    border-left: 4px solid var(--green);
+    background: var(--panel);
+    padding: 16px 18px; margin: 18px 0; border-radius: 0 6px 6px 0;
+  }
+  #lscjax-sep2026 .callout.risk { border-left-color: var(--black); background: #1a1310; border: 1px solid rgba(255,255,255,0.06); border-left: 4px solid #e04b4b; }
+  #lscjax-sep2026 .callout-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em;
+    color: var(--green); text-transform: uppercase; margin-bottom: 6px;
+  }
+  #lscjax-sep2026 .callout.risk .callout-label { color: #e08a8a; }
+
+  /* ---- stat cards ---- */
+  #lscjax-sep2026 .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 12px; margin: 20px 0; }
+  #lscjax-sep2026 .stat-card { background: var(--panel); border: 1px solid rgba(245,241,233,0.08); border-radius: 8px; padding: 14px; text-align: center; }
+  #lscjax-sep2026 .stat-card .num { font-family: 'Oswald', sans-serif; font-size: 26px; color: var(--green); }
+  #lscjax-sep2026 .stat-card .lbl { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: rgba(245,241,233,0.6); margin-top: 4px; text-transform: uppercase; }
+
+  /* ---- form timeline ---- */
+  #lscjax-sep2026 .form-timeline { display: flex; align-items: center; gap: 6px; margin: 14px 0; flex-wrap: wrap; }
+  #lscjax-sep2026 .form-dot {
+    width: 26px; height: 26px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600;
+  }
+  #lscjax-sep2026 .form-dot.W { background: var(--green); color: var(--black); }
+  #lscjax-sep2026 .form-dot.D { background: rgba(245,241,233,0.3); color: var(--black); }
+  #lscjax-sep2026 .form-dot.L { background: var(--black); color: var(--bone); border: 1px solid rgba(245,241,233,0.3); }
+  #lscjax-sep2026 .form-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+  #lscjax-sep2026 .form-row .team-lbl { font-family: 'Oswald', sans-serif; font-size: 13px; min-width: 90px; }
+
+  /* ---- match cards (key weapons) ---- */
+  #lscjax-sep2026 .weapon-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 14px; margin: 20px 0; }
+  #lscjax-sep2026 .weapon-card { background: var(--panel); border: 1px solid rgba(245,241,233,0.08); border-radius: 8px; padding: 16px; }
+  #lscjax-sep2026 .weapon-card .role { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--green); text-transform: uppercase; margin-bottom: 6px; }
+  #lscjax-sep2026 .weapon-card h3 { font-size: 16px; margin-bottom: 8px; }
+  #lscjax-sep2026 .weapon-card p { font-size: 13.5px; color: rgba(245,241,233,0.75); margin: 0; }
+
+  /* ---- pull quote ---- */
+  #lscjax-sep2026 .pullquote {
+    max-width: 720px; margin: 60px auto; padding: 0 20px; text-align: center;
+  }
+  #lscjax-sep2026 .pullquote blockquote {
+    font-family: 'Oswald', sans-serif; font-size: clamp(20px,3.4vw,28px);
+    font-weight: 500; color: var(--bone); margin: 0 0 16px; line-height: 1.35;
+  }
+  #lscjax-sep2026 .pullquote cite {
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--green); font-style: normal;
+  }
+  #lscjax-sep2026 footer.credits {
+    text-align: center; padding: 30px 20px 50px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(245,241,233,0.4);
+  }
+  #lscjax-sep2026 .section-divider { height: 1px; background: rgba(245,241,233,0.08); max-width: 880px; margin: 0 auto; }
+</style>
+</head>
+<body>
+<div id="lscjax-sep2026" class="lang-es">
+
+  <div class="lang-toggle">
+    <button id="btn-es" class="active" onclick="lscjaxSetLang('es')">ES</button>
+    <button id="btn-en" onclick="lscjaxSetLang('en')">EN</button>
+  </div>
+
+  <section class="hero">
+    <div class="eyebrow">
+      <span class="lang-es">INFORME TÁCTICO PRE-PARTIDO</span>
+      <span class="lang-en">PRE-MATCH TACTICAL REPORT</span>
+    </div>
+    <h1>LSC <span style="color:var(--green)">@</span> Sporting JAX</h1>
+    <div class="scoreboard">
+      <div class="team-block">
+        <div class="team-name">Lexington SC</div>
+        <div class="team-tag mono lang-es">Visitante · 7º Este</div>
+        <div class="team-tag mono lang-en">Away · 7th East</div>
+      </div>
+      <div class="vs mono">VS</div>
+      <div class="team-block">
+        <div class="team-name">Sporting JAX</div>
+        <div class="team-tag mono lang-es">Local · Último Este</div>
+        <div class="team-tag mono lang-en">Home · Last East</div>
+      </div>
+    </div>
+    <div class="meta-row">
+      <span class="mono">USL Championship — <span class="lang-es">Jornada</span><span class="lang-en">Matchday</span> 27</span>
+      <span class="mono">Sept. 5, 2026 · 7:00 PM ET</span>
+      <span class="mono">Hodges Stadium, Jacksonville, FL</span>
+    </div>
+  </section>
+
+  <div class="ticker">
+    <div class="ticker-item">
+      <div class="ticker-value">2.64</div>
+      <div class="ticker-label lang-es">Goles recibidos / partido (JAX)</div>
+      <div class="ticker-label lang-en">Goals conceded / game (JAX)</div>
+    </div>
+    <div class="ticker-item">
+      <div class="ticker-value">7-8</div>
+      <div class="ticker-label lang-es">Vallas invictas de LSC (2026)</div>
+      <div class="ticker-label lang-en">LSC clean sheets (2026)</div>
+    </div>
+    <div class="ticker-item">
+      <div class="ticker-value">7/10</div>
+      <div class="ticker-label lang-es">Victorias recientes de LSC</div>
+      <div class="ticker-label lang-en">LSC recent wins</div>
+    </div>
+    <div class="ticker-item">
+      <div class="ticker-value">3-2-5</div>
+      <div class="ticker-label lang-es">Salida de JAX en construcción</div>
+      <div class="ticker-label lang-en">JAX build-up shape</div>
+    </div>
+    <div class="ticker-item">
+      <div class="ticker-value">2</div>
+      <div class="ticker-label lang-es">Goles de pelota parada sufridos por JAX (últimos 2 rivales)</div>
+      <div class="ticker-label lang-en">Set-piece goals conceded by JAX (last 2 relevant opponents)</div>
+    </div>
+  </div>
+
+  <!-- MOMENT 1 -->
+  <section class="moment" data-moment>
+    <div class="moment-num mono">01</div>
+    <h2 class="lang-es">La Estructura de Jacksonville</h2>
+    <h2 class="lang-en" style="display:none">Jacksonville's Structure</h2>
+    <p class="lang-es" data-block>Jacksonville es un equipo ordenado y disciplinado que plantea su bloque en el mediocampo. Su sistema defensivo varía entre un <strong>5-4-1</strong> y un <strong>5-2-3</strong> según la altura de los volantes interiores rivales. En construcción usan un <strong>3-2-5</strong>, con laterales muy altos pero los tres centrales muy cerrados entre sí.</p>
+    <p class="lang-en" data-block>Jacksonville is an orderly, disciplined side that sets its block in midfield. Their defensive system shifts between a <strong>5-4-1</strong> and a <strong>5-2-3</strong> depending on how high the opposing interior midfielders push. In build-up they use a <strong>3-2-5</strong>, with very high wing-backs but a back three that stays tight and narrow.</p>
+
+    <div class="pitch-wrap">
+      <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="4" width="392" height="232" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+        <line x1="200" y1="4" x2="200" y2="236" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+        <circle cx="200" cy="120" r="30" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+        <circle cx="200" cy="120" r="2" fill="#F5F1E9" fill-opacity="0.5"/>
+        <!-- own box (JAX defending, left) -->
+        <rect x="4" y="55" width="62" height="130" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+        <rect x="4" y="85" width="22" height="70" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+        <!-- opposite box x=334-396 -->
+        <rect x="334" y="55" width="62" height="130" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+        <rect x="374" y="85" width="22" height="70" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+        <!-- JAX back three -->
+        <circle cx="55" cy="90" r="9" fill="#111111" stroke="#F5F1E9" stroke-width="1"/>
+        <text x="55" y="94" text-anchor="middle" font-size="9" fill="#F5F1E9" font-family="IBM Plex Mono">5</text>
+        <circle cx="48" cy="120" r="9" fill="#111111" stroke="#F5F1E9" stroke-width="1"/>
+        <text x="48" y="124" text-anchor="middle" font-size="9" fill="#F5F1E9" font-family="IBM Plex Mono">4</text>
+        <circle cx="55" cy="150" r="9" fill="#111111" stroke="#F5F1E9" stroke-width="1"/>
+        <text x="55" y="154" text-anchor="middle" font-size="9" fill="#F5F1E9" font-family="IBM Plex Mono">6</text>
+        <!-- wingbacks high -->
+        <circle cx="95" cy="35" r="9" fill="#111111" stroke="#F5F1E9" stroke-width="1"/>
+        <text x="95" y="39" text-anchor="middle" font-size="9" fill="#F5F1E9" font-family="IBM Plex Mono">2</text>
+        <circle cx="95" cy="205" r="9" fill="#111111" stroke="#F5F1E9" stroke-width="1"/>
+        <text x="95" y="209" text-anchor="middle" font-size="9" fill="#F5F1E9" font-family="IBM Plex Mono">3</text>
+        <!-- double pivot -->
+        <circle cx="115" cy="95" r="9" fill="#111111" stroke="#F5F1E9" stroke-width="1"/>
+        <text x="115" y="99" text-anchor="middle" font-size="9" fill="#F5F1E9" font-family="IBM Plex Mono">8</text>
+        <circle cx="115" cy="145" r="9" fill="#111111" stroke="#F5F1E9" stroke-width="1"/>
+        <text x="115" y="149" text-anchor="middle" font-size="9" fill="#F5F1E9" font-family="IBM Plex Mono">6a</text>
+        <!-- goalkeeper -->
+        <circle cx="18" cy="120" r="8" fill="#111111" stroke="#F5F1E9" stroke-width="1"/>
+        <text x="18" y="124" text-anchor="middle" font-size="8" fill="#F5F1E9" font-family="IBM Plex Mono">1</text>
+        <!-- front three -->
+        <circle cx="150" cy="70" r="9" fill="#111111" stroke="#F5F1E9" stroke-width="1"/>
+        <text x="150" y="74" text-anchor="middle" font-size="9" fill="#F5F1E9" font-family="IBM Plex Mono">7</text>
+        <circle cx="165" cy="120" r="9" fill="#111111" stroke="#F5F1E9" stroke-width="1"/>
+        <text x="165" y="124" text-anchor="middle" font-size="9" fill="#F5F1E9" font-family="IBM Plex Mono">9</text>
+        <circle cx="150" cy="170" r="9" fill="#111111" stroke="#F5F1E9" stroke-width="1"/>
+        <text x="150" y="174" text-anchor="middle" font-size="9" fill="#F5F1E9" font-family="IBM Plex Mono">11</text>
+        <rect x="30" y="12" width="130" height="16" rx="3" fill="#3DDC5A" fill-opacity="0.15" stroke="#3DDC5A" stroke-width="1"/>
+        <text x="95" y="23" text-anchor="middle" font-size="8.5" fill="#3DDC5A" font-family="IBM Plex Mono">5-4-1 ⇄ 5-2-3</text>
+      </svg>
+    </div>
+    <div class="pitch-caption mono lang-es">Estructura defensiva base de Sporting JAX — bloque medio compacto</div>
+    <div class="pitch-caption mono lang-en" style="display:none">Sporting JAX base defensive structure — compact mid-block</div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- MOMENT 2 -->
+  <section class="moment" data-moment>
+    <div class="moment-num mono">02</div>
+    <h2 class="lang-es">Dónde Se Rompe el Bloque</h2>
+    <h2 class="lang-en" style="display:none">Where the Block Breaks</h2>
+    <p class="lang-es" data-block>Una presión 3 vs. 3 sobre los centrales de Jacksonville puede provocar errores — así llegó el primer gol de Sacramento, tras una salida corta mal resuelta bajo presión. En cambio, si LSC presiona solo con dos delanteros, JAX sale con muchísima facilidad, tal como se vio en el partido ante Indy Eleven.</p>
+    <p class="lang-en" data-block>A 3v3 press on Jacksonville's center backs can force errors — that's how Sacramento's opening goal came about, from a short build-up mishandled under pressure. But if LSC presses with only two forwards, JAX plays out with ease, as seen in the Indy Eleven match.</p>
+
+    <div class="callout">
+      <div class="callout-label lang-es">Oportunidad</div>
+      <div class="callout-label lang-en" style="display:none">Opportunity</div>
+      <p class="lang-es" data-block style="margin:0">Jugar a las espaldas del doble pivote (los "6") de Jacksonville es fundamental. Braudilio, actuando como falso 9 y bajando a recibir en esa zona, puede tener mucha incidencia si un buen pase filtrado desde atrás rompe ese bloque de presión tan férreo.</p>
+      <p class="lang-en" data-block style="margin:0; display:none">Playing behind Jacksonville's double pivot (the "6s") is essential. Braudilio, operating as a false 9 dropping into that zone, can have real impact if a well-placed line-breaking pass from deep cuts through that tightly-drilled press.</p>
+    </div>
+
+    <div class="pitch-wrap">
+      <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="4" width="392" height="232" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+        <line x1="200" y1="4" x2="200" y2="236" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+        <circle cx="200" cy="120" r="30" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+        <rect x="4" y="55" width="62" height="130" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+        <rect x="334" y="55" width="62" height="130" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+        <rect x="374" y="85" width="22" height="70" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+        <!-- JAX back 3 defending own box on right -->
+        <circle cx="345" cy="90" r="9" fill="#111111" stroke="#F5F1E9" stroke-width="1"/>
+        <text x="345" y="94" text-anchor="middle" font-size="9" fill="#F5F1E9" font-family="IBM Plex Mono">5</text>
+        <circle cx="352" cy="120" r="9" fill="#111111" stroke="#F5F1E9" stroke-width="1"/>
+        <text x="352" y="124" text-anchor="middle" font-size="9" fill="#F5F1E9" font-family="IBM Plex Mono">4</text>
+        <circle cx="345" cy="150" r="9" fill="#111111" stroke="#F5F1E9" stroke-width="1"/>
+        <text x="345" y="154" text-anchor="middle" font-size="9" fill="#F5F1E9" font-family="IBM Plex Mono">6</text>
+        <circle cx="315" cy="110" r="9" fill="#111111" stroke="#F5F1E9" stroke-width="1"/>
+        <text x="315" y="114" text-anchor="middle" font-size="8" fill="#F5F1E9" font-family="IBM Plex Mono">6a</text>
+        <!-- LSC pressing trio -->
+        <circle cx="270" cy="90" r="9" fill="#3DDC5A" stroke="#111111" stroke-width="1"/>
+        <text x="270" y="94" text-anchor="middle" font-size="8" fill="#111111" font-family="IBM Plex Mono">9</text>
+        <circle cx="260" cy="120" r="9" fill="#3DDC5A" stroke="#111111" stroke-width="1"/>
+        <text x="260" y="124" text-anchor="middle" font-size="8" fill="#111111" font-family="IBM Plex Mono">8</text>
+        <circle cx="270" cy="150" r="9" fill="#3DDC5A" stroke="#111111" stroke-width="1"/>
+        <text x="270" y="154" text-anchor="middle" font-size="7" fill="#111111" font-family="IBM Plex Mono">Br</text>
+        <!-- arrows -->
+        <line x1="270" y1="90" x2="330" y2="92" stroke="#3DDC5A" stroke-width="2" marker-end="url(#arrow1)"/>
+        <line x1="260" y1="120" x2="330" y2="120" stroke="#3DDC5A" stroke-width="2" marker-end="url(#arrow1)"/>
+        <line x1="270" y1="150" x2="330" y2="148" stroke="#3DDC5A" stroke-width="2" marker-end="url(#arrow1)"/>
+        <defs>
+          <marker id="arrow1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#3DDC5A"/>
+          </marker>
+        </defs>
+        <rect x="215" y="200" width="170" height="16" rx="3" fill="#3DDC5A" fill-opacity="0.15" stroke="#3DDC5A" stroke-width="1"/>
+        <text x="300" y="211" text-anchor="middle" font-size="8" fill="#3DDC5A" font-family="IBM Plex Mono" class="lang-es">Presión 3v3 = riesgo de pérdida</text>
+      </svg>
+    </div>
+    <div class="pitch-caption mono lang-es">Presión organizada de LSC sobre la salida 3v3 de Jacksonville</div>
+    <div class="pitch-caption mono lang-en" style="display:none">LSC's organized press on Jacksonville's 3v3 build-up</div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- MOMENT 3 -->
+  <section class="moment" data-moment>
+    <div class="moment-num mono">03</div>
+    <h2 class="lang-es">Amplitud a la Izquierda</h2>
+    <h2 class="lang-en" style="display:none">Width on the Left</h2>
+    <p class="lang-es" data-block>Usar la amplitud con el lateral y el extremo del mismo sector puede ser una excelente idea: pone al lateral de Jacksonville en una situación de <strong>2v1</strong>, tal y como hizo Indy Eleven. En el lado izquierdo, Greene y Epps podrían ser importantes, sumando las diagonales de adentro hacia afuera que suelen hacer.</p>
+    <p class="lang-en" data-block>Using width with the fullback and winger on the same side can be a great idea: it puts Jacksonville's wing-back in a <strong>2v1</strong>, the way Indy Eleven did. On the left side, Greene and Epps could be key, adding the inside-out diagonal runs they tend to make.</p>
+
+    <div class="callout">
+      <div class="callout-label lang-es">Clave táctica</div>
+      <div class="callout-label lang-en" style="display:none">Tactical key</div>
+      <p class="lang-es" data-block style="margin:0">La clave de Sacramento estuvo en hacer moverse a Jacksonville: intensidad en la posesión, cambios de ritmo y buscar las espaldas de los laterales en situaciones de 1v1 o 2v1, más una presión bien organizada frente a una defensa cerrada.</p>
+      <p class="lang-en" data-block style="margin:0; display:none">Sacramento's key was making Jacksonville move: intensity in possession, tempo changes, and hunting the space behind the wing-backs in 1v1 or 2v1 situations, plus a well-organized press against a compact defense.</p>
+    </div>
+
+    <div class="weapon-cards">
+      <div class="weapon-card">
+        <div class="role lang-es">Lateral izquierdo</div>
+        <div class="role lang-en" style="display:none">Left Back</div>
+        <h3>Jacob Greene</h3>
+        <p class="lang-es" data-block>Amplitud y solapes; combina con Epps para generar el 2v1 sobre el carrilero rival.</p>
+        <p class="lang-en" data-block style="display:none">Width and overlaps; combines with Epps to create the 2v1 against the opposing wing-back.</p>
+      </div>
+      <div class="weapon-card">
+        <div class="role lang-es">Extremo izquierdo</div>
+        <div class="role lang-en" style="display:none">Left Winger</div>
+        <h3>Marcus Epps</h3>
+        <p class="lang-es" data-block>Diagonales de adentro hacia afuera; recibe entre líneas o se abre para el 1v1.</p>
+        <p class="lang-en" data-block style="display:none">Inside-out diagonal runs; receives between the lines or stretches wide for the 1v1.</p>
+      </div>
+      <div class="weapon-card">
+        <div class="role lang-es">Falso 9</div>
+        <div class="role lang-en" style="display:none">False 9</div>
+        <h3>Braudilio Rodrigues</h3>
+        <p class="lang-es" data-block>Baja a recibir a la espalda del doble pivote; conexión clave con Molloy y Ferri.</p>
+        <p class="lang-en" data-block style="display:none">Drops to receive behind the double pivot; key connection with Molloy and Ferri.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- MOMENT 4 -->
+  <section class="moment" data-moment>
+    <div class="moment-num mono">04</div>
+    <h2 class="lang-es">La Bala de Plata: Pelota Parada</h2>
+    <h2 class="lang-en" style="display:none">The Silver Bullet: Set Pieces</h2>
+    <p class="lang-es" data-block>Jacksonville sufre muchísimo con las pelotas quietas. Indy Eleven les ganó el partido en el último minuto con un gol desde un centro, y en la misma jornada ante Sacramento encajaron desde un tiro de esquina. Es la debilidad más repetible de este rival.</p>
+    <p class="lang-en" data-block>Jacksonville struggles badly with set pieces. Indy Eleven won the match in the final minute from a cross, and in the Sacramento match they also conceded from a corner kick. It's this opponent's most repeatable weakness.</p>
+
+    <div class="callout risk">
+      <div class="callout-label lang-es">Riesgo a vigilar</div>
+      <div class="callout-label lang-en" style="display:none">Risk to Watch</div>
+      <p class="lang-es" data-block style="margin:0">El central izquierdo de Jacksonville es quien más juega los balones largos con constancia, generando transiciones de defensa a ataque muy rápidas. LSC debe evitar sobrecargar el ataque sin cobertura para no exponerse a ese cambio de juego.</p>
+      <p class="lang-en" data-block style="margin:0; display:none">Jacksonville's left center back is their most consistent long-ball distributor, generating very fast defense-to-attack transitions. LSC must avoid over-committing numbers forward without cover to prevent being exposed to that switch of play.</p>
+    </div>
+
+    <div class="stat-cards">
+      <div class="stat-card">
+        <div class="num">92'</div>
+        <div class="lbl lang-es">Gol de Indy Eleven (centro)</div>
+        <div class="lbl lang-en" style="display:none">Indy Eleven goal (cross)</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">38'</div>
+        <div class="lbl lang-es">Gol de Sacramento (córner)</div>
+        <div class="lbl lang-en" style="display:none">Sacramento goal (corner)</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">2.64</div>
+        <div class="lbl lang-es">Goles recibidos / partido</div>
+        <div class="lbl lang-en" style="display:none">Goals conceded / game</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- RECENT FORM -->
+  <section class="moment" data-moment>
+    <div class="moment-num mono">05</div>
+    <h2 class="lang-es">Forma Reciente</h2>
+    <h2 class="lang-en" style="display:none">Recent Form</h2>
+    <div class="form-row">
+      <div class="team-lbl">LSC</div>
+      <div class="form-timeline">
+        <div class="form-dot W">W</div>
+        <div class="form-dot W">W</div>
+        <div class="form-dot L">L</div>
+        <div class="form-dot L">L</div>
+        <div class="form-dot W">W</div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="team-lbl">Sporting JAX</div>
+      <div class="form-timeline">
+        <div class="form-dot L">L</div>
+        <div class="form-dot W">W</div>
+        <div class="form-dot L">L</div>
+        <div class="form-dot L">L</div>
+        <div class="form-dot L">L</div>
+      </div>
+    </div>
+    <p class="lang-es" data-block style="font-size:13px;color:rgba(245,241,233,0.55)">LSC llega con siete victorias en sus últimos diez partidos y una de las mejores defensas de la liga. Jacksonville, último en la Conferencia Este, encaja 2.64 goles por partido de promedio.</p>
+    <p class="lang-en" data-block style="display:none;font-size:13px;color:rgba(245,241,233,0.55)">LSC arrives with seven wins in its last ten matches and one of the league's best defenses. Jacksonville, last in the Eastern Conference, concedes 2.64 goals per game on average.</p>
+  </section>
+
+  <div class="pullquote">
+    <blockquote class="lang-es" data-block>"Intensidad en la posesión, cambios de ritmo y buscar las espaldas — así se rompe a Jacksonville."</blockquote>
+    <blockquote class="lang-en" data-block style="display:none">"Intensity in possession, tempo changes, and hunting the space behind them — that's how you break Jacksonville down."</blockquote>
+    <cite>— Alejandro Mena, Video Analysis, LSC</cite>
+  </div>
+
+  <footer class="credits">
+    <span class="lang-es">Análisis táctico previo al partido · Lexington Sporting Club · Sept. 5, 2026</span>
+    <span class="lang-en" style="display:none">Pre-match tactical analysis · Lexington Sporting Club · Sept. 5, 2026</span>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var root = document.getElementById('lscjax-sep2026');
+  window.lscjaxSetLang = function(lang){
+    root.classList.remove('lang-es','lang-en');
+    root.classList.add('lang-' + lang);
+    document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    // toggle inline-style display for elements using data-block pattern with inline display:none
+    var esBlocks = root.querySelectorAll('[data-block].lang-es');
+    var enBlocks = root.querySelectorAll('[data-block].lang-en');
+    esBlocks.forEach(function(el){ el.style.display = (lang === 'es') ? '' : 'none'; });
+    enBlocks.forEach(function(el){ el.style.display = (lang === 'en') ? '' : 'none'; });
+    var esH = root.querySelectorAll('h2.lang-es, .pitch-caption.lang-es');
+    var enH = root.querySelectorAll('h2.lang-en, .pitch-caption.lang-en');
+    esH.forEach(function(el){ el.style.display = (lang === 'es') ? '' : 'none'; });
+    enH.forEach(function(el){ el.style.display = (lang === 'en') ? '' : 'none'; });
+  };
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('#lscjax-sep2026 [data-moment]').forEach(function(el){
+    observer.observe(el);
+  });
+})();
+</script>
+</body>
+</html>
