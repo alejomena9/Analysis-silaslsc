@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noble Okello — Silas Vance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#3DDC5A;
+    --black:#111111;
+    --bone:#F5F1E9;
+    --bg:#0B0F0C;
+    --panel:#131A14;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  #okello-micro{
+    background:var(--bg);
+    color:var(--bone);
+    font-family:'Inter',sans-serif;
+    line-height:1.55;
+    overflow-x:hidden;
+  }
+  #okello-micro [data-en]{display:none;}
+  #okello-micro[data-lang="en"] [data-es]{display:none;}
+  #okello-micro[data-lang="en"] [data-en]{display:inline;}
+  #okello-micro .block-en{display:none;}
+  #okello-micro[data-lang="en"] .block-es{display:none;}
+  #okello-micro[data-lang="en"] .block-en{display:block;}
+
+  #okello-micro .lang-toggle{
+    position:sticky;top:0;z-index:50;
+    display:flex;justify-content:flex-end;gap:0;
+    background:rgba(11,15,12,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(245,241,233,0.08);
+    padding:14px 24px;
+  }
+  #okello-micro .lang-toggle button{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.75rem;
+    letter-spacing:0.04em;
+    background:none;
+    border:1px solid rgba(245,241,233,0.25);
+    color:var(--bone);
+    padding:6px 14px;
+    cursor:pointer;
+    transition:background 0.2s,color 0.2s;
+  }
+  #okello-micro .lang-toggle button:first-child{border-radius:3px 0 0 3px;}
+  #okello-micro .lang-toggle button:last-child{border-radius:0 3px 3px 0;border-left:none;}
+  #okello-micro .lang-toggle button.active{background:var(--green);color:var(--black);border-color:var(--green);font-weight:600;}
+
+  #okello-micro .hero{
+    max-width:900px;margin:0 auto;
+    padding:72px 24px 48px;
+  }
+  #okello-micro .hero .kicker{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.8rem;
+    color:var(--green);
+    margin-bottom:18px;
+  }
+  #okello-micro .hero h1{
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    font-size:clamp(2.6rem,7vw,4.6rem);
+    line-height:0.98;
+    letter-spacing:-0.01em;
+  }
+  #okello-micro .hero .role{
+    font-family:'Oswald',sans-serif;
+    font-weight:500;
+    font-size:1.3rem;
+    color:rgba(245,241,233,0.7);
+    margin-top:10px;
+  }
+  #okello-micro .hero .badges{
+    display:flex;flex-wrap:wrap;gap:10px;
+    margin-top:28px;
+  }
+  #okello-micro .badge{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    border:1px solid rgba(245,241,233,0.2);
+    border-radius:20px;
+    padding:6px 14px;
+    color:rgba(245,241,233,0.85);
+  }
+  #okello-micro .badge.pending{border-color:rgba(245,241,233,0.12);color:rgba(245,241,233,0.45);font-style:italic;}
+
+  #okello-micro .ticker{
+    border-top:1px solid rgba(245,241,233,0.1);
+    border-bottom:1px solid rgba(245,241,233,0.1);
+    background:var(--panel);
+  }
+  #okello-micro .ticker-inner{
+    max-width:900px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(4,1fr);
+  }
+  #okello-micro .stat{
+    padding:26px 16px;
+    text-align:center;
+    border-left:1px solid rgba(245,241,233,0.08);
+  }
+  #okello-micro .stat:first-child{border-left:none;}
+  #okello-micro .stat .num{
+    font-family:'Oswald',sans-serif;font-weight:600;
+    font-size:2.1rem;color:var(--green);
+  }
+  #okello-micro .stat .label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.7rem;
+    color:rgba(245,241,233,0.6);
+    margin-top:6px;
+  }
+
+  #okello-micro .aportes{
+    max-width:900px;margin:0 auto;
+    padding:80px 24px;
+  }
+  #okello-micro .aportes-intro{
+    max-width:560px;
+    font-size:1.05rem;
+    color:rgba(245,241,233,0.75);
+    margin-bottom:56px;
+  }
+  #okello-micro .aporte{
+    display:grid;grid-template-columns:90px 1fr;
+    gap:28px;
+    padding:36px 0;
+    border-top:1px solid rgba(245,241,233,0.1);
+    opacity:0;transform:translateY(16px);
+    transition:opacity 0.6s ease,transform 0.6s ease;
+  }
+  #okello-micro .aporte.visible{opacity:1;transform:translateY(0);}
+  #okello-micro .aporte:last-child{border-bottom:1px solid rgba(245,241,233,0.1);}
+  #okello-micro .aporte .idx{
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    font-size:2.6rem;
+    color:rgba(61,220,90,0.35);
+  }
+  #okello-micro .aporte h3{
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    font-size:1.4rem;
+    margin-bottom:10px;
+  }
+  #okello-micro .aporte p{color:rgba(245,241,233,0.8);}
+
+  #okello-micro .diagram-section{
+    background:var(--panel);
+    padding:80px 24px;
+  }
+  #okello-micro .diagram-inner{
+    max-width:820px;margin:0 auto;
+    display:grid;grid-template-columns:1.1fr 1fr;gap:40px;
+    align-items:center;
+  }
+  #okello-micro .diagram-inner h3{
+    font-family:'Oswald',sans-serif;font-weight:600;
+    font-size:1.5rem;margin-bottom:14px;
+  }
+  #okello-micro .diagram-inner p{color:rgba(245,241,233,0.75);}
+  #okello-micro .pitch-wrap{background:var(--bg);border-radius:6px;padding:12px;}
+  #okello-micro .pitch-wrap svg{width:100%;height:auto;display:block;}
+  #okello-micro .coverage{stroke-dasharray:6 5;animation:dash 12s linear infinite;}
+  @keyframes dash{to{stroke-dashoffset:-220;}}
+  #okello-micro .legend{
+    display:flex;gap:18px;margin-top:12px;flex-wrap:wrap;
+    font-family:'IBM Plex Mono',monospace;font-size:0.7rem;
+    color:rgba(245,241,233,0.6);
+  }
+  #okello-micro .legend span{display:flex;align-items:center;gap:6px;}
+  #okello-micro .dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+
+  #okello-micro .callout{
+    max-width:820px;margin:0 auto;
+    padding:80px 24px;
+  }
+  #okello-micro .callout-box{
+    border:1px solid rgba(61,220,90,0.35);
+    background:rgba(61,220,90,0.05);
+    border-radius:6px;
+    padding:32px;
+  }
+  #okello-micro .callout-box .tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.75rem;color:var(--green);margin-bottom:12px;
+  }
+  #okello-micro .callout-box h3{
+    font-family:'Oswald',sans-serif;font-weight:600;
+    font-size:1.5rem;margin-bottom:14px;
+  }
+  #okello-micro .callout-box p{color:rgba(245,241,233,0.85);margin-bottom:10px;}
+  #okello-micro .lineup{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.82rem;
+    color:rgba(245,241,233,0.7);
+    margin-top:14px;
+    padding-top:14px;
+    border-top:1px dashed rgba(245,241,233,0.15);
+  }
+
+  #okello-micro .closing{
+    max-width:700px;margin:0 auto;
+    padding:100px 24px 120px;
+    text-align:center;
+  }
+  #okello-micro .closing blockquote{
+    font-family:'Oswald',sans-serif;
+    font-weight:500;font-style:italic;
+    font-size:1.5rem;line-height:1.4;
+    color:var(--bone);
+  }
+  #okello-micro .closing .byline{
+    margin-top:24px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.8rem;color:rgba(245,241,233,0.55);
+  }
+
+  @media(max-width:640px){
+    #okello-micro .ticker-inner{grid-template-columns:repeat(2,1fr);}
+    #okello-micro .stat:nth-child(3){border-left:none;}
+    #okello-micro .diagram-inner{grid-template-columns:1fr;}
+    #okello-micro .aporte{grid-template-columns:50px 1fr;}
+    #okello-micro .aporte .idx{font-size:1.8rem;}
+  }
+</style>
+</head>
+<body>
+<div id="okello-micro" data-lang="es">
+
+  <div class="lang-toggle">
+    <button data-set="es" class="active">ES</button>
+    <button data-set="en">EN</button>
+  </div>
+
+  <header class="hero">
+    <div class="kicker">
+      <span data-es>MICRO-ANÁLISIS · JUGADOR</span>
+      <span data-en>PLAYER MICRO-ANALYSIS</span>
+    </div>
+    <h1>Noble Okello</h1>
+    <div class="role">
+      <span data-es>Mediocampista defensivo — Lexington Sporting Club</span>
+      <span data-en>Defensive Midfielder — Lexington Sporting Club</span>
+    </div>
+    <div class="badges">
+      <span class="badge">1.95 m</span>
+      <span class="badge" data-es>26 años</span>
+      <span class="badge" data-en>26 years old</span>
+      <span class="badge" data-es>Selección de Uganda</span>
+      <span class="badge" data-en>Uganda national team</span>
+      <span class="badge pending" data-es>Dorsal LSC — por confirmar</span>
+      <span class="badge pending" data-en>LSC squad number — TBC</span>
+    </div>
+  </header>
+
+  <section class="ticker">
+    <div class="ticker-inner">
+      <div class="stat">
+        <div class="num">174</div>
+        <div class="label"><span data-es>PARTIDOS PROFESIONALES</span><span data-en>PRO APPEARANCES</span></div>
+      </div>
+      <div class="stat">
+        <div class="num">45</div>
+        <div class="label"><span data-es>DUELOS AÉREOS GANADOS (2025)</span><span data-en>AERIAL DUELS WON (2025)</span></div>
+      </div>
+      <div class="stat">
+        <div class="num">58%</div>
+        <div class="label"><span data-es>ENTRADAS GANADAS (2026)</span><span data-en>TACKLES WON (2026)</span></div>
+      </div>
+      <div class="stat">
+        <div class="num">11</div>
+        <div class="label"><span data-es>INTERCEPCIONES (2026)</span><span data-en>INTERCEPTIONS (2026)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="aportes">
+    <p class="aportes-intro">
+      <span data-es>Desde su llegada el 21 de agosto, el mediocampo de LSC ya no se ve igual. Estos son los tres aportes estructurales que Okello trajo consigo.</span>
+      <span data-en>Since his arrival on August 21, LSC's midfield hasn't looked the same. These are the three structural contributions Okello brought with him.</span>
+    </p>
+
+    <div class="aporte">
+      <div class="idx">01</div>
+      <div>
+        <h3><span data-es>Volumen posicional</span><span data-en>Positional volume</span></h3>
+        <p>
+          <span data-es>Okello se ubica constantemente en los espacios justos para ganar la segunda pelota o forzar la pérdida rival. Su físico ayuda, pero es la lectura de espacio la que da a sus compañeros ventaja posicional con balón y una red de seguridad inmediata si lo pierden. Es, literalmente, el trabajo sucio que sostiene todo lo demás.</span>
+          <span data-en>Okello consistently occupies the exact spaces needed to win the second ball or force a turnover. His frame helps, but it's his spatial reading that gives teammates a positional edge on the ball — and an immediate safety net if they lose it. It's the unglamorous work that holds everything else together.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="aporte">
+      <div class="idx">02</div>
+      <div>
+        <h3><span data-es>Libertad para Ferri</span><span data-en>Freedom for Ferri</span></h3>
+        <p>
+          <span data-es>El despliegue físico del ugandés libera a su compañero de mediocampo. Como se vio ante Orange County, Ferri pudo concentrarse en lo suyo — manejar los controles y el ritmo del partido — sabiendo que Okello incomoda al rival y recupera si el balón se pierde. Una división de trabajo casi tácita: "controla el ritmo, yo distraigo y recupero".</span>
+          <span data-en>The Ugandan's physical coverage frees up his midfield partner. As seen against Orange County, Ferri could focus purely on his own game — controlling tempo and dictating rhythm — knowing Okello disrupts the opponent and cleans up any loose ball. An almost unspoken division of labor: "you set the pace, I'll distract and recover."</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="aporte">
+      <div class="idx">03</div>
+      <div>
+        <h3><span data-es>Recambio</span><span data-en>Rotation relief</span></h3>
+        <p>
+          <span data-es>Antes de Okello, Molloy y Ferri habían disputado prácticamente todos los minutos de la temporada — Molloy, de hecho, entre los jugadores de campo con más minutos de toda la liga. Su llegada por fin les dio margen para descansar, recuperarse del trajín físico y rotar, dándole a Lexington un segundo aire en el mediocampo de cara al cierre de temporada.</span>
+          <span data-en>Before Okello, Molloy and Ferri had played nearly every minute of the season — Molloy, in fact, among the outfield players with the most minutes in the entire league. His arrival finally gave them room to rest, recover from the physical grind, and rotate, giving Lexington a second wind in midfield heading into the season's final stretch.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="diagram-section">
+    <div class="diagram-inner">
+      <div class="pitch-wrap">
+        <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="4" width="392" height="232" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+          <line x1="200" y1="4" x2="200" y2="236" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+          <circle cx="200" cy="120" r="30" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+          <circle cx="200" cy="120" r="2" fill="#F5F1E9" fill-opacity="0.35"/>
+          <rect x="334" y="70" width="62" height="100" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+          <rect x="366" y="95" width="30" height="50" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+          <circle class="coverage" cx="272" cy="122" r="42" fill="rgba(61,220,90,0.06)" stroke="#3DDC5A" stroke-width="1.4"/>
+          <circle cx="248" cy="98" r="6" fill="#F5F1E9"/>
+          <text x="248" y="86" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#F5F1E9" opacity="0.8">MOLLOY</text>
+          <circle cx="252" cy="150" r="6" fill="#F5F1E9"/>
+          <text x="252" y="166" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#F5F1E9" opacity="0.8">FERRI</text>
+          <circle cx="272" cy="122" r="7" fill="#3DDC5A"/>
+          <text x="272" y="140" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#3DDC5A">OKELLO</text>
+        </svg>
+        <div class="legend">
+          <span><span class="dot" style="background:#3DDC5A"></span><span data-es>Zona de cobertura de Okello</span><span data-en>Okello's coverage zone</span></span>
+        </div>
+      </div>
+      <div>
+        <h3><span data-es>Un escudo detrás del doble pivote</span><span data-en>A shield behind the double pivot</span></h3>
+        <p>
+          <span data-es>Okello no ocupa una posición fija: se desplaza entre Molloy y Ferri, cerrando el espacio que cualquiera de los dos deja al presionar o distribuir. Esa cobertura es lo que le permite al doble pivote de LSC funcionar con mayor libertad, sabiendo que el ugandés respalda cualquier pérdida de balón en zona central.</span>
+          <span data-en>Okello doesn't hold a fixed spot — he shuttles between Molloy and Ferri, closing whatever space either one leaves when pressing or distributing. That coverage is what lets LSC's double pivot operate with more freedom, knowing the Ugandan backs up any turnover in the central zone.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="callout">
+    <div class="callout-box">
+      <div class="tag" data-es>LECTURA TÁCTICA</div>
+      <div class="tag block-en" data-en style="display:none">TACTICAL READ</div>
+      <h3><span data-es>El dilema de Hemmi</span><span data-en>Hemmi's dilemma</span></h3>
+      <p>
+        <span data-es>Es el problema que cualquier entrenador querría tener: ¿quién de los tres juega? El experimento de alinear a Molloy, Ferri y Okello juntos funcionó ante Oakland Roots — Lexington ganó 4-1, con hat-trick de Phillip Goodrum — pero también deja claro que, en el resto de la temporada y de cara a unos posibles playoffs, alguno de los tres tendrá que dar un paso al costado.</span>
+        <span data-en>It's the problem every coach wants to have: which of the three plays? The experiment of lining up Molloy, Ferri, and Okello together worked against Oakland Roots — Lexington won 4-1, with a Phillip Goodrum hat-trick — but it also makes clear that for the rest of the season, and any potential playoff run, one of the three will have to step aside.</span>
+      </p>
+      <div class="lineup">
+        <span data-es>Titular vs. Oakland Roots (12 sep 2026): </span><span data-en>Starting XI vs. Oakland Roots (Sep 12, 2026): </span>Semmle; Zengue, Burks, Brown, Greene; Okello, Molloy, Ferri; Fry, Epps, Goodrum
+      </div>
+    </div>
+  </section>
+
+  <footer class="closing">
+    <blockquote>
+      <span data-es>“No siempre se nota en el marcador, pero se nota en los espacios que ya nadie tiene que cubrir.”</span>
+      <span data-en>“It doesn't always show up on the scoreboard, but it shows up in the spaces nobody else has to cover anymore.”</span>
+    </blockquote>
+    <div class="byline">— Silas Vance</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var root = document.getElementById('okello-micro');
+  var buttons = root.querySelectorAll('.lang-toggle button');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var lang = btn.getAttribute('data-set');
+      root.setAttribute('data-lang', lang);
+      buttons.forEach(function(b){ b.classList.toggle('active', b===btn); });
+      root.querySelectorAll('.callout-box .tag[data-en]').forEach(function(el){
+        el.style.display = (lang==='en') ? 'block' : 'none';
+      });
+      root.querySelectorAll('.callout-box .tag[data-es]').forEach(function(el){
+        el.style.display = (lang==='es') ? 'block' : 'none';
+      });
+    });
+  });
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){ entry.target.classList.add('visible'); }
+    });
+  }, {threshold:0.2});
+  root.querySelectorAll('.aporte').forEach(function(el){ observer.observe(el); });
+})();
+</script>
+</body>
+</html>
