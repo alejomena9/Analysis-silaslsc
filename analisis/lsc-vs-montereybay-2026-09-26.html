@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LSC vs. Monterey Bay FC — Pre-Match Scouting | Silas Vance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  #match-lsc-mbfc-20260926 {
+    --green: #3DDC5A;
+    --black: #111111;
+    --bone: #F5F1E9;
+    --bg: #0B0F0C;
+    --panel: #131A14;
+    --grey: #8A9490;
+    --line: #23291F;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--bone);
+    line-height: 1.55;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  #match-lsc-mbfc-20260926 * { box-sizing: border-box; }
+  #match-lsc-mbfc-20260926 .display {
+    font-family: 'Oswald', sans-serif;
+    text-transform: none;
+    letter-spacing: 0.01em;
+  }
+  #match-lsc-mbfc-20260926 .mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  #match-lsc-mbfc-20260926 .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* -------- Language toggle -------- */
+  #match-lsc-mbfc-20260926 .lang-bar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(11,15,12,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 24px;
+  }
+  #match-lsc-mbfc-20260926 .lang-bar button {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    background: none;
+    border: 1px solid var(--line);
+    color: var(--grey);
+    padding: 5px 12px;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+  }
+  #match-lsc-mbfc-20260926 .lang-bar button + button { margin-left: 6px; border-left: 1px solid var(--line); }
+  #match-lsc-mbfc-20260926 .lang-bar button[aria-pressed="true"] {
+    color: var(--green);
+    border-color: var(--green);
+  }
+
+  /* -------- Hero -------- */
+  #match-lsc-mbfc-20260926 .hero {
+    padding: 56px 24px 40px;
+    border-bottom: 1px solid var(--line);
+  }
+  #match-lsc-mbfc-20260926 .hero .tag {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--green);
+    border: 1px solid var(--green);
+    padding: 3px 10px;
+    margin-bottom: 18px;
+  }
+  #match-lsc-mbfc-20260926 .scoreboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: clamp(28px, 6vw, 48px);
+    text-align: center;
+  }
+  #match-lsc-mbfc-20260926 .scoreboard .vs {
+    font-size: 16px;
+    color: var(--grey);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  #match-lsc-mbfc-20260926 .meta {
+    text-align: center;
+    margin-top: 18px;
+    color: var(--grey);
+    font-size: 14px;
+  }
+  #match-lsc-mbfc-20260926 .meta .mono { color: var(--bone); }
+
+  /* -------- Stat ticker -------- */
+  #match-lsc-mbfc-20260926 .ticker {
+    display: flex;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--line);
+    background: var(--panel);
+  }
+  #match-lsc-mbfc-20260926 .ticker-item {
+    flex: 1 0 auto;
+    padding: 14px 20px;
+    text-align: center;
+    border-right: 1px solid var(--line);
+    min-width: 120px;
+  }
+  #match-lsc-mbfc-20260926 .ticker-item .val {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    color: var(--green);
+    display: block;
+  }
+  #match-lsc-mbfc-20260926 .ticker-item .lbl {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    color: var(--grey);
+  }
+
+  /* -------- Moments -------- */
+  #match-lsc-mbfc-20260926 .moment {
+    padding: 52px 24px;
+    border-bottom: 1px solid var(--line);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  #match-lsc-mbfc-20260926 .moment.in-view { opacity: 1; transform: translateY(0); }
+  #match-lsc-mbfc-20260926 .moment-num {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--green);
+    font-size: 13px;
+  }
+  #match-lsc-mbfc-20260926 .moment h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    margin: 6px 0 16px;
+  }
+  #match-lsc-mbfc-20260926 .moment p { color: #D9D4C8; font-size: 15.5px; max-width: 68ch; }
+  #match-lsc-mbfc-20260926 .pitch-wrap { margin: 24px 0 8px; max-width: 480px; }
+  #match-lsc-mbfc-20260926 .pitch-cap { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--grey); }
+  #match-lsc-mbfc-20260926 svg .pitch-line { fill: none; stroke: var(--bone); stroke-width: 1.4; opacity: 0.55; }
+  #match-lsc-mbfc-20260926 svg .zone { fill: var(--green); opacity: 0.14; stroke: var(--green); stroke-dasharray: 4 3; stroke-width: 1; }
+  #match-lsc-mbfc-20260926 svg .node-mb circle { fill: var(--green); }
+  #match-lsc-mbfc-20260926 svg .node-lex circle { fill: var(--bone); }
+  #match-lsc-mbfc-20260926 svg .node-mb text, #match-lsc-mbfc-20260926 svg .node-lex text { font-family: 'IBM Plex Mono', monospace; font-size: 8px; fill: var(--black); font-weight: 500; text-anchor: middle; dominant-baseline: central; }
+  #match-lsc-mbfc-20260926 svg .draw-path {
+    fill: none;
+    stroke: var(--green);
+    stroke-width: 2;
+    stroke-dasharray: 260;
+    stroke-dashoffset: 260;
+    transition: stroke-dashoffset 1.1s ease 0.15s;
+  }
+  #match-lsc-mbfc-20260926 .moment.in-view .draw-path { stroke-dashoffset: 0; }
+  #match-lsc-mbfc-20260926 svg .label-sm { font-family: 'IBM Plex Mono', monospace; font-size: 8.5px; fill: var(--grey); }
+
+  /* -------- Callouts -------- */
+  #match-lsc-mbfc-20260926 .callouts { padding: 48px 24px; border-bottom: 1px solid var(--line); }
+  #match-lsc-mbfc-20260926 .callout {
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    border-left: 3px solid var(--green);
+    background: var(--panel);
+  }
+  #match-lsc-mbfc-20260926 .callout.risk { border-left-color: var(--bone); }
+  #match-lsc-mbfc-20260926 .callout .lbl {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--green);
+    display: block;
+    margin-bottom: 6px;
+  }
+  #match-lsc-mbfc-20260926 .callout.risk .lbl { color: var(--bone); }
+  #match-lsc-mbfc-20260926 .callout p { font-size: 14.5px; color: #D9D4C8; margin: 0; }
+
+  /* -------- Cards -------- */
+  #match-lsc-mbfc-20260926 .section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 40px 24px 0;
+  }
+  #match-lsc-mbfc-20260926 .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    padding: 20px 24px 48px;
+    border-bottom: 1px solid var(--line);
+  }
+  #match-lsc-mbfc-20260926 .stat-card, #match-lsc-mbfc-20260926 .player-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 16px 18px;
+  }
+  #match-lsc-mbfc-20260926 .player-card .name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+    margin-bottom: 2px;
+  }
+  #match-lsc-mbfc-20260926 .player-card .pos {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--green);
+    margin-bottom: 8px;
+    display: block;
+  }
+  #match-lsc-mbfc-20260926 .player-card p { font-size: 13.5px; color: var(--grey); margin: 0; }
+  #match-lsc-mbfc-20260926 .stat-card .row { display: flex; justify-content: space-between; font-size: 14px; padding: 5px 0; border-bottom: 1px dashed var(--line); }
+  #match-lsc-mbfc-20260926 .stat-card .row:last-child { border-bottom: none; }
+  #match-lsc-mbfc-20260926 .stat-card .row .mb { color: var(--green); font-family: 'IBM Plex Mono', monospace; }
+  #match-lsc-mbfc-20260926 .stat-card .row .lex { color: var(--bone); font-family: 'IBM Plex Mono', monospace; }
+  #match-lsc-mbfc-20260926 .stat-card h3 { font-family: 'Oswald', sans-serif; font-size: 15px; margin: 0 0 10px; color: var(--grey); font-weight: 500; }
+
+  /* -------- Match card -------- */
+  #match-lsc-mbfc-20260926 .match-card {
+    margin: 20px 24px 48px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--green);
+    padding: 20px 22px;
+    max-width: 460px;
+  }
+  #match-lsc-mbfc-20260926 .match-card .row { display: flex; justify-content: space-between; font-size: 13.5px; padding: 6px 0; color: var(--grey); }
+  #match-lsc-mbfc-20260926 .match-card .row span:last-child { color: var(--bone); font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; }
+
+  /* -------- Pull quote -------- */
+  #match-lsc-mbfc-20260926 .pull-quote {
+    padding: 60px 24px 50px;
+    text-align: center;
+  }
+  #match-lsc-mbfc-20260926 .pull-quote blockquote {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(20px, 3.4vw, 27px);
+    font-weight: 500;
+    max-width: 640px;
+    margin: 0 auto 18px;
+    color: var(--bone);
+  }
+  #match-lsc-mbfc-20260926 .pull-quote .byline {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--green);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #match-lsc-mbfc-20260926 .moment, #match-lsc-mbfc-20260926 svg .draw-path {
+      transition: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      stroke-dashoffset: 0 !important;
+    }
+  }
+</style>
+</head>
+<body>
+<div id="match-lsc-mbfc-20260926" data-lang="en">
+
+  <div class="lang-bar">
+    <button type="button" data-set-lang="en" aria-pressed="true">EN</button><button type="button" data-set-lang="es" aria-pressed="false">ES</button>
+  </div>
+
+  <section class="hero wrap">
+    <span class="tag" data-i18n="tag"></span>
+    <div class="scoreboard">
+      <span>LSC</span><span class="vs">VS</span><span>MBFC</span>
+    </div>
+    <p class="meta"><span class="mono" data-i18n="matchday"></span> · <span class="mono" data-i18n="venue"></span></p>
+  </section>
+
+  <div class="ticker">
+    <div class="ticker-item"><span class="val">31</span><span class="lbl" data-i18n="tk1"></span></div>
+    <div class="ticker-item"><span class="val">18</span><span class="lbl" data-i18n="tk2"></span></div>
+    <div class="ticker-item"><span class="val">+4</span><span class="lbl" data-i18n="tk3"></span></div>
+    <div class="ticker-item"><span class="val">−18</span><span class="lbl" data-i18n="tk4"></span></div>
+    <div class="ticker-item"><span class="val">3-2</span><span class="lbl" data-i18n="tk5"></span></div>
+  </div>
+
+  <section class="moment" id="moment-1">
+    <span class="moment-num">01</span>
+    <h2 data-i18n="m1-title"></h2>
+    <p data-i18n="m1-body"></p>
+    <div class="pitch-wrap">
+      <svg viewBox="0 0 400 240" width="100%">
+        <rect x="4" y="4" width="392" height="232" class="pitch-line"/>
+        <line x1="200" y1="4" x2="200" y2="236" class="pitch-line"/>
+        <circle cx="200" cy="120" r="34" class="pitch-line"/>
+        <rect x="4" y="60" width="62" height="120" class="pitch-line"/>
+        <rect x="334" y="60" width="62" height="120" class="pitch-line"/>
+        <rect x="4" y="90" width="24" height="60" class="pitch-line"/>
+        <rect x="372" y="90" width="24" height="60" class="pitch-line"/>
+        <rect x="270" y="72" width="40" height="96" class="zone"/>
+        <text x="290" y="66" class="label-sm" text-anchor="middle" data-i18n="zone14-lbl"></text>
+        <g class="node-mb"><circle cx="80" cy="60" r="9"/><text x="80" y="60">LB</text></g>
+        <g class="node-mb"><circle cx="76" cy="95" r="9"/><text x="76" y="95">CB</text></g>
+        <g class="node-mb"><circle cx="76" cy="145" r="9"/><text x="76" y="145">CB</text></g>
+        <g class="node-mb"><circle cx="80" cy="180" r="9"/><text x="80" y="180">RB</text></g>
+        <g class="node-mb"><circle cx="150" cy="95" r="9"/><text x="150" y="95">DM</text></g>
+        <g class="node-mb"><circle cx="150" cy="145" r="9"/><text x="150" y="145">DM</text></g>
+        <g class="node-mb"><circle cx="230" cy="60" r="9"/><text x="230" y="60">10</text></g>
+        <g class="node-mb"><circle cx="235" cy="120" r="9"/><text x="235" y="120">10</text></g>
+        <g class="node-mb"><circle cx="230" cy="180" r="9"/><text x="230" y="180">10</text></g>
+        <g class="node-mb"><circle cx="290" cy="120" r="9"/><text x="290" y="120">9</text></g>
+      </svg>
+      <div class="pitch-cap" data-i18n="m1-cap"></div>
+    </div>
+  </section>
+
+  <section class="moment" id="moment-2">
+    <span class="moment-num">02</span>
+    <h2 data-i18n="m2-title"></h2>
+    <p data-i18n="m2-body"></p>
+    <div class="pitch-wrap">
+      <svg viewBox="0 0 400 240" width="100%">
+        <rect x="4" y="4" width="392" height="232" class="pitch-line"/>
+        <line x1="200" y1="4" x2="200" y2="236" class="pitch-line"/>
+        <circle cx="200" cy="120" r="34" class="pitch-line"/>
+        <rect x="4" y="60" width="62" height="120" class="pitch-line"/>
+        <rect x="334" y="60" width="62" height="120" class="pitch-line"/>
+        <g class="node-mb"><circle cx="90" cy="90" r="9"/><text x="90" y="90">CB</text></g>
+        <g class="node-mb"><circle cx="90" cy="150" r="9"/><text x="90" y="150">CB</text></g>
+        <g class="node-lex"><circle cx="310" cy="55" r="9"/><text x="310" y="55">LB</text></g>
+        <g class="node-lex"><circle cx="300" cy="95" r="9"/><text x="300" y="95">CB</text></g>
+        <g class="node-lex"><circle cx="300" cy="145" r="9"/><text x="300" y="145">CB</text></g>
+        <g class="node-lex"><circle cx="310" cy="185" r="9"/><text x="310" y="185">RB</text></g>
+        <g class="node-mb"><circle cx="350" cy="30" r="9"/><text x="350" y="30">W</text></g>
+        <g class="node-mb"><circle cx="350" cy="210" r="9"/><text x="350" y="210">W</text></g>
+        <path class="draw-path" d="M 90 90 Q 220 20 350 30" />
+        <path class="draw-path" d="M 90 150 Q 220 220 350 210" />
+        <text x="220" y="14" class="label-sm" text-anchor="middle" data-i18n="m2-cap"></text>
+      </svg>
+    </div>
+  </section>
+
+  <section class="moment" id="moment-3">
+    <span class="moment-num">03</span>
+    <h2 data-i18n="m3-title"></h2>
+    <p data-i18n="m3-body"></p>
+    <div class="pitch-wrap">
+      <svg viewBox="0 0 400 240" width="100%">
+        <rect x="4" y="4" width="392" height="232" class="pitch-line"/>
+        <line x1="200" y1="4" x2="200" y2="236" class="pitch-line"/>
+        <circle cx="200" cy="120" r="34" class="pitch-line"/>
+        <rect x="4" y="60" width="62" height="120" class="pitch-line"/>
+        <rect x="334" y="60" width="62" height="120" class="pitch-line"/>
+        <rect x="180" y="80" width="46" height="80" class="zone"/>
+        <g class="node-mb"><circle cx="150" cy="95" r="9"/><text x="150" y="95">DM</text></g>
+        <g class="node-mb"><circle cx="150" cy="145" r="9"/><text x="150" y="145">DM</text></g>
+        <g class="node-lex"><circle cx="255" cy="120" r="9"/><text x="255" y="120">10</text></g>
+        <g class="node-lex"><circle cx="175" cy="60" r="9"/><text x="175" y="60">8</text></g>
+        <path class="draw-path" d="M 175 60 Q 195 90 205 118" />
+        <text x="203" y="76" class="label-sm" text-anchor="middle" data-i18n="m3-cap"></text>
+      </svg>
+    </div>
+  </section>
+
+  <section class="callouts wrap">
+    <div class="callout">
+      <span class="lbl" data-i18n="opp-lbl"></span>
+      <p data-i18n="opp-body"></p>
+    </div>
+    <div class="callout risk">
+      <span class="lbl" data-i18n="risk-lbl"></span>
+      <p data-i18n="risk-body"></p>
+    </div>
+  </section>
+
+  <h3 class="section-title" data-i18n="weapons-title"></h3>
+  <div class="card-grid wrap">
+    <div class="player-card">
+      <div class="name">Ilijah Paul</div>
+      <span class="pos">FW · #20</span>
+      <p data-i18n="p1"></p>
+    </div>
+    <div class="player-card">
+      <div class="name">Sebastian Lletget</div>
+      <span class="pos">MF · #10</span>
+      <p data-i18n="p2"></p>
+    </div>
+    <div class="player-card">
+      <div class="name">Ryuga Nakamura</div>
+      <span class="pos">MF · #6</span>
+      <p data-i18n="p3"></p>
+    </div>
+  </div>
+
+  <h3 class="section-title" data-i18n="stats-title"></h3>
+  <div class="card-grid wrap">
+    <div class="stat-card">
+      <h3 data-i18n="stats-sub"></h3>
+      <div class="row"><span data-i18n="stat-record"></span><span><span class="mb">4-15-6</span> / <span class="lex">9-10-4</span></span></div>
+      <div class="row"><span data-i18n="stat-pts"></span><span><span class="mb">18</span> / <span class="lex">31</span></span></div>
+      <div class="row"><span data-i18n="stat-pos"></span><span><span class="mb" data-i18n="stat-pos-mb"></span> / <span class="lex" data-i18n="stat-pos-lex"></span></span></div>
+      <div class="row"><span data-i18n="stat-gf"></span><span><span class="mb">25</span> / <span class="lex">33</span></span></div>
+      <div class="row"><span data-i18n="stat-ga"></span><span><span class="mb">43</span> / <span class="lex">29</span></span></div>
+      <div class="row"><span data-i18n="stat-gd"></span><span><span class="mb">−18</span> / <span class="lex">+4</span></span></div>
+    </div>
+  </div>
+
+  <div class="match-card">
+    <div class="row"><span data-i18n="mc-comp"></span><span>USL Championship — MD30</span></div>
+    <div class="row"><span data-i18n="mc-date"></span><span>Sat, Sep 26, 2026</span></div>
+    <div class="row"><span data-i18n="mc-kickoff"></span><span>10:00 PM ET / 7:00 PM PT</span></div>
+    <div class="row"><span data-i18n="mc-venue"></span><span>Cardinale Stadium, Seaside, CA</span></div>
+  </div>
+
+  <section class="pull-quote wrap">
+    <blockquote data-i18n="quote"></blockquote>
+    <div class="byline">— Silas Vance</div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  var root = document.getElementById('match-lsc-mbfc-20260926');
+
+  var i18n = {
+    en: {
+      "tag": "PRE-MATCH · AWAY · MATCHDAY 30",
+      "matchday": "Matchday 30 · USL Championship",
+      "venue": "Cardinale Stadium, Seaside, CA",
+      "m1-title": "A compact, disciplined block — with a hole in Zone 14",
+      "m1-body": "Monterey Bay FC line up in a 4-2-3-1 that's genuinely hard to break down through the middle. The cost: their double pivot covers so much horizontal ground that both midfielders consistently arrive late to the pocket just outside the box — the recurring gap LSC needs to find.",
+      "m1-cap": "MBFC base shape · Zone 14 gap behind the double pivot",
+      "m2-title": "Their outlet: the long ball behind the full-back",
+      "m2-body": "When Monterey Bay have the ball, the center backs look first for a direct diagonal into the channel behind the opposing full-back — their clearest source of danger in transition. Without it, they settle for slow, low-yield possession that rarely reaches the final third with a real chance.",
+      "m2-cap": "Direct diagonal into the channel",
+      "m3-title": "LSC's route in: mobility behind the pivot",
+      "m3-body": "Because the double pivot covers so much ground, dropping a midfielder into the pocket behind them creates persistent confusion in coverage — the direct route into the space this scouting cycle identifies as Monterey Bay's core structural weakness.",
+      "m3-cap": "Third-man run into the pocket",
+      "opp-lbl": "OPPORTUNITY",
+      "opp-body": "Mobility behind the double pivot. Rotating a midfielder into the Zone 14 pocket while a second attacker drops to combine creates persistent coverage confusion — the direct route into Monterey Bay's core structural weakness.",
+      "risk-lbl": "RISK",
+      "risk-body": "The counter via the long diagonal. Monterey Bay's center backs look immediately for the ball in behind the moment they win it back — LSC's back line needs coordinated pressing triggers and disciplined cover, not just isolated pressure from the front.",
+      "weapons-title": "Key Weapons",
+      "p1": "Leading scorer (5G/4A) and Monterey Bay's most productive outlet — a threat in behind and in the box.",
+      "p2": "Second-leading scorer (4G/2A); influential in their rare sustained possession sequences.",
+      "p3": "Rotates through the double pivot; late-game impact shown by a long-range equalizer vs. Phoenix (Sep 5).",
+      "stats-title": "Season Snapshot",
+      "stats-sub": "MBFC / LSC · entering Matchday 30",
+      "stat-record": "Record (W-L-D)",
+      "stat-pts": "Points",
+      "stat-pos": "Conference Position",
+      "stat-pos-mb": "12th",
+      "stat-pos-lex": "8th",
+      "stat-gf": "Goals For",
+      "stat-ga": "Goals Against",
+      "stat-gd": "Goal Differential",
+      "mc-comp": "Competition",
+      "mc-date": "Date",
+      "mc-kickoff": "Kickoff",
+      "mc-venue": "Venue",
+      "zone14-lbl": "ZONE 14",
+      "tk1": "LSC PTS · 8TH WEST",
+      "tk2": "MBFC PTS · 12TH WEST",
+      "tk3": "LSC GOAL DIFF",
+      "tk4": "MBFC GOAL DIFF",
+      "tk5": "LSC WON THE H2H (AUG 1)",
+      "quote": "Monterey Bay's block is disciplined, but discipline that covers too much ground still leaves a door open. LSC just has to walk through it."
+    },
+    es: {
+      "tag": "PRE-PARTIDO · VISITANTE · JORNADA 30",
+      "matchday": "Jornada 30 · USL Championship",
+      "venue": "Cardinale Stadium, Seaside, CA",
+      "m1-title": "Un bloque compacto y disciplinado — con un hueco en la zona 14",
+      "m1-body": "Monterey Bay FC se para en un 4-2-3-1 realmente difícil de romper por el medio. El costo: su doble pivote cubre tanto terreno horizontal que ambos volantes llegan tarde, de forma constante, al espacio justo afuera del área — el hueco recurrente que LSC necesita encontrar.",
+      "m1-cap": "Forma base de MBFC · hueco de zona 14 detrás del doble pivote",
+      "m2-title": "Su salida: el balón largo a la espalda del lateral",
+      "m2-body": "Cuando Monterey Bay tiene el balón, sus centrales buscan primero el diagonal directo hacia el carril detrás del lateral rival — su fuente más clara de peligro en transición. Sin esa opción, se conforman con posesiones lentas y poco productivas que rara vez llegan al tercio final con una ocasión real.",
+      "m2-cap": "Diagonal directo hacia el carril",
+      "m3-title": "La vía de entrada de LSC: movilidad detrás del pivote",
+      "m3-body": "Como el doble pivote cubre tanto terreno, un volante que cae al espacio detrás de ellos genera confusiones constantes en la marca — la vía directa hacia el espacio que este ciclo de análisis identifica como la debilidad estructural central de Monterey Bay.",
+      "m3-cap": "Tercer hombre al espacio",
+      "opp-lbl": "OPORTUNIDAD",
+      "opp-body": "Movilidad detrás del doble pivote. Rotar un volante hacia el bolsillo de zona 14 mientras un segundo atacante cae a combinar genera confusión constante en la cobertura — la vía directa hacia la debilidad estructural central de Monterey Bay.",
+      "risk-lbl": "RIESGO",
+      "risk-body": "El contragolpe por el balón largo. Los centrales de Monterey Bay buscan de inmediato el balón a la espalda apenas recuperan — la línea de LSC necesita disparadores de presión coordinados y cobertura disciplinada, no solo presión aislada desde el frente.",
+      "weapons-title": "Jugadores Clave",
+      "p1": "Máximo goleador (5G/4A) y el arma más productiva de Monterey Bay — amenaza a la espalda y dentro del área.",
+      "p2": "Segundo máximo goleador (4G/2A); influyente en sus escasas secuencias de posesión sostenida.",
+      "p3": "Rota por el doble pivote; impacto de último minuto mostrado con un empate de larga distancia vs. Phoenix (5 sep).",
+      "stats-title": "Panorama de Temporada",
+      "stats-sub": "MBFC / LSC · entrando a la jornada 30",
+      "stat-record": "Récord (G-P-E)",
+      "stat-pts": "Puntos",
+      "stat-pos": "Posición en Conferencia",
+      "stat-pos-mb": "12º",
+      "stat-pos-lex": "8º",
+      "stat-gf": "Goles a Favor",
+      "stat-ga": "Goles en Contra",
+      "stat-gd": "Diferencia de Gol",
+      "mc-comp": "Competencia",
+      "mc-date": "Fecha",
+      "mc-kickoff": "Hora",
+      "mc-venue": "Sede",
+      "zone14-lbl": "ZONA 14",
+      "tk1": "PTS LSC · 8º OESTE",
+      "tk2": "PTS MBFC · 12º OESTE",
+      "tk3": "DIF. GOL LSC",
+      "tk4": "DIF. GOL MBFC",
+      "tk5": "LSC GANÓ EL H2H (1 AGO)",
+      "quote": "El bloque de Monterey Bay es disciplinado, pero una disciplina que cubre tanto terreno igual deja una puerta abierta. LSC solo tiene que atravesarla."
+    }
+  };
+
+  function applyLang(lang) {
+    root.setAttribute('data-lang', lang);
+    root.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (i18n[lang][key] !== undefined) el.textContent = i18n[lang][key];
+    });
+    root.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+      btn.setAttribute('aria-pressed', btn.getAttribute('data-set-lang') === lang ? 'true' : 'false');
+    });
+  }
+
+  root.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+    btn.addEventListener('click', function () { applyLang(btn.getAttribute('data-set-lang')); });
+  });
+
+  applyLang('en');
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.25 });
+    root.querySelectorAll('.moment').forEach(function (m) { io.observe(m); });
+  } else {
+    root.querySelectorAll('.moment').forEach(function (m) { m.classList.add('in-view'); });
+  }
+})();
+</script>
+</body>
+</html>
