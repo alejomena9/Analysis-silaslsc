@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LSC — Weekly Breakdown / Resumen Semanal · Aug 22–29, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+#lsc-wk-md20-22 {
+  --green: #3DDC5A;
+  --black: #111111;
+  --bone: #F5F1E9;
+  --bg: #0B0F0C;
+  --panel: #131A14;
+  --panel-2: #171F19;
+  --line: #263029;
+  --grey: #8B948D;
+
+  background: var(--bg);
+  color: var(--bone);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#lsc-wk-md20-22 * { box-sizing: border-box; }
+
+#lsc-wk-md20-22 h1, #lsc-wk-md20-22 h2, #lsc-wk-md20-22 h3 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+#lsc-wk-md20-22 .mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* ---------- lang toggle ---------- */
+#lsc-wk-md20-22 [data-lang] { display: none; }
+#lsc-wk-md20-22.lang-es [data-lang="es"] { display: block; }
+#lsc-wk-md20-22.lang-en [data-lang="en"] { display: block; }
+#lsc-wk-md20-22 span[data-lang].lang-inline { display: none; }
+#lsc-wk-md20-22.lang-es span[data-lang="es"] { display: inline; }
+#lsc-wk-md20-22.lang-en span[data-lang="en"] { display: inline; }
+
+#lsc-wk-md20-22 .lang-toggle {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(11,15,12,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 10px;
+}
+#lsc-wk-md20-22 .lang-toggle span {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--grey);
+  letter-spacing: 0.08em;
+}
+#lsc-wk-md20-22 .lang-toggle button {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--bone);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all .2s ease;
+  letter-spacing: 0.06em;
+}
+#lsc-wk-md20-22 .lang-toggle button.active {
+  background: var(--green);
+  color: var(--black);
+  border-color: var(--green);
+  font-weight: 600;
+}
+
+/* ---------- hero ---------- */
+#lsc-wk-md20-22 .hero {
+  padding: 64px 24px 40px;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+#lsc-wk-md20-22 .hero .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--green);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  margin-bottom: 14px;
+}
+#lsc-wk-md20-22 .hero h1 {
+  font-size: clamp(32px, 6vw, 58px);
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+#lsc-wk-md20-22 .hero h1 .accent { color: var(--green); }
+#lsc-wk-md20-22 .hero p.sub {
+  color: var(--grey);
+  font-size: 16px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* scoreboard row */
+#lsc-wk-md20-22 .scoreboard-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 980px;
+  margin: 36px auto 0;
+  padding: 0 24px;
+}
+#lsc-wk-md20-22 .score-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 14px;
+  text-align: center;
+}
+#lsc-wk-md20-22 .score-card .res {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+#lsc-wk-md20-22 .score-card .res.win { background: rgba(61,220,90,0.14); color: var(--green); }
+#lsc-wk-md20-22 .score-card .res.loss { background: rgba(245,241,233,0.08); color: var(--bone); }
+#lsc-wk-md20-22 .score-card .opp { font-size: 13px; color: var(--grey); margin-bottom: 6px; }
+#lsc-wk-md20-22 .score-card .sc { font-family: 'Oswald', sans-serif; font-size: 30px; font-weight: 600; }
+
+/* stat ticker */
+#lsc-wk-md20-22 .ticker {
+  display: flex;
+  overflow-x: auto;
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin: 44px 0;
+  background: var(--panel);
+}
+#lsc-wk-md20-22 .ticker::-webkit-scrollbar { display: none; }
+#lsc-wk-md20-22 .tick {
+  flex: 1 0 140px;
+  text-align: center;
+  padding: 20px 12px;
+  border-right: 1px solid var(--line);
+}
+#lsc-wk-md20-22 .tick:last-child { border-right: none; }
+#lsc-wk-md20-22 .tick .num {
+  font-family: 'Oswald', sans-serif;
+  font-size: 26px;
+  color: var(--green);
+  font-weight: 600;
+}
+#lsc-wk-md20-22 .tick .lbl {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  color: var(--grey);
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+/* content container */
+#lsc-wk-md20-22 .wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+/* moment sections */
+#lsc-wk-md20-22 .moment {
+  margin: 90px 0;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+#lsc-wk-md20-22 .moment.reveal { opacity: 1; transform: translateY(0); }
+
+#lsc-wk-md20-22 .moment-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+#lsc-wk-md20-22 .moment-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  color: var(--green);
+  border: 1px solid var(--green);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+#lsc-wk-md20-22 .moment-head h2 { font-size: clamp(22px, 4vw, 32px); }
+#lsc-wk-md20-22 .moment-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--grey);
+  font-size: 12.5px;
+  margin: 8px 0 26px 50px;
+  letter-spacing: 0.04em;
+}
+#lsc-wk-md20-22 .moment-meta .result-tag {
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+#lsc-wk-md20-22 .moment-meta .result-tag.win { background: rgba(61,220,90,0.15); color: var(--green); }
+#lsc-wk-md20-22 .moment-meta .result-tag.loss { background: rgba(245,241,233,0.1); color: var(--bone); }
+
+#lsc-wk-md20-22 .moment-body { margin-left: 50px; }
+#lsc-wk-md20-22 .moment-body p { color: #D9D4C8; font-size: 16px; margin: 0 0 18px; }
+
+/* match card */
+#lsc-wk-md20-22 .match-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 24px 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+#lsc-wk-md20-22 .match-card .team { font-family: 'Oswald', sans-serif; font-size: 17px; }
+#lsc-wk-md20-22 .match-card .score { font-family: 'Oswald', sans-serif; font-size: 34px; font-weight: 700; color: var(--green); white-space: nowrap; }
+
+/* stat cards grid */
+#lsc-wk-md20-22 .stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 20px 0 28px;
+}
+#lsc-wk-md20-22 .stat-card {
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+}
+#lsc-wk-md20-22 .stat-card .row { display: flex; justify-content: space-between; font-size: 13px; padding: 3px 0; }
+#lsc-wk-md20-22 .stat-card .row .v { font-family: 'IBM Plex Mono', monospace; color: var(--green); }
+#lsc-wk-md20-22 .stat-card .row .v.dim { color: var(--grey); }
+#lsc-wk-md20-22 .stat-card .title { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--grey); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
+
+/* callouts */
+#lsc-wk-md20-22 .callout {
+  border-left: 3px solid var(--green);
+  background: rgba(61,220,90,0.06);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 22px 0;
+}
+#lsc-wk-md20-22 .callout.alert { border-left-color: var(--bone); background: rgba(245,241,233,0.05); }
+#lsc-wk-md20-22 .callout .lbl {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--green);
+  margin-bottom: 6px;
+}
+#lsc-wk-md20-22 .callout.alert .lbl { color: var(--bone); }
+#lsc-wk-md20-22 .callout p { margin: 0; font-size: 14.5px; color: #D9D4C8; }
+
+/* svg diagram wrap */
+#lsc-wk-md20-22 .diagram-wrap {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+  margin: 24px 0;
+}
+#lsc-wk-md20-22 .diagram-wrap svg { width: 100%; height: auto; display: block; }
+#lsc-wk-md20-22 .diagram-cap {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--grey);
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: .03em;
+}
+
+/* recent form timeline */
+#lsc-wk-md20-22 .form-timeline {
+  display: flex;
+  gap: 8px;
+  margin: 22px 0;
+  flex-wrap: wrap;
+}
+#lsc-wk-md20-22 .form-dot {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+}
+#lsc-wk-md20-22 .form-dot.w { background: var(--green); color: var(--black); }
+#lsc-wk-md20-22 .form-dot.l { background: var(--panel-2); color: var(--bone); border: 1px solid var(--line); }
+
+/* trend chart image */
+#lsc-wk-md20-22 .trend-img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  margin: 24px 0;
+}
+
+/* closing quote */
+#lsc-wk-md20-22 .closing {
+  max-width: 720px;
+  margin: 100px auto 40px;
+  text-align: center;
+  padding: 0 24px;
+}
+#lsc-wk-md20-22 .closing blockquote {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(22px, 3.4vw, 30px);
+  line-height: 1.3;
+  margin: 0 0 20px;
+  color: var(--bone);
+}
+#lsc-wk-md20-22 .closing blockquote .accent { color: var(--green); }
+#lsc-wk-md20-22 .closing .byline {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  color: var(--grey);
+  letter-spacing: 0.06em;
+}
+#lsc-wk-md20-22 .foot {
+  text-align: center;
+  padding: 30px 24px 50px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--grey);
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 640px) {
+  #lsc-wk-md20-22 .moment-meta, #lsc-wk-md20-22 .moment-body { margin-left: 0; }
+  #lsc-wk-md20-22 .match-card { grid-template-columns: 1fr; }
+  #lsc-wk-md20-22 .scoreboard-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div id="lsc-wk-md20-22" class="lang-es">
+
+  <div class="lang-toggle">
+    <span>LANG</span>
+    <button id="btn-es" class="active" onclick="lscSetLang('es')">ES</button>
+    <button id="btn-en" onclick="lscSetLang('en')">EN</button>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="eyebrow mono">USL CHAMPIONSHIP · MATCHDAYS 20–22</div>
+    <h1 data-lang="es">Una semana de <span class="accent">control</span> sin <span class="accent">castigo</span></h1>
+    <h1 data-lang="en">A week of <span class="accent">control</span> without <span class="accent">punishment</span></h1>
+    <p class="sub" data-lang="es">Tres partidos, un mismo patrón: Lexington SC llega, genera y domina — pero la definición sigue siendo la barrera entre el proceso y el resultado.</p>
+    <p class="sub" data-lang="en">Three matches, one pattern: Lexington SC arrives, creates, and dominates — but finishing remains the barrier between process and result.</p>
+
+    <div class="scoreboard-row">
+      <div class="score-card">
+        <div class="res win mono">W</div>
+        <div class="opp" data-lang="es">vs. Las Vegas Lights FC</div>
+        <div class="opp" data-lang="en">vs. Las Vegas Lights FC</div>
+        <div class="sc">2–0</div>
+      </div>
+      <div class="score-card">
+        <div class="res loss mono">L</div>
+        <div class="opp" data-lang="es">en New Mexico United</div>
+        <div class="opp" data-lang="en">at New Mexico United</div>
+        <div class="sc">1–2</div>
+      </div>
+      <div class="score-card">
+        <div class="res loss mono">L</div>
+        <div class="opp" data-lang="es">vs. Colorado Springs</div>
+        <div class="opp" data-lang="en">vs. Colorado Springs</div>
+        <div class="sc">0–1</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="tick"><div class="num">3</div><div class="lbl mono" data-lang="es">GOLES A FAVOR</div><div class="lbl mono" data-lang="en">GOALS FOR</div></div>
+    <div class="tick"><div class="num">1.25</div><div class="lbl mono">XG · CS MATCH</div></div>
+    <div class="tick"><div class="num">8/8</div><div class="lbl mono" data-lang="es">DUELOS MOLLOY</div><div class="lbl mono" data-lang="en">MOLLOY DUELS WON</div></div>
+    <div class="tick"><div class="num">4</div><div class="lbl mono" data-lang="es">OCASIONES CLARAS SIN CONVERTIR (CS)</div><div class="lbl mono" data-lang="en">CLEAR CHANCES MISSED (CS)</div></div>
+    <div class="tick"><div class="num">1</div><div class="lbl mono" data-lang="es">DEBUT PROFESIONAL (MUIR)</div><div class="lbl mono" data-lang="en">FIRST PRO GOAL (MUIR)</div></div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- MOMENT 1 -->
+    <section class="moment" id="m1">
+      <div class="moment-head">
+        <div class="moment-num mono">01</div>
+        <h2 data-lang="es">Las Vegas: se gana por talento, no por ajuste</h2>
+        <h2 data-lang="en">Las Vegas: won on talent, not on a tactical shift</h2>
+      </div>
+      <div class="moment-meta">
+        <span class="result-tag win mono">WIN</span>
+        <span data-lang="es">22 ago · Lexington SC Stadium · Matchday 20</span>
+        <span data-lang="en">Aug 22 · Lexington SC Stadium · Matchday 20</span>
+      </div>
+      <div class="moment-body">
+        <div class="match-card">
+          <div class="team">LSC</div>
+          <div class="score">2–0</div>
+          <div class="team" data-lang="es">Las Vegas Lights FC</div>
+          <div class="team" data-lang="en">Las Vegas Lights FC</div>
+        </div>
+
+        <p data-lang="es">Fue un partido de efectividad, o mejor dicho, de su ausencia. Lexington no tuvo ningún problema en cruzar el último cuarto de cancha y llegar al último tercio: el equipo controló el ritmo, jugó cómodo y cruzó buenos balones al área con regularidad. Pero esos balones, y los toques en el último tercio, no fueron efectivos. El partido se destrabó al 51' por una individualidad de Nicolas Firmino — no por un cambio táctico — y Marcus Epps amplió la ventaja apenas 161 segundos después.</p>
+        <p data-lang="en">This was a game about efficiency — or the lack of it. Lexington had no trouble crossing the final quarter of the pitch and reaching the final third: the team controlled the tempo, played comfortably, and delivered good service into the box regularly. But that service, and the touches inside the final third, weren't effective. The game unlocked in the 51st minute through individual quality from Nicolas Firmino — not a tactical adjustment — and Marcus Epps doubled the lead just 161 seconds later.</p>
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="title" data-lang="es">POSESIÓN</div><div class="title" data-lang="en">POSSESSION</div>
+            <div class="row"><span>LSC</span><span class="v">46%</span></div>
+            <div class="row"><span data-lang="es">Rival</span><span data-lang="en" class="lang-inline">Opp.</span><span class="v dim">54%</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="title" data-lang="es">TIROS / AL ARCO</div><div class="title" data-lang="en">SHOTS / ON TARGET</div>
+            <div class="row"><span>LSC</span><span class="v">12 / 4</span></div>
+            <div class="row"><span data-lang="es">Rival</span><span data-lang="en" class="lang-inline">Opp.</span><span class="v dim">17 / 3</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="title" data-lang="es">TOQUES EN ÁREA RIVAL</div><div class="title" data-lang="en">TOUCHES IN OPP. BOX</div>
+            <div class="row"><span>LSC</span><span class="v">15</span></div>
+            <div class="row"><span data-lang="es">Rival</span><span data-lang="en" class="lang-inline">Opp.</span><span class="v dim">16</span></div>
+          </div>
+        </div>
+
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="396" height="236" fill="none" stroke="#3DDC5A" stroke-opacity="0.5" stroke-width="1.5"/>
+            <line x1="200" y1="2" x2="200" y2="238" stroke="#3DDC5A" stroke-opacity="0.5" stroke-width="1.5"/>
+            <circle cx="200" cy="120" r="28" fill="none" stroke="#3DDC5A" stroke-opacity="0.5" stroke-width="1.5"/>
+            <circle cx="200" cy="120" r="2" fill="#3DDC5A" fill-opacity="0.7"/>
+            <!-- LSC attacking box (right side, x=334-396) -->
+            <rect x="334" y="50" width="62" height="140" fill="none" stroke="#3DDC5A" stroke-opacity="0.5" stroke-width="1.5"/>
+            <rect x="374" y="85" width="22" height="70" fill="none" stroke="#3DDC5A" stroke-opacity="0.5" stroke-width="1.5"/>
+            <path d="M334 90 A 28 28 0 0 1 334 150" fill="none" stroke="#3DDC5A" stroke-opacity="0.5" stroke-width="1.5"/>
+            <!-- own box left -->
+            <rect x="4" y="50" width="62" height="140" fill="none" stroke="#3DDC5A" stroke-opacity="0.3" stroke-width="1.5"/>
+            <rect x="4" y="85" width="22" height="70" fill="none" stroke="#3DDC5A" stroke-opacity="0.3" stroke-width="1.5"/>
+            <!-- Firmino run + shot -->
+            <path d="M240 150 C 270 160, 300 150, 330 130" fill="none" stroke="#3DDC5A" stroke-width="2.5" stroke-dasharray="5,4"/>
+            <circle cx="330" cy="130" r="5" fill="#3DDC5A"/>
+            <path d="M330 130 L 380 108" fill="none" stroke="#F5F1E9" stroke-width="2.5"/>
+            <circle cx="380" cy="108" r="4" fill="#F5F1E9"/>
+            <text x="240" y="140" fill="#8B948D" font-family="IBM Plex Mono" font-size="9">FIRMINO 51'</text>
+            <!-- Epps second wave -->
+            <path d="M255 175 C 285 185, 310 175, 340 155" fill="none" stroke="#F5F1E9" stroke-opacity="0.6" stroke-width="2" stroke-dasharray="3,4"/>
+            <circle cx="340" cy="155" r="4" fill="#F5F1E9" fill-opacity="0.8"/>
+            <text x="255" y="192" fill="#8B948D" font-family="IBM Plex Mono" font-size="9">EPPS 54'</text>
+          </svg>
+          <div class="diagram-cap" data-lang="es">SECUENCIA — GOLES DE FIRMINO Y EPPS (51'–54')</div>
+          <div class="diagram-cap" data-lang="en">SEQUENCE — FIRMINO &amp; EPPS GOALS (51'–54')</div>
+        </div>
+
+        <div class="callout">
+          <div class="lbl mono" data-lang="es">DATO</div>
+          <div class="lbl mono" data-lang="en">STAT NOTE</div>
+          <p data-lang="es">Aaron Molloy ganó 8 de 8 duelos — la mayor marca individual de toda la USL Championship esta temporada.</p>
+          <p data-lang="en">Aaron Molloy won 8 of 8 duels — the highest individual mark in the entire USL Championship this season.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOMENT 2 -->
+    <section class="moment" id="m2">
+      <div class="moment-head">
+        <div class="moment-num mono">02</div>
+        <h2 data-lang="es">New Mexico: plantilla corta, partido que se escapa</h2>
+        <h2 data-lang="en">New Mexico: a thin squad, a game that slips away</h2>
+      </div>
+      <div class="moment-meta">
+        <span class="result-tag loss mono">LOSS</span>
+        <span data-lang="es">26 ago · Isotopes Park, Albuquerque · Matchday 21</span>
+        <span data-lang="en">Aug 26 · Isotopes Park, Albuquerque · Matchday 21</span>
+      </div>
+      <div class="moment-body">
+        <div class="match-card">
+          <div class="team" data-lang="es">New Mexico United</div>
+          <div class="team" data-lang="en">New Mexico United</div>
+          <div class="score">2–1</div>
+          <div class="team">LSC</div>
+        </div>
+
+        <p data-lang="es">Un partido completamente distinto ante un rival defensivo, y un Lexington afectado por una plantilla corta y limitada — agravada por jugadores que salieron a préstamo. Con esa profundidad reducida, no se lograron cubrir los espacios que se fueron abriendo. El partido se pudo haber ganado en una acción a pelota quieta: Marqes Muir remató de cabeza un córner de Molloy al 51' para el 1-0. Pero al final se pierde por falta de presencia y contundencia en las áreas.</p>
+        <p data-lang="en">A completely different game against a defensive side, with Lexington affected by a short, limited squad — worsened by players out on loan. With that reduced depth, the spaces that opened up couldn't be consistently covered. The match could have been won on a set piece: Marqes Muir headed home a Molloy corner in the 51st minute to make it 1-0. But it's ultimately lost due to a lack of presence and cutting edge in both boxes.</p>
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="title" data-lang="es">POSESIÓN</div><div class="title" data-lang="en">POSSESSION</div>
+            <div class="row"><span data-lang="es">N. México</span><span data-lang="en" class="lang-inline">New Mexico</span><span class="v dim">66%</span></div>
+            <div class="row"><span>LSC</span><span class="v">34%</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="title" data-lang="es">TIROS / AL ARCO</div><div class="title" data-lang="en">SHOTS / ON TARGET</div>
+            <div class="row"><span data-lang="es">N. México</span><span data-lang="en" class="lang-inline">New Mexico</span><span class="v dim">17 / 4</span></div>
+            <div class="row"><span>LSC</span><span class="v">13 / 3</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="title" data-lang="es">TOQUES EN ÁREA RIVAL</div><div class="title" data-lang="en">TOUCHES IN OPP. BOX</div>
+            <div class="row"><span data-lang="es">N. México</span><span data-lang="en" class="lang-inline">New Mexico</span><span class="v dim">34</span></div>
+            <div class="row"><span>LSC</span><span class="v">25</span></div>
+          </div>
+        </div>
+
+        <div class="callout alert">
+          <div class="lbl mono" data-lang="es">RIESGO</div>
+          <div class="lbl mono" data-lang="en">RISK</div>
+          <p data-lang="es">Cuatro cambios en el once titular — primeros minutos de la temporada para Fry, Scott y Muir. La rotación forzada por la plantilla corta coincidió directamente con la caída de presencia defensiva en los últimos 20 minutos.</p>
+          <p data-lang="en">Four changes to the starting XI — first minutes of the season for Fry, Scott, and Muir. Rotation forced by the thin squad correlated directly with a drop-off in defensive presence in the final 20 minutes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOMENT 3 -->
+    <section class="moment" id="m3">
+      <div class="moment-head">
+        <div class="moment-num mono">03</div>
+        <h2 data-lang="es">Colorado Springs: el mejor partido, el peor resultado</h2>
+        <h2 data-lang="en">Colorado Springs: the best performance, the worst result</h2>
+      </div>
+      <div class="moment-meta">
+        <span class="result-tag loss mono">LOSS</span>
+        <span data-lang="es">29 ago · Lexington SC Stadium · Matchday 22</span>
+        <span data-lang="en">Aug 29 · Lexington SC Stadium · Matchday 22</span>
+      </div>
+      <div class="moment-body">
+        <div class="match-card">
+          <div class="team">LSC</div>
+          <div class="score">0–1</div>
+          <div class="team" data-lang="es">Colorado Springs Switchbacks</div>
+          <div class="team" data-lang="en">Colorado Springs Switchbacks</div>
+        </div>
+
+        <p data-lang="es">Lexington dominó el balón desde el inicio y logró algo que pocos equipos habían conseguido contra Colorado Springs esta temporada: disputarle cada balón hasta hacerlo sentir incómodo. Por momentos desplegó un nivel futbolístico excelente, con dos ocasiones claras de liquidar el partido en cada mitad. Pero la falta de contundencia en las áreas — el hilo conductor de las tres semanas — volvió a costarle caro.</p>
+        <p data-lang="en">Lexington dominated the ball from the start and achieved something few teams had managed against Colorado Springs this season: contesting every ball until the opponent looked visibly uncomfortable. At times the team produced an excellent level of football, with two clear chances to close out the match in each half. But the lack of cutting edge in both boxes — the throughline of the entire week — cost them again.</p>
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="title" data-lang="es">POSESIÓN</div><div class="title" data-lang="en">POSSESSION</div>
+            <div class="row"><span>LSC</span><span class="v">56%</span></div>
+            <div class="row"><span data-lang="es">Rival</span><span data-lang="en" class="lang-inline">Opp.</span><span class="v dim">44%</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="title">XG</div>
+            <div class="row"><span>LSC</span><span class="v">1.25</span></div>
+            <div class="row"><span data-lang="es">Rival</span><span data-lang="en" class="lang-inline">Opp.</span><span class="v dim">0.26</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="title" data-lang="es">TIROS AL ARCO (RIVAL)</div><div class="title" data-lang="en">SHOTS ON TARGET (OPP.)</div>
+            <div class="row"><span data-lang="es">Colorado Springs</span><span data-lang="en" class="lang-inline">Colorado Springs</span><span class="v dim">2</span></div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="lbl mono" data-lang="es">CONCLUSIÓN DE LA SEMANA</div>
+          <div class="lbl mono" data-lang="en">WEEK'S TAKEAWAY</div>
+          <p data-lang="es">1.25 de xG y cero goles. El problema ya no es puntual — es el tema táctico central de la temporada: convertir el dominio en marcador.</p>
+          <p data-lang="en">1.25 xG and zero goals. This is no longer a one-off — it's the season's central tactical theme: turning dominance into a scoreline.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- CLOSING -->
+  <section class="closing">
+    <blockquote data-lang="es">Lexington no tiene un problema para <span class="accent">llegar</span>. Tiene un problema para <span class="accent">terminar</span>.</blockquote>
+    <blockquote data-lang="en">Lexington doesn't have a problem <span class="accent">arriving</span>. It has a problem <span class="accent">finishing</span>.</blockquote>
+    <div class="byline" data-lang="es">— ALEJANDRO MENA, ANÁLISIS TÁCTICO</div>
+    <div class="byline" data-lang="en">— ALEJANDRO MENA, TACTICAL ANALYSIS</div>
+  </section>
+
+  <div class="foot mono">LSC WEEKLY BREAKDOWN · MD20–22 · AUG 2026</div>
+
+</div>
+
+<script>
+(function() {
+  window.lscSetLang = function(lang) {
+    var root = document.getElementById('lsc-wk-md20-22');
+    root.classList.remove('lang-es', 'lang-en');
+    root.classList.add('lang-' + lang);
+    document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  };
+
+  var moments = document.querySelectorAll('#lsc-wk-md20-22 .moment');
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('reveal');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  moments.forEach(function(m) { io.observe(m); });
+})();
+</script>
+</body>
+</html>
