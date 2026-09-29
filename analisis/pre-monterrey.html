@@ -6,21 +6,120 @@
 <title>August 1 — Silas Vance</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* Silas Vance — Pre-Match · paleta del proyecto. Todo namespaced bajo #pm-2026-08-01-monterrey */
+#pm-2026-08-01-monterrey{
+  --green:#3DDC5A; --black:#111111; --bone:#F5F1E9;
+  --bg:#0B0F0C; --panel:#131A14; --line:rgba(245,241,233,.12); --muted:rgba(245,241,233,.62);
+  --display:'Oswald',sans-serif; --body:'Inter',sans-serif; --mono:'IBM Plex Mono',monospace;
+  background:var(--bg); color:var(--bone); font-family:var(--body); font-size:17px; line-height:1.65;
+  min-height:100vh; margin:0; -webkit-font-smoothing:antialiased;
+}
+#pm-2026-08-01-monterrey *{box-sizing:border-box;}
+#pm-2026-08-01-monterrey a{color:inherit;text-decoration:none;}
+#pm-2026-08-01-monterrey .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+#pm-2026-08-01-monterrey .display{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;}
+#pm-2026-08-01-monterrey .mono{font-family:var(--mono);}
+#pm-2026-08-01-monterrey .label{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:10px;}
+
+/* Nav */
+#pm-2026-08-01-monterrey .site-nav{position:sticky;top:0;z-index:20;background:rgba(11,15,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+#pm-2026-08-01-monterrey .nav-inner{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+#pm-2026-08-01-monterrey .brand{display:flex;align-items:center;gap:12px;}
+#pm-2026-08-01-monterrey .brand-mark{width:30px;height:30px;flex:none;}
+#pm-2026-08-01-monterrey .brand-text .display{font-size:1.15rem;line-height:1;}
+#pm-2026-08-01-monterrey .tagline{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-08-01-monterrey .tabs{display:flex;gap:22px;}
+#pm-2026-08-01-monterrey .tabs a{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
+#pm-2026-08-01-monterrey .tabs a:hover{color:var(--green);}
+#pm-2026-08-01-monterrey .nav-toggle{display:none;background:none;border:1px solid var(--line);color:var(--bone);font-size:1.1rem;padding:4px 10px;cursor:pointer;}
+
+/* Hero */
+#pm-2026-08-01-monterrey .detail-hero{padding:56px 0 40px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(61,220,90,.07),transparent 70%);}
+#pm-2026-08-01-monterrey .back-link{display:inline-block;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--muted);margin-bottom:26px;}
+#pm-2026-08-01-monterrey .back-link:hover{color:var(--green);}
+#pm-2026-08-01-monterrey .detail-kicker{display:block;font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);}
+#pm-2026-08-01-monterrey .detail-hero h1{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(3rem,10vw,5.6rem);line-height:.95;margin:10px 0 22px;letter-spacing:.01em;}
+#pm-2026-08-01-monterrey .detail-meta{display:flex;flex-wrap:wrap;gap:10px;}
+#pm-2026-08-01-monterrey .badge{display:inline-block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--green);color:var(--green);border-radius:2px;}
+
+/* Body */
+#pm-2026-08-01-monterrey .detail-body{padding:44px 0 60px;}
+#pm-2026-08-01-monterrey .summary-card{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--green);padding:22px 24px;margin-bottom:40px;}
+#pm-2026-08-01-monterrey .summary-card p{margin:0;font-size:1.12rem;font-weight:500;}
+#pm-2026-08-01-monterrey .detail-article .block{padding:0 0 30px;margin-bottom:30px;border-bottom:1px solid var(--line);counter-increment:blk;}
+#pm-2026-08-01-monterrey .detail-article{counter-reset:blk;}
+#pm-2026-08-01-monterrey .detail-article h3{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.03em;font-size:1.55rem;margin:0 0 14px;line-height:1.15;}
+#pm-2026-08-01-monterrey .detail-article h3::before{content:counter(blk,decimal-leading-zero);display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;color:var(--green);margin-bottom:6px;}
+#pm-2026-08-01-monterrey .detail-article p{margin:0 0 14px;color:rgba(245,241,233,.88);}
+#pm-2026-08-01-monterrey .detail-conclusion{background:var(--green);color:var(--black);padding:26px 26px;margin:10px 0 44px;}
+#pm-2026-08-01-monterrey .detail-conclusion .label{color:var(--black);opacity:.75;}
+#pm-2026-08-01-monterrey .detail-conclusion p{margin:0;font-size:1.1rem;font-weight:600;line-height:1.55;}
+
+/* Video */
+#pm-2026-08-01-monterrey .video-section{margin-bottom:44px;}
+#pm-2026-08-01-monterrey .video-links{display:grid;gap:10px;}
+#pm-2026-08-01-monterrey .video-link-slot{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);padding:16px 18px;font-weight:500;transition:border-color .2s,color .2s;}
+#pm-2026-08-01-monterrey a.video-link-slot:hover{border-color:var(--green);color:var(--green);}
+#pm-2026-08-01-monterrey .platform{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);background:var(--bone);padding:4px 8px;min-width:88px;text-align:center;}
+
+#pm-2026-08-01-monterrey .detail-nav-links{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;}
+#pm-2026-08-01-monterrey .detail-nav-links a:hover{color:var(--green);}
+#pm-2026-08-01-monterrey footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--muted);}
+
+/* Figures */
+#pm-2026-08-01-monterrey .figure{background:var(--panel);border:1px solid var(--line);padding:16px 16px 12px;margin:22px 0 6px;}
+#pm-2026-08-01-monterrey .figure svg{display:block;width:100%;height:auto;}
+#pm-2026-08-01-monterrey .fig-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;}
+#pm-2026-08-01-monterrey .fig-title{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);}
+#pm-2026-08-01-monterrey .fig-dir{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+#pm-2026-08-01-monterrey .figcaption{font-size:.86rem;color:var(--muted);margin:10px 0 0;line-height:1.5;}
+#pm-2026-08-01-monterrey .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-08-01-monterrey .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;}
+#pm-2026-08-01-monterrey .figure .draw{stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1.3s ease .25s;}
+#pm-2026-08-01-monterrey .figure .fade{opacity:0;transition:opacity .8s ease .9s;}
+#pm-2026-08-01-monterrey .figure.in .draw{stroke-dashoffset:0;}
+#pm-2026-08-01-monterrey .figure.in .fade{opacity:1;}
+#pm-2026-08-01-monterrey .figure .grow{transform:scaleY(0);transform-box:fill-box;transform-origin:bottom;transition:transform .9s ease;}
+#pm-2026-08-01-monterrey .figure.in .grow{transform:scaleY(1);}
+@media (prefers-reduced-motion:reduce){#pm-2026-08-01-monterrey .figure .draw{stroke-dashoffset:0;transition:none}#pm-2026-08-01-monterrey .figure .fade{opacity:1;transition:none}#pm-2026-08-01-monterrey .figure .grow{transform:none;transition:none}}
+
+/* Phase grid */
+#pm-2026-08-01-monterrey .phase-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:-30px 0 44px;}
+#pm-2026-08-01-monterrey .phase{background:var(--panel);border:1px solid var(--line);padding:16px 18px;}
+#pm-2026-08-01-monterrey .phase.alert{border-color:var(--bone);background:repeating-linear-gradient(45deg,rgba(245,241,233,.05) 0 6px,transparent 6px 12px),var(--panel);}
+#pm-2026-08-01-monterrey .phase-n{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--green);}
+#pm-2026-08-01-monterrey .phase h4{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-size:1.05rem;margin:4px 0 6px;}
+#pm-2026-08-01-monterrey .phase p{margin:0;font-size:.9rem;color:rgba(245,241,233,.8);line-height:1.5;}
+
+@media (max-width:760px){
+  #pm-2026-08-01-monterrey .phase-grid{grid-template-columns:1fr;}
+  #pm-2026-08-01-monterrey .nav-toggle{display:block;}
+  #pm-2026-08-01-monterrey .tabs{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);}
+  #pm-2026-08-01-monterrey .tabs.open{display:flex;}
+  #pm-2026-08-01-monterrey .tabs a{padding:14px 20px;border-top:1px solid var(--line);}
+  #pm-2026-08-01-monterrey .detail-hero{padding:36px 0 30px;}
+  #pm-2026-08-01-monterrey .detail-conclusion,#pm-2026-08-01-monterrey .summary-card{padding:20px;}
+  #pm-2026-08-01-monterrey .figure{margin-left:-20px !important;margin-right:-20px !important;padding:14px 8px 12px;border-left:0;border-right:0;}
+  #pm-2026-08-01-monterrey .fig-head,#pm-2026-08-01-monterrey .legend,#pm-2026-08-01-monterrey .figcaption{padding:0 12px;}
+}
+</style>
 </head>
-<body>
+<body id="pm-2026-08-01-monterrey" style="margin:0;">
 
 <header class="site-nav">
   <div class="nav-inner">
     <a class="brand" href="../index.html">
       <svg class="brand-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="1" width="26" height="26" rx="2" stroke="#3D9B54" stroke-width="1.4"/>
-        <line x1="1" y1="14" x2="27" y2="14" stroke="#3D9B54" stroke-width="1.2"/>
-        <circle cx="14" cy="14" r="4.2" stroke="#3D9B54" stroke-width="1.2"/>
-        <circle cx="14" cy="6" r="1.6" fill="#E8B23D"/>
-        <circle cx="8" cy="9" r="1.6" fill="#E8B23D"/>
-        <circle cx="20" cy="9" r="1.6" fill="#E8B23D"/>
+        <rect x="1" y="1" width="26" height="26" rx="2" stroke="#3DDC5A" stroke-width="1.4"/>
+        <line x1="1" y1="14" x2="27" y2="14" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="14" r="4.2" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="6" r="1.6" fill="#F5F1E9"/>
+        <circle cx="8" cy="9" r="1.6" fill="#F5F1E9"/>
+        <circle cx="20" cy="9" r="1.6" fill="#F5F1E9"/>
       </svg>
       <span class="brand-text">
         <span class="display" style="display:block;">SILAS VANCE</span>
@@ -59,7 +158,103 @@
     </div>
 
     <article class="detail-article">
-      <div class="block"><h3>A Very Direct Build-Up Pattern</h3><p>Monterrey have a clear, repeatable pattern: everything starts in zone one, where they try to build with no more than three or four touches before looking for depth. They have almost no interest in holding the ball in zone two — in fact, they generate practically nothing there. The plan is simple: exit quickly from the back and look for the space behind the rival defense to go straight into zone three.</p></div><div class="block"><h3>What A Good Press Does To Them</h3><p>That directness has a real cost: when they face a high, well-coordinated press in zone one, they struggle badly to play out cleanly. Whether it's a forced long ball or a turnover inside the press itself, they typically end up losing possession. For Lexington, that's a clear opportunity to generate recoveries in high, dangerous zones — as long as the press is properly coordinated.</p></div><div class="block"><h3>A Left-Back Who Loses His Man</h3><p>Their most exposed individual weakness is the left-back, who consistently loses track of runners behind him. Against Phoenix, that exact issue produced three clear scoring chances in under five minutes purely from balls played behind him. On top of that, because their forwards sit so advanced and their back line drops so deep, they leave a lot of open space in zone fourteen — a zone Monterrey concede into frequently.</p></div><div class="block"><h3>A Tactical Detail Worth Knowing</h3><p>One interesting wrinkle: Monterrey's center-backs jump onto the opposing striker specifically to stop him from turning, but they aren't actually trying to win the ball — they're shadowing, not tackling. That means a target striker can receive with his back to goal fairly comfortably, even if he can't spin immediately.</p></div>
+      <div class="block"><h3>A Very Direct Build-Up Pattern</h3><p>Monterrey have a clear, repeatable pattern: everything starts in zone one, where they try to build with no more than three or four touches before looking for depth. They have almost no interest in holding the ball in zone two — in fact, they generate practically nothing there. The plan is simple: exit quickly from the back and look for the space behind the rival defense to go straight into zone three.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Zone 1 → zone 3, nothing in between</span><span class="fig-dir">MTY attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="Zone 1 → zone 3, nothing in between" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="m1ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="m1ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="m1hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><rect x="134" y="4" width="132" height="232" fill="rgba(245,241,233,.04)"/><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><g stroke="#F5F1E9" stroke-opacity=".35" stroke-dasharray="4 4"><line x1="134" y1="4" x2="134" y2="236"/><line x1="266" y1="4" x2="266" y2="236"/></g><text x="69" y="18" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#3DDC5A">ZONE 1</text><text x="200" y="18" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">ZONE 2</text><text x="331" y="18" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#3DDC5A">ZONE 3</text><text x="200" y="180" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="rgba(245,241,233,.55)">ALMOST NOTHING</text><text x="200" y="190" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="rgba(245,241,233,.55)">HAPPENS HERE</text><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="56" cy="84" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="56" cy="156" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="102" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><path class="draw" d="M20 116 L50 90" fill="none" stroke="#F5F1E9" stroke-width="1.4" marker-end="url(#m1ah-b)"/><path class="draw" d="M60 92 L96 114" fill="none" stroke="#F5F1E9" stroke-width="1.4" marker-end="url(#m1ah-b)"/><text x="62" y="200" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">3–4 TOUCHES</text><circle cx="108" cy="116" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><path class="draw" d="M110 112 Q210 40 320 72" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#m1ah-b)"/><circle cx="292" cy="50" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="300" cy="150" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><path class="fade" d="M300 50 L322 68" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#m1ah-b)"/><circle cx="344" cy="96" r="7" fill="#3DDC5A"/><circle cx="344" cy="146" r="7" fill="#3DDC5A"/><circle cx="388" cy="120" r="6.5" fill="#3DDC5A"/><text x="330" y="50" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">IN BEHIND</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Monterrey</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:#F5F1E9;width:7px;height:7px"></i>Ball</span></div>
+<p class="figcaption">Monterrey build in zone 1 with three or four touches, then look for depth immediately. Zone 2 is barely used: the aim is to reach the space behind the back line in one move.</p>
+</figure></div><div class="block"><h3>What A Good Press Does To Them</h3><p>That directness has a real cost: when they face a high, well-coordinated press in zone one, they struggle badly to play out cleanly. Whether it's a forced long ball or a turnover inside the press itself, they typically end up losing possession. For Lexington, that's a clear opportunity to generate recoveries in high, dangerous zones — as long as the press is properly coordinated.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">What a coordinated press does</span><span class="fig-dir">← LSC attack</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="What a coordinated press does" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="m2ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="m2ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="m2hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><rect class="fade" x="4" y="40" width="130" height="160" fill="rgba(61,220,90,.10)" stroke="#3DDC5A" stroke-opacity=".5" stroke-dasharray="3 3"/><text x="69" y="214" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#3DDC5A">HIGH RECOVERY ZONE</text><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="52" cy="80" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="52" cy="160" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="106" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="58" cy="84" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><circle cx="92" cy="64" r="7" fill="#3DDC5A"/><circle cx="72" cy="114" r="7" fill="#3DDC5A"/><circle cx="96" cy="170" r="7" fill="#3DDC5A"/><circle cx="140" cy="110" r="7" fill="#3DDC5A"/><path class="draw" d="M86 68 L64 80" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#m2ah-g)"/><path class="draw" d="M76 108 L62 92" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#m2ah-g)"/><path class="fade" d="M92 164 L62 162" fill="none" stroke="#3DDC5A" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#m2ah-g)"/><path class="fade" d="M134 112 L114 118" fill="none" stroke="#3DDC5A" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#m2ah-g)"/><text x="150" y="146" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#3DDC5A">CUT THE SHORT OPTIONS</text><path class="fade" d="M60 80 Q160 20 250 60" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#m2ah-b)"/><circle cx="262" cy="66" r="7" fill="#3DDC5A"/><text x="262" y="68.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">CB</text><text x="258" y="88" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">FORCED LONG → WON</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Monterrey</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:#F5F1E9;width:7px;height:7px"></i>Ball</span></div>
+<p class="figcaption">Take away the short options in zone 1 and Monterrey have two exits: a turnover inside the press, or a forced long ball that Lexington's back line can win. Either way the ball comes back high up the pitch.</p>
+</figure></div><div class="block"><h3>A Left-Back Who Loses His Man</h3><p>Their most exposed individual weakness is the left-back, who consistently loses track of runners behind him. Against Phoenix, that exact issue produced three clear scoring chances in under five minutes purely from balls played behind him. On top of that, because their forwards sit so advanced and their back line drops so deep, they leave a lot of open space in zone fourteen — a zone Monterrey concede into frequently.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">The left-back and the empty middle</span><span class="fig-dir">← LSC attack</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="The left-back and the empty middle" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="m3ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="m3ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="m3hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><rect x="4" y="4" width="92" height="40" fill="rgba(61,220,90,.25)" stroke="#3DDC5A" stroke-dasharray="3 3"/><rect class="fade" x="68" y="84" width="72" height="72" fill="rgba(61,220,90,.22)" stroke="#3DDC5A" stroke-dasharray="3 3"/><text x="104" y="170" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#3DDC5A">ZONE 14 · OPEN</text><circle cx="12" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="46" cy="58" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="46" y="60.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">LB</text><circle cx="44" cy="100" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="44" cy="140" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="48" cy="184" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="230" cy="92" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="234" cy="150" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="262" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="248" y="190" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">FORWARDS STAY HIGH</text><line class="fade" x1="62" y1="46" x2="62" y2="194" stroke="#F5F1E9" stroke-opacity=".4" stroke-dasharray="2 3"/><text x="56" y="214" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">DEEP LINE</text><circle cx="120" cy="44" r="7" fill="#3DDC5A"/><path class="draw" d="M114 40 Q80 22 40 22" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#m3ah-g)"/><line class="fade" x1="46" y1="58" x2="112" y2="44" stroke="#F5F1E9" stroke-opacity=".5" stroke-dasharray="1 3"/><circle cx="186" cy="118" r="7" fill="#3DDC5A"/><circle cx="180" cy="116" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><path class="fade" d="M178 110 Q120 40 50 28" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#m3ah-b)"/><circle cx="112" cy="128" r="7" fill="#3DDC5A"/><text x="150" y="16" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">BEHIND THE LB · 3 CHANCES IN <5' VS PHOENIX</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Monterrey</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:rgba(61,220,90,.35);border-radius:0"></i>Space to attack</span></div>
+<p class="figcaption">The left-back loses runners in behind (three clear chances in under five minutes for Phoenix). With the forwards high and the back line deep, zone 14 is left open between the lines.</p>
+</figure></div><div class="block"><h3>A Tactical Detail Worth Knowing</h3><p>One interesting wrinkle: Monterrey's center-backs jump onto the opposing striker specifically to stop him from turning, but they aren't actually trying to win the ball — they're shadowing, not tackling. That means a target striker can receive with his back to goal fairly comfortably, even if he can't spin immediately.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">They shadow, they don't tackle</span><span class="fig-dir">← LSC attack</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="They shadow, they don't tackle" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="m4ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="m4ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="m4hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><circle cx="12" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="46" cy="80" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="46" cy="160" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="94" cy="120" r="7" fill="#3DDC5A"/><text x="94" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">9</text><circle cx="72" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="72" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">CB</text><text x="72" y="104" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">CB JUMPS</text><text x="110" y="146" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">RECEIVES BACK TO GOAL</text><text x="110" y="156" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">SHADOWED, NOT TACKLED</text><circle cx="196" cy="124" r="7" fill="#3DDC5A"/><circle cx="190" cy="124" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><path class="draw" d="M188 122 L102 120" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#m4ah-b)"/><path class="draw" d="M100 114 Q112 88 128 82" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#m4ah-g)"/><circle cx="150" cy="60" r="7" fill="#3DDC5A"/><path class="fade" d="M146 64 L134 78" fill="none" stroke="#3DDC5A" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#m4ah-g)"/><text x="160" y="50" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">LAY-OFF TO THE RUNNER</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Monterrey</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:#F5F1E9;width:7px;height:7px"></i>Ball</span></div>
+<p class="figcaption">Monterrey's centre-backs step onto the striker only to stop him turning. A target striker can take the ball with his back to goal and set it for a teammate arriving from midfield.</p>
+</figure></div>
     </article>
 
     <div class="detail-conclusion"><span class="label">Prediction</span><p>Look for balls played behind the left-back, occupy zone fourteen with real numbers, and take advantage of the space naturally left by a team that plays so long and with so little connection between its own lines.</p></div>
@@ -67,12 +262,14 @@
     <div class="video-section">
       <span class="label">Watch The Breakdown</span>
       <div class="video-links">
-        <div class="video-link-slot"><span class="platform">Instagram</span> [ Paste the Reel link here ]</div>
-        <div class="video-link-slot"><span class="platform">TikTok</span> [ Paste the TikTok link here ]</div>
+        <!-- VIDEO: reemplaza PEGAR_ENLACE_VIDEO por el enlace del video -->
+        <a class="video-link-slot" href="PEGAR_ENLACE_VIDEO" target="_blank" rel="noopener"><span class="platform">Video</span> Watch the full breakdown →</a>
+        <!-- INSTAGRAM: reemplaza PEGAR_ENLACE_INSTAGRAM -->
+        <a class="video-link-slot" href="PEGAR_ENLACE_INSTAGRAM" target="_blank" rel="noopener"><span class="platform">Instagram</span> Watch the Reel →</a>
+        <!-- TIKTOK: reemplaza PEGAR_ENLACE_TIKTOK -->
+        <a class="video-link-slot" href="PEGAR_ENLACE_TIKTOK" target="_blank" rel="noopener"><span class="platform">TikTok</span> Watch on TikTok →</a>
       </div>
     </div>
-
-  </div>
 
     <div class="detail-nav-links">
       <a href="../index.html#pre-match">← All Pre-Match</a>
@@ -88,6 +285,11 @@
   const toggle = document.getElementById('navToggle');
   const tabs = document.getElementById('tabs');
   toggle.addEventListener('click', () => tabs.classList.toggle('open'));
+  const figs = document.querySelectorAll('.figure');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .35});
+    figs.forEach(f => io.observe(f));
+  } else { figs.forEach(f => f.classList.add('in')); }
 </script>
 </body>
 </html>
