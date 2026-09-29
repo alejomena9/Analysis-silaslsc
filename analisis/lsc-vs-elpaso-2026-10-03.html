@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LSC vs. El Paso Locomotive — Silas Vance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+#match-lsc-elpaso-20261003 {
+  --green: #3DDC5A;
+  --black: #111111;
+  --bone: #F5F1E9;
+  --bg: #0B0F0C;
+  --panel: #131A14;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--bone);
+  line-height: 1.55;
+}
+#match-lsc-elpaso-20261003 * { box-sizing: border-box; }
+#match-lsc-elpaso-20261003 h1, #match-lsc-elpaso-20261003 h2, #match-lsc-elpaso-20261003 h3 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  padding-bottom: 0.06em;
+  margin: 0;
+}
+#match-lsc-elpaso-20261003 p {
+  line-height: 1.7;
+}
+#match-lsc-elpaso-20261003 strong { font-weight: 600; color: var(--bone); }
+#match-lsc-elpaso-20261003 .mono { font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.03em; }
+#match-lsc-elpaso-20261003 [data-lang-en] { display: none; }
+#match-lsc-elpaso-20261003.lang-en [data-lang-en] { display: revert; }
+#match-lsc-elpaso-20261003.lang-en [data-lang-es] { display: none; }
+
+/* ---------- toggle ---------- */
+#match-lsc-elpaso-20261003 .lang-toggle {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(11,15,12,0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #22291f;
+}
+#match-lsc-elpaso-20261003 .lang-toggle button {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  background: transparent;
+  border: 1px solid #3a4436;
+  color: var(--bone);
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+#match-lsc-elpaso-20261003 .lang-toggle button.active {
+  background: var(--green);
+  color: var(--black);
+  border-color: var(--green);
+  font-weight: 700;
+}
+
+/* ---------- hero ---------- */
+#match-lsc-elpaso-20261003 .hero {
+  padding: 60px 20px 40px;
+  text-align: center;
+  border-bottom: 1px solid #1c2318;
+}
+#match-lsc-elpaso-20261003 .hero .comp {
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--green);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  margin-bottom: 14px;
+}
+#match-lsc-elpaso-20261003 .scoreboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  margin: 10px 0 18px;
+}
+#match-lsc-elpaso-20261003 .scoreboard .vs {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 16px;
+  color: #7a8570;
+}
+#match-lsc-elpaso-20261003 .hero .meta {
+  color: #a9b3a0;
+  font-size: 14px;
+}
+#match-lsc-elpaso-20261003 .badge-pre {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 5px 14px;
+  border: 1px solid var(--green);
+  color: var(--green);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  border-radius: 999px;
+}
+
+/* ---------- stat ticker ---------- */
+#match-lsc-elpaso-20261003 .ticker {
+  display: flex;
+  overflow-x: auto;
+  gap: 0;
+  border-bottom: 1px solid #1c2318;
+  background: var(--panel);
+}
+#match-lsc-elpaso-20261003 .ticker .tick {
+  flex: 1 0 auto;
+  padding: 14px 22px;
+  text-align: center;
+  border-right: 1px solid #1c2318;
+  min-width: 140px;
+}
+#match-lsc-elpaso-20261003 .ticker .tick .num {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--green);
+}
+#match-lsc-elpaso-20261003 .ticker .tick .lbl {
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #9aa494;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 4px;
+  line-height: 1.3;
+}
+
+/* ---------- sections ---------- */
+#match-lsc-elpaso-20261003 .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+#match-lsc-elpaso-20261003 .moment {
+  padding: 70px 0;
+  border-bottom: 1px solid #1c2318;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+#match-lsc-elpaso-20261003 .moment.revealed { opacity: 1; transform: translateY(0); }
+#match-lsc-elpaso-20261003 .moment .num {
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--green);
+  font-size: 13px;
+  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+}
+#match-lsc-elpaso-20261003 .moment h2 { font-size: 26px; margin-bottom: 16px; }
+#match-lsc-elpaso-20261003 .moment p { color: #cdd4c6; font-size: 15.5px; max-width: 640px; }
+
+/* ---------- pitch svg ---------- */
+#match-lsc-elpaso-20261003 .pitch-wrap { margin: 28px 0; background: var(--panel); border: 1px solid #232b1d; border-radius: 8px; padding: 14px; }
+#match-lsc-elpaso-20261003 .pitch-wrap svg { width: 100%; height: auto; display: block; }
+#match-lsc-elpaso-20261003 .pitch-line { fill: none; stroke: #3a4436; stroke-width: 1.5; }
+#match-lsc-elpaso-20261003 .pitch-run {
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 2.5;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  transition: stroke-dashoffset 1.4s ease;
+}
+#match-lsc-elpaso-20261003 .moment.revealed .pitch-run { stroke-dashoffset: 0; }
+#match-lsc-elpaso-20261003 .pitch-zone { fill: rgba(61,220,90,0.16); }
+#match-lsc-elpaso-20261003 .pitch-dot { fill: var(--bone); }
+#match-lsc-elpaso-20261003 .pitch-dot.opp { fill: var(--green); }
+#match-lsc-elpaso-20261003 .pitch-label { font-family: 'IBM Plex Mono', monospace; font-size: 8px; fill: #b7c0ae; }
+
+/* ---------- callouts ---------- */
+#match-lsc-elpaso-20261003 .callout {
+  border-left: 3px solid var(--green);
+  background: var(--panel);
+  padding: 16px 20px;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+#match-lsc-elpaso-20261003 .callout.risk { border-left-color: #d94f4f; }
+#match-lsc-elpaso-20261003 .callout .tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  margin-bottom: 6px;
+  display: block;
+}
+#match-lsc-elpaso-20261003 .callout.risk .tag { color: #d94f4f; }
+#match-lsc-elpaso-20261003 .callout p { margin: 0; color: #dde3d5; font-size: 14.5px; }
+
+/* ---------- cards ---------- */
+#match-lsc-elpaso-20261003 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 22px 0; }
+#match-lsc-elpaso-20261003 .card {
+  background: var(--panel);
+  border: 1px solid #232b1d;
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+#match-lsc-elpaso-20261003 .card .card-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+#match-lsc-elpaso-20261003 .card .card-num { font-family: 'Oswald', sans-serif; color: var(--green); font-size: 22px; }
+#match-lsc-elpaso-20261003 .card .card-name { font-weight: 600; font-size: 15px; }
+#match-lsc-elpaso-20261003 .card .card-pos { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #9aa494; }
+#match-lsc-elpaso-20261003 .card p { font-size: 13.5px; color: #b9c1b1; margin: 6px 0 0; }
+
+/* ---------- form timeline ---------- */
+#match-lsc-elpaso-20261003 .form-timeline { display: flex; gap: 8px; margin: 18px 0; flex-wrap: wrap; }
+#match-lsc-elpaso-20261003 .form-dot {
+  width: 30px; height: 30px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 700;
+}
+#match-lsc-elpaso-20261003 .form-dot.w { background: var(--green); color: var(--black); }
+#match-lsc-elpaso-20261003 .form-dot.d { background: #6b6b63; color: var(--bone); }
+#match-lsc-elpaso-20261003 .form-dot.l { background: var(--black); color: var(--bone); border: 1px solid #3a4436; }
+#match-lsc-elpaso-20261003 .form-block { margin: 26px 0; }
+#match-lsc-elpaso-20261003 .form-block .form-label { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #9aa494; margin-bottom: 8px; }
+
+/* ---------- match cards (context) ---------- */
+#match-lsc-elpaso-20261003 .match-card {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--panel); border: 1px solid #232b1d; border-radius: 8px;
+  padding: 12px 16px; margin: 8px 0; font-size: 14px;
+}
+#match-lsc-elpaso-20261003 .match-card .res { font-family: 'IBM Plex Mono', monospace; color: var(--green); font-weight: 700; }
+
+/* ---------- closer ---------- */
+#match-lsc-elpaso-20261003 .closer {
+  padding: 70px 20px 60px;
+  text-align: center;
+  border-top: 1px solid #1c2318;
+}
+#match-lsc-elpaso-20261003 .closer blockquote {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.45;
+  font-style: normal;
+  max-width: 640px;
+  margin: 0 auto 16px;
+  color: var(--bone);
+}
+#match-lsc-elpaso-20261003 .closer .byline {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--green);
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 520px) {
+  #match-lsc-elpaso-20261003 .scoreboard { font-size: 22px; gap: 16px; }
+  #match-lsc-elpaso-20261003 .moment h2 { font-size: 21px; }
+}
+</style>
+</head>
+<body>
+<div id="match-lsc-elpaso-20261003" class="lang-es">
+
+  <div class="lang-toggle">
+    <button class="active" data-set-lang="es">ES</button>
+    <button data-set-lang="en">EN</button>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="comp">USL CHAMPIONSHIP — MATCHDAY 27</div>
+    <div class="scoreboard">
+      <span>LEXINGTON SC</span>
+      <span class="vs">VS</span>
+      <span>EL PASO LOCOMOTIVE FC</span>
+    </div>
+    <div class="meta mono">
+      <span data-lang-es>Sábado 3 de octubre de 2026 · 7:00 PM · Lexington SC Stadium</span>
+      <span data-lang-en>Saturday, October 3, 2026 · 7:00 PM · Lexington SC Stadium</span>
+    </div>
+    <div class="badge-pre">
+      <span data-lang-es>PRE-PARTIDO</span>
+      <span data-lang-en>PRE-MATCH</span>
+    </div>
+  </div>
+
+  <!-- STAT TICKER -->
+  <div class="ticker">
+    <div class="tick"><div class="num">1°</div><div class="lbl" data-lang-es>El Paso — Conf. Oeste</div><div class="lbl" data-lang-en>El Paso — West Conf.</div></div>
+    <div class="tick"><div class="num">3°</div><div class="lbl" data-lang-es>LSC — Conf. Oeste</div><div class="lbl" data-lang-en>LSC — West Conf.</div></div>
+    <div class="tick"><div class="num">9</div><div class="lbl" data-lang-es>Partidos invicto — El Paso</div><div class="lbl" data-lang-en>Unbeaten run — El Paso</div></div>
+    <div class="tick"><div class="num">3</div><div class="lbl" data-lang-es>Victorias seguidas — LSC</div><div class="lbl" data-lang-en>Win streak — LSC</div></div>
+    <div class="tick"><div class="num">16</div><div class="lbl" data-lang-es>Goles — Rubín (Bota de Oro)</div><div class="lbl" data-lang-en>Goals — Rubín (Golden Boot)</div></div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- MOMENT 1 -->
+    <div class="moment">
+      <div class="num">01</div>
+      <h2><span data-lang-es>Estructura</span><span data-lang-en>Structure</span></h2>
+      <p data-lang-es>El Paso Locomotive defiende en 3-4-2-1 y ataca en 3-2-5: los carrileros se abren al máximo mientras los interiores se cierran hacia el centro para luego proyectarse en diagonal hacia las bandas altas.</p>
+      <p data-lang-en>El Paso Locomotive defends in a 3-4-2-1 and attacks in a 3-2-5: wing-backs push fully wide while the interiors tuck in centrally before bursting diagonally into the wide channels of the final third.</p>
+
+      <div class="pitch-wrap">
+        <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="4" width="392" height="232" class="pitch-line"/>
+          <line x1="200" y1="4" x2="200" y2="236" class="pitch-line"/>
+          <circle cx="200" cy="120" r="30" class="pitch-line"/>
+          <!-- own box (El Paso, left) -->
+          <rect x="4" y="70" width="40" height="100" class="pitch-line"/>
+          <rect x="4" y="95" width="16" height="50" class="pitch-line"/>
+          <!-- opposition box (right, x=334-396) -->
+          <rect x="334" y="70" width="62" height="100" class="pitch-line"/>
+          <rect x="360" y="95" width="36" height="50" class="pitch-line"/>
+          <!-- zone 16/18 highlight -->
+          <rect x="334" y="4" width="62" height="66" class="pitch-zone"/>
+          <text x="365" y="20" text-anchor="middle" class="pitch-label">ZONA 16</text>
+          <rect x="334" y="170" width="62" height="66" class="pitch-zone"/>
+          <text x="365" y="222" text-anchor="middle" class="pitch-label">ZONA 18</text>
+          <!-- players (El Paso, green) -->
+          <circle cx="30" cy="120" r="5" class="pitch-dot opp"/>
+          <circle cx="70" cy="60" r="5" class="pitch-dot opp"/>
+          <circle cx="70" cy="120" r="5" class="pitch-dot opp"/>
+          <circle cx="70" cy="180" r="5" class="pitch-dot opp"/>
+          <circle cx="150" cy="90" r="5" class="pitch-dot opp"/>
+          <circle cx="150" cy="150" r="5" class="pitch-dot opp"/>
+          <circle cx="255" cy="58" r="5" class="pitch-dot opp"/>
+          <text x="255" y="45" text-anchor="middle" class="pitch-label">INT. IZQ.</text>
+          <circle cx="300" cy="120" r="5" class="pitch-dot opp"/>
+          <circle cx="280" cy="190" r="5" class="pitch-dot opp"/>
+          <circle cx="325" cy="35" r="5" class="pitch-dot opp"/>
+          <text x="325" y="24" text-anchor="middle" class="pitch-label">TORRES 16</text>
+          <circle cx="335" cy="150" r="5" class="pitch-dot opp"/>
+          <!-- diagonal run: left interior into zone 16 (inside-out, same-side) -->
+          <path d="M 255 58 C 285 45, 315 30, 345 18" class="pitch-run"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- MOMENT 2 -->
+    <div class="moment">
+      <div class="num">02</div>
+      <h2><span data-lang-es>La Diagonal</span><span data-lang-en>The Diagonal</span></h2>
+      <p data-lang-es>La clave ofensiva de El Paso es la diagonal de adentro hacia afuera: el interior izquierdo (<strong>Amando Moreno #10</strong>) arranca centrado y rompe a la espalda del lateral rival — normalmente por la izquierda, con <strong>Gabi Torres #16</strong> dando el ancho por fuera. El objetivo es llegar a la zona 16 antes de que el rival reorganice su línea.</p>
+      <p data-lang-en>El Paso's core offensive pattern is the inside-to-outside diagonal: the left interior (<strong>Amando Moreno #10</strong>) starts centrally and breaks into the channel behind the opposing full-back — usually on the left, with <strong>Gabi Torres #16</strong> providing the width outside him. The target is zone 16 before the defense can reorganize.</p>
+
+      <div class="callout">
+        <span class="tag" data-lang-es>OPORTUNIDAD</span>
+        <span class="tag" data-lang-en>OPPORTUNITY</span>
+        <p data-lang-es>Con tanta gente arriba, los centrales de El Paso quedan mano a mano. <strong>Noah Dollenmayer #15</strong> es el eslabón más débil técnicamente — hay que atacarlo directamente.</p>
+        <p data-lang-en>With so many bodies forward, El Paso's centre-backs are repeatedly caught 1v1. <strong>Noah Dollenmayer #15</strong> is the technically weakest link — attack him directly.</p>
+      </div>
+    </div>
+
+    <!-- MOMENT 3 -->
+    <div class="moment">
+      <div class="num">03</div>
+      <h2><span data-lang-es>El Plan de LSC</span><span data-lang-en>LSC's Plan</span></h2>
+      <p data-lang-es>Bloque medio, pivotes protegidos con basculación ordenada. Recuperar y salir rápido en transición hacia la espalda de Torres, aprovechando el momento de <strong>Phillip Goodrum</strong>, quien ha marcado en sus tres últimos partidos.</p>
+      <p data-lang-en>Mid-block, pivots protected with disciplined shifting. Win the ball and break quickly into the space behind Torres, riding the form of <strong>Phillip Goodrum</strong>, who has scored in three straight matches.</p>
+
+      <div class="callout risk">
+        <span class="tag" data-lang-es>RIESGO</span>
+        <span class="tag" data-lang-en>RISK</span>
+        <p data-lang-es>La presión alta de El Paso es muy bien ejecutada y fuerza errores. <strong>Tony Alfaro #93</strong> es quien mejor sale jugando desde el fondo, y también es su arma en el balón parado.</p>
+        <p data-lang-en>El Paso's high press is very well executed and forces mistakes. <strong>Tony Alfaro #93</strong> is their best ball-playing defender and also their set-piece weapon.</p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-top"><span class="card-num">14</span><span class="card-pos">ST</span></div>
+          <div class="card-name">Rubio Rubín</div>
+          <p data-lang-es>Líder de la Bota de Oro (16 goles). Movimiento élite a la espalda de la defensa.</p>
+          <p data-lang-en>USL Golden Boot leader (16 goals). Elite movement in behind.</p>
+        </div>
+        <div class="card">
+          <div class="card-top"><span class="card-num">10</span><span class="card-pos">IF/AM</span></div>
+          <div class="card-name">Amando Moreno</div>
+          <p data-lang-es>Interior izquierdo; motor de la diagonal ofensiva.</p>
+          <p data-lang-en>Left interior; the engine of the attacking diagonal.</p>
+        </div>
+        <div class="card">
+          <div class="card-top"><span class="card-num">93</span><span class="card-pos">CB</span></div>
+          <div class="card-name">Tony Alfaro</div>
+          <p data-lang-es>Quien mejor sale jugando desde el fondo; también amenaza en pelota parada.</p>
+          <p data-lang-en>Best build-up passer and set-piece threat.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOMENT 4: form -->
+    <div class="moment">
+      <div class="num">04</div>
+      <h2><span data-lang-es>Forma Reciente</span><span data-lang-en>Recent Form</span></h2>
+
+      <div class="form-block">
+        <div class="form-label">EL PASO LOCOMOTIVE FC</div>
+        <div class="form-timeline">
+          <div class="form-dot w">W</div>
+          <div class="form-dot w">W</div>
+          <div class="form-dot w">W</div>
+          <div class="form-dot w">W</div>
+          <div class="form-dot d">D</div>
+        </div>
+      </div>
+      <div class="form-block">
+        <div class="form-label">LEXINGTON SC</div>
+        <div class="form-timeline">
+          <div class="form-dot w">W</div>
+          <div class="form-dot w">W</div>
+          <div class="form-dot w">W</div>
+          <div class="form-dot l">L</div>
+          <div class="form-dot l">L</div>
+        </div>
+      </div>
+
+      <div class="match-card">
+        <span data-lang-es>El Paso 1–1 FC Tulsa (25 sep)</span><span data-lang-en>El Paso 1–1 FC Tulsa (Sep 25)</span>
+        <span class="res">D</span>
+      </div>
+      <div class="match-card">
+        <span data-lang-es>LSC 3–2 Monterey Bay (26 sep)</span><span data-lang-en>LSC 3–2 Monterey Bay (Sep 26)</span>
+        <span class="res">W</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CLOSER -->
+  <div class="closer">
+    <blockquote>
+      <span data-lang-es>“El invicto se mide en el papel. La espalda de Torres se mide en el campo.”</span>
+      <span data-lang-en>“The unbeaten run shows up on paper. The space behind Torres shows up on the pitch.”</span>
+    </blockquote>
+    <div class="byline">— SILAS VANCE</div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var root = document.getElementById('match-lsc-elpaso-20261003');
+  var buttons = root.querySelectorAll('.lang-toggle button');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var lang = btn.getAttribute('data-set-lang');
+      root.classList.remove('lang-es','lang-en');
+      root.classList.add('lang-' + lang);
+      buttons.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+    });
+  });
+
+  var moments = root.querySelectorAll('.moment');
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    moments.forEach(function(m){ obs.observe(m); });
+  } else {
+    moments.forEach(function(m){ m.classList.add('revealed'); });
+  }
+})();
+</script>
+</body>
+</html>
