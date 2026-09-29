@@ -183,7 +183,9 @@
 #match-lsc-elpaso-20261003 .pitch-zone { fill: rgba(61,220,90,0.16); }
 #match-lsc-elpaso-20261003 .pitch-dot { fill: var(--bone); }
 #match-lsc-elpaso-20261003 .pitch-dot.opp { fill: var(--green); }
+#match-lsc-elpaso-20261003 .pitch-dot.key { fill: #7be895; }
 #match-lsc-elpaso-20261003 .pitch-label { font-family: 'IBM Plex Mono', monospace; font-size: 8px; fill: #b7c0ae; }
+#match-lsc-elpaso-20261003 .pitch-num { font-family: 'IBM Plex Mono', monospace; font-size: 7px; font-weight: 600; fill: var(--black); }
 
 /* ---------- callouts ---------- */
 #match-lsc-elpaso-20261003 .callout {
@@ -329,22 +331,43 @@
           <text x="365" y="20" text-anchor="middle" class="pitch-label">ZONA 16</text>
           <rect x="334" y="170" width="62" height="66" class="pitch-zone"/>
           <text x="365" y="222" text-anchor="middle" class="pitch-label">ZONA 18</text>
-          <!-- players (El Paso, green) -->
-          <circle cx="30" cy="120" r="5" class="pitch-dot opp"/>
-          <circle cx="70" cy="60" r="5" class="pitch-dot opp"/>
-          <circle cx="70" cy="120" r="5" class="pitch-dot opp"/>
-          <circle cx="70" cy="180" r="5" class="pitch-dot opp"/>
-          <circle cx="150" cy="90" r="5" class="pitch-dot opp"/>
-          <circle cx="150" cy="150" r="5" class="pitch-dot opp"/>
-          <circle cx="255" cy="58" r="5" class="pitch-dot opp"/>
-          <text x="255" y="45" text-anchor="middle" class="pitch-label">INT. IZQ.</text>
-          <circle cx="300" cy="120" r="5" class="pitch-dot opp"/>
-          <circle cx="280" cy="190" r="5" class="pitch-dot opp"/>
-          <circle cx="325" cy="35" r="5" class="pitch-dot opp"/>
-          <text x="325" y="24" text-anchor="middle" class="pitch-label">TORRES 16</text>
-          <circle cx="335" cy="150" r="5" class="pitch-dot opp"/>
-          <!-- diagonal run: left interior into zone 16 (inside-out, same-side) -->
-          <path d="M 255 58 C 285 45, 315 30, 345 18" class="pitch-run"/>
+
+          <!-- back three + GK -->
+          <circle cx="22" cy="120" r="7" class="pitch-dot opp"/>
+          <text x="22" y="121" text-anchor="middle" dominant-baseline="central" class="pitch-num">GK</text>
+          <circle cx="50" cy="77" r="7" class="pitch-dot opp"/>
+          <text x="50" y="78" text-anchor="middle" dominant-baseline="central" class="pitch-num">CB</text>
+          <circle cx="50" cy="120" r="7" class="pitch-dot opp"/>
+          <text x="50" y="121" text-anchor="middle" dominant-baseline="central" class="pitch-num">CB</text>
+          <circle cx="50" cy="163" r="7" class="pitch-dot opp"/>
+          <text x="50" y="164" text-anchor="middle" dominant-baseline="central" class="pitch-num">CB</text>
+
+          <!-- double pivot -->
+          <circle cx="133" cy="99" r="7" class="pitch-dot opp"/>
+          <text x="133" y="100" text-anchor="middle" dominant-baseline="central" class="pitch-num">6</text>
+          <circle cx="133" cy="141" r="7" class="pitch-dot opp"/>
+          <text x="133" y="142" text-anchor="middle" dominant-baseline="central" class="pitch-num">6</text>
+
+          <!-- front five (3-2-5) -->
+          <circle cx="280" cy="83" r="8" class="pitch-dot key"/>
+          <text x="280" y="84" text-anchor="middle" dominant-baseline="central" class="pitch-num">10</text>
+          <text x="280" y="61" text-anchor="middle" class="pitch-label">MORENO · INT. IZQ.</text>
+
+          <circle cx="280" cy="157" r="7" class="pitch-dot opp"/>
+          <text x="280" y="158" text-anchor="middle" dominant-baseline="central" class="pitch-num">19</text>
+
+          <circle cx="335" cy="120" r="7" class="pitch-dot opp"/>
+          <text x="335" y="121" text-anchor="middle" dominant-baseline="central" class="pitch-num">14</text>
+
+          <circle cx="368" cy="20" r="8" class="pitch-dot key"/>
+          <text x="368" y="21" text-anchor="middle" dominant-baseline="central" class="pitch-num">16</text>
+          <text x="368" y="35" text-anchor="middle" class="pitch-label">TORRES · CARRILERO</text>
+
+          <circle cx="359" cy="212" r="7" class="pitch-dot opp"/>
+          <text x="359" y="213" text-anchor="middle" dominant-baseline="central" class="pitch-num">CI</text>
+
+          <!-- diagonal run: left interior into zone 16, outside of Torres -->
+          <path d="M 280 75 C 305 55, 330 38, 350 26" class="pitch-run"/>
         </svg>
       </div>
     </div>
