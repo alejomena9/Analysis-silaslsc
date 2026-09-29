@@ -6,21 +6,120 @@
 <title>August 8 — Silas Vance</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* Silas Vance — Pre-Match · paleta del proyecto. Todo namespaced bajo #pm-2026-08-08-phoenix */
+#pm-2026-08-08-phoenix{
+  --green:#3DDC5A; --black:#111111; --bone:#F5F1E9;
+  --bg:#0B0F0C; --panel:#131A14; --line:rgba(245,241,233,.12); --muted:rgba(245,241,233,.62);
+  --display:'Oswald',sans-serif; --body:'Inter',sans-serif; --mono:'IBM Plex Mono',monospace;
+  background:var(--bg); color:var(--bone); font-family:var(--body); font-size:17px; line-height:1.65;
+  min-height:100vh; margin:0; -webkit-font-smoothing:antialiased;
+}
+#pm-2026-08-08-phoenix *{box-sizing:border-box;}
+#pm-2026-08-08-phoenix a{color:inherit;text-decoration:none;}
+#pm-2026-08-08-phoenix .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+#pm-2026-08-08-phoenix .display{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;}
+#pm-2026-08-08-phoenix .mono{font-family:var(--mono);}
+#pm-2026-08-08-phoenix .label{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:10px;}
+
+/* Nav */
+#pm-2026-08-08-phoenix .site-nav{position:sticky;top:0;z-index:20;background:rgba(11,15,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+#pm-2026-08-08-phoenix .nav-inner{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+#pm-2026-08-08-phoenix .brand{display:flex;align-items:center;gap:12px;}
+#pm-2026-08-08-phoenix .brand-mark{width:30px;height:30px;flex:none;}
+#pm-2026-08-08-phoenix .brand-text .display{font-size:1.15rem;line-height:1;}
+#pm-2026-08-08-phoenix .tagline{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-08-08-phoenix .tabs{display:flex;gap:22px;}
+#pm-2026-08-08-phoenix .tabs a{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
+#pm-2026-08-08-phoenix .tabs a:hover{color:var(--green);}
+#pm-2026-08-08-phoenix .nav-toggle{display:none;background:none;border:1px solid var(--line);color:var(--bone);font-size:1.1rem;padding:4px 10px;cursor:pointer;}
+
+/* Hero */
+#pm-2026-08-08-phoenix .detail-hero{padding:56px 0 40px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(61,220,90,.07),transparent 70%);}
+#pm-2026-08-08-phoenix .back-link{display:inline-block;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--muted);margin-bottom:26px;}
+#pm-2026-08-08-phoenix .back-link:hover{color:var(--green);}
+#pm-2026-08-08-phoenix .detail-kicker{display:block;font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);}
+#pm-2026-08-08-phoenix .detail-hero h1{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(3rem,10vw,5.6rem);line-height:.95;margin:10px 0 22px;letter-spacing:.01em;}
+#pm-2026-08-08-phoenix .detail-meta{display:flex;flex-wrap:wrap;gap:10px;}
+#pm-2026-08-08-phoenix .badge{display:inline-block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--green);color:var(--green);border-radius:2px;}
+
+/* Body */
+#pm-2026-08-08-phoenix .detail-body{padding:44px 0 60px;}
+#pm-2026-08-08-phoenix .summary-card{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--green);padding:22px 24px;margin-bottom:40px;}
+#pm-2026-08-08-phoenix .summary-card p{margin:0;font-size:1.12rem;font-weight:500;}
+#pm-2026-08-08-phoenix .detail-article .block{padding:0 0 30px;margin-bottom:30px;border-bottom:1px solid var(--line);counter-increment:blk;}
+#pm-2026-08-08-phoenix .detail-article{counter-reset:blk;}
+#pm-2026-08-08-phoenix .detail-article h3{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.03em;font-size:1.55rem;margin:0 0 14px;line-height:1.15;}
+#pm-2026-08-08-phoenix .detail-article h3::before{content:counter(blk,decimal-leading-zero);display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;color:var(--green);margin-bottom:6px;}
+#pm-2026-08-08-phoenix .detail-article p{margin:0 0 14px;color:rgba(245,241,233,.88);}
+#pm-2026-08-08-phoenix .detail-conclusion{background:var(--green);color:var(--black);padding:26px 26px;margin:10px 0 44px;}
+#pm-2026-08-08-phoenix .detail-conclusion .label{color:var(--black);opacity:.75;}
+#pm-2026-08-08-phoenix .detail-conclusion p{margin:0;font-size:1.1rem;font-weight:600;line-height:1.55;}
+
+/* Video */
+#pm-2026-08-08-phoenix .video-section{margin-bottom:44px;}
+#pm-2026-08-08-phoenix .video-links{display:grid;gap:10px;}
+#pm-2026-08-08-phoenix .video-link-slot{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);padding:16px 18px;font-weight:500;transition:border-color .2s,color .2s;}
+#pm-2026-08-08-phoenix a.video-link-slot:hover{border-color:var(--green);color:var(--green);}
+#pm-2026-08-08-phoenix .platform{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);background:var(--bone);padding:4px 8px;min-width:88px;text-align:center;}
+
+#pm-2026-08-08-phoenix .detail-nav-links{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;}
+#pm-2026-08-08-phoenix .detail-nav-links a:hover{color:var(--green);}
+#pm-2026-08-08-phoenix footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--muted);}
+
+/* Figures */
+#pm-2026-08-08-phoenix .figure{background:var(--panel);border:1px solid var(--line);padding:16px 16px 12px;margin:22px 0 6px;}
+#pm-2026-08-08-phoenix .figure svg{display:block;width:100%;height:auto;}
+#pm-2026-08-08-phoenix .fig-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;}
+#pm-2026-08-08-phoenix .fig-title{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);}
+#pm-2026-08-08-phoenix .fig-dir{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+#pm-2026-08-08-phoenix .figcaption{font-size:.86rem;color:var(--muted);margin:10px 0 0;line-height:1.5;}
+#pm-2026-08-08-phoenix .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-08-08-phoenix .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;}
+#pm-2026-08-08-phoenix .figure .draw{stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1.3s ease .25s;}
+#pm-2026-08-08-phoenix .figure .fade{opacity:0;transition:opacity .8s ease .9s;}
+#pm-2026-08-08-phoenix .figure.in .draw{stroke-dashoffset:0;}
+#pm-2026-08-08-phoenix .figure.in .fade{opacity:1;}
+#pm-2026-08-08-phoenix .figure .grow{transform:scaleY(0);transform-box:fill-box;transform-origin:bottom;transition:transform .9s ease;}
+#pm-2026-08-08-phoenix .figure.in .grow{transform:scaleY(1);}
+@media (prefers-reduced-motion:reduce){#pm-2026-08-08-phoenix .figure .draw{stroke-dashoffset:0;transition:none}#pm-2026-08-08-phoenix .figure .fade{opacity:1;transition:none}#pm-2026-08-08-phoenix .figure .grow{transform:none;transition:none}}
+
+/* Phase grid */
+#pm-2026-08-08-phoenix .phase-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:-30px 0 44px;}
+#pm-2026-08-08-phoenix .phase{background:var(--panel);border:1px solid var(--line);padding:16px 18px;}
+#pm-2026-08-08-phoenix .phase.alert{border-color:var(--bone);background:repeating-linear-gradient(45deg,rgba(245,241,233,.05) 0 6px,transparent 6px 12px),var(--panel);}
+#pm-2026-08-08-phoenix .phase-n{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--green);}
+#pm-2026-08-08-phoenix .phase h4{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-size:1.05rem;margin:4px 0 6px;}
+#pm-2026-08-08-phoenix .phase p{margin:0;font-size:.9rem;color:rgba(245,241,233,.8);line-height:1.5;}
+
+@media (max-width:760px){
+  #pm-2026-08-08-phoenix .phase-grid{grid-template-columns:1fr;}
+  #pm-2026-08-08-phoenix .nav-toggle{display:block;}
+  #pm-2026-08-08-phoenix .tabs{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);}
+  #pm-2026-08-08-phoenix .tabs.open{display:flex;}
+  #pm-2026-08-08-phoenix .tabs a{padding:14px 20px;border-top:1px solid var(--line);}
+  #pm-2026-08-08-phoenix .detail-hero{padding:36px 0 30px;}
+  #pm-2026-08-08-phoenix .detail-conclusion,#pm-2026-08-08-phoenix .summary-card{padding:20px;}
+  #pm-2026-08-08-phoenix .figure{margin-left:-20px !important;margin-right:-20px !important;padding:14px 8px 12px;border-left:0;border-right:0;}
+  #pm-2026-08-08-phoenix .fig-head,#pm-2026-08-08-phoenix .legend,#pm-2026-08-08-phoenix .figcaption{padding:0 12px;}
+}
+</style>
 </head>
-<body>
+<body id="pm-2026-08-08-phoenix" style="margin:0;">
 
 <header class="site-nav">
   <div class="nav-inner">
     <a class="brand" href="../index.html">
       <svg class="brand-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="1" width="26" height="26" rx="2" stroke="#3D9B54" stroke-width="1.4"/>
-        <line x1="1" y1="14" x2="27" y2="14" stroke="#3D9B54" stroke-width="1.2"/>
-        <circle cx="14" cy="14" r="4.2" stroke="#3D9B54" stroke-width="1.2"/>
-        <circle cx="14" cy="6" r="1.6" fill="#E8B23D"/>
-        <circle cx="8" cy="9" r="1.6" fill="#E8B23D"/>
-        <circle cx="20" cy="9" r="1.6" fill="#E8B23D"/>
+        <rect x="1" y="1" width="26" height="26" rx="2" stroke="#3DDC5A" stroke-width="1.4"/>
+        <line x1="1" y1="14" x2="27" y2="14" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="14" r="4.2" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="6" r="1.6" fill="#F5F1E9"/>
+        <circle cx="8" cy="9" r="1.6" fill="#F5F1E9"/>
+        <circle cx="20" cy="9" r="1.6" fill="#F5F1E9"/>
       </svg>
       <span class="brand-text">
         <span class="display" style="display:block;">SILAS VANCE</span>
@@ -59,20 +158,147 @@
     </div>
 
     <article class="detail-article">
-      <div class="block"><h3>One Of The League's Best In Possession</h3><p>Phoenix Rising arrive in Lexington as one of the best possession teams in the league, and it isn't an accident — they exit cleanly from the back, avoid careless mistakes, and circulate the ball through all three thirds of the pitch with a comfort that unsettles most opponents. Tactically they set up in a 4-2-3-1, but in the possession phase that shape shifts into a 3-2-2-3, looking for numerical superiority in the build-up and occupying passing lanes intelligently.</p></div><div class="block"><h3>Two Proven Ways They've Been Beaten</h3><p>Looking at how Phoenix has actually lost this season, two clear paths stand out. The first is to actively take the ball away from them rather than simply contesting it — that's exactly what Colorado Springs did in Phoenix's most recent defeat. The difference wasn't playing better with the ball; it was physically taking it off them. Phoenix are deeply uncomfortable without possession, and that discomfort is exploitable with sustained, aggressive pressure.</p><p>The second path is the one Louisville used: beating them in fast transition, scoring in as little as three or four passes. This route is riskier, since there's no way to know exactly when that transition opportunity will appear during the match, but it's a proven method all the same.</p></div><div class="block"><h3>A Point Of Self-Criticism</h3><p>This is also where Lexington needs to be honest with itself. Against Monterrey, both of the opponent's goals came from exactly this kind of poorly closed transition from attack to defense. Phoenix move in synchronized blocks and flood the box very quickly the moment they win the ball back — if Lexington repeats that same vulnerability, the match can get complicated in waves, regardless of which path is chosen to attack them.</p></div><div class="block"><h3>The Tools Already Exist</h3><p>The good news is that Lexington already has the right personnel for both paths. Ferri and Molloy's passing range is ideal for balls in behind, exploiting the disorder Phoenix shows right after losing possession. Greene, Epps and Zengue bring the flank speed needed to run into that space before Phoenix can reorganize. And Braudilio and Goodrum are two players who consistently find pockets inside the opposing box exactly at the moment of transition.</p></div>
+      <div class="block"><h3>One Of The League's Best In Possession</h3><p>Phoenix Rising arrive in Lexington as one of the best possession teams in the league, and it isn't an accident — they exit cleanly from the back, avoid careless mistakes, and circulate the ball through all three thirds of the pitch with a comfort that unsettles most opponents. Tactically they set up in a 4-2-3-1, but in the possession phase that shape shifts into a 3-2-2-3, looking for numerical superiority in the build-up and occupying passing lanes intelligently.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">In possession · 4-2-3-1 → 3-2-2-3</span><span class="fig-dir">PHX attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="In possession · 4-2-3-1 → 3-2-2-3" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="p1ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="p1ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="p1hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><line class="fade" x1="70" y1="68" x2="62" y2="120" stroke="#F5F1E9" stroke-opacity=".28" stroke-width="1"/><line class="fade" x1="62" y1="120" x2="70" y2="172" stroke="#F5F1E9" stroke-opacity=".28" stroke-width="1"/><line class="fade" x1="70" y1="68" x2="122" y2="96" stroke="#F5F1E9" stroke-opacity=".28" stroke-width="1"/><line class="fade" x1="62" y1="120" x2="122" y2="96" stroke="#F5F1E9" stroke-opacity=".28" stroke-width="1"/><line class="fade" x1="62" y1="120" x2="122" y2="144" stroke="#F5F1E9" stroke-opacity=".28" stroke-width="1"/><line class="fade" x1="70" y1="172" x2="122" y2="144" stroke="#F5F1E9" stroke-opacity=".28" stroke-width="1"/><line class="fade" x1="122" y1="96" x2="122" y2="144" stroke="#F5F1E9" stroke-opacity=".28" stroke-width="1"/><line class="fade" x1="122" y1="96" x2="186" y2="88" stroke="#F5F1E9" stroke-opacity=".28" stroke-width="1"/><line class="fade" x1="122" y1="144" x2="186" y2="152" stroke="#F5F1E9" stroke-opacity=".28" stroke-width="1"/><line class="fade" x1="186" y1="88" x2="186" y2="152" stroke="#F5F1E9" stroke-opacity=".28" stroke-width="1"/><line class="fade" x1="186" y1="88" x2="262" y2="34" stroke="#F5F1E9" stroke-opacity=".28" stroke-width="1"/><line class="fade" x1="186" y1="88" x2="270" y2="120" stroke="#F5F1E9" stroke-opacity=".28" stroke-width="1"/><line class="fade" x1="186" y1="152" x2="270" y2="120" stroke="#F5F1E9" stroke-opacity=".28" stroke-width="1"/><line class="fade" x1="186" y1="152" x2="262" y2="206" stroke="#F5F1E9" stroke-opacity=".28" stroke-width="1"/><line class="fade" x1="122" y1="96" x2="262" y2="34" stroke="#F5F1E9" stroke-opacity=".28" stroke-width="1"/><line class="fade" x1="122" y1="144" x2="262" y2="206" stroke="#F5F1E9" stroke-opacity=".28" stroke-width="1"/><circle cx="112" cy="72" r="7" fill="#3DDC5A"/><circle cx="112" cy="168" r="7" fill="#3DDC5A"/><rect class="fade" x="40" y="46" width="42" height="148" rx="4" fill="none" stroke="#3DDC5A" stroke-width="1.2" stroke-dasharray="3 3"/><text x="61" y="40" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#3DDC5A">3 V 2</text><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="70" cy="68" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="62" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="70" cy="172" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="122" cy="96" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="122" cy="144" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="186" cy="88" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="186" cy="152" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="262" cy="34" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="270" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="262" cy="206" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="76" cy="64" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><text x="66" y="232" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".6" fill="rgba(245,241,233,.55)">3</text><text x="122" y="232" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".6" fill="rgba(245,241,233,.55)">2</text><text x="186" y="232" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".6" fill="rgba(245,241,233,.55)">2</text><text x="266" y="232" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".6" fill="rgba(245,241,233,.55)">3</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Phoenix</span><span><i style="background:#3DDC5A"></i>Lexington</span></div>
+<p class="figcaption">With the ball Phoenix build with three at the back and a double pivot: an extra player against a two-man first line, and every passing lane occupied through all three thirds.</p>
+</figure></div><div class="block"><h3>Two Proven Ways They've Been Beaten</h3><p>Looking at how Phoenix has actually lost this season, two clear paths stand out. The first is to actively take the ball away from them rather than simply contesting it — that's exactly what Colorado Springs did in Phoenix's most recent defeat. The difference wasn't playing better with the ball; it was physically taking it off them. Phoenix are deeply uncomfortable without possession, and that discomfort is exploitable with sustained, aggressive pressure.</p><p>The second path is the one Louisville used: beating them in fast transition, scoring in as little as three or four passes. This route is riskier, since there's no way to know exactly when that transition opportunity will appear during the match, but it's a proven method all the same.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Two ways Phoenix have lost</span><span class="fig-dir">← LSC attack</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="Two ways Phoenix have lost" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="p2ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="p2ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="p2hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><ellipse class="fade" cx="72" cy="96" rx="44" ry="40" fill="rgba(61,220,90,.14)" stroke="#3DDC5A" stroke-width="1" stroke-dasharray="3 3"/><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="66" cy="70" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="60" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="70" cy="170" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="118" cy="100" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="72" cy="66" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><circle cx="108" cy="50" r="7" fill="#3DDC5A"/><circle cx="106" cy="76" r="7" fill="#3DDC5A"/><circle cx="40" cy="50" r="7" fill="#3DDC5A"/><path class="draw" d="M102 54 L78 64" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#p2ah-g)"/><path class="draw" d="M100 78 L80 70" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#p2ah-g)"/><path class="draw" d="M44 56 L60 66" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#p2ah-g)"/><text x="72" y="18" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#3DDC5A">A · WIN IT HIGH</text><text x="72" y="28" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.6)">COLORADO SPRINGS</text><circle cx="300" cy="150" r="7" fill="#3DDC5A"/><circle cx="292" cy="150" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><path class="draw" d="M292 146 L226 196" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#p2ah-b)"/><circle cx="222" cy="202" r="7" fill="#3DDC5A"/><circle cx="168" cy="150" r="7" fill="#3DDC5A"/><path class="draw" d="M216 200 L174 156" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#p2ah-b)"/><path class="draw" d="M162 150 L112 152" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#p2ah-b)"/><circle cx="104" cy="152" r="7" fill="#3DDC5A"/><path class="fade" d="M97 149 L20 124" fill="none" stroke="#3DDC5A" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#p2ah-g)"/><text x="250" y="128" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#3DDC5A">B · 3–4 PASSES</text><text x="250" y="138" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.6)">LOUISVILLE</text><text x="300" y="172" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">WIN IT</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Phoenix</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:#F5F1E9;width:7px;height:7px"></i>Ball</span></div>
+<p class="figcaption">A: aggressive pressure that physically takes the ball off their back line (Colorado Springs). B: win it anywhere and score in three or four passes before they reset (Louisville).</p>
+</figure></div><div class="block"><h3>A Point Of Self-Criticism</h3><p>This is also where Lexington needs to be honest with itself. Against Monterrey, both of the opponent's goals came from exactly this kind of poorly closed transition from attack to defense. Phoenix move in synchronized blocks and flood the box very quickly the moment they win the ball back — if Lexington repeats that same vulnerability, the match can get complicated in waves, regardless of which path is chosen to attack them.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">The Monterrey problem</span><span class="fig-dir">PHX attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="The Monterrey problem" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="p3ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="p3ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="p3hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><rect x="286" y="60" width="48" height="120" fill="url(#p3hatch)" stroke="#F5F1E9" stroke-opacity=".45" stroke-dasharray="3 3"/><circle cx="96" cy="60" r="7" fill="#3DDC5A"/><circle cx="82" cy="118" r="7" fill="#3DDC5A"/><circle cx="110" cy="176" r="7" fill="#3DDC5A"/><circle cx="150" cy="96" r="7" fill="#3DDC5A"/><circle cx="156" cy="146" r="7" fill="#3DDC5A"/><circle cx="196" cy="40" r="7" fill="#3DDC5A"/><circle cx="330" cy="96" r="7" fill="#3DDC5A"/><circle cx="330" cy="146" r="7" fill="#3DDC5A"/><circle cx="388" cy="120" r="6.5" fill="#3DDC5A"/><circle cx="112" cy="124" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><text x="112" y="108" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">BALL LOST</text><circle cx="126" cy="60" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="122" cy="124" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="130" cy="188" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="168" cy="90" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="170" cy="160" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><path class="draw" d="M134 60 L300 70" fill="none" stroke="#F5F1E9" stroke-width="1.5" marker-end="url(#p3ah-b)"/><path class="draw" d="M130 124 L312 120" fill="none" stroke="#F5F1E9" stroke-width="1.5" marker-end="url(#p3ah-b)"/><path class="draw" d="M138 188 L300 172" fill="none" stroke="#F5F1E9" stroke-width="1.5" marker-end="url(#p3ah-b)"/><path class="draw" d="M176 90 L292 100" fill="none" stroke="#F5F1E9" stroke-width="1.5" marker-end="url(#p3ah-b)"/><path class="draw" d="M178 160 L292 146" fill="none" stroke="#F5F1E9" stroke-width="1.5" marker-end="url(#p3ah-b)"/><text x="310" y="196" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">ONLY 2 BACK</text><text x="262" y="22" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">BOX FLOODED IN WAVES</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Phoenix</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:repeating-linear-gradient(45deg,rgba(245,241,233,.45) 0 2px,transparent 2px 5px);border-radius:0"></i>Danger zone</span></div>
+<p class="figcaption">Both Monterrey goals came from this: Lexington lose it with bodies committed forward, and Phoenix break in synchronized lines that fill the box before the rest-defense can close.</p>
+</figure></div><div class="block"><h3>The Tools Already Exist</h3><p>The good news is that Lexington already has the right personnel for both paths. Ferri and Molloy's passing range is ideal for balls in behind, exploiting the disorder Phoenix shows right after losing possession. Greene, Epps and Zengue bring the flank speed needed to run into that space before Phoenix can reorganize. And Braudilio and Goodrum are two players who consistently find pockets inside the opposing box exactly at the moment of transition.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Built for both paths</span><span class="fig-dir">← LSC attack</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="Built for both paths" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="p4ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="p4ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="p4hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="74" cy="78" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="58" cy="150" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="104" cy="118" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="140" cy="60" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="150" cy="176" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="190" cy="118" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="228" cy="104" r="7" fill="#3DDC5A"/><circle cx="230" cy="146" r="7" fill="#3DDC5A"/><text x="242" y="128" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">FERRI · MOLLOY</text><path class="draw" d="M222 100 Q150 30 60 30" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#p4ah-g)"/><path class="draw" d="M224 150 Q150 210 60 210" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#p4ah-g)"/><circle cx="170" cy="22" r="7" fill="#3DDC5A"/><circle cx="172" cy="218" r="7" fill="#3DDC5A"/><path class="fade" d="M162 22 L70 22" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#p4ah-b)"/><path class="fade" d="M164 218 L70 218" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#p4ah-b)"/><text x="170" y="44" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">WIDE RUNNER</text><text x="172" y="204" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">WIDE RUNNER</text><ellipse class="fade" cx="38" cy="100" rx="14" ry="12" fill="rgba(61,220,90,.30)" stroke="#3DDC5A" stroke-dasharray="2 2"/><ellipse class="fade" cx="36" cy="140" rx="14" ry="12" fill="rgba(61,220,90,.30)" stroke="#3DDC5A" stroke-dasharray="2 2"/><circle cx="92" cy="102" r="7" fill="#3DDC5A"/><circle cx="94" cy="136" r="7" fill="#3DDC5A"/><path class="draw" d="M86 102 L48 100" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#p4ah-g)"/><path class="draw" d="M88 136 L46 140" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#p4ah-g)"/><text x="92" y="166" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">POCKETS IN THE BOX</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Phoenix</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:rgba(61,220,90,.35);border-radius:0"></i>Space to attack</span></div>
+<p class="figcaption">Ferri and Molloy's range finds the space behind a disorganized back line; Greene, Epps and Zengue attack it from the flanks; Braudilio and Goodrum arrive in the pockets inside the box.</p>
+</figure></div>
     </article>
 
-    <div class="detail-conclusion"><span class="label">Game Plan By Phase</span><p>In possession: hold the ball, look for long attacking sequences, and isolate Epps for a 1v1. In the defense-to-attack transition: speed is everything — respond fast and finish clinically. In the defensive phase: sit in a compact mid-block that forces Phoenix to build down their weaker left side. And in the attack-to-defense transition — the moment that hurt Lexington most against Monterrey — the instruction is clear: delay Phoenix's counter as much as possible, using home-field tactical fouls when necessary. Two paths, one safer and one riskier but potentially decisive — the plan is to keep both live depending on how the match unfolds.</p></div>
+    <div class="detail-conclusion"><span class="label">Game Plan By Phase</span><p>In possession: hold the ball, look for long attacking sequences, and isolate Epps for a 1v1. In the defense-to-attack transition: speed is everything — respond fast and finish clinically. In the defensive phase: sit in a compact mid-block that forces Phoenix to build down their weaker left side. And in the attack-to-defense transition — the moment that hurt Lexington most against Monterrey — the instruction is clear: delay Phoenix's counter as much as possible, using home-field tactical fouls when necessary. Two paths, one safer and one riskier but potentially decisive — the plan is to keep both live depending on how the match unfolds.</p></div><div class="phase-grid">
+<div class="phase"><span class="phase-n">01</span><h4>In possession</h4><p>Keep the ball, build long sequences, isolate Epps 1v1.</p></div>
+<div class="phase"><span class="phase-n">02</span><h4>Defense → attack</h4><p>Speed is everything: react fast, finish clinically.</p></div>
+<div class="phase"><span class="phase-n">03</span><h4>Defensive phase</h4><p>Compact mid-block that forces Phoenix down their weaker left.</p></div>
+<div class="phase alert"><span class="phase-n">04</span><h4>Attack → defense</h4><p>Delay the counter at all costs, tactical fouls if needed. This is what hurt vs Monterrey.</p></div>
+</div><figure class="figure" id="fig-steer" style="margin:0 0 44px;">
+<div class="fig-head"><span class="fig-title">Out of possession · the steer</span><span class="fig-dir">PHX attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="Out of possession · the steer" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="p5ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="p5ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="p5hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><rect class="fade" x="176" y="52" width="122" height="170" rx="4" fill="rgba(61,220,90,.07)" stroke="#3DDC5A" stroke-opacity=".6" stroke-dasharray="3 3"/><circle cx="290" cy="74" r="7" fill="#3DDC5A"/><circle cx="290" cy="118" r="7" fill="#3DDC5A"/><circle cx="290" cy="160" r="7" fill="#3DDC5A"/><circle cx="290" cy="202" r="7" fill="#3DDC5A"/><circle cx="238" cy="66" r="7" fill="#3DDC5A"/><circle cx="238" cy="108" r="7" fill="#3DDC5A"/><circle cx="238" cy="150" r="7" fill="#3DDC5A"/><circle cx="238" cy="192" r="7" fill="#3DDC5A"/><circle cx="186" cy="104" r="7" fill="#3DDC5A"/><circle cx="190" cy="156" r="7" fill="#3DDC5A"/><circle cx="388" cy="120" r="6.5" fill="#3DDC5A"/><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="70" cy="68" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="62" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="70" cy="172" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="122" cy="96" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="122" cy="144" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="66" cy="124" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><path class="fade" d="M180 110 Q140 128 80 170" fill="none" stroke="#3DDC5A" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#p5ah-g)"/><path class="draw" d="M70 116 Q60 90 70 76" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#p5ah-b)"/><path class="draw" d="M76 62 Q120 26 190 26" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#p5ah-b)"/><text x="142" y="18" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">FORCED TO THEIR WEAKER LEFT</text><text x="237" y="236" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#3DDC5A">COMPACT MID-BLOCK</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Phoenix</span><span><i style="background:#3DDC5A"></i>Lexington</span></div>
+<p class="figcaption">Lexington's mid-block stays compact and the press angles in from the inside, screening their right-sided build-up and steering circulation toward Phoenix's weaker left flank.</p>
+</figure>
 
     <div class="video-section">
       <span class="label">Watch The Breakdown</span>
       <div class="video-links">
-        <div class="video-link-slot"><span class="platform">Instagram</span> [ Paste the Reel link here ]</div>
-        <div class="video-link-slot"><span class="platform">TikTok</span> [ Paste the TikTok link here ]</div>
+        <!-- VIDEO: reemplaza PEGAR_ENLACE_VIDEO por el enlace del video -->
+        <a class="video-link-slot" href="PEGAR_ENLACE_VIDEO" target="_blank" rel="noopener"><span class="platform">Video</span> Watch the full breakdown →</a>
+        <!-- INSTAGRAM: reemplaza PEGAR_ENLACE_INSTAGRAM -->
+        <a class="video-link-slot" href="PEGAR_ENLACE_INSTAGRAM" target="_blank" rel="noopener"><span class="platform">Instagram</span> Watch the Reel →</a>
+        <!-- TIKTOK: reemplaza PEGAR_ENLACE_TIKTOK -->
+        <a class="video-link-slot" href="PEGAR_ENLACE_TIKTOK" target="_blank" rel="noopener"><span class="platform">TikTok</span> Watch on TikTok →</a>
       </div>
     </div>
-
-  </div>
 
     <div class="detail-nav-links">
       <a href="../index.html#pre-match">← All Pre-Match</a>
@@ -88,6 +314,11 @@
   const toggle = document.getElementById('navToggle');
   const tabs = document.getElementById('tabs');
   toggle.addEventListener('click', () => tabs.classList.toggle('open'));
+  const figs = document.querySelectorAll('.figure');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .35});
+    figs.forEach(f => io.observe(f));
+  } else { figs.forEach(f => f.classList.add('in')); }
 </script>
 </body>
 </html>
