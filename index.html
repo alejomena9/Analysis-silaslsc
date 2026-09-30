@@ -117,17 +117,90 @@ html{scroll-behavior:smooth;scroll-padding-top:64px;}
 #home-silas-vance .contact-list .arrow{color:var(--green);}
 #home-silas-vance footer{padding:26px 20px;text-align:center;font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--muted);}
 
+
+/* Language switch */
+#home-silas-vance .nav-right{display:flex;align-items:center;gap:10px;}
+#home-silas-vance .lang-switch{display:flex;border:1px solid var(--line);}
+#home-silas-vance .lang-switch button{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;background:transparent;color:var(--muted);border:0;padding:6px 10px;cursor:pointer;transition:color .2s,background .2s;}
+#home-silas-vance .lang-switch button+button{border-left:1px solid var(--line);}
+#home-silas-vance .lang-switch button:hover{color:var(--bone);}
+#home-silas-vance .lang-switch button[aria-pressed="true"]{background:var(--green);color:var(--black);font-weight:600;}
+
+/* Prediction vs. Result */
+#home-silas-vance .tr-summary{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--panel);border:1px solid var(--line);padding:22px 24px;margin-bottom:12px;}
+#home-silas-vance .tr-big b{display:block;font-size:3.4rem;line-height:1;color:var(--green);font-weight:600;}
+#home-silas-vance .tr-big small{font-size:1.4rem;color:var(--muted);}
+#home-silas-vance .tr-big span{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+#home-silas-vance .tr-bar{display:block;width:100%;height:auto;}
+#home-silas-vance .tr-bar .tr-seg{transform-box:fill-box;transform-origin:left;transform:scaleX(0);transition:transform 1s ease .2s;}
+#home-silas-vance .tr-summary.in .tr-seg{transform:scaleX(1);}
+#home-silas-vance .tr-legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:12px;font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#home-silas-vance .tr-legend i{display:inline-block;width:11px;height:11px;margin-right:6px;vertical-align:-1px;}
+#home-silas-vance .k-held{background:var(--green);}
+#home-silas-vance .k-partly{background:repeating-linear-gradient(45deg,var(--green) 0 2px,rgba(61,220,90,.2) 2px 5px);}
+#home-silas-vance .k-missed{background:var(--black);box-shadow:inset 0 0 0 1px var(--bone);}
+#home-silas-vance .k-na{background:rgba(245,241,233,.14);}
+#home-silas-vance .tr-strip-card{background:var(--panel);border:1px solid var(--line);padding:14px 18px 10px;margin-bottom:12px;}
+#home-silas-vance .tr-strip-head{display:flex;justify-content:space-between;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+#home-silas-vance .tr-strip-scroll{overflow-x:auto;}
+#home-silas-vance .tr-strip{display:block;width:100%;min-width:620px;height:auto;}
+#home-silas-vance .tr-dot{opacity:0;transition:opacity .4s ease var(--d);}
+#home-silas-vance .tr-strip-card.in .tr-dot{opacity:1;}
+#home-silas-vance .tr-callout{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--green);padding:14px 18px;margin-bottom:28px;}
+#home-silas-vance .tr-callout p{margin:0;font-size:.95rem;color:rgba(245,241,233,.88);}
+#home-silas-vance .tr-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+#home-silas-vance .tr-f{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;background:transparent;color:var(--muted);border:1px solid var(--line);padding:7px 12px;cursor:pointer;transition:all .2s;}
+#home-silas-vance .tr-f:hover{color:var(--bone);border-color:var(--bone);}
+#home-silas-vance .tr-f.active{background:var(--green);border-color:var(--green);color:var(--black);font-weight:600;}
+#home-silas-vance .tr-list{display:grid;gap:8px;}
+#home-silas-vance .tr-row{display:grid;grid-template-columns:170px 1fr 1.25fr 130px;gap:18px;align-items:start;background:var(--panel);border:1px solid var(--line);padding:16px 18px;}
+#home-silas-vance .tr-row[hidden]{display:none;}
+#home-silas-vance .tr-row[data-v="held"]{border-left:3px solid var(--green);}
+#home-silas-vance .tr-row[data-v="partly"]{border-left:3px dashed var(--green);}
+#home-silas-vance .tr-row[data-v="missed"]{border-left:3px solid var(--bone);}
+#home-silas-vance .tr-row[data-v="na"],#home-silas-vance .tr-row[data-v="pending"]{border-left:3px dotted rgba(245,241,233,.35);}
+#home-silas-vance .tr-date{display:block;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green);}
+#home-silas-vance .tr-opp{font-size:1.1rem;margin:2px 0 6px;line-height:1.15;}
+#home-silas-vance .tr-comp{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:-2px 0 6px;}
+#home-silas-vance .badge-draw{border-color:var(--bone);color:var(--bone);}
+#home-silas-vance .tr-read,#home-silas-vance .tr-what{font-size:.86rem;line-height:1.5;color:rgba(245,241,233,.84);}
+#home-silas-vance .tr-read .label{color:var(--muted);}
+#home-silas-vance .tr-verdict{display:flex;flex-direction:column;gap:10px;align-items:flex-start;}
+#home-silas-vance .tr-chip{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border:1px solid var(--green);white-space:nowrap;}
+#home-silas-vance .v-held{background:var(--green);color:var(--black);font-weight:600;}
+#home-silas-vance .v-partly{color:var(--green);background:var(--black);border-style:dashed;font-weight:600;}
+#home-silas-vance .v-missed{background:var(--black);color:var(--bone);border-color:var(--bone);font-weight:600;}
+#home-silas-vance .v-na,#home-silas-vance .v-pending{color:var(--muted);border-color:var(--line);border-style:dashed;}
+#home-silas-vance .tr-link{font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green);}
+#home-silas-vance .tr-link:hover{color:var(--bone);}
+#home-silas-vance .tr-note{font-size:.62rem;letter-spacing:.08em;color:var(--muted);margin:14px 0 0;}
+@media (prefers-reduced-motion:reduce){#home-silas-vance .tr-bar .tr-seg{transform:none;transition:none}#home-silas-vance .tr-dot{opacity:1;transition:none}}
+@media (max-width:900px){
+  #home-silas-vance .tr-row{grid-template-columns:1fr 1fr;}
+  #home-silas-vance .tr-meta{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;}
+  #home-silas-vance .tr-opp{margin:0;}
+  #home-silas-vance .tr-comp{margin:0;}
+  #home-silas-vance .tr-verdict{grid-column:1/-1;flex-direction:row;justify-content:space-between;align-items:center;}
+}
+@media (max-width:600px){
+  #home-silas-vance .tr-summary{grid-template-columns:1fr;gap:16px;}
+  #home-silas-vance .tr-row{grid-template-columns:1fr;gap:10px;}
+  #home-silas-vance .tr-strip-head span:last-child{display:none;}
+}
+
 @media (max-width:900px){
   #home-silas-vance .hero-grid,#home-silas-vance .about-grid,#home-silas-vance .contact-grid{grid-template-columns:1fr;}
   #home-silas-vance .about-photo{max-width:320px;}
   #home-silas-vance .card-grid{grid-template-columns:1fr;}
 }
-@media (max-width:760px){
-  #home-silas-vance{font-size:16px;}
+@media (max-width:1060px){
   #home-silas-vance .nav-toggle{display:block;}
   #home-silas-vance .tabs{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);}
   #home-silas-vance .tabs.open{display:flex;}
   #home-silas-vance .tabs a{padding:14px 20px;border-top:1px solid var(--line);}
+}
+@media (max-width:760px){
+  #home-silas-vance{font-size:16px;}
   #home-silas-vance section{padding:60px 0;}
   #home-silas-vance .hero{padding:48px 0 50px;}
   #home-silas-vance .section-head{flex-direction:column;align-items:flex-start;}
@@ -154,36 +227,42 @@ html{scroll-behavior:smooth;scroll-padding-top:64px;}
       </svg>
       <span class="brand-text">
         <span class="display" style="display:block;">SILAS VANCE</span>
-        <span class="tagline">Tactical Analysis</span>
+        <span class="tagline" data-i18n="kx1">Tactical Analysis</span>
       </span>
     </a>
     <nav class="tabs" id="tabs">
-      <a href="#individual">Player Focus</a>
-      <a href="#team-tactics">Team Tactics</a>
-      <a href="#pre-match">Pre-Match</a>
-      <a href="#post-match">Post-Match</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a data-i18n="k0" href="#individual">Player Focus</a>
+      <a data-i18n="k1" href="#team-tactics">Team Tactics</a>
+      <a data-i18n="k2" href="#pre-match">Pre-Match</a>
+      <a data-i18n="k3" href="#post-match">Post-Match</a>
+      <a data-i18n="k4" href="#track-record">Track Record</a>
+      <a data-i18n="k5" href="#about">About</a>
+      <a data-i18n="k6" href="#contact">Contact</a>
     </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language / Idioma">
+        <button type="button" data-set-lang="en" aria-pressed="true">EN</button><button type="button" data-set-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    </div>
   </div>
 </header>
 
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Match Analysis · Lexington SC &amp; Beyond</span>
-      <h1>Reading the game<br>before it <span class="accent">happens.</span></h1>
-      <p class="lede">Tactical breakdowns built the way a coaching staff thinks: systems, key matchups, and the moments that decide a match — before and after kickoff.</p>
+      <span data-i18n="k7" class="eyebrow">Match Analysis · Lexington SC &amp; Beyond</span>
+      <h1 data-i18n="k10">Reading the game<br>before it <span class="accent">happens.</span></h1>
+      <p data-i18n="k11" class="lede">Tactical breakdowns built the way a coaching staff thinks: systems, key matchups, and the moments that decide a match — before and after kickoff.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#post-match">See the analyses</a>
-        <a class="btn btn-ghost" href="#about">Who I am</a>
+        <a data-i18n="k12" class="btn btn-primary" href="#post-match">See the analyses</a>
+        <a data-i18n="k13" class="btn btn-ghost" href="#about">Who I am</a>
       </div>
       <div class="hero-count" id="heroCount">
-        <div><b data-count="individual">0</b><span>Player focus</span></div>
-        <div><b data-count="team-tactics">0</b><span>Team tactics</span></div>
-        <div><b data-count="pre-match">0</b><span>Pre-match</span></div>
-        <div><b data-count="post-match">0</b><span>Post-match</span></div>
+        <div><b data-count="individual">0</b><span data-i18n="k14">Player focus</span></div>
+        <div><b data-count="team-tactics">0</b><span data-i18n="k15">Team tactics</span></div>
+        <div><b data-count="pre-match">0</b><span data-i18n="k16">Pre-match</span></div>
+        <div><b data-count="post-match">0</b><span data-i18n="k17">Post-match</span></div>
       </div>
     </div>
     <div class="pitch-card">
@@ -199,12 +278,12 @@ html{scroll-behavior:smooth;scroll-padding-top:64px;}
           <rect x="0" y="107.5" width="4" height="25"/><rect x="396" y="107.5" width="4" height="25"/>
         </g>
         <rect x="266" y="90" width="68" height="60" fill="rgba(61,220,90,.12)" stroke="#3DDC5A" stroke-opacity=".6" stroke-dasharray="3 3"/>
-        <text x="300" y="84" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">ZONE 14</text>
+        <text x="300" y="84" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A" data-i18n="kx2">ZONE 14</text>
         <path class="run" d="M196 76 Q240 70 272 100" fill="none" stroke="#F5F1E9" stroke-width="1.5" marker-end="url(#hv-ah)"/>
         <path class="run" d="M296 40 Q330 60 346 92" fill="none" stroke="#F5F1E9" stroke-width="1.5" marker-end="url(#hv-ah)"/>
         <g class="p" style="--dx:4px;--dy:-3px;animation-duration:4.2s;animation-delay:0.0s"><circle cx="18" cy="120" r="7.5" fill="#3DDC5A"/><text x="18" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">GK</text></g><g class="p" style="--dx:5px;--dy:-4px;animation-duration:4.5s;animation-delay:0.3s"><circle cx="78" cy="40" r="7.5" fill="#3DDC5A"/></g><g class="p" style="--dx:-5px;--dy:-4px;animation-duration:4.9s;animation-delay:0.6s"><circle cx="70" cy="94" r="7.5" fill="#3DDC5A"/></g><g class="p" style="--dx:4px;--dy:-4px;animation-duration:5.2s;animation-delay:0.9s"><circle cx="70" cy="146" r="7.5" fill="#3DDC5A"/></g><g class="p" style="--dx:-4px;--dy:-4px;animation-duration:5.6s;animation-delay:0.0s"><circle cx="78" cy="200" r="7.5" fill="#3DDC5A"/></g><g class="p" style="--dx:-5px;--dy:4px;animation-duration:4.2s;animation-delay:0.3s"><circle cx="150" cy="120" r="7.5" fill="#3DDC5A"/><text x="150" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">6</text></g><g class="p" style="--dx:5px;--dy:-4px;animation-duration:4.5s;animation-delay:0.6s"><circle cx="190" cy="72" r="7.5" fill="#3DDC5A"/><text x="190" y="74.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">8</text></g><g class="p" style="--dx:-4px;--dy:-4px;animation-duration:4.9s;animation-delay:0.9s"><circle cx="190" cy="168" r="7.5" fill="#3DDC5A"/><text x="190" y="170.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">8</text></g><g class="p" style="--dx:5px;--dy:-4px;animation-duration:5.2s;animation-delay:0.0s"><circle cx="290" cy="34" r="7.5" fill="#3DDC5A"/></g><g class="p" style="--dx:-5px;--dy:-3px;animation-duration:5.6s;animation-delay:0.3s"><circle cx="300" cy="120" r="7.5" fill="#3DDC5A"/><text x="300" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">9</text></g><g class="p" style="--dx:-5px;--dy:4px;animation-duration:4.2s;animation-delay:0.6s"><circle cx="290" cy="206" r="7.5" fill="#3DDC5A"/></g>
       </svg>
-      <span class="caption">4-3-3 · base shape referenced across analyses · attack →</span>
+      <span data-i18n="k18" class="caption">4-3-3 · base shape referenced across analyses · attack →</span>
     </div>
   </div>
   </div>
@@ -215,59 +294,59 @@ html{scroll-behavior:smooth;scroll-padding-top:64px;}
   <div class="wrap">
     <div class="section-head">
       <div>
-        <h2>Player Focus</h2>
-        <p class="section-desc">Micro-analysis of individual performances — role, decision-making, and impact within the system.</p>
+        <h2 data-i18n="k0">Player Focus</h2>
+        <p data-i18n="k21" class="section-desc">Micro-analysis of individual performances — role, decision-making, and impact within the system.</p>
       </div>
-      <span class="section-note">01 / Individual</span>
+      <span data-i18n="k28" class="section-note">01 / Individual</span>
     </div>
 
     <div class="card-grid">
       <article class="card reveal ">
         <div class="card-top">
           <div>
-            <span class="card-opponent">Player Focus</span>
+            <span data-i18n="k0" class="card-opponent">Player Focus</span>
             <h3 class="card-title">Michael Adedokun &amp; Marcus Epps</h3>
           </div>
-          <span class="badge badge-system mono">Wide Forwards</span>
+          <span data-i18n="k70" class="badge badge-system mono">Wide Forwards</span>
         </div>
-        <p class="card-conclusion"><span class="label mono">Why they matter —</span> Last season's volume-based system had both full-backs overlapping together, letting Michael and Marcus generate mutual space with inside-out movement. This year's more static shape isolates them individually — same talent, far less connection.</p>
-        <a class="card-link" href="analisis/player-adedokun-epps.html">Read full analysis →</a>
+        <p data-i18n="k188" class="card-conclusion"><span class="label mono">Why they matter —</span> Last season's volume-based system had both full-backs overlapping together, letting Michael and Marcus generate mutual space with inside-out movement. This year's more static shape isolates them individually — same talent, far less connection.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/player-adedokun-epps.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal ">
         <div class="card-top">
           <div>
-            <span class="card-opponent">Player Focus</span>
+            <span data-i18n="k0" class="card-opponent">Player Focus</span>
             <h3 class="card-title">Braudílio Rodrigues</h3>
           </div>
-          <span class="badge badge-system mono">Mobile Forward</span>
+          <span data-i18n="k71" class="badge badge-system mono">Mobile Forward</span>
         </div>
-        <p class="card-conclusion"><span class="label mono">Why he matters —</span> His ability to rotate across center-forward, #10 and winger is behind Lexington's recent run of wins — his movement opens space for Firmino and late runners like Ferri, as seen against Tampa Bay and San Antonio.</p>
-        <a class="card-link" href="analisis/player-braudilio.html">Read full analysis →</a>
+        <p data-i18n="k189" class="card-conclusion"><span class="label mono">Why he matters —</span> His ability to rotate across center-forward, #10 and winger is behind Lexington's recent run of wins — his movement opens space for Firmino and late runners like Ferri, as seen against Tampa Bay and San Antonio.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/player-braudilio.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal ">
         <div class="card-top">
           <div>
-            <span class="card-opponent">Player Focus</span>
+            <span data-i18n="k0" class="card-opponent">Player Focus</span>
             <h3 class="card-title">Nick Firmino</h3>
           </div>
-          <span class="badge badge-system mono">#10 → False Winger</span>
+          <span data-i18n="k72" class="badge badge-system mono">#10 → False Winger</span>
         </div>
-        <p class="card-conclusion"><span class="label mono">Why he matters —</span> Moved off a heavily-marked #10 role into a false right-winger position, tucking inside to form a diamond with the two 6s and Braudílio — receiving in space instead of being the one forced to create.</p>
-        <a class="card-link" href="analisis/player-firmino.html">Read full analysis →</a>
+        <p data-i18n="k190" class="card-conclusion"><span class="label mono">Why he matters —</span> Moved off a heavily-marked #10 role into a false right-winger position, tucking inside to form a diamond with the two 6s and Braudílio — receiving in space instead of being the one forced to create.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/player-firmino.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal ">
         <div class="card-top">
           <div>
-            <span class="card-opponent">Player Focus</span>
+            <span data-i18n="k0" class="card-opponent">Player Focus</span>
             <h3 class="card-title">Noble Okello</h3>
           </div>
-          <span class="badge badge-system mono">Defensive Midfielder</span>
+          <span data-i18n="k73" class="badge badge-system mono">Defensive Midfielder</span>
         </div>
-        <p class="card-conclusion"><span class="label mono">Why he matters —</span> His positional coverage behind the double pivot frees Ferri to control tempo and finally lets Molloy rotate — seen clearly since his August 21st arrival and in the 4-1 win over Oakland Roots.</p>
-        <a class="card-link" href="analisis/player-okello.html">Read full analysis →</a>
+        <p data-i18n="k191" class="card-conclusion"><span class="label mono">Why he matters —</span> His positional coverage behind the double pivot frees Ferri to control tempo and finally lets Molloy rotate — seen clearly since his August 21st arrival and in the 4-1 win over Oakland Roots.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/player-okello.html">Read full analysis →</a>
       </article>
       
     </div>
@@ -279,55 +358,55 @@ html{scroll-behavior:smooth;scroll-padding-top:64px;}
   <div class="wrap">
     <div class="section-head">
       <div>
-        <h2>Team Tactics</h2>
-        <p class="section-desc">Structural shifts in how Lexington sets up as a team — not one player, but the shape and roles around them.</p>
+        <h2 data-i18n="k1">Team Tactics</h2>
+        <p data-i18n="k22" class="section-desc">Structural shifts in how Lexington sets up as a team — not one player, but the shape and roles around them.</p>
       </div>
-      <span class="section-note">02 / Team Tactics</span>
+      <span data-i18n="k29" class="section-note">02 / Team Tactics</span>
     </div>
 
     <div class="card-grid">
       <article class="card reveal ">
         <div class="card-top">
           <div>
-            <span class="card-opponent">Team Tactics</span>
-            <h3 class="card-title">The Molloy &amp; Ferri Variable</h3>
+            <span data-i18n="k1" class="card-opponent">Team Tactics</span>
+            <h3 data-i18n="k52" class="card-title">The Molloy &amp; Ferri Variable</h3>
           </div>
-          <span class="badge badge-system mono">Rotating Diamond</span>
+          <span data-i18n="k74" class="badge badge-system mono">Rotating Diamond</span>
         </div>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k146" class="attack">
             <span class="label mono">What Changed</span>
             Dropping the fixed double-6 — Ferri and Aaron no longer sit at the same height at all times, one covers while the other steps forward.
           </div>
-          <div class="defense">
+          <div data-i18n="k147" class="defense">
             <span class="label mono">Effect</span>
             Combined with a more mobile Braudílio up top, Lexington now forms a rotating diamond (dropping 6, Firmino as a 10, a tucking winger, and Braudílio) behind the opposing markers.
           </div>
         </div>
-        <p class="card-conclusion"><span class="label mono">Conclusion —</span> The interior superiority this creates also opens the flanks for faster, more direct transitions.</p>
-        <a class="card-link" href="analisis/molloy-ferri-variable.html">Read full analysis →</a>
+        <p data-i18n="k192" class="card-conclusion"><span class="label mono">Conclusion —</span> The interior superiority this creates also opens the flanks for faster, more direct transitions.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/molloy-ferri-variable.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal ">
       <div class="card-top">
         <div>
-          <span class="card-opponent">Team Tactics</span>
-          <h3 class="card-title">3 Games, One Week</h3>
+          <span data-i18n="k1" class="card-opponent">Team Tactics</span>
+          <h3 data-i18n="k53" class="card-title">3 Games, One Week</h3>
         </div>
-        <span class="badge badge-system mono">Efficiency</span>
+        <span data-i18n="k75" class="badge badge-system mono">Efficiency</span>
       </div>
         <div class="card-cols">
-        <div class="attack">
+        <div data-i18n="k148" class="attack">
           <span class="label mono">What Changed</span>
           Territorial control held up in all three matches — LSC dictated tempo, reached the final third consistently, and delivered regular service into the box, home or away.
         </div>
-        <div class="defense">
+        <div data-i18n="k149" class="defense">
           <span class="label mono">Effect</span>
           Conversion never matched the process: 3 goals across 3 games, capped by a 1.25 xG performance vs. Colorado Springs that still ended in a loss.
         </div>
       </div>
-      <p class="card-conclusion"><span class="label mono">Conclusion —</span> Lexington's problem isn't reaching the final third. It's finishing once it gets there.</p>
-      <a class="card-link" href="analisis/LSC_Tactical3games_1.html">Read full analysis →</a>
+      <p data-i18n="k193" class="card-conclusion"><span class="label mono">Conclusion —</span> Lexington's problem isn't reaching the final third. It's finishing once it gets there.</p>
+      <a data-i18n="k213" class="card-link" href="analisis/LSC_Tactical3games_1.html">Read full analysis →</a>
     </article>
 
     </div>
@@ -341,10 +420,10 @@ html{scroll-behavior:smooth;scroll-padding-top:64px;}
   <div class="wrap">
     <div class="section-head">
       <div>
-        <h2>Pre-Match</h2>
-        <p class="section-desc">Scouting the opponent and the plan going into kickoff — system, threats, and the reading before a ball is kicked.</p>
+        <h2 data-i18n="k2">Pre-Match</h2>
+        <p data-i18n="k23" class="section-desc">Scouting the opponent and the plan going into kickoff — system, threats, and the reading before a ball is kicked.</p>
       </div>
-      <span class="section-note">03 / Pre-Match</span>
+      <span data-i18n="k30" class="section-note">03 / Pre-Match</span>
     </div>
 
     <div class="card-grid">
@@ -352,425 +431,425 @@ html{scroll-behavior:smooth;scroll-padding-top:64px;}
         <div class="card-top">
           <div>
             <span class="card-opponent">vs. San Antonio FC</span>
-            <h3 class="card-title">March 29</h3>
+            <h3 data-i18n="k54" class="card-title">March 29</h3>
           </div>
-          <span class="badge badge-pre mono">3-4-3 / 5-4-1 def</span>
+          <span data-i18n="k76" class="badge badge-pre mono">3-4-3 / 5-4-1 def</span>
         </div>
         <div class="player-tags">
-          <span class="player-tag">LB #4 — overlaps to the byline</span>
-          <span class="player-tag">DM #55 — space behind him</span>
-          <span class="player-tag">CBs #21/#17 — aerial threat</span>
+          <span data-i18n="k97" class="player-tag">LB #4 — overlaps to the byline</span>
+          <span data-i18n="k98" class="player-tag">DM #55 — space behind him</span>
+          <span data-i18n="k99" class="player-tag">CBs #21/#17 — aerial threat</span>
         </div>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k150" class="attack">
             <span class="label mono">Attack</span>
             Direct, fast, targets the space behind the full-back — mainly their left, where #4 consistently reaches the byline to cross.
           </div>
-          <div class="defense">
+          <div data-i18n="k151" class="defense">
             <span class="label mono">Defense</span>
             Very compact, high-volume low block, but that density opens zone-14 gaps behind the marking midfielders — exploitable with a runner attacking the back of #55.
           </div>
         </div>
-        <p class="card-conclusion"><span class="label mono">Prediction —</span> A mobile runner behind their holding midfielders punishes the zone-14 gap and forces an even deeper block.</p>
-        <a class="card-link" href="analisis/pre-san-antonio.html">Read full analysis →</a>
+        <p data-i18n="k194" class="card-conclusion"><span class="label mono">Prediction —</span> A mobile runner behind their holding midfielders punishes the zone-14 gap and forces an even deeper block.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/pre-san-antonio.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal pre">
         <div class="card-top">
           <div>
             <span class="card-opponent">vs. Louisville City FC</span>
-            <h3 class="card-title">April 1</h3>
+            <h3 data-i18n="k55" class="card-title">April 1</h3>
           </div>
-          <span class="badge badge-pre mono">High, overlapping full-backs</span>
+          <span data-i18n="k77" class="badge badge-pre mono">High, overlapping full-backs</span>
         </div>
         <div class="player-tags">
-          <span class="player-tag">Both fullbacks push very high</span>
-          <span class="player-tag">Crossing is their main threat</span>
-          <span class="player-tag">Dangerous on second balls</span>
+          <span data-i18n="k100" class="player-tag">Both fullbacks push very high</span>
+          <span data-i18n="k101" class="player-tag">Crossing is their main threat</span>
+          <span data-i18n="k102" class="player-tag">Dangerous on second balls</span>
         </div>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k152" class="attack">
             <span class="label mono">Attack</span>
             Heavy crossing from both flanks, constant service into the box, dangerous on second balls off long or switched play.
           </div>
-          <div class="defense">
+          <div data-i18n="k153" class="defense">
             <span class="label mono">Defense</span>
             N/A — this read focuses on Lexington's own shape: a full, coordinated retreat is needed to avoid 2v1s on the flank.
           </div>
         </div>
-        <p class="card-conclusion"><span class="label mono">Prediction —</span> Win the crosses and the second balls — a partial or late retreat is what Louisville punishes most.</p>
-        <a class="card-link" href="analisis/pre-louisville-april.html">Read full analysis →</a>
+        <p data-i18n="k195" class="card-conclusion"><span class="label mono">Prediction —</span> Win the crosses and the second balls — a partial or late retreat is what Louisville punishes most.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/pre-louisville-april.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal pre">
         <div class="card-top">
           <div>
             <span class="card-opponent">vs. Colorado Springs Switchbacks</span>
-            <h3 class="card-title">April 4</h3>
+            <h3 data-i18n="k56" class="card-title">April 4</h3>
           </div>
-          <span class="badge badge-pre mono">Fast transitions</span>
+          <span data-i18n="k78" class="badge badge-pre mono">Fast transitions</span>
         </div>
         <div class="player-tags">
-          <span class="player-tag">CF dangerous in 1v1s</span>
-          <span class="player-tag">Explosive after winning zone 2</span>
+          <span data-i18n="k103" class="player-tag">CF dangerous in 1v1s</span>
+          <span data-i18n="k104" class="player-tag">Explosive after winning zone 2</span>
         </div>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k154" class="attack">
             <span class="label mono">Attack</span>
             Two clear scoring routes: crosses into a crowded box, or fast defense-to-attack transitions off recoveries in zone 2.
           </div>
-          <div class="defense">
+          <div data-i18n="k155" class="defense">
             <span class="label mono">Defense</span>
             N/A — pre-match read focuses on their attacking patterns.
           </div>
         </div>
-        <p class="card-conclusion"><span class="label mono">Prediction —</span> Limit turnovers in zone 2 and defend crosses with numbers — those are their two release valves.</p>
-        <a class="card-link" href="analisis/pre-colorado-springs.html">Read full analysis →</a>
+        <p data-i18n="k196" class="card-conclusion"><span class="label mono">Prediction —</span> Limit turnovers in zone 2 and defend crosses with numbers — those are their two release valves.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/pre-colorado-springs.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal pre">
         <div class="card-top">
           <div>
             <span class="card-opponent">vs. Louisville City FC</span>
-            <h3 class="card-title">July 11 (rematch)</h3>
+            <h3 data-i18n="k57" class="card-title">July 11 (rematch)</h3>
           </div>
-          <span class="badge badge-pre mono">Back-three, wing-backs</span>
+          <span data-i18n="k79" class="badge badge-pre mono">Back-three, wing-backs</span>
         </div>
         <div class="player-tags">
-          <span class="player-tag">Wing-backs stretch the field</span>
-          <span class="player-tag">High line + immediate press</span>
+          <span data-i18n="k105" class="player-tag">Wing-backs stretch the field</span>
+          <span data-i18n="k106" class="player-tag">High line + immediate press</span>
         </div>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k156" class="attack">
             <span class="label mono">Attack</span>
             Wing-backs stretch the opposition's width to open interior gaps for their inside forwards; possession-dominant approach.
           </div>
-          <div class="defense">
+          <div data-i18n="k157" class="defense">
             <span class="label mono">Defense</span>
             High defensive line, immediate press after losing the ball, tactical fouls to reset if the press is beaten.
           </div>
         </div>
-        <p class="card-conclusion"><span class="label mono">Prediction —</span> Break their press before it sets and attack the space their high line leaves behind.</p>
-        <a class="card-link" href="analisis/pre-louisville-july.html">Read full analysis →</a>
+        <p data-i18n="k197" class="card-conclusion"><span class="label mono">Prediction —</span> Break their press before it sets and attack the space their high line leaves behind.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/pre-louisville-july.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal pre">
         <div class="card-top">
           <div>
             <span class="card-opponent">vs. New Mexico United</span>
-            <h3 class="card-title">July 15</h3>
+            <h3 data-i18n="k58" class="card-title">July 15</h3>
           </div>
-          <span class="badge badge-pre mono">High press (leaky)</span>
+          <span data-i18n="k80" class="badge badge-pre mono">High press (leaky)</span>
         </div>
         <div class="player-tags">
-          <span class="player-tag">CB #3 — long diagonal passer</span>
-          <span class="player-tag">Winger #5 — target of long balls</span>
-          <span class="player-tag">#10 — near-post runner</span>
+          <span data-i18n="k107" class="player-tag">CB #3 — long diagonal passer</span>
+          <span data-i18n="k108" class="player-tag">Winger #5 — target of long balls</span>
+          <span data-i18n="k109" class="player-tag">#10 — near-post runner</span>
         </div>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k158" class="attack">
             <span class="label mono">Attack</span>
             Long diagonals between center-backs and full-backs targeting the space behind the opposing full-back; #10 attacks the near post on crosses.
           </div>
-          <div class="defense">
+          <div data-i18n="k159" class="defense">
             <span class="label mono">Defense</span>
             High press that breaks down often — center-backs ball-watch and lose runners, midfielders don't track theirs, exposing them to crosses into the box.
           </div>
         </div>
-        <p class="card-conclusion"><span class="label mono">Prediction —</span> Brown covering at left-back, Braudílio as a second striker, Goodrum as the target man to pull markers, Zengue at right-back for his crossing.</p>
-        <a class="card-link" href="analisis/pre-new-mexico.html">Read full analysis →</a>
+        <p data-i18n="k198" class="card-conclusion"><span class="label mono">Prediction —</span> Brown covering at left-back, Braudílio as a second striker, Goodrum as the target man to pull markers, Zengue at right-back for his crossing.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/pre-new-mexico.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal pre">
         <div class="card-top">
           <div>
             <span class="card-opponent">vs. Oakland Roots</span>
-            <h3 class="card-title">July 22</h3>
+            <h3 data-i18n="k59" class="card-title">July 22</h3>
           </div>
-          <span class="badge badge-pre mono">Possession, "U" build-up</span>
+          <span data-i18n="k81" class="badge badge-pre mono">Possession, "U" build-up</span>
         </div>
         <div class="player-tags">
-          <span class="player-tag">LCB — long-range switch passer</span>
-          <span class="player-tag">Compact pressing block</span>
+          <span data-i18n="k110" class="player-tag">LCB — long-range switch passer</span>
+          <span data-i18n="k111" class="player-tag">Compact pressing block</span>
         </div>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k160" class="attack">
             <span class="label mono">Attack</span>
             Comfortable building from the back; if the short game is pressed out, the left center-back switches long to the striker or left winger. Most goals come from crosses with runners crowding the box.
           </div>
-          <div class="defense">
+          <div data-i18n="k161" class="defense">
             <span class="label mono">Defense</span>
             Very compact, protects zone 14 well, resets with tactical fouls when beaten — but can sit too tight together, struggling with quick switches behind the full-backs.
           </div>
         </div>
-        <p class="card-conclusion"><span class="label mono">Prediction —</span> Draw them into long spells of possession to tire their shifting, then attack behind the full-backs with crosses — the approach that beat them last season.</p>
-        <a class="card-link" href="analisis/pre-oakland-roots.html">Read full analysis →</a>
+        <p data-i18n="k199" class="card-conclusion"><span class="label mono">Prediction —</span> Draw them into long spells of possession to tire their shifting, then attack behind the full-backs with crosses — the approach that beat them last season.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/pre-oakland-roots.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal pre">
         <div class="card-top">
           <div>
             <span class="card-opponent">vs. FC Tulsa</span>
-            <h3 class="card-title">July 25</h3>
+            <h3 data-i18n="k60" class="card-title">July 25</h3>
           </div>
-          <span class="badge badge-pre mono">High volume, both flanks</span>
+          <span data-i18n="k82" class="badge badge-pre mono">High volume, both flanks</span>
         </div>
         <div class="player-tags">
-          <span class="player-tag">Overloads the box on crosses</span>
-          <span class="player-tag">Weak in defensive transition</span>
+          <span data-i18n="k112" class="player-tag">Overloads the box on crosses</span>
+          <span data-i18n="k113" class="player-tag">Weak in defensive transition</span>
         </div>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k162" class="attack">
             <span class="label mono">Attack</span>
             Sends huge numbers forward from the flanks with crosses and long balls looking for a numerical overload inside the box.
           </div>
-          <div class="defense">
+          <div data-i18n="k163" class="defense">
             <span class="label mono">Defense</span>
             Struggles in defensive transition after committing so many players forward — vulnerable immediately after losing the ball.
           </div>
         </div>
-        <p class="card-conclusion"><span class="label mono">Prediction —</span> Win the ball and go fast — Goodrum and Braudílio on the break, Marcus/Zengue running the space, Aaron/Firmino/Blaine arriving from deep, plus strong aerial defending at the other end.</p>
-        <a class="card-link" href="analisis/pre-fc-tulsa.html">Read full analysis →</a>
+        <p data-i18n="k200" class="card-conclusion"><span class="label mono">Prediction —</span> Win the ball and go fast — Goodrum and Braudílio on the break, Marcus/Zengue running the space, Aaron/Firmino/Blaine arriving from deep, plus strong aerial defending at the other end.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/pre-fc-tulsa.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal pre">
         <div class="card-top">
           <div>
             <span class="card-opponent">vs. Monterey Bay FC</span>
-            <h3 class="card-title">August 1</h3>
+            <h3 data-i18n="k61" class="card-title">August 1</h3>
           </div>
-          <span class="badge badge-pre mono">Direct build-up</span>
+          <span data-i18n="k83" class="badge badge-pre mono">Direct build-up</span>
         </div>
         <div class="player-tags">
-          <span class="player-tag">LB — loses runners behind him</span>
-          <span class="player-tag">CBs shadow rather than tackle</span>
+          <span data-i18n="k114" class="player-tag">LB — loses runners behind him</span>
+          <span data-i18n="k115" class="player-tag">CBs shadow rather than tackle</span>
         </div>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k164" class="attack">
             <span class="label mono">Attack</span>
             Builds with 3–4 touches max before going long, skipping zone 2 entirely to hit zone 3 directly.
           </div>
-          <div class="defense">
+          <div data-i18n="k165" class="defense">
             <span class="label mono">Defense</span>
             Struggles badly against a coordinated high press in zone 1; the left-back repeatedly loses runners behind him; the high line leaves zone 14 open.
           </div>
         </div>
-        <p class="card-conclusion"><span class="label mono">Prediction —</span> Target the left-back's blind side, occupy zone 14 with numbers, and press their zone-1 build-up to force turnovers.</p>
-        <a class="card-link" href="analisis/pre-monterrey.html">Read full analysis →</a>
+        <p data-i18n="k201" class="card-conclusion"><span class="label mono">Prediction —</span> Target the left-back's blind side, occupy zone 14 with numbers, and press their zone-1 build-up to force turnovers.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/pre-monterrey.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal pre">
         <div class="card-top">
           <div>
             <span class="card-opponent">vs. Phoenix Rising</span>
-            <h3 class="card-title">August 8</h3>
+            <h3 data-i18n="k62" class="card-title">August 8</h3>
           </div>
           <span class="badge badge-pre mono">4-2-3-1 → 3-2-2-3</span>
         </div>
         <div class="player-tags">
-          <span class="player-tag">Comfortable in all three thirds</span>
-          <span class="player-tag">Struggles when actively dispossessed</span>
+          <span data-i18n="k116" class="player-tag">Comfortable in all three thirds</span>
+          <span data-i18n="k117" class="player-tag">Struggles when actively dispossessed</span>
         </div>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k166" class="attack">
             <span class="label mono">Attack</span>
             One of the league's best in possession — shifts to a 3-2-2-3 for numerical superiority and circulates the ball comfortably through every third.
           </div>
-          <div class="defense">
+          <div data-i18n="k167" class="defense">
             <span class="label mono">Defense</span>
             Two proven routes to beat them: actively dispossess them rather than just pressure the ball (Colorado Springs), or hit them in fast transition (Louisville, scoring in 3–4 passes).
           </div>
         </div>
-        <p class="card-conclusion"><span class="label mono">Prediction —</span> Combine both — hold the ball and isolate Epps 1v1, be ruthless in transition, sit compact forcing play down their weaker left side, and use tactical fouls to delay their transitions given the home advantage.</p>
-        <a class="card-link" href="analisis/pre-phoenix-rising.html">Read full analysis →</a>
+        <p data-i18n="k202" class="card-conclusion"><span class="label mono">Prediction —</span> Combine both — hold the ball and isolate Epps 1v1, be ruthless in transition, sit compact forcing play down their weaker left side, and use tactical fouls to delay their transitions given the home advantage.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/pre-phoenix-rising.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal pre">
       <div class="card-top">
         <div>
           <span class="card-opponent">vs. Sacramento Republic FC</span>
-          <h3 class="card-title">August 15</h3>
+          <h3 data-i18n="k63" class="card-title">August 15</h3>
           </div>
-          <span class="badge badge-pre mono">4-4-2 → 3-2-5 in possession</span>
+          <span data-i18n="k85" class="badge badge-pre mono">4-4-2 → 3-2-5 in possession</span>
       </div>
         <div class="player-tags">
-          <span class="player-tag">Right back overlaps as 5th attacker</span>
-          <span class="player-tag">CBs won't step into zone 14</span>
+          <span data-i18n="k118" class="player-tag">Right back overlaps as 5th attacker</span>
+          <span data-i18n="k119" class="player-tag">CBs won't step into zone 14</span>
         </div>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k168" class="attack">
               <span class="label mono">Attack</span>
                   Right back bombs forward while the left winger (#7) holds width; inside midfielders overlap mostly on the left looking to reach the byline.
           </div>
-          <div class="defense">
+          <div data-i18n="k169" class="defense">
               <span class="label mono">Defense</span>
               Organized, static 4-4-2 block that dominates in the air, but center backs won't step forward — zone 14 stays open behind the double pivot.
               </div>
           </div>
-          <p class="card-conclusion"><span class="label mono">Prediction —</span> Attack zone 14 with through balls and third-man runs; never in the air, they dominate the box.</p>
-          <a class="card-link" href="analisis/sacramento-preview.html">Read full analysis →</a>
+          <p data-i18n="k203" class="card-conclusion"><span class="label mono">Prediction —</span> Attack zone 14 with through balls and third-man runs; never in the air, they dominate the box.</p>
+          <a data-i18n="k213" class="card-link" href="analisis/sacramento-preview.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal pre">
         <div class="card-top">
           <div>
             <span class="card-opponent">vs. Las Vegas Lights FC</span>
-            <h3 class="card-title">August 22</h3>
+            <h3 data-i18n="k64" class="card-title">August 22</h3>
           </div>
-          <span class="badge badge-pre mono">4-4-2 diamond → 2-3-1-4</span>
+          <span data-i18n="k86" class="badge badge-pre mono">4-4-2 diamond → 2-3-1-4</span>
         </div>
         <div class="player-tags">
-          <span class="player-tag">J. Rodríguez — top scorer, late goals</span>
-          <span class="player-tag">O. Anderson — fast starts</span>
-          <span class="player-tag">#11 Pinzón — tip of the diamond</span>
-          <span class="player-tag">Antonoglou — full-back, width</span>
+          <span data-i18n="k120" class="player-tag">J. Rodríguez — top scorer, late goals</span>
+          <span data-i18n="k121" class="player-tag">O. Anderson — fast starts</span>
+          <span data-i18n="k122" class="player-tag">#11 Pinzón — tip of the diamond</span>
+          <span data-i18n="k123" class="player-tag">Antonoglou — full-back, width</span>
         </div>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k170" class="attack">
             <span class="label mono">Attack</span>
             Interior dominance through the diamond (53.6% field tilt). Once Pinzón receives between the lines they switch right — 43% of their attacks go down that side.
           </div>
-          <div class="defense">
+          <div data-i18n="k171" class="defense">
             <span class="label mono">Defense</span>
             Both full-backs push high and the interiors have long recovery runs, so the space behind the full-backs opens the moment they lose the ball.
           </div>
         </div>
-        <p class="card-conclusion"><span class="label mono">Prediction —</span> Press the build-up, attack the space behind the full-back in transition, and stay switched on in the first and last 15 minutes.</p>
-        <a class="card-link" href="analisis/lsc_vs_lasvegaslights_prematch.html">Read full analysis →</a>
+        <p data-i18n="k204" class="card-conclusion"><span class="label mono">Prediction —</span> Press the build-up, attack the space behind the full-back in transition, and stay switched on in the first and last 15 minutes.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/lsc_vs_lasvegaslights_prematch.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal pre">
   <div class="card-top">
     <div>
       <span class="card-opponent">vs. Colorado Springs Switchbacks FC</span>
-      <h3 class="card-title">August 29</h3>
+      <h3 data-i18n="k65" class="card-title">August 29</h3>
     </div>
-    <span class="badge badge-pre mono">4-1-4-1 → 2-3-5 in possession</span>
+    <span data-i18n="k87" class="badge badge-pre mono">4-1-4-1 → 2-3-5 in possession</span>
   </div>
   <div class="player-tags">
-    <span class="player-tag">#80 Speedy Williams — dictates tempo</span>
-    <span class="player-tag">Left-back channel exposed in transition</span>
-    <span class="player-tag">#12 Foster — aerial set-piece threat</span>
+    <span data-i18n="k124" class="player-tag">#80 Speedy Williams — dictates tempo</span>
+    <span data-i18n="k125" class="player-tag">Left-back channel exposed in transition</span>
+    <span data-i18n="k126" class="player-tag">#12 Foster — aerial set-piece threat</span>
   </div>
       <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k172" class="attack">
               <span class="label mono">Attack</span>
         Comfortable in possession, tempo dictated by Speedy Williams; both full-backs push high in a 2-3-5, generating width and crosses from both flanks.
         </div>
-        <div class="defense">
+        <div data-i18n="k173" class="defense">
         <span class="label mono">Defense</span>
         4-1-4-1 man-marking through midfield — but with both full-backs committed forward, the left-back channel is repeatedly exposed on the turnover. Three straight away defeats (New Mexico, Rhode Island, Phoenix Rising) despite having more of the ball.
         </div>
       </div>
-      <p class="card-conclusion"><span class="label mono">Prediction —</span> Win it back centrally and go immediately behind the left back with Epps or Zengue's pace — that's the fastest, most repeatable route to goal. Mark Foster tight at corners and long throw-ins.</p>
-      <a class="card-link" href="analisis/lsc-vs-colorado-springs-prematch.html">Read full analysis →</a>
+      <p data-i18n="k205" class="card-conclusion"><span class="label mono">Prediction —</span> Win it back centrally and go immediately behind the left back with Epps or Zengue's pace — that's the fastest, most repeatable route to goal. Mark Foster tight at corners and long throw-ins.</p>
+      <a data-i18n="k213" class="card-link" href="analisis/lsc-vs-colorado-springs-prematch.html">Read full analysis →</a>
     </article>
 
       <article class="card reveal pre">
         <div class="card-top">
           <div>
             <span class="card-opponent">vs. Sporting JAX</span>
-            <h3 class="card-title">September 5</h3>
+            <h3 data-i18n="k66" class="card-title">September 5</h3>
           </div>
           <span class="badge badge-pre mono">3-2-5 → 5-4-1 / 5-2-3</span>
         </div>
         <div class="player-tags">
-          <span class="player-tag">Back three — errors under a 3v3 press</span>
-          <span class="player-tag">Space behind the double pivot</span>
-          <span class="player-tag">Set pieces — 58 goals conceded</span>
+          <span data-i18n="k127" class="player-tag">Back three — errors under a 3v3 press</span>
+          <span data-i18n="k128" class="player-tag">Space behind the double pivot</span>
+          <span data-i18n="k129" class="player-tag">Set pieces — 58 goals conceded</span>
         </div>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k174" class="attack">
             <span class="label mono">Attack</span>
             Builds in a 3-2-5 with very high wing-backs and a tight, narrow back three; the left centre-back is their main long-ball outlet into fast transitions.
           </div>
-          <div class="defense">
+          <div data-i18n="k175" class="defense">
             <span class="label mono">Defense</span>
             An orderly 5-4-1 / 5-2-3 mid-block, but the league's leakiest defence — no clean sheets in 2026 and badly exposed on corners and balls into the box.
           </div>
         </div>
-        <p class="card-conclusion"><span class="label mono">Prediction —</span> Press them 3v3, play behind the double pivot with Braudílio dropping as a false 9, overload the left with Greene and Epps, and make every set piece count.</p>
-        <a class="card-link" href="analisis/lsc-vs-jax-sep2026.html">Read full analysis →</a>
+        <p data-i18n="k206" class="card-conclusion"><span class="label mono">Prediction —</span> Press them 3v3, play behind the double pivot with Braudílio dropping as a false 9, overload the left with Greene and Epps, and make every set piece count.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/september-5-sporting-jax.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal pre">
         <div class="card-top">
           <div>
             <span class="card-opponent">vs. Orange County SC</span>
-            <h3 class="card-title">September 19</h3>
+            <h3 data-i18n="k67" class="card-title">September 19</h3>
           </div>
-          <span class="badge badge-pre mono">Direct long-ball play</span>
+          <span data-i18n="k89" class="badge badge-pre mono">Direct long-ball play</span>
         </div>
         <div class="player-tags">
-          <span class="player-tag">Skips the midfield third entirely</span>
-          <span class="player-tag">Gap behind the double pivot</span>
-          <span class="player-tag">Weak on second balls</span>
+          <span data-i18n="k130" class="player-tag">Skips the midfield third entirely</span>
+          <span data-i18n="k131" class="player-tag">Gap behind the double pivot</span>
+          <span data-i18n="k132" class="player-tag">Weak on second balls</span>
         </div>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k176" class="attack">
             <span class="label mono">Attack</span>
             Long, early balls from the back straight to Bazini — bypassing buildup, with a clear bias to combine down their right flank.
           </div>
-          <div class="defense">
+          <div data-i18n="k177" class="defense">
             <span class="label mono">Defense</span>
             Stretched vertically by their own directness — a consistent interior channel opens between the double pivot and the back line.
           </div>
         </div>
-        <p class="card-conclusion"><span class="label mono">Prediction —</span> Press high to force the error in construction, then attack the interior channel with Braudílio and Firmino combining centrally.</p>
-        <a class="card-link" href="analisis/lsc-vs-orange-county-sc.html">Read full analysis →</a>
+        <p data-i18n="k207" class="card-conclusion"><span class="label mono">Prediction —</span> Press high to force the error in construction, then attack the interior channel with Braudílio and Firmino combining centrally.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/lsc-vs-orange-county-sc.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal pre">
         <div class="card-top">
           <div>
             <span class="card-opponent">vs. Monterey Bay FC</span>
-            <h3 class="card-title">September 26</h3>
+            <h3 data-i18n="k68" class="card-title">September 26</h3>
           </div>
-          <span class="badge badge-pre mono">Direct block, long-ball outlet</span>
+          <span data-i18n="k90" class="badge badge-pre mono">Direct block, long-ball outlet</span>
         </div>
         <div class="player-tags">
-          <span class="player-tag">CB pairing — direct long switches</span>
-          <span class="player-tag">Double pivot — covers wide, arrives late</span>
+          <span data-i18n="k133" class="player-tag">CB pairing — direct long switches</span>
+          <span data-i18n="k134" class="player-tag">Double pivot — covers wide, arrives late</span>
         </div>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k178" class="attack">
             <span class="label mono">Attack</span>
             Center backs look first for the direct diagonal into the channel behind the opposing full-back — their clearest danger in transition. Without it, they settle into slow zone-2 possession that rarely reaches the final third with a real chance.
           </div>
-          <div class="defense">
+          <div data-i18n="k179" class="defense">
             <span class="label mono">Defense</span>
             Compact, disciplined 4-2-3-1 block that's hard to break down centrally, but the double pivot covers so much ground that both midfielders arrive late to Zone 14 — and they visibly struggle to play out under sustained high pressure.
           </div>
         </div>
-        <p class="card-conclusion"><span class="label mono">Prediction —</span> Press their build-up to force turnovers, then attack the pocket behind the double pivot with rotating mobility from the 8/10.</p>
-        <a class="card-link" href="analisis/lsc-vs-montereybay-2026-09-26.html">Read full analysis →</a>
+        <p data-i18n="k208" class="card-conclusion"><span class="label mono">Prediction —</span> Press their build-up to force turnovers, then attack the pocket behind the double pivot with rotating mobility from the 8/10.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/lsc-vs-montereybay-2026-09-26.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal pre">
         <div class="card-top">
           <div>
           <span class="card-opponent">vs. El Paso Locomotive FC</span>
-            <h3 class="card-title">October 3</h3>
+            <h3 data-i18n="k69" class="card-title">October 3</h3>
           </div>
-            <span class="badge badge-pre mono">High press, diagonal overloads</span>
+            <span data-i18n="k91" class="badge badge-pre mono">High press, diagonal overloads</span>
         </div>
         <div class="player-tags">
-            <span class="player-tag">Left interior Moreno — underlaps into zone 16</span>
-            <span class="player-tag">Back three — exposed 1v1 once the press is beaten</span>
-            <span class="player-tag">#93 Alfaro — best passer, set-piece threat</span>
+            <span data-i18n="k135" class="player-tag">Left interior Moreno — underlaps into zone 16</span>
+            <span data-i18n="k136" class="player-tag">Back three — exposed 1v1 once the press is beaten</span>
+            <span data-i18n="k137" class="player-tag">#93 Alfaro — best passer, set-piece threat</span>
         </div>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k180" class="attack">
             <span class="label mono">Attack</span>
             Their identity is the inside-out diagonal: the left interior tucks in, then bursts behind the opposing full-back into the wide channel, with the wing-back overlapping outside him. It's a genuinely dangerous, repeatable pattern — not a gimmick.
           </div>
-          <div class="defense">
+          <div data-i18n="k181" class="defense">
             <span class="label mono">Defense</span>
             The trade-off for that commitment forward is a back line stretched thin. Their centre-backs are regularly left in straight 1v1s once the press is broken, and Dollenmayer in particular is the technically weaker read.
           </div>
         </div>
-          <p class="card-conclusion"><span class="label mono">Prediction —</span> Sit in an ordered mid-block, protect the pivots, take Alfaro away from their build-up, and break quickly into the space behind the wing-back once the ball is won — let Goodrum's current form finish the job.</p>
-          <a class="card-link" href="analisis/lsc-vs-elpaso-2026-10-03.html">Read full analysis →</a>
+          <p data-i18n="k209" class="card-conclusion"><span class="label mono">Prediction —</span> Sit in an ordered mid-block, protect the pivots, take Alfaro away from their build-up, and break quickly into the space behind the wing-back once the ball is won — let Goodrum's current form finish the job.</p>
+          <a data-i18n="k213" class="card-link" href="analisis/lsc-vs-elpaso-2026-10-03.html">Read full analysis →</a>
         </article>
   
   </div>
@@ -781,10 +860,10 @@ html{scroll-behavior:smooth;scroll-padding-top:64px;}
   <div class="wrap">
     <div class="section-head">
       <div>
-        <h2>Post-Match</h2>
-        <p class="section-desc">The full breakdown after the final whistle — system, key players, what happened in each phase, and the result.</p>
+        <h2 data-i18n="k3">Post-Match</h2>
+        <p data-i18n="k24" class="section-desc">The full breakdown after the final whistle — system, key players, what happened in each phase, and the result.</p>
       </div>
-      <span class="section-note">04 / Post-Match</span>
+      <span data-i18n="k31" class="section-note">04 / Post-Match</span>
     </div>
 
     <div class="card-grid">
@@ -792,127 +871,343 @@ html{scroll-behavior:smooth;scroll-padding-top:64px;}
         <div class="card-top">
           <div>
             <span class="card-opponent">vs. San Antonio FC</span>
-            <h3 class="card-title">March 29</h3>
+            <h3 data-i18n="k54" class="card-title">March 29</h3>
           </div>
-          <span class="badge badge-loss mono">L 0–2</span>
+          <span data-i18n="k92" class="badge badge-loss mono">L 0–2</span>
         </div>
         <div class="player-tags">
-          <span class="player-tag">Midence — found the pocket</span>
-          <span class="player-tag">Goodrum — best chance of the game</span>
-          <span class="player-tag">Molloy &amp; Ferri — exposed centrally</span>
+          <span data-i18n="k138" class="player-tag">Midence — found the pocket</span>
+          <span data-i18n="k139" class="player-tag">Goodrum — best chance of the game</span>
+          <span data-i18n="k140" class="player-tag">Molloy &amp; Ferri — exposed centrally</span>
         </div>
-        <span class="badge badge-system mono">3-4-3 / 5-4-1 def</span>
+        <span data-i18n="k76" class="badge badge-system mono">3-4-3 / 5-4-1 def</span>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k182" class="attack">
             <span class="label mono">Attack</span>
             Lexington found the exact pocket identified pre-match — behind San Antonio's marking midfielders — Midence found room there to set up Goodrum, whose second header — the clearest chance of the match — drifted just wide.
           </div>
-          <div class="defense">
+          <div data-i18n="k183" class="defense">
             <span class="label mono">Defense</span>
             Passive and slow all game, worse in the second half; Molloy and Ferri got caught in the middle as San Antonio's full-backs stretched the width.
           </div>
         </div>
-        <p class="card-conclusion"><span class="label mono">Conclusion —</span> The pre-match reads were correct, but a passive, low-intensity performance meant Lexington couldn't consistently exploit them, while San Antonio's higher intensity decided the game.</p>
-        <a class="card-link" href="analisis/post-san-antonio.html">Read full analysis →</a>
+        <p data-i18n="k210" class="card-conclusion"><span class="label mono">Conclusion —</span> The pre-match reads were correct, but a passive, low-intensity performance meant Lexington couldn't consistently exploit them, while San Antonio's higher intensity decided the game.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/post-san-antonio.html">Read full analysis →</a>
       </article>
 
       <article class="card reveal res-w">
         <div class="card-top">
           <div>
             <span class="card-opponent">vs. Monterey Bay FC</span>
-            <h3 class="card-title">August 1</h3>
+            <h3 data-i18n="k61" class="card-title">August 1</h3>
           </div>
-          <span class="badge badge-win mono">W 3–2</span>
+          <span data-i18n="k93" class="badge badge-win mono">W 3–2</span>
         </div>
         <div class="player-tags">
-          <span class="player-tag">Tarik Scott — width off the bench</span>
-          <span class="player-tag">Epps — isolated 1v1</span>
-          <span class="player-tag">Goodrum &amp; Molloy — deep runners</span>
+          <span data-i18n="k141" class="player-tag">Tarik Scott — width off the bench</span>
+          <span data-i18n="k142" class="player-tag">Epps — isolated 1v1</span>
+          <span data-i18n="k143" class="player-tag">Goodrum &amp; Molloy — deep runners</span>
         </div>
-        <span class="badge badge-system mono">Direct build-up</span>
+        <span data-i18n="k83" class="badge badge-system mono">Direct build-up</span>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k184" class="attack">
             <span class="label mono">Attack</span>
             The first two goals came exactly where the plan pointed — Braudílio after winning the second ball off an organized press, then a cross down Monterey Bay's weaker left side forcing Nakamura's own goal. Tarik Scott's introduction stretched their back line, isolating Epps in his ideal 1v1 spot; Scott then headed the 82nd-minute winner off a corner rebound.
           </div>
-          <div class="defense">
+          <div data-i18n="k185" class="defense">
             <span class="label mono">Defense</span>
             Monterey Bay's two goals came from the exact space flagged pre-match — direct balls behind the right-back after a low-risk build-up designed to avoid the high press.
           </div>
         </div>
-        <p class="card-conclusion"><span class="label mono">Conclusion —</span> A comeback win — with the game in hand, an extra midfielder for control (rather than staying exposed in transition) would have been the better closing move.</p>
-        <a class="card-link" href="analisis/post-monterrey.html">Read full analysis →</a>
+        <p data-i18n="k211" class="card-conclusion"><span class="label mono">Conclusion —</span> A comeback win — with the game in hand, an extra midfielder for control (rather than staying exposed in transition) would have been the better closing move.</p>
+        <a data-i18n="k213" class="card-link" href="analisis/post-monterrey.html">Read full analysis →</a>
       </article>
 
        <article class="card reveal res-w">
         <div class="card-top">
           <div>
           <span class="card-opponent">vs. Phoenix Rising FC</span>
-          <h3 class="card-title">August 8</h3>
+          <h3 data-i18n="k62" class="card-title">August 8</h3>
           </div>
-          <span class="badge badge-win mono">W 1–0</span>
+          <span data-i18n="k94" class="badge badge-win mono">W 1–0</span>
         </div>
         <div class="player-tags">
-            <span class="player-tag">Tarik Scott — width off the bench</span>
-            <span class="player-tag">Epps — freed by the switch</span>
-            <span class="player-tag">Burks &amp; Brown — shut down transitions</span>
+            <span data-i18n="k141" class="player-tag">Tarik Scott — width off the bench</span>
+            <span data-i18n="k144" class="player-tag">Epps — freed by the switch</span>
+            <span data-i18n="k145" class="player-tag">Burks &amp; Brown — shut down transitions</span>
           </div>
-            <span class="badge badge-system mono">Positional build-up</span>
+            <span data-i18n="k95" class="badge badge-system mono">Positional build-up</span>
         <div class="card-cols">
-          <div class="attack">
+          <div data-i18n="k186" class="attack">
           <span class="label mono">Attack</span>
             Lexington controlled the game for 45 minutes without reward — occupying all five lanes but disconnected in the box, with Goodrum repeatedly left isolated on crosses. The fix came from the bench: Tarik Scott's introduction in the 59th added the width the starting XI lacked, opening space behind Phoenix's holding midfielder that Epps exploited. The goal followed four minutes later.
           </div>
-            <div class="defense">
+            <div data-i18n="k187" class="defense">
             <span class="label mono">Defense</span>
               Burks and Brown were the platform that never wavered — absorbing every Phoenix attack and delaying transitions all match. Phoenix finished the game without a single shot on target.
             </div>
           </div>
-          <p class="card-conclusion"><span class="label mono">Conclusion —</span> A deserved win built on control and a clean sheet, but the box-connection problem was solved reactively rather than by design — that fix needs to happen before kickoff, not after 59 minutes.</p>
-            <a class="card-link" href="analisis/lsc-vs-phoenix.html">Read full analysis →</a>
+          <p data-i18n="k212" class="card-conclusion"><span class="label mono">Conclusion —</span> A deserved win built on control and a clean sheet, but the box-connection problem was solved reactively rather than by design — that fix needs to happen before kickoff, not after 59 minutes.</p>
+            <a data-i18n="k213" class="card-link" href="analisis/lsc-vs-phoenix.html">Read full analysis →</a>
         </article>
     </div>
   </div>
 </section>
 
+
+<!-- ============ PREDICTION VS. RESULT ============ -->
+<section id="track-record">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2 data-i18n="k19">Prediction vs. Result</h2>
+        <p data-i18n="k25" class="section-desc">Every pre-match read, checked against what actually happened. Not whether we won — whether the reading of the game was right.</p>
+      </div>
+      <span data-i18n="k32" class="section-note">05 / Track Record</span>
+    </div>
+
+    <div class="tr-summary">
+      <div class="tr-big">
+        <b class="mono">13<small>/14</small></b>
+        <span data-i18n="k214">reads held fully or in part</span>
+      </div>
+      <div class="tr-chart">
+        <svg viewBox="0 0 400 28" class="tr-bar" role="img" aria-label="Verdicts across 15 matches" xmlns="http://www.w3.org/2000/svg">
+<defs><pattern id="tr-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="rgba(61,220,90,.22)"/><line x1="0" y1="0" x2="0" y2="6" stroke="#3DDC5A" stroke-width="2.2"/></pattern></defs><rect class="tr-seg" x="1.0" y="1" width="184.7" height="26" fill="#3DDC5A"/><text x="93.3" y="18.5" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="600" fill="#111111" stroke="none" stroke-width="3" paint-order="stroke">7</text><rect class="tr-seg" x="187.7" y="1" width="158.0" height="26" fill="url(#tr-hatch)"/><text x="266.7" y="18.5" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="600" fill="#F5F1E9" stroke="#111111" stroke-width="3" paint-order="stroke">6</text><rect class="tr-seg" x="347.7" y="1" width="24.7" height="26" fill="#111111" stroke="#F5F1E9" stroke-width="1"/><text x="360.0" y="18.5" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="600" fill="#F5F1E9" stroke="none" stroke-width="3" paint-order="stroke">1</text><rect class="tr-seg" x="374.3" y="1" width="24.7" height="26" fill="rgba(245,241,233,.14)"/><text x="386.7" y="18.5" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="600" fill="#F5F1E9" stroke="none" stroke-width="3" paint-order="stroke">1</text></svg>
+        <div class="tr-legend mono">
+          <span data-i18n="k215"><i class="k-held"></i>Held · 7</span>
+          <span data-i18n="k216"><i class="k-partly"></i>Partly · 6</span>
+          <span data-i18n="k217"><i class="k-missed"></i>Missed · 1</span>
+          <span data-i18n="k218"><i class="k-na"></i>Inconclusive · 1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tr-strip-card">
+      <div class="tr-strip-head mono"><span data-i18n="k219">Season timeline · result above, verdict on the line</span><span data-i18n="k220">Mar → Oct</span></div>
+      <div class="tr-strip-scroll">
+      <svg viewBox="0 0 400 60" class="tr-strip" role="img" aria-label="Season timeline of verdicts" xmlns="http://www.w3.org/2000/svg">
+<defs><pattern id="ts-hatch" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="4" height="4" fill="rgba(61,220,90,.2)"/><line x1="0" y1="0" x2="0" y2="4" stroke="#3DDC5A" stroke-width="1.6"/></pattern></defs><line x1="10" y1="30" x2="390" y2="30" stroke="rgba(245,241,233,.18)" stroke-width="1.2"/><g class="tr-dot" style="--d:0ms"><title>Mar 29 · San Antonio FC · Read held</title><circle cx="10.0" cy="30" r="8" fill="#3DDC5A"/><text data-i18n="k314" x="10.0" y="10" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" font-weight="600" fill="#F5F1E9">L</text><text data-i18n="k315" x="10.0" y="54" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="rgba(245,241,233,.55)">MAR 29</text></g><g class="tr-dot" style="--d:60ms"><title>Apr 1 · Louisville City FC · Read held</title><circle cx="35.3" cy="30" r="8" fill="#3DDC5A"/><text data-i18n="k314" x="35.3" y="10" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" font-weight="600" fill="#F5F1E9">L</text><text data-i18n="k316" x="35.3" y="54" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="rgba(245,241,233,.55)">APR 1</text></g><g class="tr-dot" style="--d:120ms"><title>Apr 4 · Colorado Springs · Partly held</title><circle cx="60.7" cy="30" r="8" fill="url(#ts-hatch)" stroke="#3DDC5A" stroke-width="1.4"/><text data-i18n="k317" x="60.7" y="10" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" font-weight="600" fill="#F5F1E9">D</text><text data-i18n="k318" x="60.7" y="54" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="rgba(245,241,233,.55)">APR 4</text></g><g class="tr-dot" style="--d:180ms"><title>Jul 11 · Louisville City FC · Inconclusive</title><circle cx="86.0" cy="30" r="8" fill="rgba(245,241,233,.14)" stroke="rgba(245,241,233,.4)" stroke-width="1"/><text data-i18n="k314" x="86.0" y="10" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" font-weight="600" fill="#F5F1E9">L</text><text data-i18n="k319" x="86.0" y="54" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="rgba(245,241,233,.55)">JUL 11</text></g><g class="tr-dot" style="--d:240ms"><title>Jul 15 · New Mexico United · Missed</title><circle cx="111.3" cy="30" r="8" fill="#111111" stroke="#F5F1E9" stroke-width="1.4"/><text data-i18n="k314" x="111.3" y="10" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" font-weight="600" fill="#F5F1E9">L</text><text data-i18n="k320" x="111.3" y="54" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="rgba(245,241,233,.55)">JUL 15</text></g><g class="tr-dot" style="--d:300ms"><title>Jul 22 · Oakland Roots SC · Partly held</title><circle cx="136.7" cy="30" r="8" fill="url(#ts-hatch)" stroke="#3DDC5A" stroke-width="1.4"/><text data-i18n="k321" x="136.7" y="10" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" font-weight="600" fill="#3DDC5A">W</text><text data-i18n="k322" x="136.7" y="54" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="rgba(245,241,233,.55)">JUL 22</text></g><g class="tr-dot" style="--d:360ms"><title>Jul 25 · FC Tulsa · Partly held</title><circle cx="162.0" cy="30" r="8" fill="url(#ts-hatch)" stroke="#3DDC5A" stroke-width="1.4"/><text data-i18n="k317" x="162.0" y="10" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" font-weight="600" fill="#F5F1E9">D</text><text data-i18n="k323" x="162.0" y="54" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="rgba(245,241,233,.55)">JUL 25</text></g><g class="tr-dot" style="--d:420ms"><title>Aug 1 · Monterey Bay FC · Read held</title><circle cx="187.3" cy="30" r="8" fill="#3DDC5A"/><text data-i18n="k321" x="187.3" y="10" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" font-weight="600" fill="#3DDC5A">W</text><text data-i18n="k324" x="187.3" y="54" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="rgba(245,241,233,.55)">AUG 1</text></g><g class="tr-dot" style="--d:480ms"><title>Aug 8 · Phoenix Rising FC · Read held</title><circle cx="212.7" cy="30" r="8" fill="#3DDC5A"/><text data-i18n="k321" x="212.7" y="10" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" font-weight="600" fill="#3DDC5A">W</text><text data-i18n="k325" x="212.7" y="54" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="rgba(245,241,233,.55)">AUG 8</text></g><g class="tr-dot" style="--d:540ms"><title>Aug 15 · Sacramento Republic · Partly held</title><circle cx="238.0" cy="30" r="8" fill="url(#ts-hatch)" stroke="#3DDC5A" stroke-width="1.4"/><text data-i18n="k314" x="238.0" y="10" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" font-weight="600" fill="#F5F1E9">L</text><text data-i18n="k326" x="238.0" y="54" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="rgba(245,241,233,.55)">AUG 15</text></g><g class="tr-dot" style="--d:600ms"><title>Aug 22 · Las Vegas Lights FC · Read held</title><circle cx="263.3" cy="30" r="8" fill="#3DDC5A"/><text data-i18n="k321" x="263.3" y="10" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" font-weight="600" fill="#3DDC5A">W</text><text data-i18n="k327" x="263.3" y="54" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="rgba(245,241,233,.55)">AUG 22</text></g><g class="tr-dot" style="--d:660ms"><title>Aug 29 · Colorado Springs · Partly held</title><circle cx="288.7" cy="30" r="8" fill="url(#ts-hatch)" stroke="#3DDC5A" stroke-width="1.4"/><text data-i18n="k314" x="288.7" y="10" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" font-weight="600" fill="#F5F1E9">L</text><text data-i18n="k328" x="288.7" y="54" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="rgba(245,241,233,.55)">AUG 29</text></g><g class="tr-dot" style="--d:720ms"><title>Sep 5 · Sporting JAX · Partly held</title><circle cx="314.0" cy="30" r="8" fill="url(#ts-hatch)" stroke="#3DDC5A" stroke-width="1.4"/><text data-i18n="k314" x="314.0" y="10" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" font-weight="600" fill="#F5F1E9">L</text><text data-i18n="k329" x="314.0" y="54" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="rgba(245,241,233,.55)">SEP 5</text></g><g class="tr-dot" style="--d:780ms"><title>Sep 19 · Orange County SC · Read held</title><circle cx="339.3" cy="30" r="8" fill="#3DDC5A"/><text data-i18n="k321" x="339.3" y="10" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" font-weight="600" fill="#3DDC5A">W</text><text data-i18n="k330" x="339.3" y="54" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="rgba(245,241,233,.55)">SEP 19</text></g><g class="tr-dot" style="--d:840ms"><title>Sep 26 · Monterey Bay FC · Read held</title><circle cx="364.7" cy="30" r="8" fill="#3DDC5A"/><text data-i18n="k321" x="364.7" y="10" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" font-weight="600" fill="#3DDC5A">W</text><text data-i18n="k331" x="364.7" y="54" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="rgba(245,241,233,.55)">SEP 26</text></g><g class="tr-dot" style="--d:900ms"><title>Oct 3 · El Paso Locomotive · Pending</title><circle cx="390.0" cy="30" r="8" fill="none" stroke="#F5F1E9" stroke-width="1" stroke-dasharray="2 2"/><text x="390.0" y="10" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" font-weight="600" fill="#F5F1E9">·</text><text data-i18n="k333" x="390.0" y="54" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="5.6" fill="rgba(245,241,233,.55)">OCT 3</text></g></svg>
+      </div>
+    </div>
+
+    <div class="tr-callout">
+      <span data-i18n="k221" class="label mono">Pattern</span>
+      <p data-i18n="k222">The read and the result are two different things. In the losses to San Antonio and Colorado Springs the plan held and Lexington out-created the opponent; what failed was the finishing and the duels. The one clear miss (New Mexico) came from a side that beat us from distance — something the scouting didn't flag.</p>
+    </div>
+
+    <div class="tr-filters" role="group" aria-label="Filter by verdict">
+      <button data-i18n="k223" class="tr-f active" data-f="all">All · 16</button>
+      <button data-i18n="k224" class="tr-f" data-f="held">Held · 7</button>
+      <button data-i18n="k225" class="tr-f" data-f="partly">Partly · 6</button>
+      <button data-i18n="k226" class="tr-f" data-f="missed">Missed · 1</button>
+      <button data-i18n="k227" class="tr-f" data-f="na">Inconclusive · 1</button>
+    </div>
+
+    <div class="tr-list">
+      <article class="tr-row reveal" data-v="pending">
+        <div class="tr-meta">
+          <span data-i18n="k228" class="tr-date mono">Oct 3</span>
+          <h3 class="tr-opp">El Paso Locomotive</h3>
+          <span data-i18n="k96" class="badge badge-system mono">Upcoming</span>
+        </div>
+        <div data-i18n="k267" class="tr-read"><span class="label mono">The read</span>Mid-block, take Alfaro away, break behind Torres.</div>
+        <div data-i18n="k283" class="tr-what"><span class="label mono">What happened</span>Kick-off Saturday, 7 PM ET.</div>
+        <div class="tr-verdict"><span data-i18n="k299" class="tr-chip v-pending mono">Pending</span><a data-i18n="k304" class="tr-link mono" href="analisis/lsc-vs-elpaso-2026-10-03.html">Pre-match →</a></div>
+      </article>
+      <article class="tr-row reveal" data-v="held">
+        <div class="tr-meta">
+          <span data-i18n="k229" class="tr-date mono">Sep 26</span>
+          <h3 class="tr-opp">Monterey Bay FC</h3>
+          <span data-i18n="k93" class="badge badge-win mono">W 3–2</span>
+        </div>
+        <div data-i18n="k268" class="tr-read"><span class="label mono">The read</span>Press their build-up into turnovers, then attack the pocket behind the pivot.</div>
+        <div data-i18n="k284" class="tr-what"><span class="label mono">What happened</span>Firmino scored after 45 seconds off Goodrum's interception; the winner came from Epps' steal and Molloy's ball into Goodrum's run.</div>
+        <div class="tr-verdict"><span data-i18n="k300" class="tr-chip v-held mono">Read held</span><a data-i18n="k304" class="tr-link mono" href="analisis/lsc-vs-montereybay-2026-09-26.html">Pre-match →</a></div>
+      </article>
+      <article class="tr-row reveal" data-v="held">
+        <div class="tr-meta">
+          <span data-i18n="k230" class="tr-date mono">Sep 19</span>
+          <h3 class="tr-opp">Orange County SC</h3>
+          <span data-i18n="k259" class="badge badge-win mono">W 6–0</span>
+        </div>
+        <div data-i18n="k269" class="tr-read"><span class="label mono">The read</span>Press high to force errors, attack inside, keep Bazini away from the space behind.</div>
+        <div data-i18n="k285" class="tr-what"><span class="label mono">What happened</span>4–0 at half-time, a Goodrum hat trick, and Orange County held to one shot on target.</div>
+        <div class="tr-verdict"><span data-i18n="k300" class="tr-chip v-held mono">Read held</span><a data-i18n="k304" class="tr-link mono" href="analisis/lsc-vs-orange-county-sc.html">Pre-match →</a></div>
+      </article>
+      <article class="tr-row reveal" data-v="partly">
+        <div class="tr-meta">
+          <span data-i18n="k231" class="tr-date mono">Sep 5</span>
+          <h3 class="tr-opp">Sporting JAX</h3>
+          <span data-i18n="k260" class="badge badge-loss mono">L 2–3</span>
+        </div>
+        <div data-i18n="k270" class="tr-read"><span class="label mono">The read</span>Overload the left with Greene and Epps, and make every set piece count.</div>
+        <div data-i18n="k286" class="tr-what"><span class="label mono">What happened</span>The left worked: Greene's cross for Zengue's header. But the set-piece edge went the other way — JAX scored off a corner and a throw-in late.</div>
+        <div class="tr-verdict"><span data-i18n="k301" class="tr-chip v-partly mono">Partly held</span><a data-i18n="k304" class="tr-link mono" href="analisis/september-5-sporting-jax.html">Pre-match →</a></div>
+      </article>
+      <article class="tr-row reveal" data-v="partly">
+        <div class="tr-meta">
+          <span data-i18n="k232" class="tr-date mono">Aug 29</span>
+          <h3 class="tr-opp">Colorado Springs</h3>
+          <span data-i18n="k261" class="badge badge-loss mono">L 0–1</span>
+        </div>
+        <div data-i18n="k271" class="tr-read"><span class="label mono">The read</span>Win it centrally and go straight behind the left-back.</div>
+        <div data-i18n="k287" class="tr-what"><span class="label mono">What happened</span>The process held — 1.25 xG to 0.26 — but nothing went in, and Fjeldberg won it at 74'.</div>
+        <div class="tr-verdict"><span data-i18n="k301" class="tr-chip v-partly mono">Partly held</span><a data-i18n="k304" class="tr-link mono" href="analisis/lsc-vs-colorado-springs-prematch.html">Pre-match →</a></div>
+      </article>
+      <article class="tr-row reveal" data-v="held">
+        <div class="tr-meta">
+          <span data-i18n="k233" class="tr-date mono">Aug 22</span>
+          <h3 class="tr-opp">Las Vegas Lights FC</h3>
+          <span data-i18n="k262" class="badge badge-win mono">W 2–0</span>
+        </div>
+        <div data-i18n="k272" class="tr-read"><span class="label mono">The read</span>Press the build-up and attack the space behind the full-backs in transition.</div>
+        <div data-i18n="k288" class="tr-what"><span class="label mono">What happened</span>Two goals in three second-half minutes: Firmino with acres of space down the right, then Epps off a midfield turnover. Their coach: "two mistakes".</div>
+        <div class="tr-verdict"><span data-i18n="k300" class="tr-chip v-held mono">Read held</span><a data-i18n="k304" class="tr-link mono" href="analisis/lsc_vs_lasvegaslights_prematch.html">Pre-match →</a></div>
+      </article>
+      <article class="tr-row reveal" data-v="partly">
+        <div class="tr-meta">
+          <span data-i18n="k234" class="tr-date mono">Aug 15</span>
+          <h3 class="tr-opp">Sacramento Republic</h3>
+          <span data-i18n="k261" class="badge badge-loss mono">L 0–1</span>
+        </div>
+        <div data-i18n="k273" class="tr-read"><span class="label mono">The read</span>Attack zone 14 on the ground — never in the air, where they dominate.</div>
+        <div data-i18n="k289" class="tr-what"><span class="label mono">What happened</span>The aerial warning was right: the 87th-minute winner came from a flicked-on corner. The zone-14 plan didn't land — no LSC shot on target.</div>
+        <div class="tr-verdict"><span data-i18n="k301" class="tr-chip v-partly mono">Partly held</span><a data-i18n="k304" class="tr-link mono" href="analisis/sacramento-preview.html">Pre-match →</a></div>
+      </article>
+      <article class="tr-row reveal" data-v="held">
+        <div class="tr-meta">
+          <span data-i18n="k235" class="tr-date mono">Aug 8</span>
+          <h3 class="tr-opp">Phoenix Rising FC</h3>
+          <span data-i18n="k94" class="badge badge-win mono">W 1–0</span>
+        </div>
+        <div data-i18n="k274" class="tr-read"><span class="label mono">The read</span>Control the ball, isolate Epps, stay compact and ruthless in transition.</div>
+        <div data-i18n="k290" class="tr-what"><span class="label mono">What happened</span>Lexington controlled it; Tarik Scott's width freed the space for the goal and Phoenix finished without a shot on target.</div>
+        <div class="tr-verdict"><span data-i18n="k300" class="tr-chip v-held mono">Read held</span><a data-i18n="k304" class="tr-link mono" href="analisis/pre-phoenix-rising.html">Pre-match →</a></div>
+      </article>
+      <article class="tr-row reveal" data-v="held">
+        <div class="tr-meta">
+          <span data-i18n="k236" class="tr-date mono">Aug 1</span>
+          <h3 class="tr-opp">Monterey Bay FC</h3>
+          <span data-i18n="k93" class="badge badge-win mono">W 3–2</span>
+        </div>
+        <div data-i18n="k275" class="tr-read"><span class="label mono">The read</span>Press their zone-1 exit and attack the left-back's blind side.</div>
+        <div data-i18n="k291" class="tr-what"><span class="label mono">What happened</span>Both teams scored exactly where the reports said: Braudílio off a won second ball, a cross down their left for the own goal.</div>
+        <div class="tr-verdict"><span data-i18n="k300" class="tr-chip v-held mono">Read held</span><a data-i18n="k304" class="tr-link mono" href="analisis/pre-monterrey.html">Pre-match →</a></div>
+      </article>
+      <article class="tr-row reveal" data-v="partly">
+        <div class="tr-meta">
+          <span data-i18n="k237" class="tr-date mono">Jul 25</span>
+          <h3 class="tr-opp">FC Tulsa</h3>
+          <span data-i18n="k263" class="badge badge-draw mono">D 0–0</span>
+        </div>
+        <div data-i18n="k276" class="tr-read"><span class="label mono">The read</span>Win the aerial duels at the back, then break fast.</div>
+        <div data-i18n="k292" class="tr-what"><span class="label mono">What happened</span>Clean sheet: Tulsa managed 2 shots on target. But the transitions never came — one LSC shot on goal with 62% of the ball.</div>
+        <div class="tr-verdict"><span data-i18n="k301" class="tr-chip v-partly mono">Partly held</span><a data-i18n="k304" class="tr-link mono" href="analisis/pre-fc-tulsa.html">Pre-match →</a></div>
+      </article>
+      <article class="tr-row reveal" data-v="partly">
+        <div class="tr-meta">
+          <span data-i18n="k238" class="tr-date mono">Jul 22</span>
+          <h3 class="tr-opp">Oakland Roots SC</h3>
+          <span data-i18n="k262" class="badge badge-win mono">W 2–0</span>
+        </div>
+        <div data-i18n="k277" class="tr-read"><span class="label mono">The read</span>Tire their shifting with possession, then cross from behind the full-backs.</div>
+        <div data-i18n="k293" class="tr-what"><span class="label mono">What happened</span>The win came from a different route: a Braudílio turnover in their half and a break after defending a corner.</div>
+        <div class="tr-verdict"><span data-i18n="k301" class="tr-chip v-partly mono">Partly held</span><a data-i18n="k304" class="tr-link mono" href="analisis/pre-oakland-roots.html">Pre-match →</a></div>
+      </article>
+      <article class="tr-row reveal" data-v="missed">
+        <div class="tr-meta">
+          <span data-i18n="k239" class="tr-date mono">Jul 15</span>
+          <h3 class="tr-opp">New Mexico United</h3>
+          <span data-i18n="k264" class="badge badge-loss mono">L 1–4</span>
+        </div>
+        <div data-i18n="k278" class="tr-read"><span class="label mono">The read</span>Their press leaks: attack the runners their centre-backs lose and cross into the box.</div>
+        <div data-i18n="k294" class="tr-what"><span class="label mono">What happened</span>New Mexico won it with a penalty and three strikes from distance. Our crossing plan produced one goal.</div>
+        <div class="tr-verdict"><span data-i18n="k302" class="tr-chip v-missed mono">Missed</span><a data-i18n="k304" class="tr-link mono" href="analisis/pre-new-mexico.html">Pre-match →</a></div>
+      </article>
+      <article class="tr-row reveal" data-v="na">
+        <div class="tr-meta">
+          <span data-i18n="k240" class="tr-date mono">Jul 11</span>
+          <h3 class="tr-opp">Louisville City FC</h3><span data-i18n="k257" class="tr-comp">USL Cup</span>
+          <span data-i18n="k265" class="badge badge-loss mono">L 2–4</span>
+        </div>
+        <div data-i18n="k279" class="tr-read"><span class="label mono">The read</span>Break their press early and attack the space behind the high line.</div>
+        <div data-i18n="k295" class="tr-what"><span class="label mono">What happened</span>Goodrum was sent off at 32' with the score 1–1, so the plan was never tested at 11v11. Both LSC goals came from Molloy set pieces.</div>
+        <div class="tr-verdict"><span data-i18n="k303" class="tr-chip v-na mono">Inconclusive</span><a data-i18n="k304" class="tr-link mono" href="analisis/pre-louisville-july.html">Pre-match →</a></div>
+      </article>
+      <article class="tr-row reveal" data-v="partly">
+        <div class="tr-meta">
+          <span data-i18n="k241" class="tr-date mono">Apr 4</span>
+          <h3 class="tr-opp">Colorado Springs</h3>
+          <span data-i18n="k266" class="badge badge-draw mono">D 1–1</span>
+        </div>
+        <div data-i18n="k280" class="tr-read"><span class="label mono">The read</span>Defend the crosses with numbers and don't give up zone-2 turnovers.</div>
+        <div data-i18n="k296" class="tr-what"><span class="label mono">What happened</span>Colorado threw in 20 crosses and 10 corners and didn't hit the target until the 51st minute; the equaliser came from a penalty.</div>
+        <div class="tr-verdict"><span data-i18n="k301" class="tr-chip v-partly mono">Partly held</span><a data-i18n="k304" class="tr-link mono" href="analisis/pre-colorado-springs.html">Pre-match →</a></div>
+      </article>
+      <article class="tr-row reveal" data-v="held">
+        <div class="tr-meta">
+          <span data-i18n="k242" class="tr-date mono">Apr 1</span>
+          <h3 class="tr-opp">Louisville City FC</h3><span data-i18n="k258" class="tr-comp">U.S. Open Cup</span>
+          <span data-i18n="k92" class="badge badge-loss mono">L 0–2</span>
+        </div>
+        <div data-i18n="k281" class="tr-read"><span class="label mono">The read</span>Win the crosses and the second balls — that's where Louisville punish you.</div>
+        <div data-i18n="k297" class="tr-what"><span class="label mono">What happened</span>Their opener came from a corner that bounced around the box; the second from a loose ball after a run in behind. The threat was exactly the one flagged.</div>
+        <div class="tr-verdict"><span data-i18n="k300" class="tr-chip v-held mono">Read held</span><a data-i18n="k304" class="tr-link mono" href="analisis/pre-louisville-april.html">Pre-match →</a></div>
+      </article>
+      <article class="tr-row reveal" data-v="held">
+        <div class="tr-meta">
+          <span data-i18n="k243" class="tr-date mono">Mar 29</span>
+          <h3 class="tr-opp">San Antonio FC</h3>
+          <span data-i18n="k92" class="badge badge-loss mono">L 0–2</span>
+        </div>
+        <div data-i18n="k282" class="tr-read"><span class="label mono">The read</span>A mobile runner behind the #55 punishes the zone-14 gap.</div>
+        <div data-i18n="k298" class="tr-what"><span class="label mono">What happened</span>Midence found that exact pocket and set up the best chances; LSC won the xG 1.67–1.09 but lost the duels and the game.</div>
+        <div class="tr-verdict"><span data-i18n="k300" class="tr-chip v-held mono">Read held</span><a data-i18n="k304" class="tr-link mono" href="analisis/pre-san-antonio.html">Pre-match →</a></div>
+      </article>
+    </div>
+    <p data-i18n="k305" class="tr-note mono">Verdicts are self-assessed against official club match reports. Competition noted when it wasn't a league match.</p>
+  </div>
+</section>
+
 <!-- ============ ABOUT ============ -->
-<section id="about">
+<section id="about" class="alt">
   <div class="wrap about-grid">
     <div class="about-photo">
       <img src="images/Ale1.jpg" alt="Alejandro Mena" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
     </div>
     <div>
-      <span class="eyebrow">Who I Am</span>
+      <span data-i18n="k8" class="eyebrow">Who I Am</span>
       <h2 style="font-size:clamp(26px,3.4vw,36px);">Alejandro Mena</h2>
-      <p class="section-desc" style="max-width:none;margin-top:14px;">
+      <p data-i18n="k26" class="section-desc" style="max-width:none;margin-top:14px;">
         Exercise Science &amp; Sport Administration student at Georgetown College (Kentucky), heading into his final year.
         Marketing intern with the Lexington Sporting Club soccer team and a coach with Georgetown Football Club.
         Background in Systems &amp; Computer Engineering. Working toward a role as a professional or collegiate coach —
         with a focus on video and performance analysis.
       </p>
       <div class="about-tags">
-        <span class="about-tag mono">Lexington Sporting Club — Marketing Intern</span>
-        <span class="about-tag mono">Georgetown Football Club — Coach</span>
-        <span class="about-tag mono">Georgetown College — Exercise Science &amp; Sport Administration</span>
-        <span class="about-tag mono">Universidad Católica de Colombia — Systems &amp; Computer Engineering</span>
+        <span data-i18n="k306" class="about-tag mono">Lexington Sporting Club — Marketing Intern</span>
+        <span data-i18n="k307" class="about-tag mono">Georgetown Football Club — Coach</span>
+        <span data-i18n="k308" class="about-tag mono">Georgetown College — Exercise Science &amp; Sport Administration</span>
+        <span data-i18n="k309" class="about-tag mono">Universidad Católica de Colombia — Systems &amp; Computer Engineering</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section id="contact" class="contact alt">
+<section id="contact" class="contact">
   <div class="wrap contact-grid">
     <div>
-      <span class="eyebrow">Get In Touch</span>
-      <h2 style="font-size:clamp(26px,3.4vw,36px);">Contact</h2>
-      <p class="section-desc" style="max-width:none;margin-top:14px;">
+      <span data-i18n="k9" class="eyebrow">Get In Touch</span>
+      <h2 data-i18n="k6" style="font-size:clamp(26px,3.4vw,36px);">Contact</h2>
+      <p data-i18n="k27" class="section-desc" style="max-width:none;margin-top:14px;">
         Open to conversations with technical staff, coaches, or clubs interested in match analysis and video work.
       </p>
     </div>
     <div class="contact-list mono">
          <a href="mailto:alejandromenarios98@gmail.com">
-           <span>Email — alejandromenarios98@gmail.com</span><span class="arrow">→</span>
+           <span data-i18n="k310">Email — alejandromenarios98@gmail.com</span><span class="arrow">→</span>
         </a>
      
       <a href="https://www.instagram.com/silasperformancelsc?igsh=bzFjNTRxbXQyajVy&utm_source=qr" target="_blank" rel="noopener">
@@ -925,7 +1220,7 @@ html{scroll-behavior:smooth;scroll-padding-top:64px;}
   </div>
 </section>
 
-<footer>SILAS VANCE — TACTICAL ANALYSIS · LEXINGTON, KY</footer>
+<footer data-i18n="k313">SILAS VANCE — TACTICAL ANALYSIS · LEXINGTON, KY</footer>
 
 <script>
   const toggle = document.getElementById('navToggle');
@@ -948,6 +1243,45 @@ html{scroll-behavior:smooth;scroll-padding-top:64px;}
     }), {rootMargin: '-45% 0px -50% 0px'});
     document.querySelectorAll('section[id]').forEach(sec => so.observe(sec));
   } else { cards.forEach(c => c.classList.add('in')); }
+
+  // Prediction vs. Result: filters + reveal of summary/strip
+  const trBtns = document.querySelectorAll('.tr-f');
+  trBtns.forEach(b => b.addEventListener('click', () => {
+    trBtns.forEach(x => x.classList.toggle('active', x === b));
+    const f = b.dataset.f;
+    document.querySelectorAll('.tr-row').forEach(r => { r.hidden = !(f === 'all' || r.dataset.v === f); if (!r.hidden) r.classList.add('in'); });
+  }));
+  document.querySelectorAll('.tr-summary, .tr-strip-card').forEach(el => {
+    if (!('IntersectionObserver' in window)) { el.classList.add('in'); return; }
+    const o = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { el.classList.add('in'); o.disconnect(); } }), {threshold: .3});
+    o.observe(el);
+  });
+
+  // ---- Language: EN (default in HTML) / ES ----
+  const I18N_ES = {"k0": "Jugadores", "k1": "Táctica de equipo", "k2": "Pre-partido", "k3": "Post-partido", "k4": "Historial", "k5": "Sobre mí", "k6": "Contacto", "k7": "Análisis de partidos · Lexington SC y más", "k8": "Quién soy", "k9": "Contacto", "k10": "Leer el partido<br/>antes de que <span class=\"accent\">pase.</span>", "k11": "Análisis tácticos construidos como piensa un cuerpo técnico: sistemas, duelos clave y los momentos que deciden un partido — antes y después del pitazo inicial.", "k12": "Ver los análisis", "k13": "Quién soy", "k14": "Jugadores", "k15": "Táctica de equipo", "k16": "Pre-partido", "k17": "Post-partido", "k18": "4-3-3 · estructura base usada en los análisis · ataque →", "k19": "Predicción vs. Resultado", "k21": "Micro-análisis de actuaciones individuales — rol, toma de decisiones e impacto dentro del sistema.", "k22": "Cambios estructurales en cómo se para Lexington como equipo — no un jugador, sino la forma y los roles a su alrededor.", "k23": "Scouting del rival y el plan antes del partido — sistema, amenazas y la lectura antes de que ruede el balón.", "k24": "El análisis completo tras el pitazo final — sistema, jugadores clave, qué pasó en cada fase y el resultado.", "k25": "Cada lectura pre-partido, contrastada con lo que realmente pasó. No si ganamos — si la lectura del partido fue correcta.", "k26": "Estudiante de Ciencias del Ejercicio y Administración Deportiva en Georgetown College (Kentucky), entrando a su último año. Practicante de marketing en el equipo de fútbol Lexington Sporting Club y entrenador en Georgetown Football Club. Formación en Ingeniería de Sistemas y Computación. Trabajando para llegar a ser entrenador profesional o universitario — con enfoque en análisis de video y de rendimiento.", "k27": "Abierto a conversar con cuerpos técnicos, entrenadores o clubes interesados en análisis de partidos y trabajo de video.", "k28": "01 / Individual", "k29": "02 / Táctica de equipo", "k30": "03 / Pre-partido", "k31": "04 / Post-partido", "k32": "05 / Historial", "k52": "La variable Molloy y Ferri", "k53": "3 partidos, una semana", "k54": "29 de marzo", "k55": "1 de abril", "k56": "4 de abril", "k57": "11 de julio (revancha)", "k58": "15 de julio", "k59": "22 de julio", "k60": "25 de julio", "k61": "1 de agosto", "k62": "8 de agosto", "k63": "15 de agosto", "k64": "22 de agosto", "k65": "29 de agosto", "k66": "5 de septiembre", "k67": "19 de septiembre", "k68": "26 de septiembre", "k69": "3 de octubre", "k70": "Extremos", "k71": "Delantero móvil", "k72": "#10 → falso extremo", "k73": "Mediocentro defensivo", "k74": "Rombo rotativo", "k75": "Eficacia", "k76": "3-4-3 / 5-4-1 def.", "k77": "Laterales altos y profundos", "k78": "Transiciones rápidas", "k79": "Línea de 3, carrileros", "k80": "Presión alta (con fugas)", "k81": "Posesión, salida en \"U\"", "k82": "Mucho volumen, ambas bandas", "k83": "Salida directa", "k85": "4-4-2 → 3-2-5 con balón", "k86": "4-4-2 rombo → 2-3-1-4", "k87": "4-1-4-1 → 2-3-5 con balón", "k89": "Juego directo en largo", "k90": "Bloque directo, salida en largo", "k91": "Presión alta, diagonales en sobrecarga", "k92": "D 0–2", "k93": "V 3–2", "k94": "V 1–0", "k95": "Salida posicional", "k96": "Próximo", "k97": "LI #4 — llega a línea de fondo", "k98": "MC #55 — espacio a su espalda", "k99": "DFC #21/#17 — amenaza aérea", "k100": "Ambos laterales suben muy alto", "k101": "El centro es su mayor amenaza", "k102": "Peligrosos en segundas jugadas", "k103": "9 peligroso en el 1v1", "k104": "Explosivos al recuperar en zona 2", "k105": "Los carrileros abren el campo", "k106": "Línea alta + presión inmediata", "k107": "DFC #3 — diagonales largos", "k108": "Extremo #5 — destino del balón largo", "k109": "#10 — ataca el primer palo", "k110": "DFC izq. — cambios de orientación largos", "k111": "Bloque de presión compacto", "k112": "Sobrecargan el área en los centros", "k113": "Débiles en la transición defensiva", "k114": "LI — pierde a los que corren a su espalda", "k115": "Los centrales acompañan, no entran", "k116": "Cómodos en los tres tercios", "k117": "Sufren cuando se les roba activamente", "k118": "El lateral derecho sube como 5.º atacante", "k119": "Los centrales no salen a la zona 14", "k120": "J. Rodríguez — goleador, goles tardíos", "k121": "O. Anderson — goles tempraneros", "k122": "#11 Pinzón — vértice del rombo", "k123": "Antonoglou — lateral, amplitud", "k124": "#80 Speedy Williams — marca el ritmo", "k125": "Carril del lateral izquierdo expuesto en transición", "k126": "#12 Foster — amenaza aérea en balón parado", "k127": "Línea de 3 — errores ante presión 3v3", "k128": "Espacio detrás del doble pivote", "k129": "Balón parado — 58 goles recibidos", "k130": "Se saltan el tercio medio", "k131": "Hueco detrás del doble pivote", "k132": "Débiles en segundas jugadas", "k133": "Pareja de centrales — cambios largos directos", "k134": "Doble pivote — cubre lejos, llega tarde", "k135": "Interior izq. Moreno — rompe por dentro hacia la zona 16", "k136": "Línea de 3 — 1v1 expuesto al superar la presión", "k137": "#93 Alfaro — mejor pasador, amenaza en balón parado", "k138": "Midence — encontró el bolsillo", "k139": "Goodrum — la mejor ocasión del partido", "k140": "Molloy y Ferri — expuestos por dentro", "k141": "Tarik Scott — amplitud desde el banco", "k142": "Epps — aislado en el 1v1", "k143": "Goodrum y Molloy — llegadas desde atrás", "k144": "Epps — liberado por el cambio", "k145": "Burks y Brown — cortaron las transiciones", "k146": "<span class=\"label mono\">Qué cambió</span> Se abandona el doble 6 fijo — Ferri y Aaron ya no están siempre a la misma altura: uno cubre mientras el otro sale.", "k147": "<span class=\"label mono\">Efecto</span> Con un Braudílio más móvil arriba, Lexington forma un rombo rotativo (el 6 que baja, Firmino de 10, un extremo que cierra y Braudílio) a la espalda de los marcadores rivales.", "k148": "<span class=\"label mono\">Qué cambió</span> El control territorial se mantuvo en los tres partidos — LSC marcó el ritmo, llegó con constancia al último tercio y metió balones al área de forma regular, de local o de visitante.", "k149": "<span class=\"label mono\">Efecto</span> La definición nunca estuvo a la altura del proceso: 3 goles en 3 partidos, rematado por 1,25 xG ante Colorado Springs que igual terminó en derrota.", "k150": "<span class=\"label mono\">Ataque</span> Directos y rápidos, buscan la espalda del lateral — sobre todo por su izquierda, donde el #4 llega una y otra vez a línea de fondo para centrar.", "k151": "<span class=\"label mono\">Defensa</span> Bloque bajo muy compacto y con mucha gente, pero esa densidad abre huecos en la zona 14 detrás de los medios que marcan — aprovechables con un jugador que ataque la espalda del #55.", "k152": "<span class=\"label mono\">Ataque</span> Muchos centros desde ambas bandas, balones constantes al área y peligrosos en segundas jugadas tras balón largo o cambio de orientación.", "k153": "<span class=\"label mono\">Defensa</span> N/A — esta lectura se centra en la estructura de Lexington: hace falta un repliegue completo y coordinado para evitar los 2v1 por banda.", "k154": "<span class=\"label mono\">Ataque</span> Dos vías claras de gol: centros a un área llena de gente, o transiciones rápidas tras recuperar en zona 2.", "k155": "<span class=\"label mono\">Defensa</span> N/A — la lectura pre-partido se centra en sus patrones de ataque.", "k156": "<span class=\"label mono\">Ataque</span> Los carrileros abren al rival a lo ancho para generar huecos interiores a sus delanteros por dentro; planteamiento de posesión.", "k157": "<span class=\"label mono\">Defensa</span> Línea defensiva alta, presión inmediata tras pérdida y faltas tácticas para reorganizarse si se supera la presión.", "k158": "<span class=\"label mono\">Ataque</span> Diagonales largos entre centrales y laterales buscando la espalda del lateral rival; el #10 ataca el primer palo en los centros.", "k159": "<span class=\"label mono\">Defensa</span> Presión alta que se rompe a menudo — los centrales miran el balón y pierden a los que corren, los medios no siguen a los suyos y quedan expuestos a los centros.", "k160": "<span class=\"label mono\">Ataque</span> Cómodos saliendo desde atrás; si se les tapa el juego corto, el central izquierdo cambia largo al 9 o al extremo izquierdo. La mayoría de sus goles llegan de centros con mucha gente en el área.", "k161": "<span class=\"label mono\">Defensa</span> Muy compactos, protegen bien la zona 14 y cortan con faltas tácticas cuando los superan — pero a veces se juntan demasiado y sufren con los cambios rápidos a la espalda de los laterales.", "k162": "<span class=\"label mono\">Ataque</span> Mandan mucha gente arriba desde las bandas con centros y balones largos, buscando superioridad numérica dentro del área.", "k163": "<span class=\"label mono\">Defensa</span> Sufren en la transición defensiva después de comprometer tanta gente en ataque — vulnerables justo tras perder el balón.", "k164": "<span class=\"label mono\">Ataque</span> Construyen con 3-4 toques como máximo antes de ir en largo, saltándose la zona 2 para llegar directo a la zona 3.", "k165": "<span class=\"label mono\">Defensa</span> Sufren mucho ante una presión alta coordinada en zona 1; el lateral izquierdo pierde una y otra vez a los que corren a su espalda; la línea alta deja libre la zona 14.", "k166": "<span class=\"label mono\">Ataque</span> De los mejores de la liga con balón — pasan a 3-2-2-3 para tener superioridad numérica y circulan con comodidad por los tres tercios.", "k167": "<span class=\"label mono\">Defensa</span> Dos vías probadas para ganarles: robarles activamente en lugar de solo presionar el balón (Colorado Springs), o golpearles en transición rápida (Louisville, gol en 3-4 pases).", "k168": "<span class=\"label mono\">Ataque</span> El lateral derecho se proyecta mientras el extremo izquierdo (#7) da amplitud; los interiores doblan sobre todo por la izquierda buscando la línea de fondo.", "k169": "<span class=\"label mono\">Defensa</span> Bloque 4-4-2 ordenado y estático que domina por arriba, pero los centrales no salen — la zona 14 queda libre detrás del doble pivote.", "k170": "<span class=\"label mono\">Ataque</span> Dominio interior a través del rombo (53,6% de field tilt). Cuando Pinzón recibe entre líneas cambian a la derecha — el 43% de sus ataques van por ese lado.", "k171": "<span class=\"label mono\">Defensa</span> Los dos laterales suben y los interiores tienen repliegues largos, así que la espalda de los laterales se abre en cuanto pierden el balón.", "k172": "<span class=\"label mono\">Ataque</span> Cómodos con balón, con el ritmo marcado por Speedy Williams; ambos laterales suben en un 2-3-5, dando amplitud y centros por las dos bandas.", "k173": "<span class=\"label mono\">Defensa</span> 4-1-4-1 con marca al hombre en el medio — pero con los dos laterales arriba, el carril del lateral izquierdo queda expuesto una y otra vez tras pérdida. Tres derrotas seguidas de visitante (New Mexico, Rhode Island, Phoenix Rising) pese a tener más el balón.", "k174": "<span class=\"label mono\">Ataque</span> Salen en 3-2-5 con carrileros muy altos y una línea de 3 cerrada y estrecha; el central izquierdo es su principal salida en largo hacia transiciones rápidas.", "k175": "<span class=\"label mono\">Defensa</span> Bloque medio ordenado 5-4-1 / 5-2-3, pero la defensa más goleada de la liga — sin portería a cero en 2026 y muy expuesta en córners y balones al área.", "k176": "<span class=\"label mono\">Ataque</span> Balones largos y tempranos desde atrás directo a Bazini — sin construir, con una clara tendencia a combinar por su banda derecha.", "k177": "<span class=\"label mono\">Defensa</span> Estirados en vertical por su propio juego directo — se abre un carril interior constante entre el doble pivote y la defensa.", "k178": "<span class=\"label mono\">Ataque</span> Los centrales buscan primero el diagonal directo al carril a la espalda del lateral rival — su peligro más claro en transición. Sin eso, se quedan en una posesión lenta en zona 2 que rara vez llega al último tercio con una ocasión real.", "k179": "<span class=\"label mono\">Defensa</span> Bloque 4-2-3-1 compacto y disciplinado, difícil de romper por dentro, pero el doble pivote cubre tanto terreno que ambos medios llegan tarde a la zona 14 — y sufren de forma visible para salir jugando bajo presión alta sostenida.", "k180": "<span class=\"label mono\">Ataque</span> Su identidad es la diagonal de adentro hacia afuera: el interior izquierdo se cierra y luego rompe a la espalda del lateral rival hacia la banda, con el carrilero doblando por fuera. Es un patrón peligroso y repetible de verdad — no un truco.", "k181": "<span class=\"label mono\">Defensa</span> El precio de subir tanta gente es una defensa estirada. Sus centrales quedan a menudo en 1v1 directos cuando se rompe la presión, y Dollenmayer en particular es el más limitado técnicamente.", "k182": "<span class=\"label mono\">Ataque</span> Lexington encontró el bolsillo exacto señalado en el pre-partido — a la espalda de los medios que marcan de San Antonio — donde Midence tuvo espacio para habilitar a Goodrum, cuyo segundo cabezazo — la ocasión más clara del partido — se fue apenas desviado.", "k183": "<span class=\"label mono\">Defensa</span> Pasivo y lento todo el partido, peor en el segundo tiempo; Molloy y Ferri quedaron atrapados en el medio mientras los laterales de San Antonio abrían el campo.", "k184": "<span class=\"label mono\">Ataque</span> Los dos primeros goles llegaron justo por donde apuntaba el plan — Braudílio tras ganar la segunda jugada después de una presión organizada, y luego un centro por la banda izquierda, la más débil de Monterey Bay, que forzó el autogol de Nakamura. La entrada de Tarik Scott estiró su defensa y dejó a Epps en su 1v1 ideal; Scott marcó de cabeza el gol de la victoria al 82' tras un rebote de córner.", "k185": "<span class=\"label mono\">Defensa</span> Los dos goles de Monterey Bay llegaron por el espacio exacto señalado en el pre-partido — balones directos a la espalda del lateral derecho tras una salida de bajo riesgo pensada para evitar la presión alta.", "k186": "<span class=\"label mono\">Ataque</span> Lexington controló el partido 45 minutos sin premio — ocupando los cinco carriles pero desconectado en el área, con Goodrum aislado una y otra vez en los centros. La solución llegó del banco: la entrada de Tarik Scott al 59' dio la amplitud que le faltaba al once inicial y abrió espacio a la espalda del mediocentro de Phoenix que aprovechó Epps. El gol llegó cuatro minutos después.", "k187": "<span class=\"label mono\">Defensa</span> Burks y Brown fueron la base que nunca dudó — absorbieron cada ataque de Phoenix y frenaron las transiciones todo el partido. Phoenix terminó sin un solo tiro a puerta.", "k188": "<span class=\"label mono\">Por qué importan —</span> El sistema de volumen de la temporada pasada tenía a ambos laterales doblando a la vez, lo que permitía a Michael y Marcus generarse espacio mutuamente con movimientos de adentro hacia afuera. La estructura más estática de este año los aísla — el mismo talento, mucha menos conexión.", "k189": "<span class=\"label mono\">Por qué importa —</span> Su capacidad de rotar entre 9, 10 y extremo está detrás de la racha reciente de victorias de Lexington — su movimiento abre espacio para Firmino y para llegadores como Ferri, como se vio ante Tampa Bay y San Antonio.", "k190": "<span class=\"label mono\">Por qué importa —</span> Pasó de un rol de 10 muy marcado a falso extremo derecho, cerrándose por dentro para formar un rombo con los dos 6 y Braudílio — recibe con espacio en lugar de ser el obligado a crear.", "k191": "<span class=\"label mono\">Por qué importa —</span> Su cobertura posicional detrás del doble pivote libera a Ferri para manejar el ritmo y por fin deja rotar a Molloy — se ve claramente desde su llegada el 21 de agosto y en el 4-1 a Oakland Roots.", "k192": "<span class=\"label mono\">Conclusión —</span> La superioridad interior que genera también abre las bandas para transiciones más rápidas y directas.", "k193": "<span class=\"label mono\">Conclusión —</span> El problema de Lexington no es llegar al último tercio. Es definir cuando llega.", "k194": "<span class=\"label mono\">Predicción —</span> Un jugador móvil a la espalda de sus mediocentros castiga el hueco de la zona 14 y los obliga a hundirse todavía más.", "k195": "<span class=\"label mono\">Predicción —</span> Ganar los centros y las segundas jugadas — un repliegue parcial o tardío es lo que más castiga Louisville.", "k196": "<span class=\"label mono\">Predicción —</span> Limitar las pérdidas en zona 2 y defender los centros con gente — son sus dos válvulas de escape.", "k197": "<span class=\"label mono\">Predicción —</span> Romper su presión antes de que se arme y atacar el espacio que deja su línea alta.", "k198": "<span class=\"label mono\">Predicción —</span> Brown cubriendo de lateral izquierdo, Braudílio como segundo delantero, Goodrum de 9 referencia para arrastrar marcas y Zengue de lateral derecho por su centro.", "k199": "<span class=\"label mono\">Predicción —</span> Llevarlos a fases largas de posesión para cansar sus basculaciones y luego atacar la espalda de los laterales con centros — el camino que les ganó la temporada pasada.", "k200": "<span class=\"label mono\">Predicción —</span> Recuperar e ir rápido — Goodrum y Braudílio a la contra, Marcus/Zengue atacando el espacio, Aaron/Firmino/Blaine llegando desde atrás, y buen juego aéreo en nuestra área.", "k201": "<span class=\"label mono\">Predicción —</span> Atacar el punto ciego del lateral izquierdo, ocupar la zona 14 con gente y presionar su salida en zona 1 para forzar pérdidas.", "k202": "<span class=\"label mono\">Predicción —</span> Combinar ambas — tener el balón y aislar a Epps en el 1v1, ser letales en transición, estar compactos empujando el juego a su banda izquierda, la más débil, y usar faltas tácticas para frenar sus transiciones aprovechando la localía.", "k203": "<span class=\"label mono\">Predicción —</span> Atacar la zona 14 con pases filtrados y desmarques de tercer hombre; nunca por arriba, ahí dominan el área.", "k204": "<span class=\"label mono\">Predicción —</span> Presionar la salida, atacar la espalda de los laterales en transición y estar muy atentos en los primeros y últimos 15 minutos.", "k205": "<span class=\"label mono\">Predicción —</span> Recuperar por dentro e ir de inmediato a la espalda del lateral izquierdo con la velocidad de Epps o Zengue — la vía más rápida y repetible al gol. Marcar de cerca a Foster en córners y saques de banda largos.", "k206": "<span class=\"label mono\">Predicción —</span> Presionarlos 3v3, jugar a la espalda del doble pivote con Braudílio bajando como falso 9, sobrecargar la izquierda con Greene y Epps, y aprovechar cada balón parado.", "k207": "<span class=\"label mono\">Predicción —</span> Presión alta para forzar el error en la salida y luego atacar el carril interior con Braudílio y Firmino combinando por dentro.", "k208": "<span class=\"label mono\">Predicción —</span> Presionar su salida para forzar pérdidas y luego atacar el bolsillo detrás del doble pivote con la movilidad del 8/10.", "k209": "<span class=\"label mono\">Predicción —</span> Bloque medio ordenado, proteger a los pivotes, quitarle a Alfaro la salida y romper rápido a la espalda del carrilero al recuperar — que el momento de Goodrum haga el resto.", "k210": "<span class=\"label mono\">Conclusión —</span> Las lecturas pre-partido eran correctas, pero una actuación pasiva y de baja intensidad impidió a Lexington aprovecharlas con constancia, mientras la mayor intensidad de San Antonio decidió el partido.", "k211": "<span class=\"label mono\">Conclusión —</span> Una remontada — con el partido a favor, un mediocampista más para controlar (en lugar de seguir expuestos en transición) habría sido el mejor cierre.", "k212": "<span class=\"label mono\">Conclusión —</span> Una victoria merecida construida sobre el control y la portería a cero, pero el problema de conexión en el área se resolvió de forma reactiva y no por diseño — esa solución tiene que estar antes del partido, no después de 59 minutos.", "k213": "Ver análisis completo →", "k214": "lecturas que se cumplieron total o parcialmente", "k215": "<i class=\"k-held\"></i>Se cumplió · 7", "k216": "<i class=\"k-partly\"></i>Parcial · 6", "k217": "<i class=\"k-missed\"></i>Fallada · 1", "k218": "<i class=\"k-na\"></i>No concluyente · 1", "k219": "Línea de tiempo · resultado arriba, veredicto en la línea", "k220": "Mar → Oct", "k221": "Patrón", "k222": "La lectura y el resultado son cosas distintas. En las derrotas ante San Antonio y Colorado Springs el plan se cumplió y Lexington generó más que el rival; lo que falló fue la definición y los duelos. La única lectura claramente fallada (New Mexico) fue ante un equipo que nos ganó con tiros de media distancia — algo que el scouting no había señalado.", "k223": "Todos · 16", "k224": "Se cumplió · 7", "k225": "Parcial · 6", "k226": "Fallada · 1", "k227": "No concluyente · 1", "k228": "3 oct", "k229": "26 sep", "k230": "19 sep", "k231": "5 sep", "k232": "29 ago", "k233": "22 ago", "k234": "15 ago", "k235": "8 ago", "k236": "1 ago", "k237": "25 jul", "k238": "22 jul", "k239": "15 jul", "k240": "11 jul", "k241": "4 abr", "k242": "1 abr", "k243": "29 mar", "k257": "USL Cup", "k258": "U.S. Open Cup", "k259": "V 6–0", "k260": "D 2–3", "k261": "D 0–1", "k262": "V 2–0", "k263": "E 0–0", "k264": "D 1–4", "k265": "D 2–4", "k266": "E 1–1", "k267": "<span class=\"label mono\">La lectura</span>Bloque medio, quitarle la salida a Alfaro, romper a la espalda de Torres.", "k268": "<span class=\"label mono\">La lectura</span>Presionar su salida para forzar pérdidas y atacar el bolsillo detrás del pivote.", "k269": "<span class=\"label mono\">La lectura</span>Presión alta para forzar errores, atacar por dentro y quitarle a Bazini el espacio a la espalda.", "k270": "<span class=\"label mono\">La lectura</span>Sobrecargar la izquierda con Greene y Epps, y aprovechar cada balón parado.", "k271": "<span class=\"label mono\">La lectura</span>Recuperar por dentro e ir directo a la espalda del lateral izquierdo.", "k272": "<span class=\"label mono\">La lectura</span>Presionar la salida y atacar la espalda de los laterales en transición.", "k273": "<span class=\"label mono\">La lectura</span>Atacar la zona 14 por abajo — nunca por arriba, donde dominan.", "k274": "<span class=\"label mono\">La lectura</span>Controlar el balón, aislar a Epps, estar compactos y letales en transición.", "k275": "<span class=\"label mono\">La lectura</span>Presionar su salida en zona 1 y atacar el punto ciego del lateral izquierdo.", "k276": "<span class=\"label mono\">La lectura</span>Ganar los duelos aéreos atrás y luego salir rápido.", "k277": "<span class=\"label mono\">La lectura</span>Cansar sus basculaciones con posesión y luego centrar desde la espalda de los laterales.", "k278": "<span class=\"label mono\">La lectura</span>Su presión tiene fugas: atacar a los que pierden sus centrales y centrar al área.", "k279": "<span class=\"label mono\">La lectura</span>Romper su presión temprano y atacar la espalda de la línea alta.", "k280": "<span class=\"label mono\">La lectura</span>Defender los centros con gente y no regalar pérdidas en zona 2.", "k281": "<span class=\"label mono\">La lectura</span>Ganar los centros y las segundas jugadas — ahí es donde castiga Louisville.", "k282": "<span class=\"label mono\">La lectura</span>Un jugador móvil a la espalda del #55 castiga el hueco de la zona 14.", "k283": "<span class=\"label mono\">Qué pasó</span>Partido el sábado, 7 PM ET.", "k284": "<span class=\"label mono\">Qué pasó</span>Firmino marcó a los 45 segundos tras un robo de Goodrum; el gol de la victoria llegó de un robo de Epps y el pase de Molloy al desmarque de Goodrum.", "k285": "<span class=\"label mono\">Qué pasó</span>4–0 al descanso, hat trick de Goodrum y Orange County con un solo tiro a puerta.", "k286": "<span class=\"label mono\">Qué pasó</span>La izquierda funcionó: centro de Greene para el cabezazo de Zengue. Pero la ventaja en balón parado fue para ellos — JAX marcó al final tras un córner y un saque de banda.", "k287": "<span class=\"label mono\">Qué pasó</span>El proceso se cumplió — 1,25 xG contra 0,26 — pero no entró nada, y Fjeldberg lo ganó al 74'.", "k288": "<span class=\"label mono\">Qué pasó</span>Dos goles en tres minutos del segundo tiempo: Firmino con todo el espacio por la derecha y luego Epps tras un robo en el medio. Su entrenador: \"dos errores\".", "k289": "<span class=\"label mono\">Qué pasó</span>El aviso aéreo era correcto: el gol del 87' llegó de un córner peinado. El plan por la zona 14 no funcionó — ningún tiro a puerta de LSC.", "k290": "<span class=\"label mono\">Qué pasó</span>Lexington lo controló; la amplitud de Tarik Scott abrió el espacio para el gol y Phoenix terminó sin un tiro a puerta.", "k291": "<span class=\"label mono\">Qué pasó</span>Los dos equipos marcaron justo donde decían los informes: Braudílio tras ganar la segunda jugada y un centro por su izquierda para el autogol.", "k292": "<span class=\"label mono\">Qué pasó</span>Portería a cero: Tulsa solo tuvo 2 tiros a puerta. Pero las transiciones nunca llegaron — un solo tiro a puerta de LSC con el 62% del balón.", "k293": "<span class=\"label mono\">Qué pasó</span>La victoria llegó por otra vía: un robo de Braudílio en su campo y una contra tras defender un córner.", "k294": "<span class=\"label mono\">Qué pasó</span>New Mexico ganó con un penal y tres remates de media distancia. Nuestro plan de centros dio un solo gol.", "k295": "<span class=\"label mono\">Qué pasó</span>Goodrum fue expulsado al 32' con 1–1, así que el plan nunca se probó 11 contra 11. Los dos goles de LSC llegaron de balón parado de Molloy.", "k296": "<span class=\"label mono\">Qué pasó</span>Colorado metió 20 centros y 10 córners y no tiró a puerta hasta el minuto 51; el empate llegó de penal.", "k297": "<span class=\"label mono\">Qué pasó</span>Su primer gol llegó de un córner que rebotó por el área; el segundo, de un balón suelto tras una llegada a la espalda. La amenaza fue justo la señalada.", "k298": "<span class=\"label mono\">Qué pasó</span>Midence encontró ese bolsillo exacto y generó las mejores ocasiones; LSC ganó en xG 1,67–1,09 pero perdió los duelos y el partido.", "k299": "Pendiente", "k300": "Se cumplió", "k301": "Parcial", "k302": "Fallada", "k303": "No concluyente", "k304": "Pre-partido →", "k305": "Veredictos autoevaluados con los informes oficiales de los clubes. Se indica la competición cuando no fue un partido de liga.", "k306": "Lexington Sporting Club — Practicante de marketing", "k307": "Georgetown Football Club — Entrenador", "k308": "Georgetown College — Ciencias del Ejercicio y Administración Deportiva", "k309": "Universidad Católica de Colombia — Ingeniería de Sistemas y Computación", "k310": "Correo — alejandromenarios98@gmail.com", "k313": "SILAS VANCE — ANÁLISIS TÁCTICO · LEXINGTON, KY", "k314": "D", "k315": "29 MAR", "k316": "1 ABR", "k317": "E", "k318": "4 ABR", "k319": "11 JUL", "k320": "15 JUL", "k321": "V", "k322": "22 JUL", "k323": "25 JUL", "k324": "1 AGO", "k325": "8 AGO", "k326": "15 AGO", "k327": "22 AGO", "k328": "29 AGO", "k329": "5 SEP", "k330": "19 SEP", "k331": "26 SEP", "k333": "3 OCT", "kx1": "Análisis Táctico", "kx2": "ZONA 14"};
+  const i18nEls = document.querySelectorAll('[data-i18n]');
+  const TITLES = {en: document.title, es: 'Silas Vance — Análisis Táctico'};
+  function setLang(lang) {
+    if (lang !== 'es') lang = 'en';
+    i18nEls.forEach(el => {
+      if (el._en === undefined) el._en = el.innerHTML;
+      const t = I18N_ES[el.dataset.i18n];
+      el.innerHTML = (lang === 'es' && t !== undefined) ? t : el._en;
+    });
+    document.documentElement.lang = lang;
+    document.title = TITLES[lang];
+    document.querySelectorAll('[data-set-lang]').forEach(b => b.setAttribute('aria-pressed', b.dataset.setLang === lang ? 'true' : 'false'));
+    try { localStorage.setItem('sv-lang', lang); } catch (e) {}
+  }
+  document.querySelectorAll('[data-set-lang]').forEach(b => b.addEventListener('click', () => setLang(b.dataset.setLang)));
+  (function initLang() {
+    let lang = null;
+    const q = new URLSearchParams(location.search).get('lang');
+    if (q === 'es' || q === 'en') lang = q;
+    if (!lang) { try { lang = localStorage.getItem('sv-lang'); } catch (e) {} }
+    if (!lang) lang = (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+    if (lang === 'es') setLang('es');
+  })();
 </script>
 
 </body>
