@@ -6,21 +6,151 @@
 <title>March 29 — Silas Vance</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* Silas Vance — Pre-Match · paleta del proyecto. Todo namespaced bajo #post-2026-03-29-san-antonio */
+#post-2026-03-29-san-antonio{
+  --green:#3DDC5A; --black:#111111; --bone:#F5F1E9;
+  --bg:#0B0F0C; --panel:#131A14; --line:rgba(245,241,233,.12); --muted:rgba(245,241,233,.62);
+  --display:'Oswald',sans-serif; --body:'Inter',sans-serif; --mono:'IBM Plex Mono',monospace;
+  background:var(--bg); color:var(--bone); font-family:var(--body); font-size:17px; line-height:1.65;
+  min-height:100vh; margin:0; -webkit-font-smoothing:antialiased;
+}
+#post-2026-03-29-san-antonio *{box-sizing:border-box;}
+#post-2026-03-29-san-antonio a{color:inherit;text-decoration:none;}
+#post-2026-03-29-san-antonio .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+#post-2026-03-29-san-antonio .display{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;}
+#post-2026-03-29-san-antonio .mono{font-family:var(--mono);}
+#post-2026-03-29-san-antonio .label{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:10px;}
+
+/* Nav */
+#post-2026-03-29-san-antonio .site-nav{position:sticky;top:0;z-index:20;background:rgba(11,15,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+#post-2026-03-29-san-antonio .nav-inner{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+#post-2026-03-29-san-antonio .brand{display:flex;align-items:center;gap:12px;}
+#post-2026-03-29-san-antonio .brand-mark{width:30px;height:30px;flex:none;}
+#post-2026-03-29-san-antonio .brand-text .display{font-size:1.15rem;line-height:1;}
+#post-2026-03-29-san-antonio .tagline{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+#post-2026-03-29-san-antonio .tabs{display:flex;gap:22px;}
+#post-2026-03-29-san-antonio .tabs a{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
+#post-2026-03-29-san-antonio .tabs a:hover{color:var(--green);}
+#post-2026-03-29-san-antonio .nav-toggle{display:none;background:none;border:1px solid var(--line);color:var(--bone);font-size:1.1rem;padding:4px 10px;cursor:pointer;}
+
+/* Hero */
+#post-2026-03-29-san-antonio .detail-hero{padding:56px 0 40px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(61,220,90,.07),transparent 70%);}
+#post-2026-03-29-san-antonio .back-link{display:inline-block;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--muted);margin-bottom:26px;}
+#post-2026-03-29-san-antonio .back-link:hover{color:var(--green);}
+#post-2026-03-29-san-antonio .detail-kicker{display:block;font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);}
+#post-2026-03-29-san-antonio .detail-hero h1{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(3rem,10vw,5.6rem);line-height:.95;margin:10px 0 22px;letter-spacing:.01em;}
+#post-2026-03-29-san-antonio .detail-meta{display:flex;flex-wrap:wrap;gap:10px;}
+#post-2026-03-29-san-antonio .badge{display:inline-block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--green);color:var(--green);border-radius:2px;}
+
+/* Body */
+#post-2026-03-29-san-antonio .detail-body{padding:44px 0 60px;}
+#post-2026-03-29-san-antonio .summary-card{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--green);padding:22px 24px;margin-bottom:40px;}
+#post-2026-03-29-san-antonio .summary-card p{margin:0;font-size:1.12rem;font-weight:500;}
+#post-2026-03-29-san-antonio .detail-article .block{padding:0 0 30px;margin-bottom:30px;border-bottom:1px solid var(--line);counter-increment:blk;}
+#post-2026-03-29-san-antonio .detail-article{counter-reset:blk;}
+#post-2026-03-29-san-antonio .detail-article h3{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.03em;font-size:1.55rem;margin:0 0 14px;line-height:1.15;}
+#post-2026-03-29-san-antonio .detail-article h3::before{content:counter(blk,decimal-leading-zero);display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;color:var(--green);margin-bottom:6px;}
+#post-2026-03-29-san-antonio .detail-article p{margin:0 0 14px;color:rgba(245,241,233,.88);}
+#post-2026-03-29-san-antonio .detail-conclusion{background:var(--green);color:var(--black);padding:26px 26px;margin:10px 0 44px;}
+#post-2026-03-29-san-antonio .detail-conclusion .label{color:var(--black);opacity:.75;}
+#post-2026-03-29-san-antonio .detail-conclusion p{margin:0;font-size:1.1rem;font-weight:600;line-height:1.55;}
+
+/* Video */
+#post-2026-03-29-san-antonio .video-section{margin-bottom:44px;}
+#post-2026-03-29-san-antonio .video-links{display:grid;gap:10px;}
+#post-2026-03-29-san-antonio .video-link-slot{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);padding:16px 18px;font-weight:500;transition:border-color .2s,color .2s;}
+#post-2026-03-29-san-antonio a.video-link-slot:hover{border-color:var(--green);color:var(--green);}
+#post-2026-03-29-san-antonio .platform{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);background:var(--bone);padding:4px 8px;min-width:88px;text-align:center;}
+
+#post-2026-03-29-san-antonio .detail-nav-links{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;}
+#post-2026-03-29-san-antonio .detail-nav-links a:hover{color:var(--green);}
+#post-2026-03-29-san-antonio footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--muted);}
+
+/* Figures */
+#post-2026-03-29-san-antonio .figure{background:var(--panel);border:1px solid var(--line);padding:16px 16px 12px;margin:22px 0 6px;}
+#post-2026-03-29-san-antonio .figure svg{display:block;width:100%;height:auto;}
+#post-2026-03-29-san-antonio .fig-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;}
+#post-2026-03-29-san-antonio .fig-title{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);}
+#post-2026-03-29-san-antonio .fig-dir{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+#post-2026-03-29-san-antonio .figcaption{font-size:.86rem;color:var(--muted);margin:10px 0 0;line-height:1.5;}
+#post-2026-03-29-san-antonio .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#post-2026-03-29-san-antonio .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;}
+#post-2026-03-29-san-antonio .figure .draw{stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1.3s ease .25s;}
+#post-2026-03-29-san-antonio .figure .fade{opacity:0;transition:opacity .8s ease .9s;}
+#post-2026-03-29-san-antonio .figure.in .draw{stroke-dashoffset:0;}
+#post-2026-03-29-san-antonio .figure.in .fade{opacity:1;}
+#post-2026-03-29-san-antonio .figure .grow{transform:scaleY(0);transform-box:fill-box;transform-origin:bottom;transition:transform .9s ease;}
+#post-2026-03-29-san-antonio .figure.in .grow{transform:scaleY(1);}
+@media (prefers-reduced-motion:reduce){#post-2026-03-29-san-antonio .figure .draw{stroke-dashoffset:0;transition:none}#post-2026-03-29-san-antonio .figure .fade{opacity:1;transition:none}#post-2026-03-29-san-antonio .figure .grow{transform:none;transition:none}}
+
+/* Phase grid */
+#post-2026-03-29-san-antonio .phase-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:-30px 0 44px;}
+#post-2026-03-29-san-antonio .phase{background:var(--panel);border:1px solid var(--line);padding:16px 18px;}
+#post-2026-03-29-san-antonio .phase.alert{border-color:var(--bone);background:repeating-linear-gradient(45deg,rgba(245,241,233,.05) 0 6px,transparent 6px 12px),var(--panel);}
+#post-2026-03-29-san-antonio .phase-n{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--green);}
+#post-2026-03-29-san-antonio .phase h4{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-size:1.05rem;margin:4px 0 6px;}
+#post-2026-03-29-san-antonio .phase p{margin:0;font-size:.9rem;color:rgba(245,241,233,.8);line-height:1.5;}
+
+/* Extra components: stat row, callouts, player cards, match cards, form */
+#post-2026-03-29-san-antonio .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:-18px 0 40px;}
+#post-2026-03-29-san-antonio .stat-row div{background:var(--panel);padding:14px 10px;text-align:center;}
+#post-2026-03-29-san-antonio .stat-row b{display:block;font-family:var(--mono);font-size:1.3rem;color:var(--green);font-weight:600;line-height:1.2;}
+#post-2026-03-29-san-antonio .stat-row span{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+#post-2026-03-29-san-antonio .callout{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--green);padding:14px 18px;margin:18px 0 6px;}
+#post-2026-03-29-san-antonio .callout.alert{border-left-color:var(--bone);}
+#post-2026-03-29-san-antonio .callout .label{margin-bottom:6px;}
+#post-2026-03-29-san-antonio .callout.alert .label{color:var(--bone);}
+#post-2026-03-29-san-antonio .callout p{margin:0;font-size:.95rem;}
+#post-2026-03-29-san-antonio .pcards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 6px;}
+#post-2026-03-29-san-antonio .pcard{background:var(--panel);border:1px solid var(--line);padding:14px 16px;}
+#post-2026-03-29-san-antonio .pcard h4{font-family:var(--display);text-transform:uppercase;font-size:1.05rem;margin:0;letter-spacing:.02em;}
+#post-2026-03-29-san-antonio .pcard .role{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;color:var(--green);text-transform:uppercase;display:block;margin:2px 0 8px;}
+#post-2026-03-29-san-antonio .pcard .nums{display:flex;gap:18px;margin-bottom:6px;}
+#post-2026-03-29-san-antonio .pcard .nums b{display:block;font-family:var(--mono);font-size:1.2rem;color:var(--green);}
+#post-2026-03-29-san-antonio .pcard .nums span{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#post-2026-03-29-san-antonio .pcard p{margin:0;font-size:.88rem;color:rgba(245,241,233,.78);line-height:1.5;}
+#post-2026-03-29-san-antonio .form-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 6px;}
+#post-2026-03-29-san-antonio .mcard{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--muted);padding:12px 14px;}
+#post-2026-03-29-san-antonio .mcard.w{border-top-color:var(--green);}
+#post-2026-03-29-san-antonio .mcard .res{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+#post-2026-03-29-san-antonio .mcard.w .res{color:var(--green);}
+#post-2026-03-29-san-antonio .mcard .score{font-family:var(--display);font-size:1.15rem;text-transform:uppercase;margin:2px 0 4px;}
+#post-2026-03-29-san-antonio .mcard p{margin:0;font-size:.78rem;color:var(--muted);line-height:1.4;}
+
+#post-2026-03-29-san-antonio .badge-loss{background:var(--black);color:var(--bone);border-color:var(--bone);}
+
+@media (max-width:760px){
+  #post-2026-03-29-san-antonio .stat-row{grid-template-columns:repeat(2,1fr);}
+  #post-2026-03-29-san-antonio .pcards{grid-template-columns:1fr;}
+  #post-2026-03-29-san-antonio .form-row{grid-template-columns:repeat(2,1fr);}
+  #post-2026-03-29-san-antonio .phase-grid{grid-template-columns:1fr;}
+  #post-2026-03-29-san-antonio .nav-toggle{display:block;}
+  #post-2026-03-29-san-antonio .tabs{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);}
+  #post-2026-03-29-san-antonio .tabs.open{display:flex;}
+  #post-2026-03-29-san-antonio .tabs a{padding:14px 20px;border-top:1px solid var(--line);}
+  #post-2026-03-29-san-antonio .detail-hero{padding:36px 0 30px;}
+  #post-2026-03-29-san-antonio .detail-conclusion,#post-2026-03-29-san-antonio .summary-card{padding:20px;}
+  #post-2026-03-29-san-antonio .figure{margin-left:-20px !important;margin-right:-20px !important;padding:14px 8px 12px;border-left:0;border-right:0;}
+  #post-2026-03-29-san-antonio .fig-head,#post-2026-03-29-san-antonio .legend,#post-2026-03-29-san-antonio .figcaption{padding:0 12px;}
+}
+</style>
 </head>
-<body>
+<body id="post-2026-03-29-san-antonio" style="margin:0;">
 
 <header class="site-nav">
   <div class="nav-inner">
     <a class="brand" href="../index.html">
       <svg class="brand-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="1" width="26" height="26" rx="2" stroke="#3D9B54" stroke-width="1.4"/>
-        <line x1="1" y1="14" x2="27" y2="14" stroke="#3D9B54" stroke-width="1.2"/>
-        <circle cx="14" cy="14" r="4.2" stroke="#3D9B54" stroke-width="1.2"/>
-        <circle cx="14" cy="6" r="1.6" fill="#E8B23D"/>
-        <circle cx="8" cy="9" r="1.6" fill="#E8B23D"/>
-        <circle cx="20" cy="9" r="1.6" fill="#E8B23D"/>
+        <rect x="1" y="1" width="26" height="26" rx="2" stroke="#3DDC5A" stroke-width="1.4"/>
+        <line x1="1" y1="14" x2="27" y2="14" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="14" r="4.2" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="6" r="1.6" fill="#F5F1E9"/>
+        <circle cx="8" cy="9" r="1.6" fill="#F5F1E9"/>
+        <circle cx="20" cy="9" r="1.6" fill="#F5F1E9"/>
       </svg>
       <span class="brand-text">
         <span class="display" style="display:block;">SILAS VANCE</span>
@@ -45,7 +175,7 @@
     <span class="detail-kicker">Post-Match · vs. San Antonio FC</span>
     <h1>March 29</h1>
     <div class="detail-meta">
-      <span class="badge badge-score mono">0–2 (L)</span><span class="badge badge-pre mono">3-4-3 / 5-4-1 def</span>
+      <span class="badge badge-post badge-loss mono">L 0–2</span><span class="badge badge-pre mono">Intensity, not plan</span>
     </div>
   </div>
 </section>
@@ -57,22 +187,111 @@
       <span class="label">In One Line</span>
       <p>The pre-match reads were right, but a slow, passive Lexington couldn't punish them consistently — and San Antonio's superior intensity decided the game.</p>
     </div>
+<div class="stat-row">
+<div><b>52%</b><span>LSC possession</span></div>
+<div><b>11–11</b><span>Shots</span></div>
+<div><b>1.67–1.09</b><span>xG · LSC–SA</span></div>
+<div><b>33–21</b><span>Box touches</span></div>
+</div>
 
     <article class="detail-article">
-      <div class="block"><h3>A Clear Intensity Gap</h3><p>The biggest story of this match was the gap in intensity. San Antonio were sharp and committed — pressing hard, fighting for every loose ball, even shooting from range, and winning the vast majority of crossed and contested balls. Lexington, by contrast, looked passive and slow, struggling to break through San Antonio's lines for long stretches.</p></div><div class="block"><h3>The Pocket We Identified Actually Opened Up</h3><p>Even in a slow performance, Lexington still found the exact space flagged before kickoff — the pocket behind San Antonio's marking midfielders. Alfredo received well there, created room for himself, and was able to set up Philip for a shot that had a real chance of being the opener. The same overconfidence we'd noted in San Antonio's center-backs showed up here too: Philip had the clearest chance of the match off a second header when Marcos won the first ball back into the box, but the follow-up finish drifted just wide.</p></div><div class="block"><h3>Where It Went Wrong</h3><p>Lexington's passivity got worse as the game went on — the second half was noticeably slower and less intense than the first. San Antonio, meanwhile, only grew more consistent and aggressive, and that difference produced their second goal: a change of rhythm through midfield exposed Molloy and Ferri centrally, precisely because San Antonio's two full-backs were pushed so high and wide. With Lexington poorly set defensively in that moment, San Antonio's midfielder was left with a clean, unchallenged strike on goal.</p></div>
+      <div class="block"><h3>A Clear Intensity Gap</h3><p>The biggest story of this match was the gap in intensity. San Antonio were sharp and committed — pressing hard, fighting for every loose ball, shooting from range, and winning the vast majority of crossed and contested balls. Lexington, by contrast, looked passive and slow, struggling to break through San Antonio's lines for long stretches.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">How the match unfolded</span><span class="fig-dir">0' → 90'</span></div>
+<svg viewBox="0 0 400 130" role="img" aria-label="How the match unfolded" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="p4ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="p4ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="p4hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><rect class="fade" x="201.0" y="40" width="171.0" height="30" fill="rgba(245,241,233,.08)"/><text x="286.5" y="34" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6" letter-spacing=".6" fill="#F5F1E9">2ND HALF · LSC SLOWER, SA SHARPER</text><rect x="30" y="52" width="342.0" height="6" fill="rgba(245,241,233,.14)"/><text x="30.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">0'</text><text x="87.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">15'</text><text x="144.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">30'</text><text x="201.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">45'</text><text x="258.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">60'</text><text x="315.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">75'</text><text x="372.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">90'</text><circle class="fade" cx="136.39999999999998" cy="55" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.2"/><line class="fade" x1="136.39999999999998" y1="62" x2="136.39999999999998" y2="97" stroke="#F5F1E9" stroke-opacity=".35"/><text x="136.39999999999998" y="106" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">28' HERNÁNDEZ · DEFLECTED PASS</text><circle class="fade" cx="315.0" cy="55" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.2"/><line class="fade" x1="315.0" y1="62" x2="315.0" y2="113" stroke="#F5F1E9" stroke-opacity=".35"/><text x="315.0" y="122" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">75' EROFEEV (PARANO)</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.2px #F5F1E9"></i>SA goal</span></div>
+<p class="figcaption">An early goal from a deflected pass, then a second half in which Lexington's intensity dropped and San Antonio's rose — the gap that produced the 75th-minute goal.</p>
+</figure><div class="callout"><span class="label">What the numbers say</span><p>Lexington had more of the ball, more touches in the box and a higher xG. The chances were created where the plan said they would be; the difference was in the duels, the second balls and the finishing.</p></div></div><div class="block"><h3>The Pocket We Identified Actually Opened Up</h3><p>Even in a slow performance, Lexington found the exact space flagged before kickoff — the pocket behind San Antonio's marking midfielders. Alfredo Midence received well there, created room for himself and set up Phillip Goodrum for a shot that had a real chance of being the opener.</p><p>The overconfidence we'd noted in San Antonio's centre-backs showed up too: Goodrum had the clearest chance of the match off a second header when Marcus Epps won the first ball back into the box, but the finish drifted just wide.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">The pocket we flagged did open</span><span class="fig-dir">← LSC attack</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="The pocket we flagged did open" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="p1ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="p1ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="p1hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><rect class="fade" x="68" y="90" width="44" height="60" fill="rgba(61,220,90,.25)" stroke="#3DDC5A" stroke-dasharray="3 3"/><text x="90" y="84" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#3DDC5A">THE POCKET</text><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="56" cy="34" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="50" cy="78" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="46" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="50" cy="162" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="56" cy="206" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="124" cy="48" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="130" cy="98" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="130" y="100.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">55</text><circle cx="130" cy="142" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="124" cy="192" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><path class="fade" d="M136 94 L166 84" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#p1ah-b)"/><path class="fade" d="M136 146 L166 156" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#p1ah-b)"/><text x="170" y="70" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">MARKERS STEP OUT</text><circle cx="176" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="96" cy="116" r="7" fill="#3DDC5A"/><text x="96" y="118.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">MID</text><circle cx="88" cy="114" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><path class="draw" d="M196 124 L106 118" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#p1ah-b)"/><circle cx="206" cy="124" r="7" fill="#3DDC5A"/><text x="206" y="126.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">FER</text><circle cx="74" cy="150" r="7" fill="#3DDC5A"/><text x="74" y="152.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">GOO</text><path class="fade" d="M90 122 L80 142" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#p1ah-b)"/><path class="fade" d="M68 150 L26 126" fill="none" stroke="#3DDC5A" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#p1ah-g)"/></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>San Antonio</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:#F5F1E9;width:7px;height:7px"></i>Ball</span></div>
+<p class="figcaption">Midence received behind San Antonio's marking midfielders, found room to turn and set up Goodrum for a shot that could have been the opener. The space was exactly where the pre-match report put it.</p>
+</figure><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">The second header</span><span class="fig-dir">← LSC attack</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="The second header" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="p2ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="p2ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="p2hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="40" cy="92" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="36" cy="124" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="44" cy="150" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="150" cy="222" r="7" fill="#3DDC5A"/><circle cx="144" cy="220" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><path class="draw" d="M142 216 Q100 160 58 104" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#p2ah-b)"/><circle cx="52" cy="98" r="7" fill="#3DDC5A"/><text x="52" y="100.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">EPP</text><text x="70" y="80" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">1ST BALL WON</text><path class="fade" d="M50 104 L46 130" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#p2ah-b)"/><circle cx="52" cy="138" r="7" fill="#3DDC5A"/><text x="52" y="140.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">GOO</text><path class="fade" d="M46 138 Q24 140 10 154" fill="none" stroke="#3DDC5A" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#p2ah-g)"/><text x="14" y="176" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">WIDE</text><text x="120" y="140" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">CLEAREST CHANCE OF THE MATCH</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>San Antonio</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:#F5F1E9;width:7px;height:7px"></i>Ball</span></div>
+<p class="figcaption">Epps won the first ball back across the box and Goodrum met the second header — the clearest chance of the match, drifting just wide. San Antonio's centre-backs were beaten in the air exactly as their overconfidence suggested they could be.</p>
+</figure></div><div class="block"><h3>Where It Went Wrong</h3><p>Lexington's passivity got worse as the game went on — the second half was noticeably slower and less intense than the first. San Antonio only grew more consistent and aggressive, and that difference produced their second goal: a change of rhythm through midfield exposed Molloy and Ferri centrally, precisely because San Antonio's two full-backs were pushed so high and wide. With Lexington poorly set in that moment, Dmitrii Erofeev was left with a clean, unchallenged strike.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">75': Molloy and Ferri exposed</span><span class="fig-dir">SA attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="75': Molloy and Ferri exposed" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="p3ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="p3ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="p3hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><circle cx="300" cy="20" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="300" y="22.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">FB</text><circle cx="300" cy="220" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="300" y="222.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">FB</text><circle cx="318" cy="40" r="7" fill="#3DDC5A"/><circle cx="318" cy="200" r="7" fill="#3DDC5A"/><g class="fade" stroke="#F5F1E9" stroke-opacity=".5" stroke-dasharray="2 2"><line x1="307" y1="24" x2="314" y2="34"/><line x1="307" y1="216" x2="314" y2="206"/></g><circle cx="250" cy="90" r="7" fill="#3DDC5A"/><text x="250" y="92.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">MOL</text><circle cx="250" cy="150" r="7" fill="#3DDC5A"/><text x="250" y="152.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">FER</text><path class="fade" d="M244 94 L234 104" fill="none" stroke="#3DDC5A" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#p3ah-g)"/><path class="fade" d="M244 146 L234 136" fill="none" stroke="#3DDC5A" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#p3ah-g)"/><rect class="fade" x="226" y="104" width="60" height="32" fill="rgba(245,241,233,.08)" stroke="#F5F1E9" stroke-opacity=".5" stroke-dasharray="3 3"/><circle cx="170" cy="124" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="178" cy="124" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><path class="draw" d="M182 122 L240 120" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#p3ah-b)"/><circle cx="246" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><path class="fade" d="M254 120 L322 120" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#p3ah-b)"/><circle cx="348" cy="100" r="7" fill="#3DDC5A"/><circle cx="348" cy="140" r="7" fill="#3DDC5A"/><circle cx="388" cy="120" r="6.5" fill="#3DDC5A"/><text x="256" y="172" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">75' · CLEAN STRIKE</text><text x="170" y="146" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">CHANGE OF RHYTHM</text><text x="300" y="236" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6" letter-spacing=".6" fill="#F5F1E9">FULL-BACKS PIN OUR WIDE PLAYERS</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>San Antonio</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:#F5F1E9;width:7px;height:7px"></i>Ball</span></div>
+<p class="figcaption">With San Antonio's full-backs high and wide, our wide players were pinned and the middle was left to Molloy and Ferri. One change of rhythm through midfield, a poorly set block, and an unchallenged shot: Erofeev, assisted by Parano.</p>
+</figure></div>
     </article>
 
-    <div class="detail-conclusion"><span class="label">Conclusion</span><p>The tactical picture from the pre-match report held up — the space existed exactly where it was expected to be. What decided the result was game intensity, not game plan: San Antonio simply played the match at a higher gear than Lexington did.</p></div>
+    <div class="detail-conclusion"><span class="label">Conclusion</span><p>The tactical picture from the pre-match report held up — the space existed exactly where it was expected to be. What decided the result was intensity, not the game plan: San Antonio simply played the match at a higher gear.</p></div>
 
     <div class="video-section">
       <span class="label">Watch The Breakdown</span>
       <div class="video-links">
-        <div class="video-link-slot"><span class="platform">Instagram</span> [ Paste the Reel link here ]</div>
-        <div class="video-link-slot"><span class="platform">TikTok</span> [ Paste the TikTok link here ]</div>
+        <!-- VIDEO: reemplaza PEGAR_ENLACE_VIDEO por el enlace del video -->
+        <a class="video-link-slot" href="PEGAR_ENLACE_VIDEO" target="_blank" rel="noopener"><span class="platform">Video</span> Watch the full breakdown →</a>
+        <!-- INSTAGRAM: reemplaza PEGAR_ENLACE_INSTAGRAM -->
+        <a class="video-link-slot" href="PEGAR_ENLACE_INSTAGRAM" target="_blank" rel="noopener"><span class="platform">Instagram</span> Watch the Reel →</a>
+        <!-- TIKTOK: reemplaza PEGAR_ENLACE_TIKTOK -->
+        <a class="video-link-slot" href="PEGAR_ENLACE_TIKTOK" target="_blank" rel="noopener"><span class="platform">TikTok</span> Watch on TikTok →</a>
       </div>
     </div>
-
-  </div>
 
     <div class="detail-nav-links">
       <a href="../index.html#post-match">← All Post-Match</a>
@@ -88,6 +307,11 @@
   const toggle = document.getElementById('navToggle');
   const tabs = document.getElementById('tabs');
   toggle.addEventListener('click', () => tabs.classList.toggle('open'));
+  const figs = document.querySelectorAll('.figure');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .35});
+    figs.forEach(f => io.observe(f));
+  } else { figs.forEach(f => f.classList.add('in')); }
 </script>
 </body>
 </html>
