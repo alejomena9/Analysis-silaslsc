@@ -3,439 +3,341 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LSC vs. Colorado Springs Switchbacks — Pre-Match Analysis</title>
+<title>August 29 — Silas Vance</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-  :root.lscx-scope {
-    --lscx-bg: #0B0F0C;
-    --lscx-panel: #131A14;
-    --lscx-green: #3DDC5A;
-    --lscx-black: #111111;
-    --lscx-bone: #F5F1E9;
-    --lscx-border: rgba(245,241,233,0.12);
-    --lscx-muted: rgba(245,241,233,0.62);
-  }
-  .lscx-wrap {
-    background: #0B0F0C;
-    color: #F5F1E9;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    min-height: 100vh;
-  }
-  .lscx-wrap * { box-sizing: border-box; }
-  .lscx-wrap h1, .lscx-wrap h2, .lscx-wrap h3, .lscx-wrap .lscx-display {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    margin: 0;
-  }
-  .lscx-mono { font-family: 'IBM Plex Mono', monospace; }
- 
-  /* ---- lang toggle ---- */
-  .lscx-langbar {
-    position: sticky; top: 0; z-index: 50;
-    display: flex; justify-content: flex-end; gap: 8px;
-    padding: 10px 24px;
-    background: rgba(11,15,12,0.92);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid rgba(245,241,233,0.12);
-  }
-  .lscx-langbtn {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px; letter-spacing: 0.08em;
-    background: transparent; border: 1px solid rgba(245,241,233,0.25);
-    color: #F5F1E9; padding: 6px 14px; border-radius: 999px; cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  .lscx-langbtn.active { background: #3DDC5A; color: #111111; border-color: #3DDC5A; font-weight: 600; }
- 
-  [data-lang-content] { display: none; }
-  .lscx-wrap[data-lang="es"] [data-lang-content="es"] { display: block; }
-  .lscx-wrap[data-lang="en"] [data-lang-content="en"] { display: block; }
-  .lscx-wrap[data-lang="es"] span[data-lang-content="es"],
-  .lscx-wrap[data-lang="en"] span[data-lang-content="en"] { display: inline; }
- 
-  /* ---- hero ---- */
-  .lscx-hero { padding: 64px 24px 40px; max-width: 980px; margin: 0 auto; }
-  .lscx-eyebrow {
-    font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em;
-    color: #3DDC5A; text-transform: uppercase; margin-bottom: 14px;
-  }
-  .lscx-hero h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 700; line-height: 1.05; margin-bottom: 18px; }
-  .lscx-hero h1 .lscx-vs { color: rgba(245,241,233,0.4); font-weight: 400; }
-  .lscx-hero-sub { color: rgba(245,241,233,0.65); font-size: 16px; max-width: 640px; }
- 
-  .lscx-scoreboard {
-    display: flex; align-items: center; justify-content: space-between; gap: 24px;
-    margin-top: 36px; padding: 22px 26px;
-    background: #131A14; border: 1px solid rgba(245,241,233,0.12); border-radius: 10px;
-    flex-wrap: wrap;
-  }
-  .lscx-sb-team { text-align: center; flex: 1; min-width: 140px; }
-  .lscx-sb-team .lscx-sb-name { font-family: 'Oswald', sans-serif; font-size: 20px; letter-spacing: 0.01em; }
-  .lscx-sb-team .lscx-sb-tag { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(245,241,233,0.5); margin-top: 4px; }
-  .lscx-sb-mid { font-family: 'IBM Plex Mono', monospace; text-align: center; color: rgba(245,241,233,0.7); font-size: 13px; }
-  .lscx-sb-mid .lscx-sb-date { color: #3DDC5A; font-weight: 600; margin-bottom: 4px; }
- 
-  /* ---- ticker ---- */
-  .lscx-ticker {
-    border-top: 1px solid rgba(245,241,233,0.12);
-    border-bottom: 1px solid rgba(245,241,233,0.12);
-    padding: 14px 24px; overflow: hidden; margin: 40px 0;
-  }
-  .lscx-ticker-inner {
-    display: flex; gap: 48px; justify-content: center; flex-wrap: wrap;
-    font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: rgba(245,241,233,0.7);
-  }
-  .lscx-ticker-inner b { color: #3DDC5A; }
- 
-  /* ---- section ---- */
-  .lscx-section { max-width: 980px; margin: 0 auto; padding: 56px 24px; }
-  .lscx-section-num {
-    font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #3DDC5A; margin-bottom: 10px;
-  }
-  .lscx-section h2 { font-size: clamp(24px, 3.4vw, 34px); margin-bottom: 18px; }
-  .lscx-section p { color: rgba(245,241,233,0.78); font-size: 16px; max-width: 720px; }
- 
-  /* ---- reveal ---- */
-  .lscx-reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .lscx-reveal.lscx-in { opacity: 1; transform: translateY(0); }
- 
-  /* ---- pitch svg ---- */
-  .lscx-pitch-wrap { margin: 28px 0; background: #131A14; border: 1px solid rgba(245,241,233,0.12); border-radius: 10px; padding: 18px; }
-  .lscx-pitch-wrap svg { width: 100%; height: auto; display: block; }
-  .lscx-pitch-caption { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(245,241,233,0.55); margin-top: 10px; text-align: center; }
- 
-  /* ---- stat cards ---- */
-  .lscx-statgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: 24px; }
-  .lscx-statcard { background: #131A14; border: 1px solid rgba(245,241,233,0.12); border-radius: 10px; padding: 18px; text-align: center; }
-  .lscx-statcard .lscx-statval { font-family: 'Oswald', sans-serif; font-size: 30px; color: #3DDC5A; }
-  .lscx-statcard .lscx-statlabel { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(245,241,233,0.55); margin-top: 6px; letter-spacing: 0.04em; }
- 
-  /* ---- match cards (recent form timeline) ---- */
-  .lscx-timeline { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
-  .lscx-matchcard {
-    display: flex; align-items: center; justify-content: space-between; gap: 16px;
-    background: #131A14; border: 1px solid rgba(245,241,233,0.12); border-radius: 10px;
-    padding: 14px 18px; flex-wrap: wrap;
-  }
-  .lscx-matchcard .lscx-mc-opp { font-family: 'Oswald', sans-serif; font-size: 16px; }
-  .lscx-matchcard .lscx-mc-detail { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(245,241,233,0.55); }
-  .lscx-mc-result { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; padding: 4px 10px; border-radius: 6px; }
-  .lscx-mc-result.loss { background: rgba(17,17,17,0.6); color: #F5F1E9; border: 1px solid rgba(245,241,233,0.25); }
- 
-  /* ---- callouts ---- */
-  .lscx-callout { border-left: 3px solid #3DDC5A; background: #131A14; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 18px 0; }
-  .lscx-callout.risk { border-left-color: #F5F1E9; }
-  .lscx-callout .lscx-callout-label { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; color: #3DDC5A; margin-bottom: 8px; }
-  .lscx-callout.risk .lscx-callout-label { color: rgba(245,241,233,0.7); }
-  .lscx-callout p { margin: 0; color: rgba(245,241,233,0.85); }
- 
-  /* ---- weapons table ---- */
-  .lscx-weapons { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; }
-  .lscx-weapons th { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(245,241,233,0.5); text-align: left; padding: 10px 12px; border-bottom: 1px solid rgba(245,241,233,0.2); }
-  .lscx-weapons td { padding: 12px; border-bottom: 1px solid rgba(245,241,233,0.08); vertical-align: top; color: rgba(245,241,233,0.85); }
-  .lscx-weapons td.lscx-w-name { font-family: 'Oswald', sans-serif; font-size: 15px; color: #F5F1E9; }
-  .lscx-w-num { color: #3DDC5A; font-family: 'IBM Plex Mono', monospace; }
- 
-  /* ---- pull quote / byline ---- */
-  .lscx-pullquote { max-width: 780px; margin: 60px auto; padding: 0 24px; text-align: center; }
-  .lscx-pullquote blockquote {
-    font-family: 'Oswald', sans-serif; font-size: clamp(22px, 3.4vw, 32px);
-    font-weight: 500; line-height: 1.3; color: #F5F1E9; margin: 0 0 20px;
-  }
-  .lscx-pullquote blockquote .lscx-hl { color: #3DDC5A; }
-  .lscx-byline { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(245,241,233,0.5); }
- 
-  @media (max-width: 640px) {
-    .lscx-scoreboard { flex-direction: column; }
-  }
+/* Silas Vance — Pre-Match · paleta del proyecto. Todo namespaced bajo #pm-2026-08-29-colorado-springs */
+#pm-2026-08-29-colorado-springs{
+  --green:#3DDC5A; --black:#111111; --bone:#F5F1E9;
+  --bg:#0B0F0C; --panel:#131A14; --line:rgba(245,241,233,.12); --muted:rgba(245,241,233,.62);
+  --display:'Oswald',sans-serif; --body:'Inter',sans-serif; --mono:'IBM Plex Mono',monospace;
+  background:var(--bg); color:var(--bone); font-family:var(--body); font-size:17px; line-height:1.65;
+  min-height:100vh; margin:0; -webkit-font-smoothing:antialiased;
+}
+#pm-2026-08-29-colorado-springs *{box-sizing:border-box;}
+#pm-2026-08-29-colorado-springs a{color:inherit;text-decoration:none;}
+#pm-2026-08-29-colorado-springs .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+#pm-2026-08-29-colorado-springs .display{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;}
+#pm-2026-08-29-colorado-springs .mono{font-family:var(--mono);}
+#pm-2026-08-29-colorado-springs .label{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:10px;}
+
+/* Nav */
+#pm-2026-08-29-colorado-springs .site-nav{position:sticky;top:0;z-index:20;background:rgba(11,15,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+#pm-2026-08-29-colorado-springs .nav-inner{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+#pm-2026-08-29-colorado-springs .brand{display:flex;align-items:center;gap:12px;}
+#pm-2026-08-29-colorado-springs .brand-mark{width:30px;height:30px;flex:none;}
+#pm-2026-08-29-colorado-springs .brand-text .display{font-size:1.15rem;line-height:1;}
+#pm-2026-08-29-colorado-springs .tagline{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-08-29-colorado-springs .tabs{display:flex;gap:22px;}
+#pm-2026-08-29-colorado-springs .tabs a{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
+#pm-2026-08-29-colorado-springs .tabs a:hover{color:var(--green);}
+#pm-2026-08-29-colorado-springs .nav-toggle{display:none;background:none;border:1px solid var(--line);color:var(--bone);font-size:1.1rem;padding:4px 10px;cursor:pointer;}
+
+/* Hero */
+#pm-2026-08-29-colorado-springs .detail-hero{padding:56px 0 40px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(61,220,90,.07),transparent 70%);}
+#pm-2026-08-29-colorado-springs .back-link{display:inline-block;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--muted);margin-bottom:26px;}
+#pm-2026-08-29-colorado-springs .back-link:hover{color:var(--green);}
+#pm-2026-08-29-colorado-springs .detail-kicker{display:block;font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);}
+#pm-2026-08-29-colorado-springs .detail-hero h1{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(3rem,10vw,5.6rem);line-height:.95;margin:10px 0 22px;letter-spacing:.01em;}
+#pm-2026-08-29-colorado-springs .detail-meta{display:flex;flex-wrap:wrap;gap:10px;}
+#pm-2026-08-29-colorado-springs .badge{display:inline-block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--green);color:var(--green);border-radius:2px;}
+
+/* Body */
+#pm-2026-08-29-colorado-springs .detail-body{padding:44px 0 60px;}
+#pm-2026-08-29-colorado-springs .summary-card{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--green);padding:22px 24px;margin-bottom:40px;}
+#pm-2026-08-29-colorado-springs .summary-card p{margin:0;font-size:1.12rem;font-weight:500;}
+#pm-2026-08-29-colorado-springs .detail-article .block{padding:0 0 30px;margin-bottom:30px;border-bottom:1px solid var(--line);counter-increment:blk;}
+#pm-2026-08-29-colorado-springs .detail-article{counter-reset:blk;}
+#pm-2026-08-29-colorado-springs .detail-article h3{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.03em;font-size:1.55rem;margin:0 0 14px;line-height:1.15;}
+#pm-2026-08-29-colorado-springs .detail-article h3::before{content:counter(blk,decimal-leading-zero);display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;color:var(--green);margin-bottom:6px;}
+#pm-2026-08-29-colorado-springs .detail-article p{margin:0 0 14px;color:rgba(245,241,233,.88);}
+#pm-2026-08-29-colorado-springs .detail-conclusion{background:var(--green);color:var(--black);padding:26px 26px;margin:10px 0 44px;}
+#pm-2026-08-29-colorado-springs .detail-conclusion .label{color:var(--black);opacity:.75;}
+#pm-2026-08-29-colorado-springs .detail-conclusion p{margin:0;font-size:1.1rem;font-weight:600;line-height:1.55;}
+
+/* Video */
+#pm-2026-08-29-colorado-springs .video-section{margin-bottom:44px;}
+#pm-2026-08-29-colorado-springs .video-links{display:grid;gap:10px;}
+#pm-2026-08-29-colorado-springs .video-link-slot{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);padding:16px 18px;font-weight:500;transition:border-color .2s,color .2s;}
+#pm-2026-08-29-colorado-springs a.video-link-slot:hover{border-color:var(--green);color:var(--green);}
+#pm-2026-08-29-colorado-springs .platform{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);background:var(--bone);padding:4px 8px;min-width:88px;text-align:center;}
+
+#pm-2026-08-29-colorado-springs .detail-nav-links{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;}
+#pm-2026-08-29-colorado-springs .detail-nav-links a:hover{color:var(--green);}
+#pm-2026-08-29-colorado-springs footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--muted);}
+
+/* Figures */
+#pm-2026-08-29-colorado-springs .figure{background:var(--panel);border:1px solid var(--line);padding:16px 16px 12px;margin:22px 0 6px;}
+#pm-2026-08-29-colorado-springs .figure svg{display:block;width:100%;height:auto;}
+#pm-2026-08-29-colorado-springs .fig-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;}
+#pm-2026-08-29-colorado-springs .fig-title{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);}
+#pm-2026-08-29-colorado-springs .fig-dir{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+#pm-2026-08-29-colorado-springs .figcaption{font-size:.86rem;color:var(--muted);margin:10px 0 0;line-height:1.5;}
+#pm-2026-08-29-colorado-springs .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-08-29-colorado-springs .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;}
+#pm-2026-08-29-colorado-springs .figure .draw{stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1.3s ease .25s;}
+#pm-2026-08-29-colorado-springs .figure .fade{opacity:0;transition:opacity .8s ease .9s;}
+#pm-2026-08-29-colorado-springs .figure.in .draw{stroke-dashoffset:0;}
+#pm-2026-08-29-colorado-springs .figure.in .fade{opacity:1;}
+#pm-2026-08-29-colorado-springs .figure .grow{transform:scaleY(0);transform-box:fill-box;transform-origin:bottom;transition:transform .9s ease;}
+#pm-2026-08-29-colorado-springs .figure.in .grow{transform:scaleY(1);}
+@media (prefers-reduced-motion:reduce){#pm-2026-08-29-colorado-springs .figure .draw{stroke-dashoffset:0;transition:none}#pm-2026-08-29-colorado-springs .figure .fade{opacity:1;transition:none}#pm-2026-08-29-colorado-springs .figure .grow{transform:none;transition:none}}
+
+/* Phase grid */
+#pm-2026-08-29-colorado-springs .phase-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:-30px 0 44px;}
+#pm-2026-08-29-colorado-springs .phase{background:var(--panel);border:1px solid var(--line);padding:16px 18px;}
+#pm-2026-08-29-colorado-springs .phase.alert{border-color:var(--bone);background:repeating-linear-gradient(45deg,rgba(245,241,233,.05) 0 6px,transparent 6px 12px),var(--panel);}
+#pm-2026-08-29-colorado-springs .phase-n{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--green);}
+#pm-2026-08-29-colorado-springs .phase h4{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-size:1.05rem;margin:4px 0 6px;}
+#pm-2026-08-29-colorado-springs .phase p{margin:0;font-size:.9rem;color:rgba(245,241,233,.8);line-height:1.5;}
+
+/* Extra components: stat row, callouts, player cards, match cards, form */
+#pm-2026-08-29-colorado-springs .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:-18px 0 40px;}
+#pm-2026-08-29-colorado-springs .stat-row div{background:var(--panel);padding:14px 10px;text-align:center;}
+#pm-2026-08-29-colorado-springs .stat-row b{display:block;font-family:var(--mono);font-size:1.3rem;color:var(--green);font-weight:600;line-height:1.2;}
+#pm-2026-08-29-colorado-springs .stat-row span{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-08-29-colorado-springs .callout{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--green);padding:14px 18px;margin:18px 0 6px;}
+#pm-2026-08-29-colorado-springs .callout.alert{border-left-color:var(--bone);}
+#pm-2026-08-29-colorado-springs .callout .label{margin-bottom:6px;}
+#pm-2026-08-29-colorado-springs .callout.alert .label{color:var(--bone);}
+#pm-2026-08-29-colorado-springs .callout p{margin:0;font-size:.95rem;}
+#pm-2026-08-29-colorado-springs .pcards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 6px;}
+#pm-2026-08-29-colorado-springs .pcard{background:var(--panel);border:1px solid var(--line);padding:14px 16px;}
+#pm-2026-08-29-colorado-springs .pcard h4{font-family:var(--display);text-transform:uppercase;font-size:1.05rem;margin:0;letter-spacing:.02em;}
+#pm-2026-08-29-colorado-springs .pcard .role{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;color:var(--green);text-transform:uppercase;display:block;margin:2px 0 8px;}
+#pm-2026-08-29-colorado-springs .pcard .nums{display:flex;gap:18px;margin-bottom:6px;}
+#pm-2026-08-29-colorado-springs .pcard .nums b{display:block;font-family:var(--mono);font-size:1.2rem;color:var(--green);}
+#pm-2026-08-29-colorado-springs .pcard .nums span{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-08-29-colorado-springs .pcard p{margin:0;font-size:.88rem;color:rgba(245,241,233,.78);line-height:1.5;}
+#pm-2026-08-29-colorado-springs .form-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 6px;}
+#pm-2026-08-29-colorado-springs .mcard{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--muted);padding:12px 14px;}
+#pm-2026-08-29-colorado-springs .mcard.w{border-top-color:var(--green);}
+#pm-2026-08-29-colorado-springs .mcard .res{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-08-29-colorado-springs .mcard.w .res{color:var(--green);}
+#pm-2026-08-29-colorado-springs .mcard .score{font-family:var(--display);font-size:1.15rem;text-transform:uppercase;margin:2px 0 4px;}
+#pm-2026-08-29-colorado-springs .mcard p{margin:0;font-size:.78rem;color:var(--muted);line-height:1.4;}
+
+@media (max-width:760px){
+  #pm-2026-08-29-colorado-springs .stat-row{grid-template-columns:repeat(2,1fr);}
+  #pm-2026-08-29-colorado-springs .pcards{grid-template-columns:1fr;}
+  #pm-2026-08-29-colorado-springs .form-row{grid-template-columns:repeat(2,1fr);}
+  #pm-2026-08-29-colorado-springs .phase-grid{grid-template-columns:1fr;}
+  #pm-2026-08-29-colorado-springs .nav-toggle{display:block;}
+  #pm-2026-08-29-colorado-springs .tabs{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);}
+  #pm-2026-08-29-colorado-springs .tabs.open{display:flex;}
+  #pm-2026-08-29-colorado-springs .tabs a{padding:14px 20px;border-top:1px solid var(--line);}
+  #pm-2026-08-29-colorado-springs .detail-hero{padding:36px 0 30px;}
+  #pm-2026-08-29-colorado-springs .detail-conclusion,#pm-2026-08-29-colorado-springs .summary-card{padding:20px;}
+  #pm-2026-08-29-colorado-springs .figure{margin-left:-20px !important;margin-right:-20px !important;padding:14px 8px 12px;border-left:0;border-right:0;}
+  #pm-2026-08-29-colorado-springs .fig-head,#pm-2026-08-29-colorado-springs .legend,#pm-2026-08-29-colorado-springs .figcaption{padding:0 12px;}
+}
 </style>
 </head>
-<body>
-<div class="lscx-wrap" data-lang="es" id="lscxRoot">
- 
-  <div class="lscx-langbar">
-    <button class="lscx-langbtn active" data-setlang="es">ES</button>
-    <button class="lscx-langbtn" data-setlang="en">EN</button>
-  </div>
- 
-  <!-- HERO -->
-  <section class="lscx-hero">
-    <div class="lscx-eyebrow" data-lang-content="es">Pre-partido · USL Championship</div>
-    <div class="lscx-eyebrow" data-lang-content="en">Pre-Match · USL Championship</div>
-    <h1>LSC <span class="lscx-vs">vs.</span> Colorado Springs Switchbacks FC</h1>
-    <p class="lscx-hero-sub" data-lang-content="es">Colorado construye todo su juego a través de Speedy Williams y ataca con velocidad por las bandas — pero su lateral izquierdo ha sido el patrón exacto detrás de sus últimas tres derrotas de visitante.</p>
-    <p class="lscx-hero-sub" data-lang-content="en">Colorado builds everything through Speedy Williams and attacks with speed down the flanks — but their left-back channel has been the exact pattern behind their last three away losses.</p>
- 
-    <div class="lscx-scoreboard">
-      <div class="lscx-sb-team">
-        <div class="lscx-sb-name">Lexington SC</div>
-        <div class="lscx-sb-tag">HOME</div>
-      </div>
-      <div class="lscx-sb-mid">
-        <div class="lscx-sb-date">SAT AUG 29 · 7:00 PM</div>
-        <div data-lang-content="es">Lexington SC Stadium</div>
-        <div data-lang-content="en">Lexington SC Stadium</div>
-      </div>
-      <div class="lscx-sb-team">
-        <div class="lscx-sb-name">Colorado Springs SB</div>
-        <div class="lscx-sb-tag">AWAY</div>
-      </div>
-    </div>
-  </section>
- 
-  <!-- TICKER -->
-  <div class="lscx-ticker">
-    <div class="lscx-ticker-inner">
-      <span data-lang-content="es"><b>0-3</b> en sus últimos 3 partidos de visitante</span>
-      <span data-lang-content="en"><b>0-3</b> in their last 3 away matches</span>
-      <span><b>#80</b> Speedy Williams</span>
-      <span data-lang-content="es"><b>9 goles</b> Khori Bennett (líder)</span>
-      <span data-lang-content="en"><b>9 goals</b> Khori Bennett (leader)</span>
-      <span class="lscx-mono">2-3-5 <span data-lang-content="es">→ ataque</span><span data-lang-content="en">→ attack</span></span>
-    </div>
-  </div>
- 
-  <!-- SECTION 1: STRUCTURE -->
-  <section class="lscx-section lscx-reveal">
-    <div class="lscx-section-num">01</div>
-    <h2 data-lang-content="es">La estructura de Colorado</h2>
-    <h2 data-lang-content="en">Colorado's structure</h2>
-    <p data-lang-content="es">Fuera de posesión, Colorado se cierra en un 4-1-4-1 compacto, marcando hombre a hombre en el mediocampo. En posesión, el sistema se transforma en un 2-3-5: ambos laterales suben, y el que queda del lado contrario al balón se convierte en interior para formar el "tres" de salida junto al mediocentro.</p>
-    <p data-lang-content="en">Out of possession, Colorado sets up in a compact 4-1-4-1, man-marking through midfield. In possession, the system morphs into a 2-3-5: both fullbacks push forward, and the one on the ball-far side tucks inside as an interior to form the buildup "three" alongside the holding midfielder.</p>
- 
-    <div class="lscx-pitch-wrap">
-      <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" id="lscxPitch1">
-        <rect x="4" y="4" width="392" height="232" fill="none" stroke="#F5F1E9" stroke-opacity="0.3" stroke-width="1.2"/>
-        <line x1="200" y1="4" x2="200" y2="236" stroke="#F5F1E9" stroke-opacity="0.3" stroke-width="1"/>
-        <circle cx="200" cy="120" r="22" fill="none" stroke="#F5F1E9" stroke-opacity="0.3" stroke-width="1"/>
-        <rect x="4" y="60" width="62" height="120" fill="none" stroke="#F5F1E9" stroke-opacity="0.3" stroke-width="1"/>
-        <rect x="334" y="60" width="62" height="120" fill="none" stroke="#F5F1E9" stroke-opacity="0.3" stroke-width="1"/>
-        <!-- 4-1-4-1 shape (static, out of possession) -->
-        <g id="lscxShape441">
-          <circle cx="60" cy="200" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
-          <circle cx="60" cy="155" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
-          <circle cx="60" cy="85" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
-          <circle cx="60" cy="40" r="8" fill="#111111" stroke="#3DDC5A" stroke-opacity="1.5"/>
-          <circle cx="100" cy="120" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
-          <circle cx="150" cy="200" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
-          <circle cx="150" cy="155" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
-          <circle cx="150" cy="85" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
-          <circle cx="150" cy="40" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
-          <circle cx="200" cy="120" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
-        </g>
-        <text x="60" y="60" text-anchor="middle" fill="#3DDC5A" font-size="9" font-family="IBM Plex Mono, monospace">LB</text>
+<body id="pm-2026-08-29-colorado-springs" style="margin:0;">
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html">
+      <svg class="brand-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="26" height="26" rx="2" stroke="#3DDC5A" stroke-width="1.4"/>
+        <line x1="1" y1="14" x2="27" y2="14" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="14" r="4.2" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="6" r="1.6" fill="#F5F1E9"/>
+        <circle cx="8" cy="9" r="1.6" fill="#F5F1E9"/>
+        <circle cx="20" cy="9" r="1.6" fill="#F5F1E9"/>
       </svg>
-      <div class="lscx-pitch-caption" data-lang-content="es">4-1-4-1 fuera de posesión — el lateral izquierdo (verde) es el punto de recuperación más lento</div>
-      <div class="lscx-pitch-caption" data-lang-content="en">4-1-4-1 out of possession — the left back (green) is the slowest recovery point</div>
-    </div>
-  </section>
- 
-  <!-- SECTION 2: THE WEAKNESS -->
-  <section class="lscx-section lscx-reveal">
-    <div class="lscx-section-num">02</div>
-    <h2 data-lang-content="es">La grieta detrás del lateral izquierdo</h2>
-    <h2 data-lang-content="en">The crack behind the left back</h2>
-    <p data-lang-content="es">Con el lateral izquierdo empujado tan alto en el 2-3-5, el espacio detrás de él queda expuesto en cuanto Colorado pierde el balón. No es casualidad: los goles decisivos ante New Mexico United y Phoenix Rising llegaron exactamente por ese canal.</p>
-    <p data-lang-content="en">With the left back pushed so high in the 2-3-5, the space behind him is exposed the moment Colorado loses the ball. It's not a coincidence: the decisive goals against New Mexico United and Phoenix Rising came through that exact channel.</p>
- 
-    <div class="lscx-pitch-wrap">
-      <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
-        <rect x="4" y="4" width="392" height="232" fill="none" stroke="#F5F1E9" stroke-opacity="0.3" stroke-width="1.2"/>
-        <line x1="200" y1="4" x2="200" y2="236" stroke="#F5F1E9" stroke-opacity="0.3" stroke-width="1"/>
-        <circle cx="200" cy="120" r="22" fill="none" stroke="#F5F1E9" stroke-opacity="0.3" stroke-width="1"/>
-        <rect x="4" y="60" width="62" height="120" fill="none" stroke="#F5F1E9" stroke-opacity="0.3" stroke-width="1"/>
-        <rect x="334" y="60" width="62" height="120" fill="none" stroke="#F5F1E9" stroke-opacity="0.3" stroke-width="1"/>
-        <!-- Colorado back line, attacking toward left (LSC attacks right to left of COS goal at x=334-396) -->
-        <circle cx="300" cy="200" r="8" fill="#111111" stroke="#3DDC5A" stroke-width="1.5"/>
-        <circle cx="300" cy="150" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
-        <circle cx="300" cy="90" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
-        <circle cx="300" cy="40" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
-        <circle cx="260" cy="120" r="8" fill="#111111" stroke="#F5F1E9" stroke-opacity="0.4"/>
-        <!-- LSC runners -->
-        <circle cx="220" cy="130" r="9" fill="#3DDC5A" id="lscxRunner1"/>
-        <text x="220" y="134" text-anchor="middle" font-size="8" font-family="IBM Plex Mono, monospace" fill="#111111" font-weight="600">7</text>
-        <circle cx="180" cy="190" r="9" fill="#3DDC5A" id="lscxRunner2"/>
-        <text x="180" y="194" text-anchor="middle" font-size="8" font-family="IBM Plex Mono, monospace" fill="#111111" font-weight="600">12</text>
-        <path d="M 220 130 Q 280 145 330 205" fill="none" stroke="#3DDC5A" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#lscxArrow)" id="lscxRunPath"/>
-        <defs>
-          <marker id="lscxArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-            <path d="M0,0 L8,4 L0,8 Z" fill="#3DDC5A"/>
-          </marker>
-        </defs>
-      </svg>
-      <div class="lscx-pitch-caption" data-lang-content="es">Carrera de Epps/Zengue hacia el espacio detrás del lateral izquierdo de Colorado en transición</div>
-      <div class="lscx-pitch-caption" data-lang-content="en">Epps/Zengue run into the space behind Colorado's left back in transition</div>
-    </div>
- 
-    <div class="lscx-timeline">
-      <div class="lscx-matchcard">
-        <div>
-          <div class="lscx-mc-opp">@ New Mexico United</div>
-          <div class="lscx-mc-detail" data-lang-content="es">Gol decisivo 51' — Howell (asist. Nava)</div>
-          <div class="lscx-mc-detail" data-lang-content="en">Decisive goal 51' — Howell (ast. Nava)</div>
-        </div>
-        <div class="lscx-mc-result loss">0-1 L</div>
-      </div>
-      <div class="lscx-matchcard">
-        <div>
-          <div class="lscx-mc-opp">@ Rhode Island FC</div>
-          <div class="lscx-mc-detail" data-lang-content="es">Goles 69' y 90+1' — Tsukada, J. Williams</div>
-          <div class="lscx-mc-detail" data-lang-content="en">Goals 69' and 90+1' — Tsukada, J. Williams</div>
-        </div>
-        <div class="lscx-mc-result loss">0-2 L</div>
-      </div>
-      <div class="lscx-matchcard">
-        <div>
-          <div class="lscx-mc-opp">@ Phoenix Rising FC</div>
-          <div class="lscx-mc-detail" data-lang-content="es">Goles 35', 72' (AG), 90+1'</div>
-          <div class="lscx-mc-detail" data-lang-content="en">Goals 35', 72' (OG), 90+1'</div>
-        </div>
-        <div class="lscx-mc-result loss">1-3 L</div>
-      </div>
-    </div>
-  </section>
- 
-  <!-- SECTION 3: SET PIECES / STAT CARDS -->
-  <section class="lscx-section lscx-reveal">
-    <div class="lscx-section-num">03</div>
-    <h2 data-lang-content="es">Peligro por el aire</h2>
-    <h2 data-lang-content="en">Aerial danger</h2>
-    <p data-lang-content="es">Colorado genera mucho volumen de centros y corners, y su defensor Isaiah Foster ha anotado esta temporada tanto de corner como de un saque de banda largo. Hay que marcarlo estrictamente en las jugadas a balón parado.</p>
-    <p data-lang-content="en">Colorado generates heavy crossing and corner volume, and defender Isaiah Foster has scored this season from both a corner and a long throw-in. He needs to be marked strictly on set pieces.</p>
- 
-    <div class="lscx-statgrid">
-      <div class="lscx-statcard">
-        <div class="lscx-statval">71</div>
-        <div class="lscx-statlabel" data-lang-content="es">CORNERS GANADOS (TEMP.)</div>
-        <div class="lscx-statlabel" data-lang-content="en">CORNERS WON (SEASON)</div>
-      </div>
-      <div class="lscx-statcard">
-        <div class="lscx-statval">18</div>
-        <div class="lscx-statlabel" data-lang-content="es">CENTROS EN UN SOLO PARTIDO</div>
-        <div class="lscx-statlabel" data-lang-content="en">CROSSES IN A SINGLE MATCH</div>
-      </div>
-      <div class="lscx-statcard">
-        <div class="lscx-statval">9</div>
-        <div class="lscx-statlabel" data-lang-content="es">GOLES — K. BENNETT (LÍDER)</div>
-        <div class="lscx-statlabel" data-lang-content="en">GOALS — K. BENNETT (LEADER)</div>
-      </div>
-      <div class="lscx-statcard">
-        <div class="lscx-statval">56%</div>
-        <div class="lscx-statlabel" data-lang-content="es">POSESIÓN PROM. (ÚLT. 3 VISITA)</div>
-        <div class="lscx-statlabel" data-lang-content="en">AVG. POSSESSION (LAST 3 AWAY)</div>
-      </div>
-    </div>
-  </section>
- 
-  <!-- SECTION 4: ROUTE DIAGNOSIS -->
-  <section class="lscx-section lscx-reveal">
-    <div class="lscx-section-num">04</div>
-    <h2 data-lang-content="es">Diagnóstico de ruta</h2>
-    <h2 data-lang-content="en">Route diagnosis</h2>
- 
-    <div class="lscx-callout">
-      <div class="lscx-callout-label" data-lang-content="es">OPORTUNIDAD</div>
-      <div class="lscx-callout-label" data-lang-content="en">OPPORTUNITY</div>
-      <p data-lang-content="es">El canal detrás del lateral izquierdo es una debilidad estructural repetible. La ruta más rápida a gol para LSC es un balón vertical inmediato hacia ese espacio en cuanto se recupera el balón, aprovechando la velocidad de Epps y Zengue en transición.</p>
-      <p data-lang-content="en">The channel behind the left back is a repeatable structural weakness. LSC's fastest route to goal is an immediate vertical ball into that space the moment possession is won, using the pace of Epps and Zengue in transition.</p>
-    </div>
- 
-    <div class="lscx-callout risk">
-      <div class="lscx-callout-label" data-lang-content="es">RIESGO</div>
-      <div class="lscx-callout-label" data-lang-content="en">RISK</div>
-      <p data-lang-content="es">Colorado compromete muchos jugadores en centros desde ambas bandas, y sus centrales — sobre todo Isaiah Foster — son una amenaza de gol real cuando se suman al ataque. Hay que marcar a los defensores que llegan tarde al área, no solo a los delanteros.</p>
-      <p data-lang-content="en">Colorado commits heavy numbers to crosses from both flanks, and their center backs — especially Isaiah Foster — are a real goal threat when they join the attack. Late-arriving defenders must be tracked, not just the strikers.</p>
-    </div>
-  </section>
- 
-  <!-- SECTION 5: KEY WEAPONS -->
-  <section class="lscx-section lscx-reveal">
-    <div class="lscx-section-num">05</div>
-    <h2 data-lang-content="es">Jugadores clave</h2>
-    <h2 data-lang-content="en">Key weapons</h2>
- 
-    <table class="lscx-weapons">
-      <thead>
-        <tr>
-          <th data-lang-content="es">Jugador</th>
-          <th data-lang-content="en">Player</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="lscx-w-name">Speedy Williams <span class="lscx-w-num">#80</span></td>
-          <td>
-            <span data-lang-content="es">Dicta el ritmo de todo el juego de Colorado. Ex-LSC (2025), cuatro veces campeón de USL.</span>
-            <span data-lang-content="en">Dictates the tempo of Colorado's entire game. Ex-LSC (2025), four-time USL champion.</span>
-          </td>
-        </tr>
-        <tr>
-          <td class="lscx-w-name">Isaiah Foster <span class="lscx-w-num">#12</span></td>
-          <td>
-            <span data-lang-content="es">Amenaza aérea principal en set pieces — ha anotado de corner y de saque de banda largo.</span>
-            <span data-lang-content="en">Primary aerial set-piece threat — has scored from a corner and a long throw-in.</span>
-          </td>
-        </tr>
-        <tr>
-          <td class="lscx-w-name">Khori Bennett <span class="lscx-w-num">#90</span></td>
-          <td>
-            <span data-lang-content="es">Goleador líder (9 goles en 14 partidos); cobrador designado de penales.</span>
-            <span data-lang-content="en">Leading scorer (9 goals in 14 matches); designated penalty taker.</span>
-          </td>
-        </tr>
-        <tr>
-          <td class="lscx-w-name">Adrien Perez <span class="lscx-w-num">#10</span></td>
-          <td>
-            <span data-lang-content="es">Amenaza de tiro libre de larga distancia; anotó el empate ante Phoenix Rising.</span>
-            <span data-lang-content="en">Long-range free-kick threat; scored the equalizer against Phoenix Rising.</span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
- 
-  <!-- PULL QUOTE -->
-  <div class="lscx-pullquote lscx-reveal">
-    <blockquote>
-      <span data-lang-content="es">Colorado dominó la posesión en sus últimos tres partidos de visitante — y aun así perdió los tres. <span class="lscx-hl">La grieta siempre estuvo en el mismo lugar.</span></span>
-      <span data-lang-content="en">Colorado dominated possession in its last three away matches — and still lost all three. <span class="lscx-hl">The crack was always in the same place.</span></span>
-    </blockquote>
-    <div class="lscx-byline">ALEJANDRO MENA · LSC VIDEO ANALYSIS</div>
+      <span class="brand-text">
+        <span class="display" style="display:block;">SILAS VANCE</span>
+        <span class="tagline">Tactical Analysis</span>
+      </span>
+    </a>
+    <nav class="tabs" id="tabs">
+      <a href="../index.html#individual">Player Focus</a>
+      <a href="../index.html#team-tactics">Team Tactics</a>
+      <a href="../index.html#pre-match">Pre-Match</a>
+      <a href="../index.html#post-match">Post-Match</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
   </div>
- 
+</header>
+
+<section class="detail-hero">
+  <div class="wrap">
+    <a class="back-link" href="../index.html#pre-match">← Back to Pre-Match</a>
+    <span class="detail-kicker">Pre-Match · vs. Colorado Springs Switchbacks FC</span>
+    <h1>August 29</h1>
+    <div class="detail-meta">
+      <span class="badge badge-pre mono">Home · 7 PM ET</span><span class="badge badge-pre mono">4-1-4-1 / 2-3-5</span><span class="badge badge-pre mono">Behind the left-back</span>
+    </div>
+  </div>
+</section>
+
+<section class="detail-body">
+  <div class="wrap" style="max-width:760px;">
+
+    <div class="summary-card">
+      <span class="label">In One Line</span>
+      <p>Colorado build everything through Speedy Williams and attack with speed down the flanks — but they've lost their last three away games, and the channel behind their left-back is where it keeps breaking.</p>
+    </div>
+<div class="stat-row">
+<div><b>0–3</b><span>COS last 3 away</span></div>
+<div><b>11</b><span>Goals · Bennett</span></div>
+<div><b>46</b><span>Chances created · Pérez</span></div>
+<div><b>7th / 9th</b><span>LSC / COS · West</span></div>
 </div>
- 
+
+    <article class="detail-article">
+      <div class="block"><h3>Colorado's Structure</h3><p>Out of possession Colorado set up in a compact 4-1-4-1, man-marking through midfield. In possession it becomes a 2-3-5: both full-backs push on, and the one on the far side from the ball tucks inside to form the base three with the holding midfielder, Speedy Williams.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Out of possession · 4-1-4-1</span><span class="fig-dir">← LSC attack</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="Out of possession · 4-1-4-1" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="k1ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="k1ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="k1hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="60" cy="34" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="60" y="36.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">LB</text><circle cx="52" cy="90" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="52" cy="150" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="60" cy="206" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="60" y="208.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">RB</text><circle class="fade" cx="60" cy="34" r="12" fill="none" stroke="#3DDC5A" stroke-width="1.4" stroke-dasharray="3 3"/><circle cx="100" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="100" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">6</text><circle cx="150" cy="40" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="150" cy="94" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="150" cy="146" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="150" cy="200" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="206" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="206" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">9</text><circle cx="178" cy="94" r="7" fill="#3DDC5A"/><circle cx="178" cy="146" r="7" fill="#3DDC5A"/><g class="fade" stroke="#F5F1E9" stroke-opacity=".55" stroke-dasharray="2 2"><line x1="157" y1="94" x2="171" y2="94"/><line x1="157" y1="146" x2="171" y2="146"/></g><text x="164" y="124" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">MAN-MARKING</text><text x="84" y="20" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">SLOWEST RECOVERY POINT</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Colorado Springs</span><span><i style="background:#3DDC5A"></i>Lexington</span></div>
+<p class="figcaption">A compact 4-1-4-1 that goes man-to-man through midfield. The left-back is the slowest point to recover when the shape has to turn and run back.</p>
+</figure><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">In possession · 2-3-5</span><span class="fig-dir">COS attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="In possession · 2-3-5" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="k2ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="k2ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="k2hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="62" cy="96" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="62" cy="144" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="124" cy="78" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="124" y="80.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">LB</text><circle cx="116" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="116" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">80</text><circle cx="124" cy="162" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><path class="fade" d="M70 40 Q100 50 118 70" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#k2ah-b)"/><circle cx="66" cy="36" r="7" fill="none" stroke="#F5F1E9" stroke-width="1" stroke-dasharray="2 2" opacity=".55"/><text x="66" y="20" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">BALL-FAR FB TUCKS IN</text><text x="116" y="104" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6" letter-spacing=".6" fill="#F5F1E9">SPEEDY</text><circle cx="290" cy="22" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="262" cy="88" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="262" y="90.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">10</text><circle cx="304" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="304" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">90</text><circle cx="262" cy="152" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="282" cy="218" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="282" y="220.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">RB</text><circle cx="290" cy="214" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><text x="62" y="186" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".6" fill="rgba(245,241,233,.55)">2</text><text x="120" y="232" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".6" fill="rgba(245,241,233,.55)">3</text><text x="280" y="232" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".6" fill="rgba(245,241,233,.55)">5</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Colorado Springs</span><span><i style="background:#F5F1E9;width:7px;height:7px"></i>Ball</span><span><i style="border:1px dashed #F5F1E9"></i>Out-of-possession spot</span></div>
+<p class="figcaption">Both full-backs go; the one on the far side from the ball tucks inside to form the base three with Speedy Williams. Everything is built through him.</p>
+</figure></div><div class="block"><h3>The Crack Behind The Left-Back</h3><p>With the left-back pushed that high, the space behind him is exposed the moment Colorado lose the ball. That is the pattern in their recent away defeats: they have more of the ball (21 shots in New Mexico, 56% possession in Phoenix) and still come home with nothing.</p><p>The route for Lexington is an immediate vertical ball into that channel on the turnover, with runners who can get there before he recovers.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">The crack behind the left-back</span><span class="fig-dir">← LSC attack</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="The crack behind the left-back" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="k3ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="k3ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="k3hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><rect class="fade" x="66" y="4" width="120" height="56" fill="rgba(61,220,90,.24)" stroke="#3DDC5A" stroke-dasharray="3 3"/><text x="126" y="72" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#3DDC5A">BEHIND THE LB</text><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="58" cy="96" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="58" cy="144" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="60" cy="206" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="60" y="208.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">RB</text><circle cx="226" cy="64" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="226" y="66.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">LB</text><path class="fade" d="M220 60 L172 44" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#k3ah-b)"/><text x="236" y="44" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">CAUGHT HIGH</text><circle cx="210" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="210" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">80</text><circle cx="236" cy="164" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="250" cy="104" r="7" fill="#3DDC5A"/><circle cx="244" cy="100" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><text x="262" y="124" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">BALL WON</text><path class="draw" d="M242 96 Q180 20 110 26" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#k3ah-b)"/><circle cx="214" cy="28" r="7" fill="#3DDC5A"/><text x="214" y="30.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">ZEN</text><path class="draw" d="M206 28 L118 22" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#k3ah-g)"/><circle cx="170" cy="104" r="7" fill="#3DDC5A"/><text x="170" y="106.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">EPP</text><path class="fade" d="M162 100 Q130 70 104 46" fill="none" stroke="#3DDC5A" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#k3ah-g)"/></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Colorado Springs</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:rgba(61,220,90,.35);border-radius:0"></i>Space to attack</span></div>
+<p class="figcaption">When Colorado lose it with the left-back advanced, the channel behind him is open. One immediate vertical ball, and runners with pace attacking it before he can get back.</p>
+</figure><div class="form-row">
+<div class="mcard l"><span class="res">L · Aug 1</span><div class="score">@ NM 0–1</div><p>Howell 51' (Nava) · 21 COS shots</p></div>
+<div class="mcard l"><span class="res">L · Aug 8</span><div class="score">@ RI 0–2</div><p>Tsukada 69', J. Williams 90+2'</p></div>
+<div class="mcard l"><span class="res">L · Aug 19</span><div class="score">@ PHX 1–3</div><p>56.1% possession · Pérez goal</p></div>
+<div class="mcard"><span class="res">1W · 4L</span><div class="score">Last five</div><p>4 scored, 9 conceded</p></div>
+</div></div><div class="block"><h3>Aerial Danger</h3><p>Colorado generate heavy crossing and corner volume, and defender Isaiah Foster has scored this season from both a corner and a long throw-in. He has to be marked strictly on every set piece — and so do the other defenders who arrive late.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Track the late arrival</span><span class="fig-dir">COS attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="Track the late arrival" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="k4ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="k4ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="k4hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><circle cx="386" cy="228" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="382" cy="222" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><path class="draw" d="M380 218 Q360 150 364 112" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#k4ah-b)"/><circle cx="388" cy="120" r="6.5" fill="#3DDC5A"/><circle cx="368" cy="100" r="6" fill="#3DDC5A"/><circle cx="372" cy="126" r="6" fill="#3DDC5A"/><circle cx="360" cy="140" r="6" fill="#3DDC5A"/><circle cx="352" cy="94" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="356" cy="120" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="300" cy="104" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="300" y="106.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">12</text><path class="fade" d="M308 106 L350 112" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#k4ah-b)"/><circle class="fade" cx="300" cy="104" r="13" fill="none" stroke="#3DDC5A" stroke-width="1.4" stroke-dasharray="3 3"/><text x="300" y="84" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">FOSTER · LATE RUN</text><text x="250" y="170" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">CORNERS + LONG THROWS</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Colorado Springs</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:#F5F1E9;width:7px;height:7px"></i>Ball</span></div>
+<p class="figcaption">Isaiah Foster (#12) has scored from a corner and from a long throw this season. The danger is the defender arriving late from the edge of the box, not only the strikers already in it.</p>
+</figure><div class="pcards">
+<div class="pcard"><h4>Speedy Williams</h4><span class="role">#80 · holding mid</span><p>Sets the tempo for everything Colorado do. Ex-LSC (2025) and a four-time USL champion.</p></div>
+<div class="pcard"><h4>Khori Bennett</h4><span class="role">#90 · striker</span><div class="nums"><div><b>11</b><span>Goals</span></div></div><p>Tied for second in the league's scoring chart; takes the penalties.</p></div>
+<div class="pcard"><h4>Adrien Pérez</h4><span class="role">#10 · attacking mid</span><div class="nums"><div><b>46</b><span>Chances created</span></div><div><b>42</b><span>Shots</span></div></div><p>Their central spark; scored the equaliser at Phoenix.</p></div>
+<div class="pcard"><h4>Isaiah Foster</h4><span class="role">#12 · defender</span><p>Main aerial threat on set pieces; goals from a corner and a long throw.</p></div>
+</div></div>
+    </article>
+
+    <div class="detail-conclusion"><span class="label">Game Plan</span><p>Colorado lost their last three away games with plenty of the ball. The crack was always in the same place — go there first, and don't lose Foster on the set pieces.</p></div><div class="phase-grid">
+<div class="phase"><span class="phase-n">01</span><h4>Opportunity · behind the left-back</h4><p>An immediate vertical ball into that channel the moment possession is won, using the pace of Epps and Zengue.</p></div>
+<div class="phase alert"><span class="phase-n">02</span><h4>Risk · bodies on crosses</h4><p>They commit heavy numbers to crosses from both flanks. Track the late-arriving defenders, not just the strikers.</p></div>
+</div>
+
+    <div class="video-section">
+      <span class="label">Watch The Breakdown</span>
+      <div class="video-links">
+        <!-- VIDEO: reemplaza PEGAR_ENLACE_VIDEO por el enlace del video -->
+        <a class="video-link-slot" href="PEGAR_ENLACE_VIDEO" target="_blank" rel="noopener"><span class="platform">Video</span> Watch the full breakdown →</a>
+        <!-- INSTAGRAM: reemplaza PEGAR_ENLACE_INSTAGRAM -->
+        <a class="video-link-slot" href="PEGAR_ENLACE_INSTAGRAM" target="_blank" rel="noopener"><span class="platform">Instagram</span> Watch the Reel →</a>
+        <!-- TIKTOK: reemplaza PEGAR_ENLACE_TIKTOK -->
+        <a class="video-link-slot" href="PEGAR_ENLACE_TIKTOK" target="_blank" rel="noopener"><span class="platform">TikTok</span> Watch on TikTok →</a>
+      </div>
+    </div>
+
+    <div class="detail-nav-links">
+      <a href="../index.html#pre-match">← All Pre-Match</a>
+      <a href="../index.html">Home</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>SILAS VANCE — TACTICAL ANALYSIS</footer>
+
 <script>
-(function() {
-  var root = document.getElementById('lscxRoot');
-  var langBtns = root.parentElement.querySelectorAll('.lscx-langbtn');
-  langBtns.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var lang = btn.getAttribute('data-setlang');
-      root.setAttribute('data-lang', lang);
-      langBtns.forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-    });
-  });
- 
-  var reveals = root.querySelectorAll('.lscx-reveal');
+  const toggle = document.getElementById('navToggle');
+  const tabs = document.getElementById('tabs');
+  toggle.addEventListener('click', () => tabs.classList.toggle('open'));
+  const figs = document.querySelectorAll('.figure');
   if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('lscx-in');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    reveals.forEach(function(el) { io.observe(el); });
-  } else {
-    reveals.forEach(function(el) { el.classList.add('lscx-in'); });
-  }
-})();
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .35});
+    figs.forEach(f => io.observe(f));
+  } else { figs.forEach(f => f.classList.add('in')); }
 </script>
 </body>
 </html>
