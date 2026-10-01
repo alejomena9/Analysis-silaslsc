@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video in production — Silas Vance</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Silas Vance — Video en desarrollo · paleta del proyecto. Namespaced bajo #video-pending */
+#video-pending{
+  --green:#3DDC5A; --black:#111111; --bone:#F5F1E9;
+  --bg:#0B0F0C; --panel:#131A14; --line:rgba(245,241,233,.12); --muted:rgba(245,241,233,.62);
+  --display:'Oswald',sans-serif; --body:'Inter',sans-serif; --mono:'IBM Plex Mono',monospace;
+  background:var(--bg); color:var(--bone); font-family:var(--body); font-size:17px; line-height:1.65;
+  margin:0; min-height:100vh; display:flex; flex-direction:column; -webkit-font-smoothing:antialiased;
+}
+#video-pending *{box-sizing:border-box;}
+#video-pending a{color:inherit;text-decoration:none;}
+#video-pending .mono{font-family:var(--mono);}
+
+/* Nav */
+#video-pending .site-nav{position:sticky;top:0;z-index:20;background:rgba(11,15,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+#video-pending .nav-inner{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+#video-pending .brand{display:flex;align-items:center;gap:12px;}
+#video-pending .brand-mark{width:30px;height:30px;flex:none;}
+#video-pending .brand-name{display:block;font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-size:1.15rem;line-height:1;}
+#video-pending .tagline{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+#video-pending .lang-switch{display:flex;border:1px solid var(--line);}
+#video-pending .lang-switch button{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;background:transparent;color:var(--muted);border:0;padding:6px 10px;cursor:pointer;}
+#video-pending .lang-switch button+button{border-left:1px solid var(--line);}
+#video-pending .lang-switch button[aria-pressed="true"]{background:var(--green);color:var(--black);font-weight:600;}
+
+/* Main */
+#video-pending main{flex:1;display:flex;align-items:center;padding:56px 20px 64px;background:radial-gradient(ellipse at 50% 0%,rgba(61,220,90,.09),transparent 60%);}
+#video-pending .wrap{max-width:760px;margin:0 auto;width:100%;}
+#video-pending .kicker{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);}
+#video-pending .rec{width:9px;height:9px;border-radius:50%;background:var(--green);animation:blink 1.4s ease-in-out infinite;}
+@keyframes blink{50%{opacity:.25}}
+#video-pending h1{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(2.4rem,7vw,4.2rem);line-height:.98;margin:14px 0 18px;letter-spacing:.01em;}
+#video-pending h1 .accent{color:var(--green);}
+#video-pending .lede{color:rgba(245,241,233,.82);font-size:1.06rem;max-width:600px;margin:0 0 26px;}
+#video-pending .match{display:none;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:22px;}
+#video-pending .match.on{display:flex;}
+#video-pending .chip{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border:1px solid var(--line);background:var(--panel);}
+#video-pending .chip.g{border-color:var(--green);color:var(--green);}
+
+/* Editing timeline figure */
+#video-pending .edit{background:var(--panel);border:1px solid var(--line);padding:16px 16px 12px;margin-bottom:26px;}
+#video-pending .edit-head{display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+#video-pending .edit-head b{color:var(--green);font-weight:500;}
+#video-pending .edit svg{display:block;width:100%;height:auto;}
+#video-pending .playhead{animation:scrub 7s linear infinite;}
+@keyframes scrub{from{transform:translateX(0)}to{transform:translateX(340px)}}
+#video-pending .clip{transform-box:fill-box;transform-origin:left;animation:grow 1.2s ease-out both;}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+#video-pending .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:12px;}
+#video-pending .step{background:var(--bg);padding:10px 8px;text-align:center;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+#video-pending .step b{display:block;font-size:.9rem;margin-bottom:2px;}
+#video-pending .step.done b{color:var(--green);}
+#video-pending .step.now{color:var(--bone);}
+#video-pending .step.now b{color:var(--bone);}
+
+/* Actions */
+#video-pending .actions{display:flex;flex-wrap:wrap;gap:10px;}
+#video-pending .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;padding:12px 18px;border:1px solid var(--line);color:var(--bone);background:transparent;cursor:pointer;transition:border-color .2s,color .2s,background .2s;}
+#video-pending .btn:hover{border-color:var(--green);color:var(--green);}
+#video-pending .btn-primary{background:var(--green);border-color:var(--green);color:var(--black);font-weight:600;}
+#video-pending .btn-primary:hover{background:transparent;color:var(--green);}
+#video-pending .note{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;color:var(--muted);margin-top:22px;}
+#video-pending footer{border-top:1px solid var(--line);padding:22px 20px;text-align:center;font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;color:var(--muted);}
+
+@media (prefers-reduced-motion:reduce){#video-pending .rec,#video-pending .playhead,#video-pending .clip{animation:none}}
+@media (max-width:600px){
+  #video-pending main{padding:40px 16px 48px;}
+  #video-pending .steps{grid-template-columns:repeat(2,1fr);}
+  #video-pending .tagline{display:none;}
+}
+</style>
+</head>
+<body id="video-pending" style="margin:0;">
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html">
+      <svg class="brand-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="26" height="26" rx="2" stroke="#3DDC5A" stroke-width="1.4"/>
+        <line x1="1" y1="14" x2="27" y2="14" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="14" r="4.2" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="6" r="1.6" fill="#F5F1E9"/>
+        <circle cx="8" cy="9" r="1.6" fill="#F5F1E9"/>
+        <circle cx="20" cy="9" r="1.6" fill="#F5F1E9"/>
+      </svg>
+      <span>
+        <span class="brand-name">SILAS VANCE</span>
+        <span class="tagline" data-t="tagline">Tactical Analysis</span>
+      </span>
+    </a>
+    <div class="lang-switch" role="group" aria-label="Language / Idioma">
+      <button type="button" data-set-lang="en" aria-pressed="true">EN</button><button type="button" data-set-lang="es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <span class="kicker"><i class="rec" aria-hidden="true"></i><span data-t="kicker">Video in production</span></span>
+    <h1 data-t="title">The breakdown is <span class="accent">on its way.</span></h1>
+    <div class="match" id="match"><span class="chip g mono" id="matchName"></span><span class="chip mono" id="platform"></span></div>
+    <p class="lede" data-t="lede">The written analysis is already live. The video version — clips, drawn-on tactics and the key moments — is still in the edit, and will be linked here as soon as it's published.</p>
+
+    <div class="edit">
+      <div class="edit-head"><span data-t="timeline">Edit timeline</span><b data-t="status">In progress</b></div>
+      <svg viewBox="0 0 400 96" role="img" aria-label="Video editing timeline" xmlns="http://www.w3.org/2000/svg">
+        <g font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">
+          <text x="4" y="22">V1</text><text x="4" y="46">V2</text><text x="4" y="70">A1</text>
+          <text x="30" y="92">00:00</text><text x="110" y="92">00:15</text><text x="190" y="92">00:30</text><text x="270" y="92">00:45</text><text x="350" y="92">01:00</text>
+        </g>
+        <g stroke="rgba(245,241,233,.1)"><line x1="30" y1="6" x2="30" y2="80"/><line x1="110" y1="6" x2="110" y2="80"/><line x1="190" y1="6" x2="190" y2="80"/><line x1="270" y1="6" x2="270" y2="80"/><line x1="350" y1="6" x2="350" y2="80"/></g>
+        <rect class="clip" x="30" y="12" width="74" height="16" fill="#3DDC5A" style="animation-delay:.1s"/>
+        <rect class="clip" x="108" y="12" width="96" height="16" fill="#3DDC5A" style="animation-delay:.3s"/>
+        <rect class="clip" x="208" y="12" width="60" height="16" fill="rgba(61,220,90,.35)" stroke="#3DDC5A" stroke-dasharray="3 2" style="animation-delay:.5s"/>
+        <rect x="272" y="12" width="98" height="16" fill="none" stroke="rgba(245,241,233,.3)" stroke-dasharray="3 3"/>
+        <rect class="clip" x="60" y="36" width="70" height="16" fill="#F5F1E9" opacity=".85" style="animation-delay:.4s"/>
+        <rect class="clip" x="160" y="36" width="56" height="16" fill="#F5F1E9" opacity=".85" style="animation-delay:.6s"/>
+        <rect x="236" y="36" width="80" height="16" fill="none" stroke="rgba(245,241,233,.3)" stroke-dasharray="3 3"/>
+        <path d="M30 70 L40 64 L50 72 L60 62 L70 70 L80 66 L90 72 L100 63 L110 70 L120 65 L130 71 L140 62 L150 70 L160 66 L170 72 L180 64 L190 70 L200 66 L210 70" fill="none" stroke="#3DDC5A" stroke-width="1.2" opacity=".8"/>
+        <g class="playhead"><line x1="30" y1="4" x2="30" y2="80" stroke="#F5F1E9" stroke-width="1.4"/><path d="M26 4 L34 4 L30 9 Z" fill="#F5F1E9"/></g>
+      </svg>
+      <div class="steps">
+        <div class="step done"><b>✓</b><span data-t="s1">Analysis</span></div>
+        <div class="step done"><b>✓</b><span data-t="s2">Script</span></div>
+        <div class="step now"><b>●</b><span data-t="s3">Editing</span></div>
+        <div class="step"><b>○</b><span data-t="s4">Published</span></div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a class="btn btn-primary" id="backBtn" href="../index.html" data-t="back">← Back to the analysis</a>
+      <a class="btn" href="https://www.instagram.com/silasperformancelsc" target="_blank" rel="noopener">Instagram ↗</a>
+      <a class="btn" href="https://www.tiktok.com/@silasperformancelsc" target="_blank" rel="noopener">TikTok ↗</a>
+    </div>
+    <p class="note" data-t="note">Follow @silasperformancelsc to catch the video the day it drops.</p>
+  </div>
+</main>
+
+<footer data-t="footer">SILAS VANCE — TACTICAL ANALYSIS · LEXINGTON, KY</footer>
+
+<script>
+(function () {
+  var ES = {
+    tagline: 'Análisis Táctico',
+    kicker: 'Video en desarrollo',
+    title: 'El video está <span class="accent">en camino.</span>',
+    lede: 'El análisis escrito ya está publicado. La versión en video — con clips, la táctica dibujada sobre la jugada y los momentos clave — sigue en edición, y quedará enlazada aquí en cuanto se publique.',
+    timeline: 'Línea de edición', status: 'En proceso',
+    s1: 'Análisis', s2: 'Guion', s3: 'Edición', s4: 'Publicado',
+    back: '← Volver al análisis',
+    note: 'Sigue a @silasperformancelsc para ver el video el día que salga.',
+    footer: 'SILAS VANCE — ANÁLISIS TÁCTICO · LEXINGTON, KY'
+  };
+  var PLAT = {video: ['Full breakdown', 'Análisis completo'], instagram: ['Instagram Reel', 'Reel de Instagram'], tiktok: ['TikTok', 'TikTok']};
+  var q = new URLSearchParams(location.search);
+  var match = q.get('m'), plat = (q.get('p') || '').toLowerCase();
+  var els = document.querySelectorAll('[data-t]');
+  var lang = 'en';
+
+  // back button: return to the analysis that sent the visitor here
+  var back = document.getElementById('backBtn');
+  try {
+    if (document.referrer && new URL(document.referrer).origin === location.origin) back.href = document.referrer;
+  } catch (e) {}
+
+  function render() {
+    els.forEach(function (el) {
+      if (el._en === undefined) el._en = el.innerHTML;
+      el.innerHTML = (lang === 'es' && ES[el.dataset.t]) ? ES[el.dataset.t] : el._en;
+    });
+    if (match) {
+      document.getElementById('match').classList.add('on');
+      var mt = match;
+      if (lang === 'es') {
+        var MES = {January:'enero',February:'febrero',March:'marzo',April:'abril',May:'mayo',June:'junio',July:'julio',August:'agosto',September:'septiembre',October:'octubre',November:'noviembre',December:'diciembre'};
+        mt = mt.replace(/(January|February|March|April|May|June|July|August|September|October|November|December) (\d{1,2})/, function (_, m, d) { return d + ' de ' + MES[m]; });
+      }
+      document.getElementById('matchName').textContent = mt;
+      var pl = document.getElementById('platform');
+      if (PLAT[plat]) pl.textContent = PLAT[plat][lang === 'es' ? 1 : 0]; else pl.remove();
+    }
+    document.documentElement.lang = lang;
+    document.title = (lang === 'es' ? 'Video en desarrollo' : 'Video in production') + ' — Silas Vance';
+    document.querySelectorAll('[data-set-lang]').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.setLang === lang ? 'true' : 'false'); });
+  }
+  function setLang(l) { lang = l === 'es' ? 'es' : 'en'; try { localStorage.setItem('sv-lang', lang); } catch (e) {} render(); }
+  document.querySelectorAll('[data-set-lang]').forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.setLang); }); });
+
+  var init = q.get('lang');
+  if (init !== 'es' && init !== 'en') { try { init = localStorage.getItem('sv-lang'); } catch (e) {} }
+  if (!init) init = (navigator.language || 'en').toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
+  lang = init === 'es' ? 'es' : 'en';
+  render();
+})();
+</script>
+</body>
+</html>
