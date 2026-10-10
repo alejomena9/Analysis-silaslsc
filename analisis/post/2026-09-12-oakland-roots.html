@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>September 12 — Silas Vance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* Silas Vance — Pre-Match · paleta del proyecto. Todo namespaced bajo #post-2026-09-12-oakland */
+#post-2026-09-12-oakland{
+  --green:#3DDC5A; --black:#111111; --bone:#F5F1E9;
+  --bg:#0B0F0C; --panel:#131A14; --line:rgba(245,241,233,.12); --muted:rgba(245,241,233,.62);
+  --display:'Oswald',sans-serif; --body:'Inter',sans-serif; --mono:'IBM Plex Mono',monospace;
+  background:var(--bg); color:var(--bone); font-family:var(--body); font-size:17px; line-height:1.65;
+  min-height:100vh; margin:0; -webkit-font-smoothing:antialiased;
+}
+#post-2026-09-12-oakland *{box-sizing:border-box;}
+#post-2026-09-12-oakland a{color:inherit;text-decoration:none;}
+#post-2026-09-12-oakland .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+#post-2026-09-12-oakland .display{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;}
+#post-2026-09-12-oakland .mono{font-family:var(--mono);}
+#post-2026-09-12-oakland .label{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:10px;}
+
+/* Nav */
+#post-2026-09-12-oakland .site-nav{position:sticky;top:0;z-index:20;background:rgba(11,15,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+#post-2026-09-12-oakland .nav-inner{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+#post-2026-09-12-oakland .brand{display:flex;align-items:center;gap:12px;}
+#post-2026-09-12-oakland .brand-mark{width:30px;height:30px;flex:none;}
+#post-2026-09-12-oakland .brand-text .display{font-size:1.15rem;line-height:1;}
+#post-2026-09-12-oakland .tagline{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+#post-2026-09-12-oakland .tabs{display:flex;gap:22px;}
+#post-2026-09-12-oakland .tabs a{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
+#post-2026-09-12-oakland .tabs a:hover{color:var(--green);}
+#post-2026-09-12-oakland .nav-toggle{display:none;background:none;border:1px solid var(--line);color:var(--bone);font-size:1.1rem;padding:4px 10px;cursor:pointer;}
+
+/* Hero */
+#post-2026-09-12-oakland .detail-hero{padding:56px 0 40px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(61,220,90,.07),transparent 70%);}
+#post-2026-09-12-oakland .back-link{display:inline-block;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--muted);margin-bottom:26px;}
+#post-2026-09-12-oakland .back-link:hover{color:var(--green);}
+#post-2026-09-12-oakland .detail-kicker{display:block;font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);}
+#post-2026-09-12-oakland .detail-hero h1{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(3rem,10vw,5.6rem);line-height:.95;margin:10px 0 22px;letter-spacing:.01em;}
+#post-2026-09-12-oakland .detail-meta{display:flex;flex-wrap:wrap;gap:10px;}
+#post-2026-09-12-oakland .badge{display:inline-block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--green);color:var(--green);border-radius:2px;}
+
+/* Body */
+#post-2026-09-12-oakland .detail-body{padding:44px 0 60px;}
+#post-2026-09-12-oakland .summary-card{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--green);padding:22px 24px;margin-bottom:40px;}
+#post-2026-09-12-oakland .summary-card p{margin:0;font-size:1.12rem;font-weight:500;}
+#post-2026-09-12-oakland .detail-article .block{padding:0 0 30px;margin-bottom:30px;border-bottom:1px solid var(--line);counter-increment:blk;}
+#post-2026-09-12-oakland .detail-article{counter-reset:blk;}
+#post-2026-09-12-oakland .detail-article h3{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.03em;font-size:1.55rem;margin:0 0 14px;line-height:1.15;}
+#post-2026-09-12-oakland .detail-article h3::before{content:counter(blk,decimal-leading-zero);display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;color:var(--green);margin-bottom:6px;}
+#post-2026-09-12-oakland .detail-article p{margin:0 0 14px;color:rgba(245,241,233,.88);}
+#post-2026-09-12-oakland .detail-conclusion{background:var(--green);color:var(--black);padding:26px 26px;margin:10px 0 44px;}
+#post-2026-09-12-oakland .detail-conclusion .label{color:var(--black);opacity:.75;}
+#post-2026-09-12-oakland .detail-conclusion p{margin:0;font-size:1.1rem;font-weight:600;line-height:1.55;}
+
+/* Video */
+#post-2026-09-12-oakland .video-section{margin-bottom:44px;}
+#post-2026-09-12-oakland .video-links{display:grid;gap:10px;}
+#post-2026-09-12-oakland .video-link-slot{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);padding:16px 18px;font-weight:500;transition:border-color .2s,color .2s;}
+#post-2026-09-12-oakland a.video-link-slot:hover{border-color:var(--green);color:var(--green);}
+#post-2026-09-12-oakland .platform{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);background:var(--bone);padding:4px 8px;min-width:88px;text-align:center;}
+
+#post-2026-09-12-oakland .detail-nav-links{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;}
+#post-2026-09-12-oakland .detail-nav-links a:hover{color:var(--green);}
+#post-2026-09-12-oakland footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--muted);}
+
+/* Figures */
+#post-2026-09-12-oakland .figure{background:var(--panel);border:1px solid var(--line);padding:16px 16px 12px;margin:22px 0 6px;}
+#post-2026-09-12-oakland .figure svg{display:block;width:100%;height:auto;}
+#post-2026-09-12-oakland .fig-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;}
+#post-2026-09-12-oakland .fig-title{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);}
+#post-2026-09-12-oakland .fig-dir{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+#post-2026-09-12-oakland .figcaption{font-size:.86rem;color:var(--muted);margin:10px 0 0;line-height:1.5;}
+#post-2026-09-12-oakland .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#post-2026-09-12-oakland .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;}
+#post-2026-09-12-oakland .figure .draw{stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1.3s ease .25s;}
+#post-2026-09-12-oakland .figure .fade{opacity:0;transition:opacity .8s ease .9s;}
+#post-2026-09-12-oakland .figure.in .draw{stroke-dashoffset:0;}
+#post-2026-09-12-oakland .figure.in .fade{opacity:1;}
+#post-2026-09-12-oakland .figure .grow{transform:scaleY(0);transform-box:fill-box;transform-origin:bottom;transition:transform .9s ease;}
+#post-2026-09-12-oakland .figure.in .grow{transform:scaleY(1);}
+@media (prefers-reduced-motion:reduce){#post-2026-09-12-oakland .figure .draw{stroke-dashoffset:0;transition:none}#post-2026-09-12-oakland .figure .fade{opacity:1;transition:none}#post-2026-09-12-oakland .figure .grow{transform:none;transition:none}}
+
+/* Phase grid */
+#post-2026-09-12-oakland .phase-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:-30px 0 44px;}
+#post-2026-09-12-oakland .phase{background:var(--panel);border:1px solid var(--line);padding:16px 18px;}
+#post-2026-09-12-oakland .phase.alert{border-color:var(--bone);background:repeating-linear-gradient(45deg,rgba(245,241,233,.05) 0 6px,transparent 6px 12px),var(--panel);}
+#post-2026-09-12-oakland .phase-n{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--green);}
+#post-2026-09-12-oakland .phase h4{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-size:1.05rem;margin:4px 0 6px;}
+#post-2026-09-12-oakland .phase p{margin:0;font-size:.9rem;color:rgba(245,241,233,.8);line-height:1.5;}
+
+/* Extra components: stat row, callouts, player cards, match cards, form */
+#post-2026-09-12-oakland .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:-18px 0 40px;}
+#post-2026-09-12-oakland .stat-row div{background:var(--panel);padding:14px 10px;text-align:center;}
+#post-2026-09-12-oakland .stat-row b{display:block;font-family:var(--mono);font-size:1.3rem;color:var(--green);font-weight:600;line-height:1.2;}
+#post-2026-09-12-oakland .stat-row span{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+#post-2026-09-12-oakland .callout{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--green);padding:14px 18px;margin:18px 0 6px;}
+#post-2026-09-12-oakland .callout.alert{border-left-color:var(--bone);}
+#post-2026-09-12-oakland .callout .label{margin-bottom:6px;}
+#post-2026-09-12-oakland .callout.alert .label{color:var(--bone);}
+#post-2026-09-12-oakland .callout p{margin:0;font-size:.95rem;}
+#post-2026-09-12-oakland .pcards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 6px;}
+#post-2026-09-12-oakland .pcard{background:var(--panel);border:1px solid var(--line);padding:14px 16px;}
+#post-2026-09-12-oakland .pcard h4{font-family:var(--display);text-transform:uppercase;font-size:1.05rem;margin:0;letter-spacing:.02em;}
+#post-2026-09-12-oakland .pcard .role{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;color:var(--green);text-transform:uppercase;display:block;margin:2px 0 8px;}
+#post-2026-09-12-oakland .pcard .nums{display:flex;gap:18px;margin-bottom:6px;}
+#post-2026-09-12-oakland .pcard .nums b{display:block;font-family:var(--mono);font-size:1.2rem;color:var(--green);}
+#post-2026-09-12-oakland .pcard .nums span{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#post-2026-09-12-oakland .pcard p{margin:0;font-size:.88rem;color:rgba(245,241,233,.78);line-height:1.5;}
+#post-2026-09-12-oakland .form-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 6px;}
+#post-2026-09-12-oakland .mcard{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--muted);padding:12px 14px;}
+#post-2026-09-12-oakland .mcard.w{border-top-color:var(--green);}
+#post-2026-09-12-oakland .mcard .res{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+#post-2026-09-12-oakland .mcard.w .res{color:var(--green);}
+#post-2026-09-12-oakland .mcard .score{font-family:var(--display);font-size:1.15rem;text-transform:uppercase;margin:2px 0 4px;}
+#post-2026-09-12-oakland .mcard p{margin:0;font-size:.78rem;color:var(--muted);line-height:1.4;}
+
+#post-2026-09-12-oakland .figure .growx{transform:scaleX(0);transform-box:fill-box;transform-origin:left;transition:transform 1s ease .2s;}
+#post-2026-09-12-oakland .figure.in .growx{transform:scaleX(1);}
+@media (prefers-reduced-motion:reduce){#post-2026-09-12-oakland .figure .growx{transform:none;transition:none}}
+
+@media (max-width:760px){
+  #post-2026-09-12-oakland .stat-row{grid-template-columns:repeat(2,1fr);}
+  #post-2026-09-12-oakland .pcards{grid-template-columns:1fr;}
+  #post-2026-09-12-oakland .form-row{grid-template-columns:repeat(2,1fr);}
+  #post-2026-09-12-oakland .phase-grid{grid-template-columns:1fr;}
+  #post-2026-09-12-oakland .nav-toggle{display:block;}
+  #post-2026-09-12-oakland .tabs{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);}
+  #post-2026-09-12-oakland .tabs.open{display:flex;}
+  #post-2026-09-12-oakland .tabs a{padding:14px 20px;border-top:1px solid var(--line);}
+  #post-2026-09-12-oakland .detail-hero{padding:36px 0 30px;}
+  #post-2026-09-12-oakland .detail-conclusion,#post-2026-09-12-oakland .summary-card{padding:20px;}
+  #post-2026-09-12-oakland .figure{margin-left:-20px !important;margin-right:-20px !important;padding:14px 8px 12px;border-left:0;border-right:0;}
+  #post-2026-09-12-oakland .fig-head,#post-2026-09-12-oakland .legend,#post-2026-09-12-oakland .figcaption{padding:0 12px;}
+}
+</style>
+</head>
+<body id="post-2026-09-12-oakland" style="margin:0;">
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">
+      <svg class="brand-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="26" height="26" rx="2" stroke="#3DDC5A" stroke-width="1.4"/>
+        <line x1="1" y1="14" x2="27" y2="14" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="14" r="4.2" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="6" r="1.6" fill="#F5F1E9"/>
+        <circle cx="8" cy="9" r="1.6" fill="#F5F1E9"/>
+        <circle cx="20" cy="9" r="1.6" fill="#F5F1E9"/>
+      </svg>
+      <span class="brand-text">
+        <span class="display" style="display:block;">SILAS VANCE</span>
+        <span class="tagline">Tactical Analysis</span>
+      </span>
+    </a>
+    <nav class="tabs" id="tabs">
+      <a href="../../index.html#individual">Player Focus</a>
+      <a href="../../index.html#team-tactics">Team Tactics</a>
+      <a href="../../index.html#pre-match">Pre-Match</a>
+      <a href="../../index.html#post-match">Post-Match</a>
+      <a href="../../index.html#about">About</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="detail-hero">
+  <div class="wrap">
+    <a class="back-link" href="../../index.html#post-match">← Back to Post-Match</a>
+    <span class="detail-kicker">Post-Match · vs. Oakland Roots SC</span>
+    <h1>September 12</h1>
+    <div class="detail-meta">
+      <span class="badge badge-post mono" style="background:#3DDC5A;color:#111111;">W 4–1</span><span class="badge badge-pre mono">Okello in the base</span><span class="badge badge-pre mono">Transition kills</span>
+    </div>
+  </div>
+</section>
+
+<section class="detail-body">
+  <div class="wrap" style="max-width:760px;">
+
+    <div class="summary-card">
+      <span class="label">In One Line</span>
+      <p>Oakland had more corners, more of the ball after half-time and the equaliser — but the more they committed forward, the more space Lexington's transitions found.</p>
+    </div>
+<div class="stat-row">
+<div><b>1–0</b><span>Half-time</span></div>
+<div><b>8–3</b><span>Shots on target</span></div>
+<div><b>1–11</b><span>Corners · LSC–OAK</span></div>
+<div><b>3</b><span>Goals in the last 12'</span></div>
+</div>
+
+    <article class="detail-article">
+      <div class="block"><h3>An Early Lead, A Protected Base</h3><p>Lexington started with Noble Okello in midfield next to Ferri and Molloy — the base that lets the midfield rotate without leaving the back line exposed. The opener came early: a quick free kick from deep sent Zengue down the right, his effort was blocked, and Goodrum finished the rebound at 22'.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">22': Zengue down the right</span><span class="fig-dir">LSC attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="22': Zengue down the right" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="k4ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="k4ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="k4hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><circle cx="110" cy="200" r="7" fill="#3DDC5A"/><text x="110" y="202.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">FER</text><circle cx="118" cy="198" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><path class="draw" d="M120 196 Q220 150 290 186" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#k4ah-b)"/><circle cx="300" cy="190" r="7" fill="#3DDC5A"/><text x="300" y="192.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">ZEN</text><path class="draw" d="M306 186 L346 158" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#k4ah-g)"/><circle cx="352" cy="150" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="362" cy="118" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="360" cy="90" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="388" cy="120" r="6.5" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><g class="fade" stroke="#F5F1E9" stroke-width="1.6"><line x1="344" y1="150" x2="352" y2="158"/><line x1="352" y1="150" x2="344" y2="158"/></g><text x="330" y="172" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">BLOCKED</text><circle cx="330" cy="128" r="7" fill="#3DDC5A"/><text x="330" y="130.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">GOO</text><path class="fade" d="M336 128 L384 124" fill="none" stroke="#3DDC5A" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#k4ah-g)"/><text x="300" y="106" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#3DDC5A">22' · REBOUND</text><text x="170" y="222" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">DEEP FREE KICK SPRINGS ZENGUE</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Oakland</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:#F5F1E9;width:7px;height:7px"></i>Ball</span></div>
+<p class="figcaption">A quick restart from deep releases Zengue down the right. His effort is blocked, and Goodrum is first to the rebound.</p>
+</figure></div><div class="block"><h3>Oakland's Spell, Lexington's Structure</h3><p>Oakland's coach Ryan Martin changed the approach at half-time — more direct, more aggressive in transition — and it worked for a spell: Peter Wilson headed in McCabe's cross at 52' and the Roots dominated the ball from the 50th to the 75th minute.</p><p>But the numbers show what the structure did with that pressure: eleven Oakland corners, fourteen shots, and only three on target.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Absorb, then strike</span><span class="fig-dir">0' → 90'</span></div>
+<svg viewBox="0 0 400 140" role="img" aria-label="Absorb, then strike" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="k1ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="k1ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="k1hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><rect class="fade" x="220.0" y="40" width="95.0" height="30" fill="rgba(245,241,233,.10)"/><text x="267.5" y="34" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6" letter-spacing=".6" fill="#F5F1E9">OAKLAND'S BEST SPELL</text><rect x="30" y="52" width="342.0" height="6" fill="rgba(245,241,233,.14)"/><text x="30.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">0'</text><text x="87.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">15'</text><text x="144.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">30'</text><text x="201.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">45'</text><text x="258.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">60'</text><text x="315.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">75'</text><text x="372.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">90'</text><circle class="fade" cx="113.6" cy="55" r="5.5" fill="#3DDC5A" stroke="#F5F1E9" stroke-width="1.2"/><line class="fade" x1="113.6" y1="61" x2="113.6" y2="95" stroke="#F5F1E9" stroke-opacity=".35"/><text x="113.6" y="104" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">22' GOODRUM</text><circle class="fade" cx="227.6" cy="55" r="5.5" fill="#111111" stroke="#F5F1E9" stroke-width="1.2"/><line class="fade" x1="227.6" y1="61" x2="227.6" y2="109" stroke="#F5F1E9" stroke-opacity=".35"/><text x="227.6" y="118" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">52' WILSON</text><circle class="fade" cx="326.4" cy="55" r="5.5" fill="#3DDC5A" stroke="#F5F1E9" stroke-width="1.2"/><line class="fade" x1="326.4" y1="61" x2="326.4" y2="95" stroke="#F5F1E9" stroke-opacity=".35"/><text x="326.4" y="104" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">78' GOODRUM</text><circle class="fade" cx="345.4" cy="55" r="5.5" fill="#3DDC5A" stroke="#F5F1E9" stroke-width="1.2"/><line class="fade" x1="345.4" y1="61" x2="345.4" y2="109" stroke="#F5F1E9" stroke-opacity=".35"/><text x="345.4" y="118" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">83' EPPS</text><circle class="fade" cx="360.59999999999997" cy="55" r="5.5" fill="#3DDC5A" stroke="#F5F1E9" stroke-width="1.2"/><line class="fade" x1="360.59999999999997" y1="61" x2="360.59999999999997" y2="123" stroke="#F5F1E9" stroke-opacity=".35"/><text x="360.59999999999997" y="132" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">87' GOODRUM</text></svg>
+<div class="legend"><span><i style="background:#3DDC5A"></i>LSC goal</span><span><i style="background:#111111;box-shadow:0 0 0 1.2px #F5F1E9"></i>Oakland goal</span></div>
+<p class="figcaption">Oakland had their best spell between the 50th and 75th minute and equalised in it. Lexington scored three times in the last twelve.</p>
+</figure><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">More of the ball, less of the goal</span><span class="fig-dir">Full match</span></div>
+<svg viewBox="0 0 400 160" role="img" aria-label="More of the ball, less of the goal" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="k2ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="k2ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="k2hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><text x="4" y="20" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="rgba(245,241,233,.6)">SHOTS</text><text x="110" y="39" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">LSC</text><rect x="118" y="31" width="240" height="10" fill="rgba(245,241,233,.06)"/><rect class="growx" x="118" y="31" width="195.0" height="10" fill="#3DDC5A"/><text x="319.0" y="39" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">13</text><text x="110" y="52" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">OAK</text><rect x="118" y="44" width="240" height="10" fill="rgba(245,241,233,.06)"/><rect class="growx" x="118" y="44" width="210.0" height="10" fill="rgba(245,241,233,.35)"/><text x="334.0" y="52" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">14</text><text x="4" y="70" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="rgba(245,241,233,.6)">ON TARGET</text><text x="110" y="89" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">LSC</text><rect x="118" y="81" width="240" height="10" fill="rgba(245,241,233,.06)"/><rect class="growx" x="118" y="81" width="120.0" height="10" fill="#3DDC5A"/><text x="244.0" y="89" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">8</text><text x="110" y="102" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">OAK</text><rect x="118" y="94" width="240" height="10" fill="rgba(245,241,233,.06)"/><rect class="growx" x="118" y="94" width="45.0" height="10" fill="rgba(245,241,233,.35)"/><text x="169.0" y="102" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">3</text><text x="4" y="120" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="rgba(245,241,233,.6)">CORNERS</text><text x="110" y="139" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">LSC</text><rect x="118" y="131" width="240" height="10" fill="rgba(245,241,233,.06)"/><rect class="growx" x="118" y="131" width="15.0" height="10" fill="#3DDC5A"/><text x="139.0" y="139" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">1</text><text x="110" y="152" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">OAK</text><rect x="118" y="144" width="240" height="10" fill="rgba(245,241,233,.06)"/><rect class="growx" x="118" y="144" width="165.0" height="10" fill="rgba(245,241,233,.35)"/><text x="289.0" y="152" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">11</text></svg>
+<div class="legend"><span><i style="background:#3DDC5A;border-radius:0"></i>Lexington</span><span><i style="background:rgba(245,241,233,.35);border-radius:0"></i>OAK</span></div>
+<p class="figcaption">Oakland won eleven corners to one and matched Lexington for shots, but only three of theirs hit the target. Lexington put eight on it.</p>
+</figure></div><div class="block"><h3>The Last Twelve Minutes</h3><p>The more Oakland pushed, the more space opened behind them. At 78' Zengue and Ferri combined and Goodrum finished through a crowded box. At 83' Oakland's ninth corner turned into a Lexington goal: Ferri's looping ball and Epps running onto it unopposed. At 87', on another counter, Goodrum completed his hat trick with a diving header from Epps' cross.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">83': from their corner to our goal</span><span class="fig-dir">LSC attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="83': from their corner to our goal" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="k3ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="k3ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="k3hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><rect class="fade" x="4" y="51.3" width="61.6" height="137.4" fill="rgba(245,241,233,.06)"/><circle cx="8" cy="232" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="12" cy="228" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><text x="20" y="222" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">OAK CORNER #9</text><circle cx="40" cy="104" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="46" cy="130" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="30" cy="146" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="14" cy="120" r="6.5" fill="#3DDC5A"/><circle cx="34" cy="118" r="6" fill="#3DDC5A"/><circle cx="52" cy="146" r="6.5" fill="#3DDC5A"/><text x="52" y="148.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">FER</text><path class="draw" d="M58 140 Q180 40 300 84" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#k3ah-b)"/><text x="170" y="44" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">LOOPING BALL OVER THE TOP</text><circle cx="120" cy="100" r="7" fill="#3DDC5A"/><text x="120" y="102.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">EPP</text><path class="draw" d="M128 98 L296 88" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#k3ah-g)"/><circle cx="236" cy="150" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="262" cy="176" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="250" y="200" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6" letter-spacing=".6" fill="#F5F1E9">OAKLAND COMMITTED FORWARD</text><path class="fade" d="M306 88 L384 112" fill="none" stroke="#3DDC5A" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#k3ah-g)"/><text x="344" y="150" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".6" fill="#3DDC5A">83' · 3–1</text><circle cx="388" cy="120" r="6.5" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Oakland</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:#F5F1E9;width:7px;height:7px"></i>Ball</span></div>
+<p class="figcaption">Oakland's ninth corner is cleared, Ferri loops it over a side with bodies forward, and Epps runs onto it unopposed. The corner count was theirs; the transition was ours.</p>
+</figure><div class="pcards">
+<div class="pcard"><h4>Phillip Goodrum</h4><span class="role">Hat trick · 22' 78' 87'</span><div class="nums"><div><b>3</b><span>Goals</span></div><div><b>7</b><span>Season</span></div></div><p>Rebound, a finish through a crowded box, and a diving header from Epps' cross.</p></div>
+<div class="pcard"><h4>Blaine Ferri</h4><span class="role">Two assists</span><div class="nums"><div><b>2</b><span>Assists</span></div></div><p>Out-muscled his man in the box for the 78th and launched the counter for the 83rd.</p></div>
+</div></div>
+    </article>
+
+    <div class="detail-conclusion"><span class="label">Conclusion</span><p>Oakland did what a chasing home side does and paid for it. Lexington didn't need the ball — the Okello in the base held the middle through Oakland's best spell, and every time the Roots committed bodies forward, Ferri, Epps and Goodrum were ready to go the other way.</p></div>
+
+    <div class="video-section">
+      <span class="label">Watch The Breakdown</span>
+      <div class="video-links">
+        <!-- VIDEO: reemplaza PEGAR_ENLACE_VIDEO por el enlace del video -->
+        <a class="video-link-slot" href="PEGAR_ENLACE_VIDEO" target="_blank" rel="noopener"><span class="platform">Video</span> Watch the full breakdown →</a>
+        <!-- INSTAGRAM: reemplaza PEGAR_ENLACE_INSTAGRAM -->
+        <a class="video-link-slot" href="PEGAR_ENLACE_INSTAGRAM" target="_blank" rel="noopener"><span class="platform">Instagram</span> Watch the Reel →</a>
+        <!-- TIKTOK: reemplaza PEGAR_ENLACE_TIKTOK -->
+        <a class="video-link-slot" href="PEGAR_ENLACE_TIKTOK" target="_blank" rel="noopener"><span class="platform">TikTok</span> Watch on TikTok →</a>
+      </div>
+    </div>
+
+    <div class="detail-nav-links">
+      <a href="../../index.html#post-match">← All Post-Match</a>
+      <a href="../../index.html">Home</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>SILAS VANCE — TACTICAL ANALYSIS</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const tabs = document.getElementById('tabs');
+  toggle.addEventListener('click', () => tabs.classList.toggle('open'));
+  const figs = document.querySelectorAll('.figure');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .35});
+    figs.forEach(f => io.observe(f));
+  } else { figs.forEach(f => f.classList.add('in')); }
+</script>
+</body>
+</html>

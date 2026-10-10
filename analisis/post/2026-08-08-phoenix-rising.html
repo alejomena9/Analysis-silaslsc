@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>August 8 — Silas Vance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* Silas Vance — Pre-Match · paleta del proyecto. Todo namespaced bajo #post-2026-08-08-phoenix */
+#post-2026-08-08-phoenix{
+  --green:#3DDC5A; --black:#111111; --bone:#F5F1E9;
+  --bg:#0B0F0C; --panel:#131A14; --line:rgba(245,241,233,.12); --muted:rgba(245,241,233,.62);
+  --display:'Oswald',sans-serif; --body:'Inter',sans-serif; --mono:'IBM Plex Mono',monospace;
+  background:var(--bg); color:var(--bone); font-family:var(--body); font-size:17px; line-height:1.65;
+  min-height:100vh; margin:0; -webkit-font-smoothing:antialiased;
+}
+#post-2026-08-08-phoenix *{box-sizing:border-box;}
+#post-2026-08-08-phoenix a{color:inherit;text-decoration:none;}
+#post-2026-08-08-phoenix .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+#post-2026-08-08-phoenix .display{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;}
+#post-2026-08-08-phoenix .mono{font-family:var(--mono);}
+#post-2026-08-08-phoenix .label{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:10px;}
+
+/* Nav */
+#post-2026-08-08-phoenix .site-nav{position:sticky;top:0;z-index:20;background:rgba(11,15,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+#post-2026-08-08-phoenix .nav-inner{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+#post-2026-08-08-phoenix .brand{display:flex;align-items:center;gap:12px;}
+#post-2026-08-08-phoenix .brand-mark{width:30px;height:30px;flex:none;}
+#post-2026-08-08-phoenix .brand-text .display{font-size:1.15rem;line-height:1;}
+#post-2026-08-08-phoenix .tagline{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+#post-2026-08-08-phoenix .tabs{display:flex;gap:22px;}
+#post-2026-08-08-phoenix .tabs a{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
+#post-2026-08-08-phoenix .tabs a:hover{color:var(--green);}
+#post-2026-08-08-phoenix .nav-toggle{display:none;background:none;border:1px solid var(--line);color:var(--bone);font-size:1.1rem;padding:4px 10px;cursor:pointer;}
+
+/* Hero */
+#post-2026-08-08-phoenix .detail-hero{padding:56px 0 40px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(61,220,90,.07),transparent 70%);}
+#post-2026-08-08-phoenix .back-link{display:inline-block;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--muted);margin-bottom:26px;}
+#post-2026-08-08-phoenix .back-link:hover{color:var(--green);}
+#post-2026-08-08-phoenix .detail-kicker{display:block;font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);}
+#post-2026-08-08-phoenix .detail-hero h1{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(3rem,10vw,5.6rem);line-height:.95;margin:10px 0 22px;letter-spacing:.01em;}
+#post-2026-08-08-phoenix .detail-meta{display:flex;flex-wrap:wrap;gap:10px;}
+#post-2026-08-08-phoenix .badge{display:inline-block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--green);color:var(--green);border-radius:2px;}
+
+/* Body */
+#post-2026-08-08-phoenix .detail-body{padding:44px 0 60px;}
+#post-2026-08-08-phoenix .summary-card{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--green);padding:22px 24px;margin-bottom:40px;}
+#post-2026-08-08-phoenix .summary-card p{margin:0;font-size:1.12rem;font-weight:500;}
+#post-2026-08-08-phoenix .detail-article .block{padding:0 0 30px;margin-bottom:30px;border-bottom:1px solid var(--line);counter-increment:blk;}
+#post-2026-08-08-phoenix .detail-article{counter-reset:blk;}
+#post-2026-08-08-phoenix .detail-article h3{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.03em;font-size:1.55rem;margin:0 0 14px;line-height:1.15;}
+#post-2026-08-08-phoenix .detail-article h3::before{content:counter(blk,decimal-leading-zero);display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;color:var(--green);margin-bottom:6px;}
+#post-2026-08-08-phoenix .detail-article p{margin:0 0 14px;color:rgba(245,241,233,.88);}
+#post-2026-08-08-phoenix .detail-conclusion{background:var(--green);color:var(--black);padding:26px 26px;margin:10px 0 44px;}
+#post-2026-08-08-phoenix .detail-conclusion .label{color:var(--black);opacity:.75;}
+#post-2026-08-08-phoenix .detail-conclusion p{margin:0;font-size:1.1rem;font-weight:600;line-height:1.55;}
+
+/* Video */
+#post-2026-08-08-phoenix .video-section{margin-bottom:44px;}
+#post-2026-08-08-phoenix .video-links{display:grid;gap:10px;}
+#post-2026-08-08-phoenix .video-link-slot{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);padding:16px 18px;font-weight:500;transition:border-color .2s,color .2s;}
+#post-2026-08-08-phoenix a.video-link-slot:hover{border-color:var(--green);color:var(--green);}
+#post-2026-08-08-phoenix .platform{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);background:var(--bone);padding:4px 8px;min-width:88px;text-align:center;}
+
+#post-2026-08-08-phoenix .detail-nav-links{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;}
+#post-2026-08-08-phoenix .detail-nav-links a:hover{color:var(--green);}
+#post-2026-08-08-phoenix footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--muted);}
+
+/* Figures */
+#post-2026-08-08-phoenix .figure{background:var(--panel);border:1px solid var(--line);padding:16px 16px 12px;margin:22px 0 6px;}
+#post-2026-08-08-phoenix .figure svg{display:block;width:100%;height:auto;}
+#post-2026-08-08-phoenix .fig-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;}
+#post-2026-08-08-phoenix .fig-title{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);}
+#post-2026-08-08-phoenix .fig-dir{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+#post-2026-08-08-phoenix .figcaption{font-size:.86rem;color:var(--muted);margin:10px 0 0;line-height:1.5;}
+#post-2026-08-08-phoenix .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#post-2026-08-08-phoenix .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;}
+#post-2026-08-08-phoenix .figure .draw{stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1.3s ease .25s;}
+#post-2026-08-08-phoenix .figure .fade{opacity:0;transition:opacity .8s ease .9s;}
+#post-2026-08-08-phoenix .figure.in .draw{stroke-dashoffset:0;}
+#post-2026-08-08-phoenix .figure.in .fade{opacity:1;}
+#post-2026-08-08-phoenix .figure .grow{transform:scaleY(0);transform-box:fill-box;transform-origin:bottom;transition:transform .9s ease;}
+#post-2026-08-08-phoenix .figure.in .grow{transform:scaleY(1);}
+@media (prefers-reduced-motion:reduce){#post-2026-08-08-phoenix .figure .draw{stroke-dashoffset:0;transition:none}#post-2026-08-08-phoenix .figure .fade{opacity:1;transition:none}#post-2026-08-08-phoenix .figure .grow{transform:none;transition:none}}
+
+/* Phase grid */
+#post-2026-08-08-phoenix .phase-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:-30px 0 44px;}
+#post-2026-08-08-phoenix .phase{background:var(--panel);border:1px solid var(--line);padding:16px 18px;}
+#post-2026-08-08-phoenix .phase.alert{border-color:var(--bone);background:repeating-linear-gradient(45deg,rgba(245,241,233,.05) 0 6px,transparent 6px 12px),var(--panel);}
+#post-2026-08-08-phoenix .phase-n{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--green);}
+#post-2026-08-08-phoenix .phase h4{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-size:1.05rem;margin:4px 0 6px;}
+#post-2026-08-08-phoenix .phase p{margin:0;font-size:.9rem;color:rgba(245,241,233,.8);line-height:1.5;}
+
+/* Extra components: stat row, callouts, player cards, match cards, form */
+#post-2026-08-08-phoenix .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:-18px 0 40px;}
+#post-2026-08-08-phoenix .stat-row div{background:var(--panel);padding:14px 10px;text-align:center;}
+#post-2026-08-08-phoenix .stat-row b{display:block;font-family:var(--mono);font-size:1.3rem;color:var(--green);font-weight:600;line-height:1.2;}
+#post-2026-08-08-phoenix .stat-row span{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+#post-2026-08-08-phoenix .callout{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--green);padding:14px 18px;margin:18px 0 6px;}
+#post-2026-08-08-phoenix .callout.alert{border-left-color:var(--bone);}
+#post-2026-08-08-phoenix .callout .label{margin-bottom:6px;}
+#post-2026-08-08-phoenix .callout.alert .label{color:var(--bone);}
+#post-2026-08-08-phoenix .callout p{margin:0;font-size:.95rem;}
+#post-2026-08-08-phoenix .pcards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 6px;}
+#post-2026-08-08-phoenix .pcard{background:var(--panel);border:1px solid var(--line);padding:14px 16px;}
+#post-2026-08-08-phoenix .pcard h4{font-family:var(--display);text-transform:uppercase;font-size:1.05rem;margin:0;letter-spacing:.02em;}
+#post-2026-08-08-phoenix .pcard .role{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;color:var(--green);text-transform:uppercase;display:block;margin:2px 0 8px;}
+#post-2026-08-08-phoenix .pcard .nums{display:flex;gap:18px;margin-bottom:6px;}
+#post-2026-08-08-phoenix .pcard .nums b{display:block;font-family:var(--mono);font-size:1.2rem;color:var(--green);}
+#post-2026-08-08-phoenix .pcard .nums span{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#post-2026-08-08-phoenix .pcard p{margin:0;font-size:.88rem;color:rgba(245,241,233,.78);line-height:1.5;}
+#post-2026-08-08-phoenix .form-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 6px;}
+#post-2026-08-08-phoenix .mcard{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--muted);padding:12px 14px;}
+#post-2026-08-08-phoenix .mcard.w{border-top-color:var(--green);}
+#post-2026-08-08-phoenix .mcard .res{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+#post-2026-08-08-phoenix .mcard.w .res{color:var(--green);}
+#post-2026-08-08-phoenix .mcard .score{font-family:var(--display);font-size:1.15rem;text-transform:uppercase;margin:2px 0 4px;}
+#post-2026-08-08-phoenix .mcard p{margin:0;font-size:.78rem;color:var(--muted);line-height:1.4;}
+
+#post-2026-08-08-phoenix .figure .growx{transform:scaleX(0);transform-box:fill-box;transform-origin:left;transition:transform 1s ease .2s;}
+#post-2026-08-08-phoenix .figure.in .growx{transform:scaleX(1);}
+@media (prefers-reduced-motion:reduce){#post-2026-08-08-phoenix .figure .growx{transform:none;transition:none}}
+
+@media (max-width:760px){
+  #post-2026-08-08-phoenix .stat-row{grid-template-columns:repeat(2,1fr);}
+  #post-2026-08-08-phoenix .pcards{grid-template-columns:1fr;}
+  #post-2026-08-08-phoenix .form-row{grid-template-columns:repeat(2,1fr);}
+  #post-2026-08-08-phoenix .phase-grid{grid-template-columns:1fr;}
+  #post-2026-08-08-phoenix .nav-toggle{display:block;}
+  #post-2026-08-08-phoenix .tabs{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);}
+  #post-2026-08-08-phoenix .tabs.open{display:flex;}
+  #post-2026-08-08-phoenix .tabs a{padding:14px 20px;border-top:1px solid var(--line);}
+  #post-2026-08-08-phoenix .detail-hero{padding:36px 0 30px;}
+  #post-2026-08-08-phoenix .detail-conclusion,#post-2026-08-08-phoenix .summary-card{padding:20px;}
+  #post-2026-08-08-phoenix .figure{margin-left:-20px !important;margin-right:-20px !important;padding:14px 8px 12px;border-left:0;border-right:0;}
+  #post-2026-08-08-phoenix .fig-head,#post-2026-08-08-phoenix .legend,#post-2026-08-08-phoenix .figcaption{padding:0 12px;}
+}
+</style>
+</head>
+<body id="post-2026-08-08-phoenix" style="margin:0;">
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">
+      <svg class="brand-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="26" height="26" rx="2" stroke="#3DDC5A" stroke-width="1.4"/>
+        <line x1="1" y1="14" x2="27" y2="14" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="14" r="4.2" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="6" r="1.6" fill="#F5F1E9"/>
+        <circle cx="8" cy="9" r="1.6" fill="#F5F1E9"/>
+        <circle cx="20" cy="9" r="1.6" fill="#F5F1E9"/>
+      </svg>
+      <span class="brand-text">
+        <span class="display" style="display:block;">SILAS VANCE</span>
+        <span class="tagline">Tactical Analysis</span>
+      </span>
+    </a>
+    <nav class="tabs" id="tabs">
+      <a href="../../index.html#individual">Player Focus</a>
+      <a href="../../index.html#team-tactics">Team Tactics</a>
+      <a href="../../index.html#pre-match">Pre-Match</a>
+      <a href="../../index.html#post-match">Post-Match</a>
+      <a href="../../index.html#about">About</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="detail-hero">
+  <div class="wrap">
+    <a class="back-link" href="../../index.html#post-match">← Back to Post-Match</a>
+    <span class="detail-kicker">Post-Match · vs. Phoenix Rising</span>
+    <h1>August 8</h1>
+    <div class="detail-meta">
+      <span class="badge badge-post mono" style="background:#3DDC5A;color:#111111;">W 1–0</span><span class="badge badge-pre mono">Control without a cutting edge</span>
+    </div>
+  </div>
+</section>
+
+<section class="detail-body">
+  <div class="wrap" style="max-width:760px;">
+
+    <div class="summary-card">
+      <span class="label">In One Line</span>
+      <p>Lexington dominated for 45 minutes without reward, until a substitution solved the problem the starting XI couldn't.</p>
+    </div>
+<div class="stat-row">
+<div><b>64%</b><span>1H possession</span></div>
+<div><b>10–8</b><span>1H shots</span></div>
+<div><b>6–0</b><span>Shots on target</span></div>
+<div><b>63'</b><span>Goal · Braudilio</span></div>
+</div>
+
+    <article class="detail-article">
+      <div class="block"><h3>Attack</h3><p>Lexington controlled the tempo from the first whistle, occupying all five lanes of the field. Inside-out diagonal runs from Greene and Epps created the clearest chances, with play tilted toward the left.</p><p>But in the final third, Firmino wasn't arriving in the box on crosses — Goodrum was left isolated time and again, and Braudilio was late to the same sequences. The inner square never connected.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">First-half control</span><span class="fig-dir">1st half</span></div>
+<svg viewBox="0 0 400 122" role="img" aria-label="First-half control" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="q1ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="q1ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="q1hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><text x="4" y="22" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="rgba(245,241,233,.6)">POSSESSION · 1ST HALF</text><text x="88" y="41" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">LSC</text><rect x="96" y="34" width="280" height="10" fill="rgba(245,241,233,.06)"/><rect class="growx" x="96" y="34" width="179.2" height="10" fill="#3DDC5A"/><text x="281.2" y="42" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">64%</text><text x="88" y="55" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">PHX</text><rect x="96" y="48" width="280" height="10" fill="rgba(245,241,233,.06)"/><rect class="growx" x="96" y="48" width="100.8" height="10" fill="rgba(245,241,233,.35)"/><text x="202.8" y="56" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">36%</text><text x="4" y="76" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="rgba(245,241,233,.6)">SHOTS · 1ST HALF</text><text x="88" y="95" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">LSC</text><rect x="96" y="88" width="280" height="10" fill="rgba(245,241,233,.06)"/><rect class="growx" x="96" y="88" width="280.0" height="10" fill="#3DDC5A"/><text x="382.0" y="96" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">10</text><text x="88" y="109" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">PHX</text><rect x="96" y="102" width="280" height="10" fill="rgba(245,241,233,.06)"/><rect class="growx" x="96" y="102" width="224.0" height="10" fill="rgba(245,241,233,.35)"/><text x="326.0" y="110" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">8</text></svg>
+<div class="legend"><span><i style="background:#3DDC5A;border-radius:0"></i>Lexington</span><span><i style="background:rgba(245,241,233,.35);border-radius:0"></i>Phoenix</span></div>
+<p class="figcaption">Two-thirds of the ball and more shots, but nothing to show for it at the break.</p>
+</figure><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Five lanes, one isolated striker</span><span class="fig-dir">LSC attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="Five lanes, one isolated striker" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="q2ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="q2ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="q2hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><line x1="120" y1="50" x2="396" y2="50" stroke="#F5F1E9" stroke-opacity=".12" stroke-dasharray="2 4"/><line x1="120" y1="96" x2="396" y2="96" stroke="#F5F1E9" stroke-opacity=".12" stroke-dasharray="2 4"/><line x1="120" y1="144" x2="396" y2="144" stroke="#F5F1E9" stroke-opacity=".12" stroke-dasharray="2 4"/><line x1="120" y1="190" x2="396" y2="190" stroke="#F5F1E9" stroke-opacity=".12" stroke-dasharray="2 4"/><rect class="fade" x="120" y="4" width="276" height="46" fill="rgba(61,220,90,.10)"/><text x="126" y="16" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">PLAY TILTED LEFT</text><circle cx="210" cy="28" r="7" fill="#3DDC5A"/><circle cx="214" cy="212" r="7" fill="#3DDC5A"/><path class="draw" d="M216 32 Q250 60 286 76" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#q2ah-g)"/><path class="draw" d="M220 208 Q256 180 290 166" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#q2ah-g)"/><text x="200" y="58" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">INSIDE-OUT</text><text x="200" y="66" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">DIAGONALS</text><circle cx="338" cy="60" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="344" cy="100" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="344" cy="140" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="338" cy="180" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="388" cy="120" r="5.5" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><path class="fade" d="M296 94 L360 120 L296 146 L250 120 Z" fill="none" stroke="#F5F1E9" stroke-opacity=".45" stroke-dasharray="3 4"/><circle cx="360" cy="120" r="7" fill="#3DDC5A"/><text x="360" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">GOO</text><circle cx="296" cy="94" r="7" fill="none" stroke="#F5F1E9" stroke-width="1" stroke-dasharray="2 2" opacity=".55"/><circle cx="296" cy="146" r="7" fill="none" stroke="#F5F1E9" stroke-width="1" stroke-dasharray="2 2" opacity=".55"/><circle cx="250" cy="120" r="7" fill="#3DDC5A"/><text x="296" y="82" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6" letter-spacing=".6" fill="#F5F1E9">FIRMINO · NOT ARRIVING</text><text x="296" y="164" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6" letter-spacing=".6" fill="#F5F1E9">BRAUDILIO · LATE</text><text x="390" y="162" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">ISOLATED</text></svg>
+<div class="legend"><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Phoenix</span><span><i style="border:1px dashed #F5F1E9"></i>Where support should be</span></div>
+<p class="figcaption">Lexington occupied all five lanes and the inside-out diagonals from Greene and Epps created the best openings, mostly on the left. In the final third the inner square never connected: Goodrum alone, Firmino not reaching the box, Braudilio arriving late.</p>
+</figure></div><div class="block"><h3>Defense → Attack Transition</h3><p>Bringing on Tarik for Firmino in the 59th minute solved in an instant what the starting XI couldn't in 59 minutes. His width opened space behind the holding midfielder and in front of Phoenix's center-backs — the same space Epps occupied from inside.</p><p>Four minutes later, that opening directly produced Braudilio's goal, assisted by Ferri.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">59': width changes the game</span><span class="fig-dir">LSC attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="59': width changes the game" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="q4ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="q4ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="q4hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><rect class="fade" x="232" y="94" width="40" height="52" fill="rgba(61,220,90,.28)" stroke="#3DDC5A" stroke-dasharray="3 3"/><circle cx="262" cy="40" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="284" cy="92" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="284" cy="148" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="250" cy="196" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="250" y="198.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">FB</text><circle cx="222" cy="124" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="222" y="126.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">DM</text><circle cx="388" cy="120" r="6.5" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="262" y="22" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">PHX BLOCK</text><circle cx="150" cy="214" r="7" fill="#3DDC5A"/><text x="150" y="216.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">TAR</text><path class="draw" d="M158 216 L270 222" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#q4ah-g)"/><text x="206" y="234" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">TARIK HOLDS THE WIDTH</text><path class="fade" d="M252 204 L262 214" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#q4ah-b)"/><circle cx="176" cy="150" r="7" fill="#3DDC5A"/><text x="176" y="152.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">EPP</text><path class="draw" d="M184 146 L234 128" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#q4ah-g)"/><circle cx="150" cy="96" r="7" fill="#3DDC5A"/><text x="150" y="98.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">FER</text><circle cx="158" cy="98" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><path class="draw" d="M158 102 Q210 112 244 122" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#q4ah-b)"/><circle cx="252" cy="124" r="7" fill="#3DDC5A"/><text x="252" y="126.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">BRA</text><path class="fade" d="M260 122 L390 118" fill="none" stroke="#3DDC5A" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#q4ah-g)"/><text x="330" y="108" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#3DDC5A">63' · BRAUDILIO</text><text x="252" y="88" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6" letter-spacing=".6" fill="#3DDC5A">BEHIND THE DM</text></svg>
+<div class="legend"><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Phoenix</span><span><i style="background:rgba(61,220,90,.35);border-radius:0"></i>Space to attack</span></div>
+<p class="figcaption">Tarik on for Firmino. His width pins Phoenix's full-back and opens space behind the holding midfielder, in front of the centre-backs; Epps attacks it from inside and, four minutes later, Ferri finds Braudilio there for the goal.</p>
+</figure></div><div class="block"><h3>Defense</h3><p>While the attack searched for a rhythm, the defense was never in question. Burks and Brown absorbed every Phoenix advance and delayed transitions with precision for all 90 minutes — Phoenix didn't register a single shot on target the entire match.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Nothing on target</span><span class="fig-dir">Full match</span></div>
+<svg viewBox="0 0 400 68" role="img" aria-label="Nothing on target" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="q3ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="q3ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="q3hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><text x="4" y="22" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="rgba(245,241,233,.6)">SHOTS ON TARGET · FULL MATCH</text><text x="88" y="41" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">LSC</text><rect x="96" y="34" width="280" height="10" fill="rgba(245,241,233,.06)"/><rect class="growx" x="96" y="34" width="280.0" height="10" fill="#3DDC5A"/><text x="382.0" y="42" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">6</text><text x="88" y="55" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">PHX</text><rect x="96" y="48" width="280" height="10" fill="rgba(245,241,233,.06)"/><rect class="growx" x="96" y="48" width="1.5" height="10" fill="rgba(245,241,233,.35)"/><text x="103.5" y="56" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">0</text></svg>
+<div class="legend"><span><i style="background:#3DDC5A;border-radius:0"></i>Lexington</span><span><i style="background:rgba(245,241,233,.35);border-radius:0"></i>Phoenix</span></div>
+<p class="figcaption">Phoenix finished the match without a single shot on target.</p>
+</figure><div class="pcards">
+<div class="pcard"><h4>Kendall Burks</h4><span class="role">Defensive foundation</span><p>Shut down Phoenix's fast-transition attempts from the first minute.</p></div>
+<div class="pcard"><h4>Javain Brown</h4><span class="role">Defensive foundation</span><p>No scares across 90 minutes; a key piece in the team's seventh clean sheet of the year.</p></div>
+</div>
+<div class="callout"><span class="label">7th clean sheet of the year</span><p>Phoenix didn't register a single shot on target the entire match.</p></div></div><div class="block"><h3>Attack → Defense Transition</h3><p>From the 65th minute on, the team lost rhythm and Phoenix gained ground. Lexington had chances to close it out on the counter, but physical fatigue got in the way. Biasi's red card (PHX #20) in the 85th minute for violent conduct finished off any remaining flow.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">How the match unfolded</span><span class="fig-dir">0' → 90'</span></div>
+<svg viewBox="0 0 400 128" role="img" aria-label="How the match unfolded" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="q5ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="q5ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="q5hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><rect class="fade" x="277.0" y="40" width="95.0" height="30" fill="rgba(245,241,233,.10)"/><text x="324.5" y="34" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6" letter-spacing=".6" fill="#F5F1E9">PHOENIX GAIN GROUND · LSC TIRE</text><rect x="30" y="52" width="342.0" height="6" fill="rgba(245,241,233,.14)"/><rect class="growx" x="30" y="52" width="239.39999999999998" height="6" fill="rgba(61,220,90,.5)"/><text x="30.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">0'</text><text x="87.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">15'</text><text x="144.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">30'</text><text x="201.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">45'</text><text x="258.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">60'</text><text x="315.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">75'</text><text x="372.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.5)">90'</text><circle class="fade" cx="254.2" cy="55" r="6" fill="#3DDC5A" stroke="#F5F1E9" stroke-width="1.2"/><line class="fade" x1="254.2" y1="62" x2="254.2" y2="112" stroke="#F5F1E9" stroke-opacity=".35"/><text x="254.2" y="120" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">59' TARIK ON</text><circle class="fade" cx="269.4" cy="55" r="6" fill="#3DDC5A" stroke="#F5F1E9" stroke-width="1.2"/><line class="fade" x1="269.4" y1="62" x2="269.4" y2="112" stroke="#F5F1E9" stroke-opacity=".35"/><text x="269.4" y="120" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">63' GOAL · BRAUDILIO</text><circle class="fade" cx="353.0" cy="55" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.2"/><line class="fade" x1="353.0" y1="62" x2="353.0" y2="96" stroke="#F5F1E9" stroke-opacity=".35"/><text x="353.0" y="104" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">85' RED · BIASI (PHX #20)</text></svg>
+<div class="legend"><span><i style="background:#3DDC5A"></i>LSC event</span><span><i style="background:#111111;box-shadow:0 0 0 1.2px #F5F1E9"></i>Phoenix event</span></div>
+<p class="figcaption">From the 65th minute Lexington lost rhythm and Phoenix gained territory; fatigue took away the counters that could have closed it. Biasi's 85th-minute red card for violent conduct broke up what flow was left.</p>
+</figure></div>
+    </article>
+
+    <div class="detail-conclusion"><span class="label">Verdict</span><p>A deserved win, with clear room to have been more decisive. The bench adjustment settled the match — the open question is why that width wasn't there from the start.</p></div>
+
+    <div class="video-section">
+      <span class="label">Watch The Breakdown</span>
+      <div class="video-links">
+        <!-- INSTAGRAM: reemplaza PEGAR_ENLACE_INSTAGRAM -->
+        <a class="video-link-slot" href="https://www.instagram.com/reel/Db3Y9-hxQaI/?stkn=OHljaW5xc2VkMThh" target="_blank" rel="noopener"><span class="platform">Instagram</span> Watch the Reel →</a>
+        <!-- TIKTOK: reemplaza PEGAR_ENLACE_TIKTOK -->
+        <a class="video-link-slot" href="https://www.tiktok.com/t/ZP8E5jXG3/" target="_blank" rel="noopener"><span class="platform">TikTok</span> Watch on TikTok →</a>
+      </div>
+    </div>
+
+    <div class="detail-nav-links">
+      <a href="../../index.html#post-match">← All Post-Match</a>
+      <a href="../../index.html">Home</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>SILAS VANCE — TACTICAL ANALYSIS</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const tabs = document.getElementById('tabs');
+  toggle.addEventListener('click', () => tabs.classList.toggle('open'));
+  const figs = document.querySelectorAll('.figure');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .35});
+    figs.forEach(f => io.observe(f));
+  } else { figs.forEach(f => f.classList.add('in')); }
+</script>
+</body>
+</html>

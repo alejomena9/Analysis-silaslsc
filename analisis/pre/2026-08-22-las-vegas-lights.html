@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>August 22 — Silas Vance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* Silas Vance — Pre-Match · paleta del proyecto. Todo namespaced bajo #pm-2026-08-22-las-vegas */
+#pm-2026-08-22-las-vegas{
+  --green:#3DDC5A; --black:#111111; --bone:#F5F1E9;
+  --bg:#0B0F0C; --panel:#131A14; --line:rgba(245,241,233,.12); --muted:rgba(245,241,233,.62);
+  --display:'Oswald',sans-serif; --body:'Inter',sans-serif; --mono:'IBM Plex Mono',monospace;
+  background:var(--bg); color:var(--bone); font-family:var(--body); font-size:17px; line-height:1.65;
+  min-height:100vh; margin:0; -webkit-font-smoothing:antialiased;
+}
+#pm-2026-08-22-las-vegas *{box-sizing:border-box;}
+#pm-2026-08-22-las-vegas a{color:inherit;text-decoration:none;}
+#pm-2026-08-22-las-vegas .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+#pm-2026-08-22-las-vegas .display{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;}
+#pm-2026-08-22-las-vegas .mono{font-family:var(--mono);}
+#pm-2026-08-22-las-vegas .label{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:10px;}
+
+/* Nav */
+#pm-2026-08-22-las-vegas .site-nav{position:sticky;top:0;z-index:20;background:rgba(11,15,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+#pm-2026-08-22-las-vegas .nav-inner{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+#pm-2026-08-22-las-vegas .brand{display:flex;align-items:center;gap:12px;}
+#pm-2026-08-22-las-vegas .brand-mark{width:30px;height:30px;flex:none;}
+#pm-2026-08-22-las-vegas .brand-text .display{font-size:1.15rem;line-height:1;}
+#pm-2026-08-22-las-vegas .tagline{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-08-22-las-vegas .tabs{display:flex;gap:22px;}
+#pm-2026-08-22-las-vegas .tabs a{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
+#pm-2026-08-22-las-vegas .tabs a:hover{color:var(--green);}
+#pm-2026-08-22-las-vegas .nav-toggle{display:none;background:none;border:1px solid var(--line);color:var(--bone);font-size:1.1rem;padding:4px 10px;cursor:pointer;}
+
+/* Hero */
+#pm-2026-08-22-las-vegas .detail-hero{padding:56px 0 40px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(61,220,90,.07),transparent 70%);}
+#pm-2026-08-22-las-vegas .back-link{display:inline-block;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--muted);margin-bottom:26px;}
+#pm-2026-08-22-las-vegas .back-link:hover{color:var(--green);}
+#pm-2026-08-22-las-vegas .detail-kicker{display:block;font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);}
+#pm-2026-08-22-las-vegas .detail-hero h1{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(3rem,10vw,5.6rem);line-height:.95;margin:10px 0 22px;letter-spacing:.01em;}
+#pm-2026-08-22-las-vegas .detail-meta{display:flex;flex-wrap:wrap;gap:10px;}
+#pm-2026-08-22-las-vegas .badge{display:inline-block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--green);color:var(--green);border-radius:2px;}
+
+/* Body */
+#pm-2026-08-22-las-vegas .detail-body{padding:44px 0 60px;}
+#pm-2026-08-22-las-vegas .summary-card{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--green);padding:22px 24px;margin-bottom:40px;}
+#pm-2026-08-22-las-vegas .summary-card p{margin:0;font-size:1.12rem;font-weight:500;}
+#pm-2026-08-22-las-vegas .detail-article .block{padding:0 0 30px;margin-bottom:30px;border-bottom:1px solid var(--line);counter-increment:blk;}
+#pm-2026-08-22-las-vegas .detail-article{counter-reset:blk;}
+#pm-2026-08-22-las-vegas .detail-article h3{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.03em;font-size:1.55rem;margin:0 0 14px;line-height:1.15;}
+#pm-2026-08-22-las-vegas .detail-article h3::before{content:counter(blk,decimal-leading-zero);display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;color:var(--green);margin-bottom:6px;}
+#pm-2026-08-22-las-vegas .detail-article p{margin:0 0 14px;color:rgba(245,241,233,.88);}
+#pm-2026-08-22-las-vegas .detail-conclusion{background:var(--green);color:var(--black);padding:26px 26px;margin:10px 0 44px;}
+#pm-2026-08-22-las-vegas .detail-conclusion .label{color:var(--black);opacity:.75;}
+#pm-2026-08-22-las-vegas .detail-conclusion p{margin:0;font-size:1.1rem;font-weight:600;line-height:1.55;}
+
+/* Video */
+#pm-2026-08-22-las-vegas .video-section{margin-bottom:44px;}
+#pm-2026-08-22-las-vegas .video-links{display:grid;gap:10px;}
+#pm-2026-08-22-las-vegas .video-link-slot{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);padding:16px 18px;font-weight:500;transition:border-color .2s,color .2s;}
+#pm-2026-08-22-las-vegas a.video-link-slot:hover{border-color:var(--green);color:var(--green);}
+#pm-2026-08-22-las-vegas .platform{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);background:var(--bone);padding:4px 8px;min-width:88px;text-align:center;}
+
+#pm-2026-08-22-las-vegas .detail-nav-links{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;}
+#pm-2026-08-22-las-vegas .detail-nav-links a:hover{color:var(--green);}
+#pm-2026-08-22-las-vegas footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--muted);}
+
+/* Figures */
+#pm-2026-08-22-las-vegas .figure{background:var(--panel);border:1px solid var(--line);padding:16px 16px 12px;margin:22px 0 6px;}
+#pm-2026-08-22-las-vegas .figure svg{display:block;width:100%;height:auto;}
+#pm-2026-08-22-las-vegas .fig-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;}
+#pm-2026-08-22-las-vegas .fig-title{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);}
+#pm-2026-08-22-las-vegas .fig-dir{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+#pm-2026-08-22-las-vegas .figcaption{font-size:.86rem;color:var(--muted);margin:10px 0 0;line-height:1.5;}
+#pm-2026-08-22-las-vegas .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-08-22-las-vegas .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;}
+#pm-2026-08-22-las-vegas .figure .draw{stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1.3s ease .25s;}
+#pm-2026-08-22-las-vegas .figure .fade{opacity:0;transition:opacity .8s ease .9s;}
+#pm-2026-08-22-las-vegas .figure.in .draw{stroke-dashoffset:0;}
+#pm-2026-08-22-las-vegas .figure.in .fade{opacity:1;}
+#pm-2026-08-22-las-vegas .figure .grow{transform:scaleY(0);transform-box:fill-box;transform-origin:bottom;transition:transform .9s ease;}
+#pm-2026-08-22-las-vegas .figure.in .grow{transform:scaleY(1);}
+@media (prefers-reduced-motion:reduce){#pm-2026-08-22-las-vegas .figure .draw{stroke-dashoffset:0;transition:none}#pm-2026-08-22-las-vegas .figure .fade{opacity:1;transition:none}#pm-2026-08-22-las-vegas .figure .grow{transform:none;transition:none}}
+
+/* Phase grid */
+#pm-2026-08-22-las-vegas .phase-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:-30px 0 44px;}
+#pm-2026-08-22-las-vegas .phase{background:var(--panel);border:1px solid var(--line);padding:16px 18px;}
+#pm-2026-08-22-las-vegas .phase.alert{border-color:var(--bone);background:repeating-linear-gradient(45deg,rgba(245,241,233,.05) 0 6px,transparent 6px 12px),var(--panel);}
+#pm-2026-08-22-las-vegas .phase-n{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--green);}
+#pm-2026-08-22-las-vegas .phase h4{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-size:1.05rem;margin:4px 0 6px;}
+#pm-2026-08-22-las-vegas .phase p{margin:0;font-size:.9rem;color:rgba(245,241,233,.8);line-height:1.5;}
+
+/* Extra components: stat row, callouts, player cards, match cards, form */
+#pm-2026-08-22-las-vegas .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:-18px 0 40px;}
+#pm-2026-08-22-las-vegas .stat-row div{background:var(--panel);padding:14px 10px;text-align:center;}
+#pm-2026-08-22-las-vegas .stat-row b{display:block;font-family:var(--mono);font-size:1.3rem;color:var(--green);font-weight:600;line-height:1.2;}
+#pm-2026-08-22-las-vegas .stat-row span{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-08-22-las-vegas .callout{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--green);padding:14px 18px;margin:18px 0 6px;}
+#pm-2026-08-22-las-vegas .callout.alert{border-left-color:var(--bone);}
+#pm-2026-08-22-las-vegas .callout .label{margin-bottom:6px;}
+#pm-2026-08-22-las-vegas .callout.alert .label{color:var(--bone);}
+#pm-2026-08-22-las-vegas .callout p{margin:0;font-size:.95rem;}
+#pm-2026-08-22-las-vegas .pcards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 6px;}
+#pm-2026-08-22-las-vegas .pcard{background:var(--panel);border:1px solid var(--line);padding:14px 16px;}
+#pm-2026-08-22-las-vegas .pcard h4{font-family:var(--display);text-transform:uppercase;font-size:1.05rem;margin:0;letter-spacing:.02em;}
+#pm-2026-08-22-las-vegas .pcard .role{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;color:var(--green);text-transform:uppercase;display:block;margin:2px 0 8px;}
+#pm-2026-08-22-las-vegas .pcard .nums{display:flex;gap:18px;margin-bottom:6px;}
+#pm-2026-08-22-las-vegas .pcard .nums b{display:block;font-family:var(--mono);font-size:1.2rem;color:var(--green);}
+#pm-2026-08-22-las-vegas .pcard .nums span{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-08-22-las-vegas .pcard p{margin:0;font-size:.88rem;color:rgba(245,241,233,.78);line-height:1.5;}
+#pm-2026-08-22-las-vegas .form-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 6px;}
+#pm-2026-08-22-las-vegas .mcard{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--muted);padding:12px 14px;}
+#pm-2026-08-22-las-vegas .mcard.w{border-top-color:var(--green);}
+#pm-2026-08-22-las-vegas .mcard .res{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-08-22-las-vegas .mcard.w .res{color:var(--green);}
+#pm-2026-08-22-las-vegas .mcard .score{font-family:var(--display);font-size:1.15rem;text-transform:uppercase;margin:2px 0 4px;}
+#pm-2026-08-22-las-vegas .mcard p{margin:0;font-size:.78rem;color:var(--muted);line-height:1.4;}
+
+@media (max-width:760px){
+  #pm-2026-08-22-las-vegas .stat-row{grid-template-columns:repeat(2,1fr);}
+  #pm-2026-08-22-las-vegas .pcards{grid-template-columns:1fr;}
+  #pm-2026-08-22-las-vegas .form-row{grid-template-columns:repeat(2,1fr);}
+  #pm-2026-08-22-las-vegas .phase-grid{grid-template-columns:1fr;}
+  #pm-2026-08-22-las-vegas .nav-toggle{display:block;}
+  #pm-2026-08-22-las-vegas .tabs{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);}
+  #pm-2026-08-22-las-vegas .tabs.open{display:flex;}
+  #pm-2026-08-22-las-vegas .tabs a{padding:14px 20px;border-top:1px solid var(--line);}
+  #pm-2026-08-22-las-vegas .detail-hero{padding:36px 0 30px;}
+  #pm-2026-08-22-las-vegas .detail-conclusion,#pm-2026-08-22-las-vegas .summary-card{padding:20px;}
+  #pm-2026-08-22-las-vegas .figure{margin-left:-20px !important;margin-right:-20px !important;padding:14px 8px 12px;border-left:0;border-right:0;}
+  #pm-2026-08-22-las-vegas .fig-head,#pm-2026-08-22-las-vegas .legend,#pm-2026-08-22-las-vegas .figcaption{padding:0 12px;}
+}
+</style>
+</head>
+<body id="pm-2026-08-22-las-vegas" style="margin:0;">
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">
+      <svg class="brand-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="26" height="26" rx="2" stroke="#3DDC5A" stroke-width="1.4"/>
+        <line x1="1" y1="14" x2="27" y2="14" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="14" r="4.2" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="6" r="1.6" fill="#F5F1E9"/>
+        <circle cx="8" cy="9" r="1.6" fill="#F5F1E9"/>
+        <circle cx="20" cy="9" r="1.6" fill="#F5F1E9"/>
+      </svg>
+      <span class="brand-text">
+        <span class="display" style="display:block;">SILAS VANCE</span>
+        <span class="tagline">Tactical Analysis</span>
+      </span>
+    </a>
+    <nav class="tabs" id="tabs">
+      <a href="../../index.html#individual">Player Focus</a>
+      <a href="../../index.html#team-tactics">Team Tactics</a>
+      <a href="../../index.html#pre-match">Pre-Match</a>
+      <a href="../../index.html#post-match">Post-Match</a>
+      <a href="../../index.html#about">About</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="detail-hero">
+  <div class="wrap">
+    <a class="back-link" href="../../index.html#pre-match">← Back to Pre-Match</a>
+    <span class="detail-kicker">Pre-Match · vs. Las Vegas Lights FC</span>
+    <h1>August 22</h1>
+    <div class="detail-meta">
+      <span class="badge badge-pre mono">4-4-2 diamond</span><span class="badge badge-pre mono">Space behind the full-backs</span>
+    </div>
+  </div>
+</section>
+
+<section class="detail-body">
+  <div class="wrap" style="max-width:760px;">
+
+    <div class="summary-card">
+      <span class="label">In One Line</span>
+      <p>Las Vegas control the ball centrally through a 4-4-2 diamond — but when they lose it, the space behind their full-backs opens up completely. That's the crack.</p>
+    </div>
+<div class="stat-row">
+<div><b>2W-2D</b><span>Last 4</span></div>
+<div><b>53.6%</b><span>Field tilt</span></div>
+<div><b>43%</b><span>Attacks via right</span></div>
+<div><b>10</b><span>Goals · J. Rodríguez</span></div>
+</div>
+
+    <article class="detail-article">
+      <div class="block"><h3>Offensive Structure: 4-4-2 Diamond</h3><p>Las Vegas Lights play a 4-4-2 diamond, not a flat line. Ybarra (6) sits deeper as the holding base, two midfielders occupy the interior channels, and Christian Pinzón (11) plays as the diamond's advanced tip — the player constantly looking for the pass between the lines, connecting build-up to attack.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">4-4-2 diamond</span><span class="fig-dir">LVL attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="4-4-2 diamond" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="v1ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="v1ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="v1hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><path class="fade" d="M118 120 L166 76 L214 120 L166 164 Z" fill="rgba(245,241,233,.06)" stroke="#F5F1E9" stroke-opacity=".5" stroke-dasharray="3 3"/><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="66" cy="36" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="60" cy="92" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="60" cy="148" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="66" cy="204" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="118" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="118" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">6</text><circle cx="166" cy="76" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="166" cy="164" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="214" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="214" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">11</text><circle cx="262" cy="96" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="262" cy="144" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="118" y="142" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">YBARRA · BASE</text><text x="214" y="102" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">PINZÓN · TIP</text><path class="fade" d="M222 118 L252 102" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#v1ah-b)"/><text x="166" y="58" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">INTERIOR</text><text x="166" y="188" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">INTERIOR</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Las Vegas</span></div>
+<p class="figcaption">Ybarra (6) sits as the base, two interiors work the inside channels and Pinzón (11) is the tip, always looking for the pass between the lines to connect build-up and attack.</p>
+</figure></div><div class="block"><h3>Build-Up: 2-3-1-4</h3><p>In build-up, Las Vegas shift into a 2-3-1-4: the two center-backs stay short and fixed as the base, the interior line of three works the central channel looking for the pass between the lines, and both full-backs push hard to provide the width the diamond doesn't naturally offer. Both forwards pin the opposing center-backs to keep the middle open.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Build-up · 2-3-1-4</span><span class="fig-dir">LVL attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="Build-up · 2-3-1-4" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="v2ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="v2ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="v2hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><line class="fade" x1="58" y1="88" x2="58" y2="152" stroke="#F5F1E9" stroke-opacity=".3" stroke-width="1"/><line class="fade" x1="58" y1="88" x2="118" y2="78" stroke="#F5F1E9" stroke-opacity=".3" stroke-width="1"/><line class="fade" x1="58" y1="88" x2="126" y2="120" stroke="#F5F1E9" stroke-opacity=".3" stroke-width="1"/><line class="fade" x1="58" y1="152" x2="126" y2="120" stroke="#F5F1E9" stroke-opacity=".3" stroke-width="1"/><line class="fade" x1="58" y1="152" x2="118" y2="162" stroke="#F5F1E9" stroke-opacity=".3" stroke-width="1"/><line class="fade" x1="118" y1="78" x2="126" y2="120" stroke="#F5F1E9" stroke-opacity=".3" stroke-width="1"/><line class="fade" x1="126" y1="120" x2="118" y2="162" stroke="#F5F1E9" stroke-opacity=".3" stroke-width="1"/><line class="fade" x1="118" y1="78" x2="178" y2="120" stroke="#F5F1E9" stroke-opacity=".3" stroke-width="1"/><line class="fade" x1="126" y1="120" x2="178" y2="120" stroke="#F5F1E9" stroke-opacity=".3" stroke-width="1"/><line class="fade" x1="118" y1="162" x2="178" y2="120" stroke="#F5F1E9" stroke-opacity=".3" stroke-width="1"/><line class="fade" x1="178" y1="120" x2="262" y2="96" stroke="#F5F1E9" stroke-opacity=".3" stroke-width="1"/><line class="fade" x1="178" y1="120" x2="262" y2="144" stroke="#F5F1E9" stroke-opacity=".3" stroke-width="1"/><line class="fade" x1="118" y1="78" x2="250" y2="22" stroke="#F5F1E9" stroke-opacity=".3" stroke-width="1"/><line class="fade" x1="118" y1="162" x2="250" y2="218" stroke="#F5F1E9" stroke-opacity=".3" stroke-width="1"/><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="58" cy="88" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="58" cy="152" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="118" cy="78" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="126" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="118" cy="162" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="178" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="178" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">11</text><circle cx="262" cy="96" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="262" cy="144" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="250" cy="22" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="250" cy="218" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="250" y="220.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">RB</text><circle cx="66" cy="206" r="7" fill="none" stroke="#F5F1E9" stroke-width="1" stroke-dasharray="2 2" opacity=".55"/><path class="fade" d="M72 210 Q160 232 240 220" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#v2ah-b)"/><circle cx="318" cy="96" r="7" fill="#3DDC5A"/><circle cx="318" cy="144" r="7" fill="#3DDC5A"/><circle cx="388" cy="120" r="6.5" fill="#3DDC5A"/><path class="fade" d="M270 96 L308 96" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#v2ah-b)"/><path class="fade" d="M270 144 L308 144" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#v2ah-b)"/><text x="290" y="82" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">PIN THE CBS</text><text x="58" y="196" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".6" fill="rgba(245,241,233,.55)">2</text><text x="122" y="196" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".6" fill="rgba(245,241,233,.55)">3</text><text x="178" y="196" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".6" fill="rgba(245,241,233,.55)">1</text><text x="256" y="196" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".6" fill="rgba(245,241,233,.55)">4</text><text x="264" y="204" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">43% VIA THE RIGHT</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Las Vegas</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="border:1px dashed #F5F1E9"></i>Starting position</span></div>
+<p class="figcaption">The centre-backs stay short, three interiors work the middle, Pinzón sits between the lines and both full-backs go high for the width the diamond lacks, while the two forwards pin the centre-backs.</p>
+</figure></div><div class="block"><h3>Key Weakness: Space In Behind</h3><p>This is the clearest crack. Because both full-backs push high to provide width, and the diamond's interior midfielders have long recovery runs, the space behind the full-backs opens up the moment they lose the ball. Neither center-back is especially comfortable defending in open space — strong in the duel, but they struggle against pace.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">The crack: behind the full-backs</span><span class="fig-dir">← LSC attack</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="The crack: behind the full-backs" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="v3ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="v3ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="v3hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><rect class="fade" x="22" y="4" width="150" height="46" fill="rgba(61,220,90,.25)" stroke="#3DDC5A" stroke-dasharray="3 3"/><rect class="fade" x="22" y="190" width="150" height="46" fill="rgba(61,220,90,.25)" stroke="#3DDC5A" stroke-dasharray="3 3"/><text x="96" y="64" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">SPACE BEHIND THE FB</text><text x="96" y="182" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">SPACE BEHIND THE FB</text><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="54" cy="92" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="54" y="94.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">CB</text><circle cx="54" cy="148" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="54" y="150.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">CB</text><circle cx="214" cy="26" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="214" y="28.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">FB</text><circle cx="214" cy="214" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="214" y="216.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">FB</text><circle cx="176" cy="84" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="176" cy="156" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><path class="fade" d="M182 88 L150 94" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#v3ah-b)"/><text x="176" y="70" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">LONG RECOVERY</text><circle cx="250" cy="124" r="7" fill="#3DDC5A"/><circle cx="244" cy="122" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><text x="250" y="144" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">BALL WON</text><path class="fade" d="M242 118 Q170 40 92 30" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#v3ah-b)"/><circle cx="196" cy="48" r="7" fill="#3DDC5A"/><path class="draw" d="M190 44 L96 26" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#v3ah-g)"/><text x="68" y="118" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6" letter-spacing=".6" fill="#F5F1E9">STRONG IN DUELS,</text><text x="68" y="126" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6" letter-spacing=".6" fill="#F5F1E9">SLOW VS PACE</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Las Vegas</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:rgba(61,220,90,.35);border-radius:0"></i>Space to attack</span></div>
+<p class="figcaption">Both full-backs are high and the interiors have long recovery runs, so the moment Las Vegas lose the ball the space behind the full-back is open. A fast forward running in behind attacks centre-backs who struggle in open space.</p>
+</figure><div class="callout alert"><span class="label">Alert for them · Opportunity for LSC</span><p>A fast, mobile forward attacking that space the instant they lose the ball is the most effective way to punish this structure.</p></div></div><div class="block"><h3>Attack Loaded Down The Right</h3><p>Once Pinzón receives between the lines, Las Vegas immediately look to switch the point of attack to the right — their preferred zone, generating 43% of the team's offensive actions. It's a combination between the full-back and the right-sided interior midfielder, looking for depth before the opposing block can reset.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Loaded down the right</span><span class="fig-dir">LVL attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="Loaded down the right" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="v4ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="v4ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="v4hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="58" cy="88" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="58" cy="152" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="118" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="118" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">6</text><circle cx="168" cy="80" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="206" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="206" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">11</text><circle cx="212" cy="124" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><path class="draw" d="M212 128 Q240 170 262 188" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#v4ah-b)"/><circle cx="268" cy="194" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="214" cy="214" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="214" y="216.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">RB</text><path class="fade" d="M222 216 L320 220" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#v4ah-b)"/><path class="fade" d="M274 198 Q300 214 316 216" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#v4ah-b)"/><text x="300" y="236" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">ANTONOGLOU + RIGHT INTERIOR</text><rect x="250" y="176" width="146" height="60" fill="url(#v4hatch)" stroke="#F5F1E9" stroke-opacity=".4" stroke-dasharray="3 3"/><circle cx="338" cy="60" r="7" fill="#3DDC5A"/><circle cx="344" cy="102" r="7" fill="#3DDC5A"/><circle cx="344" cy="142" r="7" fill="#3DDC5A"/><circle cx="334" cy="184" r="7" fill="#3DDC5A"/><circle cx="388" cy="120" r="6.5" fill="#3DDC5A"/><circle cx="292" cy="150" r="7" fill="#3DDC5A"/><path class="draw" d="M296 156 L292 176" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#v4ah-g)"/><text x="290" y="136" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6" letter-spacing=".6" fill="#3DDC5A">LEFT INTERIOR HELPS</text><text x="234" y="110" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">SWITCH RIGHT</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Las Vegas</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:repeating-linear-gradient(45deg,rgba(245,241,233,.45) 0 2px,transparent 2px 5px);border-radius:0"></i>Danger zone</span></div>
+<p class="figcaption">Once Pinzón receives between the lines the ball goes right: the full-back and the right interior combine for depth before the block resets. LSC's left interior has to step across early.</p>
+</figure><div class="pcards">
+<div class="pcard"><h4>Themi Antonoglou</h4><span class="role">Full-back · width and goals</span><p>Contributes goals and chances from a defensive role; team leader in chances created.</p></div>
+<div class="pcard"><h4>Christian Pinzón</h4><span class="role">#11 · distribution to the right</span><p>The switch of play to the right largely originates from his passes between the lines.</p></div>
+</div>
+<div class="callout"><span class="label">Recommendation</span><p>Close the right channel early with support from LSC's left-sided interior midfielder, preventing Antonoglou and the right-side circuit from receiving in space, facing goal.</p></div></div><div class="block"><h3>Key Players And Recent Form</h3><p>They dominate the ball in attacking zones (top-10 in the league for Field Tilt) but don't always convert it into goals — dead last in the league for touches inside the opposition box. They need a moment of individual quality: a fast start, a late intervention, or a set-piece error from the opponent.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Danger windows</span><span class="fig-dir">Recent LVL goals</span></div>
+<svg viewBox="0 0 400 132" role="img" aria-label="Danger windows" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="v5ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="v5ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="v5hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><rect x="40" y="54" width="324.0" height="10" fill="rgba(245,241,233,.1)"/><rect class="grow" x="40" y="46" width="54.0" height="26" fill="rgba(61,220,90,.28)"/><rect class="grow" x="310.0" y="46" width="54.0" height="26" fill="rgba(61,220,90,.28)"/><text x="67.0" y="38" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#3DDC5A">FIRST 15'</text><text x="337.0" y="38" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#3DDC5A">LAST 15'</text><text x="40.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.55)">0'</text><text x="94.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.55)">15'</text><text x="148.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.55)">30'</text><text x="202.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.55)">45'</text><text x="256.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.55)">60'</text><text x="310.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.55)">75'</text><text x="364.0" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="rgba(245,241,233,.55)">90'</text><circle class="fade" cx="42.412" cy="59" r="5" fill="#F5F1E9" stroke="#111111" stroke-width="1.2"/><line class="fade" x1="42.412" y1="66" x2="42.412" y2="100" stroke="#F5F1E9" stroke-opacity=".4"/><text x="42.412" y="108" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">ANDERSON 0:40 · DET</text><circle class="fade" cx="288.4" cy="59" r="5" fill="#F5F1E9" stroke="#111111" stroke-width="1.2"/><line class="fade" x1="288.4" y1="66" x2="288.4" y2="100" stroke="#F5F1E9" stroke-opacity=".4"/><text x="288.4" y="108" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">ANDERSON 69' · BRK</text><circle class="fade" cx="353.2" cy="59" r="5" fill="#F5F1E9" stroke="#111111" stroke-width="1.2"/><line class="fade" x1="353.2" y1="66" x2="353.2" y2="114" stroke="#F5F1E9" stroke-opacity=".4"/><text x="353.2" y="122" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">RODRÍGUEZ 87' · BRK</text></svg>
+<div class="legend"><span><i style="background:#F5F1E9;box-shadow:0 0 0 1.2px #111111"></i>LVL goal</span><span><i style="background:rgba(61,220,90,.4);border-radius:0"></i>Concentration window</span></div>
+<p class="figcaption">Anderson has scored inside the first minute twice this season; Rodríguez won it at 87' against Brooklyn. Early and late are when they find their moment of quality.</p>
+</figure><div class="pcards">
+<div class="pcard"><h4>Johnny Rodríguez</h4><span class="role">Top scorer 2026</span><div class="nums"><div><b>10</b><span>Goals</span></div><div><b>87'</b><span>Winner vs BRK</span></div></div><p>Decisive in the closing stages of matches.</p></div>
+<div class="pcard"><h4>Oalex Anderson</h4><span class="role">Fast-start specialist</span><div class="nums"><div><b>5</b><span>Goals</span></div><div><b>&lt;1'</b><span>2 goals</span></div></div><p>Scored inside the opening minute in two separate matches this season.</p></div>
+</div>
+<div class="form-row">
+<div class="mcard w"><span class="res">W · Jul 25</span><div class="score">DET 0–1 LVL</div><p>Anderson at 0:40 · 5 saves by Henry · 40.7% possession</p></div>
+<div class="mcard"><span class="res">D · Aug 1</span><div class="score">LVL 1–1 PHX</div><p>Antonoglou goal · own-goal equalizer · extreme heat</p></div>
+<div class="mcard"><span class="res">D · Aug 5</span><div class="score">LVL 0–0 OAK</div><p>15 shots to 9 · hit the woodwork twice</p></div>
+<div class="mcard w"><span class="res">W · Aug 15</span><div class="score">LVL 2–1 BRK</div><p>Behind at 4' · Anderson 69' · Rodríguez 87'</p></div>
+</div></div>
+    </article>
+
+    <div class="detail-conclusion"><span class="label">Prediction</span><p>Press the build-up, attack the space behind the full-back, and never lose focus in the first and final minutes. Las Vegas control the ball centrally through a well-organized diamond — their crack is in defensive transition, not build-up, and that's where our attacking plan should live.</p></div>
+
+    <div class="video-section">
+      <span class="label">Watch The Breakdown</span>
+      <div class="video-links">
+        <!-- INSTAGRAM: reemplaza PEGAR_ENLACE_INSTAGRAM -->
+        <a class="video-link-slot" href="https://www.instagram.com/reel/DcRI6lYxPz9/?stkn=a3dmczgweDU2aHVz" target="_blank" rel="noopener"><span class="platform">Instagram</span> Watch the Reel →</a>
+        <!-- TIKTOK: reemplaza PEGAR_ENLACE_TIKTOK -->
+        <a class="video-link-slot" href="https://www.tiktok.com/t/ZP8EBc3Sr/" target="_blank" rel="noopener"><span class="platform">TikTok</span> Watch on TikTok →</a>
+      </div>
+    </div>
+
+    <div class="detail-nav-links">
+      <a href="../../index.html#pre-match">← All Pre-Match</a>
+      <a href="../../index.html">Home</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>SILAS VANCE — TACTICAL ANALYSIS</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const tabs = document.getElementById('tabs');
+  toggle.addEventListener('click', () => tabs.classList.toggle('open'));
+  const figs = document.querySelectorAll('.figure');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .35});
+    figs.forEach(f => io.observe(f));
+  } else { figs.forEach(f => f.classList.add('in')); }
+</script>
+</body>
+</html>

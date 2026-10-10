@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>September 26 — Silas Vance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* Silas Vance — Pre-Match · paleta del proyecto. Todo namespaced bajo #pm-2026-09-26-monterey-bay */
+#pm-2026-09-26-monterey-bay{
+  --green:#3DDC5A; --black:#111111; --bone:#F5F1E9;
+  --bg:#0B0F0C; --panel:#131A14; --line:rgba(245,241,233,.12); --muted:rgba(245,241,233,.62);
+  --display:'Oswald',sans-serif; --body:'Inter',sans-serif; --mono:'IBM Plex Mono',monospace;
+  background:var(--bg); color:var(--bone); font-family:var(--body); font-size:17px; line-height:1.65;
+  min-height:100vh; margin:0; -webkit-font-smoothing:antialiased;
+}
+#pm-2026-09-26-monterey-bay *{box-sizing:border-box;}
+#pm-2026-09-26-monterey-bay a{color:inherit;text-decoration:none;}
+#pm-2026-09-26-monterey-bay .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+#pm-2026-09-26-monterey-bay .display{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;}
+#pm-2026-09-26-monterey-bay .mono{font-family:var(--mono);}
+#pm-2026-09-26-monterey-bay .label{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:10px;}
+
+/* Nav */
+#pm-2026-09-26-monterey-bay .site-nav{position:sticky;top:0;z-index:20;background:rgba(11,15,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+#pm-2026-09-26-monterey-bay .nav-inner{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+#pm-2026-09-26-monterey-bay .brand{display:flex;align-items:center;gap:12px;}
+#pm-2026-09-26-monterey-bay .brand-mark{width:30px;height:30px;flex:none;}
+#pm-2026-09-26-monterey-bay .brand-text .display{font-size:1.15rem;line-height:1;}
+#pm-2026-09-26-monterey-bay .tagline{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-09-26-monterey-bay .tabs{display:flex;gap:22px;}
+#pm-2026-09-26-monterey-bay .tabs a{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
+#pm-2026-09-26-monterey-bay .tabs a:hover{color:var(--green);}
+#pm-2026-09-26-monterey-bay .nav-toggle{display:none;background:none;border:1px solid var(--line);color:var(--bone);font-size:1.1rem;padding:4px 10px;cursor:pointer;}
+
+/* Hero */
+#pm-2026-09-26-monterey-bay .detail-hero{padding:56px 0 40px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(61,220,90,.07),transparent 70%);}
+#pm-2026-09-26-monterey-bay .back-link{display:inline-block;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--muted);margin-bottom:26px;}
+#pm-2026-09-26-monterey-bay .back-link:hover{color:var(--green);}
+#pm-2026-09-26-monterey-bay .detail-kicker{display:block;font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);}
+#pm-2026-09-26-monterey-bay .detail-hero h1{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(3rem,10vw,5.6rem);line-height:.95;margin:10px 0 22px;letter-spacing:.01em;}
+#pm-2026-09-26-monterey-bay .detail-meta{display:flex;flex-wrap:wrap;gap:10px;}
+#pm-2026-09-26-monterey-bay .badge{display:inline-block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--green);color:var(--green);border-radius:2px;}
+
+/* Body */
+#pm-2026-09-26-monterey-bay .detail-body{padding:44px 0 60px;}
+#pm-2026-09-26-monterey-bay .summary-card{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--green);padding:22px 24px;margin-bottom:40px;}
+#pm-2026-09-26-monterey-bay .summary-card p{margin:0;font-size:1.12rem;font-weight:500;}
+#pm-2026-09-26-monterey-bay .detail-article .block{padding:0 0 30px;margin-bottom:30px;border-bottom:1px solid var(--line);counter-increment:blk;}
+#pm-2026-09-26-monterey-bay .detail-article{counter-reset:blk;}
+#pm-2026-09-26-monterey-bay .detail-article h3{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.03em;font-size:1.55rem;margin:0 0 14px;line-height:1.15;}
+#pm-2026-09-26-monterey-bay .detail-article h3::before{content:counter(blk,decimal-leading-zero);display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;color:var(--green);margin-bottom:6px;}
+#pm-2026-09-26-monterey-bay .detail-article p{margin:0 0 14px;color:rgba(245,241,233,.88);}
+#pm-2026-09-26-monterey-bay .detail-conclusion{background:var(--green);color:var(--black);padding:26px 26px;margin:10px 0 44px;}
+#pm-2026-09-26-monterey-bay .detail-conclusion .label{color:var(--black);opacity:.75;}
+#pm-2026-09-26-monterey-bay .detail-conclusion p{margin:0;font-size:1.1rem;font-weight:600;line-height:1.55;}
+
+/* Video */
+#pm-2026-09-26-monterey-bay .video-section{margin-bottom:44px;}
+#pm-2026-09-26-monterey-bay .video-links{display:grid;gap:10px;}
+#pm-2026-09-26-monterey-bay .video-link-slot{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);padding:16px 18px;font-weight:500;transition:border-color .2s,color .2s;}
+#pm-2026-09-26-monterey-bay a.video-link-slot:hover{border-color:var(--green);color:var(--green);}
+#pm-2026-09-26-monterey-bay .platform{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);background:var(--bone);padding:4px 8px;min-width:88px;text-align:center;}
+
+#pm-2026-09-26-monterey-bay .detail-nav-links{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;}
+#pm-2026-09-26-monterey-bay .detail-nav-links a:hover{color:var(--green);}
+#pm-2026-09-26-monterey-bay footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--muted);}
+
+/* Figures */
+#pm-2026-09-26-monterey-bay .figure{background:var(--panel);border:1px solid var(--line);padding:16px 16px 12px;margin:22px 0 6px;}
+#pm-2026-09-26-monterey-bay .figure svg{display:block;width:100%;height:auto;}
+#pm-2026-09-26-monterey-bay .fig-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;}
+#pm-2026-09-26-monterey-bay .fig-title{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);}
+#pm-2026-09-26-monterey-bay .fig-dir{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+#pm-2026-09-26-monterey-bay .figcaption{font-size:.86rem;color:var(--muted);margin:10px 0 0;line-height:1.5;}
+#pm-2026-09-26-monterey-bay .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-09-26-monterey-bay .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;}
+#pm-2026-09-26-monterey-bay .figure .draw{stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1.3s ease .25s;}
+#pm-2026-09-26-monterey-bay .figure .fade{opacity:0;transition:opacity .8s ease .9s;}
+#pm-2026-09-26-monterey-bay .figure.in .draw{stroke-dashoffset:0;}
+#pm-2026-09-26-monterey-bay .figure.in .fade{opacity:1;}
+#pm-2026-09-26-monterey-bay .figure .grow{transform:scaleY(0);transform-box:fill-box;transform-origin:bottom;transition:transform .9s ease;}
+#pm-2026-09-26-monterey-bay .figure.in .grow{transform:scaleY(1);}
+@media (prefers-reduced-motion:reduce){#pm-2026-09-26-monterey-bay .figure .draw{stroke-dashoffset:0;transition:none}#pm-2026-09-26-monterey-bay .figure .fade{opacity:1;transition:none}#pm-2026-09-26-monterey-bay .figure .grow{transform:none;transition:none}}
+
+/* Phase grid */
+#pm-2026-09-26-monterey-bay .phase-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:-30px 0 44px;}
+#pm-2026-09-26-monterey-bay .phase{background:var(--panel);border:1px solid var(--line);padding:16px 18px;}
+#pm-2026-09-26-monterey-bay .phase.alert{border-color:var(--bone);background:repeating-linear-gradient(45deg,rgba(245,241,233,.05) 0 6px,transparent 6px 12px),var(--panel);}
+#pm-2026-09-26-monterey-bay .phase-n{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--green);}
+#pm-2026-09-26-monterey-bay .phase h4{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-size:1.05rem;margin:4px 0 6px;}
+#pm-2026-09-26-monterey-bay .phase p{margin:0;font-size:.9rem;color:rgba(245,241,233,.8);line-height:1.5;}
+
+/* Extra components: stat row, callouts, player cards, match cards, form */
+#pm-2026-09-26-monterey-bay .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:-18px 0 40px;}
+#pm-2026-09-26-monterey-bay .stat-row div{background:var(--panel);padding:14px 10px;text-align:center;}
+#pm-2026-09-26-monterey-bay .stat-row b{display:block;font-family:var(--mono);font-size:1.3rem;color:var(--green);font-weight:600;line-height:1.2;}
+#pm-2026-09-26-monterey-bay .stat-row span{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-09-26-monterey-bay .callout{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--green);padding:14px 18px;margin:18px 0 6px;}
+#pm-2026-09-26-monterey-bay .callout.alert{border-left-color:var(--bone);}
+#pm-2026-09-26-monterey-bay .callout .label{margin-bottom:6px;}
+#pm-2026-09-26-monterey-bay .callout.alert .label{color:var(--bone);}
+#pm-2026-09-26-monterey-bay .callout p{margin:0;font-size:.95rem;}
+#pm-2026-09-26-monterey-bay .pcards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 6px;}
+#pm-2026-09-26-monterey-bay .pcard{background:var(--panel);border:1px solid var(--line);padding:14px 16px;}
+#pm-2026-09-26-monterey-bay .pcard h4{font-family:var(--display);text-transform:uppercase;font-size:1.05rem;margin:0;letter-spacing:.02em;}
+#pm-2026-09-26-monterey-bay .pcard .role{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;color:var(--green);text-transform:uppercase;display:block;margin:2px 0 8px;}
+#pm-2026-09-26-monterey-bay .pcard .nums{display:flex;gap:18px;margin-bottom:6px;}
+#pm-2026-09-26-monterey-bay .pcard .nums b{display:block;font-family:var(--mono);font-size:1.2rem;color:var(--green);}
+#pm-2026-09-26-monterey-bay .pcard .nums span{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-09-26-monterey-bay .pcard p{margin:0;font-size:.88rem;color:rgba(245,241,233,.78);line-height:1.5;}
+#pm-2026-09-26-monterey-bay .form-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 6px;}
+#pm-2026-09-26-monterey-bay .mcard{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--muted);padding:12px 14px;}
+#pm-2026-09-26-monterey-bay .mcard.w{border-top-color:var(--green);}
+#pm-2026-09-26-monterey-bay .mcard .res{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-09-26-monterey-bay .mcard.w .res{color:var(--green);}
+#pm-2026-09-26-monterey-bay .mcard .score{font-family:var(--display);font-size:1.15rem;text-transform:uppercase;margin:2px 0 4px;}
+#pm-2026-09-26-monterey-bay .mcard p{margin:0;font-size:.78rem;color:var(--muted);line-height:1.4;}
+
+#pm-2026-09-26-monterey-bay .figure .growx{transform:scaleX(0);transform-box:fill-box;transform-origin:left;transition:transform 1s ease .2s;}
+#pm-2026-09-26-monterey-bay .figure.in .growx{transform:scaleX(1);}
+@media (prefers-reduced-motion:reduce){#pm-2026-09-26-monterey-bay .figure .growx{transform:none;transition:none}}
+
+@media (max-width:760px){
+  #pm-2026-09-26-monterey-bay .stat-row{grid-template-columns:repeat(2,1fr);}
+  #pm-2026-09-26-monterey-bay .pcards{grid-template-columns:1fr;}
+  #pm-2026-09-26-monterey-bay .form-row{grid-template-columns:repeat(2,1fr);}
+  #pm-2026-09-26-monterey-bay .phase-grid{grid-template-columns:1fr;}
+  #pm-2026-09-26-monterey-bay .nav-toggle{display:block;}
+  #pm-2026-09-26-monterey-bay .tabs{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);}
+  #pm-2026-09-26-monterey-bay .tabs.open{display:flex;}
+  #pm-2026-09-26-monterey-bay .tabs a{padding:14px 20px;border-top:1px solid var(--line);}
+  #pm-2026-09-26-monterey-bay .detail-hero{padding:36px 0 30px;}
+  #pm-2026-09-26-monterey-bay .detail-conclusion,#pm-2026-09-26-monterey-bay .summary-card{padding:20px;}
+  #pm-2026-09-26-monterey-bay .figure{margin-left:-20px !important;margin-right:-20px !important;padding:14px 8px 12px;border-left:0;border-right:0;}
+  #pm-2026-09-26-monterey-bay .fig-head,#pm-2026-09-26-monterey-bay .legend,#pm-2026-09-26-monterey-bay .figcaption{padding:0 12px;}
+}
+</style>
+</head>
+<body id="pm-2026-09-26-monterey-bay" style="margin:0;">
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">
+      <svg class="brand-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="26" height="26" rx="2" stroke="#3DDC5A" stroke-width="1.4"/>
+        <line x1="1" y1="14" x2="27" y2="14" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="14" r="4.2" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="6" r="1.6" fill="#F5F1E9"/>
+        <circle cx="8" cy="9" r="1.6" fill="#F5F1E9"/>
+        <circle cx="20" cy="9" r="1.6" fill="#F5F1E9"/>
+      </svg>
+      <span class="brand-text">
+        <span class="display" style="display:block;">SILAS VANCE</span>
+        <span class="tagline">Tactical Analysis</span>
+      </span>
+    </a>
+    <nav class="tabs" id="tabs">
+      <a href="../../index.html#individual">Player Focus</a>
+      <a href="../../index.html#team-tactics">Team Tactics</a>
+      <a href="../../index.html#pre-match">Pre-Match</a>
+      <a href="../../index.html#post-match">Post-Match</a>
+      <a href="../../index.html#about">About</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="detail-hero">
+  <div class="wrap">
+    <a class="back-link" href="../../index.html#pre-match">← Back to Pre-Match</a>
+    <span class="detail-kicker">Pre-Match · vs. Monterey Bay FC</span>
+    <h1>September 26</h1>
+    <div class="detail-meta">
+      <span class="badge badge-pre mono">4-2-3-1 · compact block</span><span class="badge badge-pre mono">Zone 14 behind the pivot</span><span class="badge badge-pre mono">Away · Seaside</span>
+    </div>
+  </div>
+</section>
+
+<section class="detail-body">
+  <div class="wrap" style="max-width:760px;">
+
+    <div class="summary-card">
+      <span class="label">In One Line</span>
+      <p>Monterey Bay's block is compact and hard to play through, but a double pivot that covers too much ground keeps leaving Zone 14 open — and their only real outlet is the long ball behind the full-back.</p>
+    </div>
+<div class="stat-row">
+<div><b>37</b><span>LSC pts · 4th West</span></div>
+<div><b>18</b><span>MBFC pts · last West</span></div>
+<div><b>2</b><span>Goodrum hat tricks in a row</span></div>
+<div><b>3–2</b><span>LSC won H2H · Aug 1</span></div>
+</div>
+
+    <article class="detail-article">
+      <div class="block"><h3>A Compact Block With A Hole In Zone 14</h3><p>Monterey Bay line up in a 4-2-3-1 that is hard to break down through the middle. The cost is in the double pivot: the two midfielders cover so much ground side to side that they consistently arrive late to the pocket just outside the box. That's the recurring gap Lexington needs to find.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Compact block, one open pocket</span><span class="fig-dir">← LSC attack</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="Compact block, one open pocket" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="b1ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="b1ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="b1hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><rect class="fade" x="68" y="92" width="34" height="56" fill="rgba(61,220,90,.25)" stroke="#3DDC5A" stroke-dasharray="3 3"/><text x="85" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#3DDC5A">ZONE 14</text><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="58" cy="48" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="52" cy="98" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="52" cy="142" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="58" cy="192" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="122" cy="74" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="122" y="76.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">6</text><circle cx="122" cy="166" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="122" y="168.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">6</text><path class="fade" d="M134 52 L134 104" fill="none" stroke="#F5F1E9" stroke-width="1.2" stroke-dasharray="3 3" marker-start="url(#b1ah-b)" marker-end="url(#b1ah-b)"/><path class="fade" d="M134 136 L134 188" fill="none" stroke="#F5F1E9" stroke-width="1.2" stroke-dasharray="3 3" marker-start="url(#b1ah-b)" marker-end="url(#b1ah-b)"/><text x="146" y="30" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">PIVOT SHUTTLES WIDE</text><text x="146" y="40" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">→ ARRIVES LATE TO THE POCKET</text><circle cx="172" cy="50" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="176" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="176" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">10</text><circle cx="172" cy="190" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="222" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="222" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">9</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Monterey Bay</span><span><i style="background:rgba(61,220,90,.35);border-radius:0"></i>Space to attack</span></div>
+<p class="figcaption">Monterey Bay's 4-2-3-1 is hard to break through the middle, but the double pivot covers so much ground side to side that both midfielders keep arriving late to the space just outside the box.</p>
+</figure></div><div class="block"><h3>Their Outlet: The Long Ball Behind The Full-Back</h3><p>With the ball, the centre-backs look first for a direct diagonal into the channel behind the opposing full-back — their clearest source of danger in transition, and the route Ilijah Paul lives on. Take it away and they settle for slow, low-yield possession that rarely reaches the final third with a real chance.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">The outlet: long, behind the full-back</span><span class="fig-dir">MBFC attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="The outlet: long, behind the full-back" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="b2ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="b2ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="b2hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><rect class="fade" x="300" y="4" width="96" height="44" fill="url(#b2hatch)" stroke="#F5F1E9" stroke-opacity=".45" stroke-dasharray="3 3"/><rect class="fade" x="300" y="192" width="96" height="44" fill="url(#b2hatch)" stroke="#F5F1E9" stroke-opacity=".3" stroke-dasharray="3 3"/><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="62" cy="92" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="62" y="94.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">CB</text><circle cx="62" cy="148" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="62" y="150.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">CB</text><circle cx="70" cy="90" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><path class="draw" d="M70 86 Q200 0 330 26" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#b2ah-b)"/><path class="fade" d="M70 152 Q200 236 330 214" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#b2ah-b)"/><circle cx="262" cy="34" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="262" y="36.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">W</text><circle cx="262" cy="206" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="262" y="208.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">W</text><path class="fade" d="M270 34 L322 28" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#b2ah-b)"/><path class="fade" d="M270 206 L322 212" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#b2ah-b)"/><circle cx="290" cy="56" r="7" fill="#3DDC5A"/><text x="290" y="58.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">FB</text><circle cx="332" cy="98" r="7" fill="#3DDC5A"/><circle cx="332" cy="142" r="7" fill="#3DDC5A"/><circle cx="290" cy="184" r="7" fill="#3DDC5A"/><text x="290" y="186.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">FB</text><circle cx="388" cy="120" r="6.5" fill="#3DDC5A"/><text x="348" y="60" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">BEHIND THE FB</text><circle cx="150" cy="110" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="150" cy="150" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="150" y="176" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">SLOW, LOW-YIELD</text><text x="150" y="185" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">POSSESSION OTHERWISE</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Monterey Bay</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:repeating-linear-gradient(45deg,rgba(245,241,233,.45) 0 2px,transparent 2px 5px);border-radius:0"></i>Danger zone</span></div>
+<p class="figcaption">The centre-backs' first look is a direct diagonal into the channel behind the opposing full-back. It's their clearest source of danger in transition. Without it they recycle slowly and rarely reach the final third with a real chance.</p>
+</figure><div class="pcards">
+<div class="pcard"><h4>Ilijah Paul</h4><span class="role">FW · #20 · top scorer</span><div class="nums"><div><b>5</b><span>Goals</span></div><div><b>4</b><span>Assists</span></div></div><p>Their most productive outlet, the target of the diagonal: a threat in behind and in the box.</p></div>
+<div class="pcard"><h4>Sebastian Lletget</h4><span class="role">MF · #10</span><div class="nums"><div><b>4</b><span>Goals</span></div><div><b>2</b><span>Assists</span></div></div><p>Second-leading scorer; the reference in their rare spells of sustained possession.</p></div>
+<div class="pcard" style="grid-column:1/-1;"><h4>Ryuga Nakamura</h4><span class="role">MF · #6 · double pivot</span><p>Rotates through the pivot and can hurt from distance late on — his long-range equaliser against Phoenix (Sep 5) is the reminder.</p></div>
+</div></div><div class="block"><h3>Lexington's Route In: Mobility Behind The Pivot</h3><p>Because the pivot covers so much ground, one player dropping into the pocket isn't enough on its own — two moving players are. A midfielder rotating into Zone 14 while a second attacker drops to combine creates constant confusion over who picks up whom, and that is the direct route into Monterey Bay's core structural weakness.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Third man into the pocket</span><span class="fig-dir">← LSC attack</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="Third man into the pocket" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="b3ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="b3ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="b3hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><rect class="fade" x="68" y="88" width="44" height="64" fill="rgba(61,220,90,.25)" stroke="#3DDC5A" stroke-dasharray="3 3"/><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="58" cy="48" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="52" cy="98" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="52" cy="142" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="58" cy="192" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="132" cy="62" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="132" y="64.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">6</text><circle cx="132" cy="178" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="132" y="180.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">6</text><text x="132" y="44" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">WHO TAKES HIM?</text><circle cx="98" cy="102" r="7" fill="#3DDC5A"/><text x="98" y="104.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">9</text><text x="98" y="82" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">9 DROPS IN</text><circle cx="184" cy="110" r="7" fill="#3DDC5A"/><text x="184" y="112.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">10</text><circle cx="176" cy="108" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><path class="draw" d="M172 107 L108 102" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#b3ah-b)"/><circle cx="214" cy="196" r="7" fill="#3DDC5A"/><text x="214" y="198.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">8</text><path class="draw" d="M206 192 Q150 146 104 140" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#b3ah-g)"/><path class="fade" d="M100 110 L98 130" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#b3ah-b)"/><path class="fade" d="M90 140 L26 124" fill="none" stroke="#3DDC5A" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#b3ah-g)"/><text x="214" y="220" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">THIRD-MAN RUN</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Monterey Bay</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:#F5F1E9;width:7px;height:7px"></i>Ball</span></div>
+<p class="figcaption">The 9 drops into the pocket and pulls a centre-back or pivot with him; the 10 finds him and a midfielder arrives from behind for the lay-off. Two moving players in Zone 14 is more than a stretched pivot can track.</p>
+</figure></div><div class="block"><h3>Season Snapshot</h3><p>Lexington arrive on two straight wins — 4–1 at Oakland and 6–0 against Orange County, both with a Goodrum hat trick — sitting 4th in the West with 37 points. Monterey Bay are bottom with 18 and winless since June 20. Lexington also won the first meeting 3–2 on August 1. The gap in the table is real, but the diagonal behind the full-back is exactly the kind of chance a struggling side can live on.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Season snapshot</span><span class="fig-dir">Entering Sep 26</span></div>
+<svg viewBox="0 0 400 160" role="img" aria-label="Season snapshot" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="b4ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="b4ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="b4hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><text x="4" y="20" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="rgba(245,241,233,.6)">POINTS</text><text x="110" y="39" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">LSC</text><rect x="118" y="31" width="240" height="10" fill="rgba(245,241,233,.06)"/><rect class="growx" x="118" y="31" width="197.3" height="10" fill="#3DDC5A"/><text x="321.33333333333337" y="39" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">37</text><text x="110" y="52" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">MBFC</text><rect x="118" y="44" width="240" height="10" fill="rgba(245,241,233,.06)"/><rect class="growx" x="118" y="44" width="96.0" height="10" fill="rgba(245,241,233,.35)"/><text x="220.0" y="52" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">18</text><text x="4" y="70" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="rgba(245,241,233,.6)">WINS</text><text x="110" y="89" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">LSC</text><rect x="118" y="81" width="240" height="10" fill="rgba(245,241,233,.06)"/><rect class="growx" x="118" y="81" width="132.0" height="10" fill="#3DDC5A"/><text x="256.0" y="89" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">11</text><text x="110" y="102" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">MBFC</text><rect x="118" y="94" width="240" height="10" fill="rgba(245,241,233,.06)"/><rect class="growx" x="118" y="94" width="48.0" height="10" fill="rgba(245,241,233,.35)"/><text x="172.0" y="102" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">4</text><text x="4" y="120" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="rgba(245,241,233,.6)">LOSSES</text><text x="110" y="139" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">LSC</text><rect x="118" y="131" width="240" height="10" fill="rgba(245,241,233,.06)"/><rect class="growx" x="118" y="131" width="120.0" height="10" fill="#3DDC5A"/><text x="244.0" y="139" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">10</text><text x="110" y="152" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">MBFC</text><rect x="118" y="144" width="240" height="10" fill="rgba(245,241,233,.06)"/><rect class="growx" x="118" y="144" width="180.0" height="10" fill="rgba(245,241,233,.35)"/><text x="304.0" y="152" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#F5F1E9">15</text></svg>
+<div class="legend"><span><i style="background:#3DDC5A;border-radius:0"></i>Lexington</span><span><i style="background:rgba(245,241,233,.35);border-radius:0"></i>Monterey Bay</span></div>
+<p class="figcaption">Lexington (11W-10L-4D, 4th in the West) against a Monterey Bay side bottom of the conference (4W-15L-6D), already out of playoff contention and winless since June 20.</p>
+</figure></div>
+    </article>
+
+    <div class="detail-conclusion"><span class="label">Game Plan</span><p>Monterey Bay's block is disciplined, but discipline that covers too much ground still leaves a door open. Attack the pocket with two moving players, and don't give them the diagonal in behind.</p></div><div class="phase-grid">
+<div class="phase"><span class="phase-n">01</span><h4>Opportunity · mobility behind the pivot</h4><p>Rotate a midfielder into the Zone 14 pocket while a second attacker drops to combine.</p></div>
+<div class="phase alert"><span class="phase-n">02</span><h4>Risk · the long diagonal</h4><p>The moment they win it, the centre-backs look in behind. Coordinated pressing triggers and disciplined cover, not isolated pressure from the front.</p></div>
+</div>
+
+    <div class="video-section">
+      <span class="label">Watch The Breakdown</span>
+      <div class="video-links">
+        <!-- VIDEO: reemplaza PEGAR_ENLACE_VIDEO por el enlace del video -->
+        <a class="video-link-slot" href="PEGAR_ENLACE_VIDEO" target="_blank" rel="noopener"><span class="platform">Video</span> Watch the full breakdown →</a>
+        <!-- INSTAGRAM: reemplaza PEGAR_ENLACE_INSTAGRAM -->
+        <a class="video-link-slot" href="PEGAR_ENLACE_INSTAGRAM" target="_blank" rel="noopener"><span class="platform">Instagram</span> Watch the Reel →</a>
+        <!-- TIKTOK: reemplaza PEGAR_ENLACE_TIKTOK -->
+        <a class="video-link-slot" href="PEGAR_ENLACE_TIKTOK" target="_blank" rel="noopener"><span class="platform">TikTok</span> Watch on TikTok →</a>
+      </div>
+    </div>
+
+    <div class="detail-nav-links">
+      <a href="../../index.html#pre-match">← All Pre-Match</a>
+      <a href="../../index.html">Home</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>SILAS VANCE — TACTICAL ANALYSIS</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const tabs = document.getElementById('tabs');
+  toggle.addEventListener('click', () => tabs.classList.toggle('open'));
+  const figs = document.querySelectorAll('.figure');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .35});
+    figs.forEach(f => io.observe(f));
+  } else { figs.forEach(f => f.classList.add('in')); }
+</script>
+</body>
+</html>

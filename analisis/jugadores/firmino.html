@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nick Firmino — Silas Vance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#3DDC5A;
+    --black:#111111;
+    --bone:#F5F1E9;
+    --bg:#0B0F0C;
+    --panel:#131A14;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  #firmino-micro{
+    background:var(--bg);
+    color:var(--bone);
+    font-family:'Inter',sans-serif;
+    line-height:1.55;
+    overflow-x:hidden;
+  }
+  #firmino-micro [data-en]{display:none;}
+  #firmino-micro[data-lang="en"] [data-es]{display:none;}
+  #firmino-micro[data-lang="en"] [data-en]{display:inline;}
+  #firmino-micro .block-en{display:none;}
+  #firmino-micro[data-lang="en"] .block-es{display:none;}
+  #firmino-micro[data-lang="en"] .block-en{display:block;}
+ 
+  #firmino-micro .lang-toggle{
+    position:sticky;top:0;z-index:50;
+    display:flex;justify-content:flex-end;gap:0;
+    background:rgba(11,15,12,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(245,241,233,0.08);
+    padding:14px 24px;
+  }
+  #firmino-micro .lang-toggle button{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.75rem;
+    letter-spacing:0.04em;
+    background:none;
+    border:1px solid rgba(245,241,233,0.25);
+    color:var(--bone);
+    padding:6px 14px;
+    cursor:pointer;
+    transition:background 0.2s,color 0.2s;
+  }
+  #firmino-micro .lang-toggle button:first-child{border-radius:3px 0 0 3px;}
+  #firmino-micro .lang-toggle button:last-child{border-radius:0 3px 3px 0;border-left:none;}
+  #firmino-micro .lang-toggle button.active{background:var(--green);color:var(--black);border-color:var(--green);font-weight:600;}
+ 
+  #firmino-micro .hero{
+    max-width:900px;margin:0 auto;
+    padding:72px 24px 48px;
+  }
+  #firmino-micro .hero .kicker{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.8rem;
+    color:var(--green);
+    margin-bottom:18px;
+  }
+  #firmino-micro .hero h1{
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    font-size:clamp(2.6rem,7vw,4.6rem);
+    line-height:0.98;
+    letter-spacing:-0.01em;
+  }
+  #firmino-micro .hero .role{
+    font-family:'Oswald',sans-serif;
+    font-weight:500;
+    font-size:1.3rem;
+    color:rgba(245,241,233,0.7);
+    margin-top:10px;
+  }
+  #firmino-micro .hero .badges{
+    display:flex;flex-wrap:wrap;gap:10px;
+    margin-top:28px;
+  }
+  #firmino-micro .badge{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    border:1px solid rgba(245,241,233,0.2);
+    border-radius:20px;
+    padding:6px 14px;
+    color:rgba(245,241,233,0.85);
+  }
+ 
+  #firmino-micro .ticker{
+    border-top:1px solid rgba(245,241,233,0.1);
+    border-bottom:1px solid rgba(245,241,233,0.1);
+    background:var(--panel);
+  }
+  #firmino-micro .ticker-inner{
+    max-width:900px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(4,1fr);
+  }
+  #firmino-micro .stat{
+    padding:26px 16px;
+    text-align:center;
+    border-left:1px solid rgba(245,241,233,0.08);
+  }
+  #firmino-micro .stat:first-child{border-left:none;}
+  #firmino-micro .stat .num{
+    font-family:'Oswald',sans-serif;font-weight:600;
+    font-size:2.1rem;color:var(--green);
+  }
+  #firmino-micro .stat .label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.7rem;
+    color:rgba(245,241,233,0.6);
+    margin-top:6px;
+  }
+ 
+  #firmino-micro .aportes{
+    max-width:900px;margin:0 auto;
+    padding:80px 24px;
+  }
+  #firmino-micro .aportes-intro{
+    max-width:560px;
+    font-size:1.05rem;
+    color:rgba(245,241,233,0.75);
+    margin-bottom:56px;
+  }
+  #firmino-micro .aporte{
+    display:grid;grid-template-columns:90px 1fr;
+    gap:28px;
+    padding:36px 0;
+    border-top:1px solid rgba(245,241,233,0.1);
+    opacity:0;transform:translateY(16px);
+    transition:opacity 0.6s ease,transform 0.6s ease;
+  }
+  #firmino-micro .aporte.visible{opacity:1;transform:translateY(0);}
+  #firmino-micro .aporte:last-child{border-bottom:1px solid rgba(245,241,233,0.1);}
+  #firmino-micro .aporte .idx{
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    font-size:2.6rem;
+    color:rgba(61,220,90,0.35);
+  }
+  #firmino-micro .aporte h3{
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    font-size:1.4rem;
+    margin-bottom:10px;
+  }
+  #firmino-micro .aporte p{color:rgba(245,241,233,0.8);}
+ 
+  #firmino-micro .diagram-section{
+    background:var(--panel);
+    padding:80px 24px;
+  }
+  #firmino-micro .diagram-inner{
+    max-width:820px;margin:0 auto;
+    display:grid;grid-template-columns:1.1fr 1fr;gap:40px;
+    align-items:center;
+  }
+  #firmino-micro .diagram-inner h3{
+    font-family:'Oswald',sans-serif;font-weight:600;
+    font-size:1.5rem;margin-bottom:14px;
+  }
+  #firmino-micro .diagram-inner p{color:rgba(245,241,233,0.75);}
+  #firmino-micro .pitch-wrap{background:var(--bg);border-radius:6px;padding:12px;}
+  #firmino-micro .pitch-wrap svg{width:100%;height:auto;display:block;}
+  #firmino-micro .legend{
+    display:flex;gap:18px;margin-top:12px;flex-wrap:wrap;
+    font-family:'IBM Plex Mono',monospace;font-size:0.7rem;
+    color:rgba(245,241,233,0.6);
+  }
+  #firmino-micro .legend span{display:flex;align-items:center;gap:6px;}
+  #firmino-micro .dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+ 
+  #firmino-micro .callout{
+    max-width:820px;margin:0 auto;
+    padding:80px 24px;
+  }
+  #firmino-micro .callout-box{
+    border:1px solid rgba(61,220,90,0.35);
+    background:rgba(61,220,90,0.05);
+    border-radius:6px;
+    padding:32px;
+  }
+  #firmino-micro .callout-box .tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.75rem;color:var(--green);margin-bottom:12px;
+  }
+  #firmino-micro .callout-box h3{
+    font-family:'Oswald',sans-serif;font-weight:600;
+    font-size:1.5rem;margin-bottom:14px;
+  }
+  #firmino-micro .callout-box p{color:rgba(245,241,233,0.85);margin-bottom:10px;}
+ 
+  #firmino-micro .closing{
+    max-width:700px;margin:0 auto;
+    padding:100px 24px 120px;
+    text-align:center;
+  }
+  #firmino-micro .closing blockquote{
+    font-family:'Oswald',sans-serif;
+    font-weight:500;font-style:italic;
+    font-size:1.5rem;line-height:1.4;
+    color:var(--bone);
+  }
+  #firmino-micro .closing .byline{
+    margin-top:24px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.8rem;color:rgba(245,241,233,0.55);
+  }
+ 
+  @media(max-width:640px){
+    #firmino-micro .ticker-inner{grid-template-columns:repeat(2,1fr);}
+    #firmino-micro .stat:nth-child(3){border-left:none;}
+    #firmino-micro .diagram-inner{grid-template-columns:1fr;}
+    #firmino-micro .aporte{grid-template-columns:50px 1fr;}
+    #firmino-micro .aporte .idx{font-size:1.8rem;}
+  }
+</style>
+</head>
+<body>
+<div id="firmino-micro" data-lang="es">
+ 
+  <div class="lang-toggle">
+    <button data-set="es" class="active">ES</button>
+    <button data-set="en">EN</button>
+  </div>
+ 
+  <header class="hero">
+    <div class="kicker">
+      <span data-es>MICRO-ANÁLISIS · JUGADOR · JULIO 24, 2026</span>
+      <span data-en>PLAYER MICRO-ANALYSIS JULY 24TH, 2026</span>
+    </div>
+    <h1>Nick Firmino</h1>
+    <div class="role">
+      <span data-es>#10 → Falso extremo derecho</span>
+      <span data-en>#10 → False Right Winger</span>
+    </div>
+    <div class="badges">
+      <span class="badge">#8</span>
+      <span class="badge"><span data-es>Falso extremo derecho</span><span data-en>False right winger</span></span>
+      <span class="badge"><span data-es>Interior</span><span data-en>Interior</span></span>
+      <span class="badge"><span data-es>Superioridad posicional</span><span data-en>Positional superiority</span></span>
+    </div>
+  </header>
+ 
+  <section class="ticker">
+    <div class="ticker-inner">
+      <div class="stat">
+        <div class="num">#8</div>
+        <div class="label"><span data-es>ROL INICIAL</span><span data-en>INITIAL ROLE</span></div>
+      </div>
+      <div class="stat">
+        <div class="num">4-2-3-1</div>
+        <div class="label"><span data-es>ESTRUCTURA INICIAL</span><span data-en>INITIAL STRUCTURE</span></div>
+      </div>
+      <div class="stat">
+        <div class="num">4</div>
+        <div class="label"><span data-es>CAMBIOS TÁCTICOS CLAVE</span><span data-en>KEY TACTICAL SHIFTS</span></div>
+      </div>
+      <div class="stat">
+        <div class="num">→</div>
+        <div class="label"><span data-es>FALSO EXTREMO DERECHO</span><span data-en>FALSE RIGHT WINGER</span></div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="aportes">
+    <p class="aportes-intro">
+      <span data-es>Un cambio de posición transformó el contexto de Firmino: de recibir constantemente bajo presión como #10 a aparecer como interior desde el costado derecho, llegando a zonas donde puede recibir con mayor libertad.</span>
+      <span data-en>A positional change transformed Firmino's context: instead of constantly receiving under pressure as a #10, he now appears as an interior from the right side, arriving into spaces where he can receive with greater freedom.</span>
+    </p>
+ 
+    <div class="aporte">
+      <div class="idx">01</div>
+      <div>
+        <h3><span data-es>Un inicio difícil como #10</span><span data-en>A Difficult Start As A #10</span></h3>
+        <p>
+          <span data-es>Firmino comenzó la temporada como #10 en un 4-2-3-1, jugando justo detrás del delantero. En ese rol no estaba encontrando éxito: los mediocampistas y defensores rivales lo marcaban de cerca, tenía dificultades para recibir detrás del doble pivote rival y no estaba teniendo la influencia que el equipo necesitaba. Perdía muchos balones, se encontraba constantemente en inferioridad posicional y erraba demasiados pases.</span>
+          <span data-en>Nick Firmino began the season as a #10 in a 4-2-3-1, playing just behind the striker. In that role he wasn't finding success — he was being tightly marked by rival midfielders and defenders, struggled to receive behind the opposing double pivot, and simply wasn't influential in the way the team needed. He lost a lot of balls, was constantly in positional inferiority, and misplaced far too many passes.</span>
+        </p>
+      </div>
+    </div>
+ 
+    <div class="aporte">
+      <div class="idx">02</div>
+      <div>
+        <h3><span data-es>El movimiento al falso extremo derecho</span><span data-en>The Move To False Right Winger</span></h3>
+        <p>
+          <span data-es>Más adelante en la temporada, el cuerpo técnico lo trasladó a un rol de falso extremo derecho. Cuando el equipo tiene el balón, Firmino se mete hacia dentro como interior y, junto con los dos 6 y Braudilio —que baja hacia el espacio del #10—, forma un rombo central. Esta posición le permite recibir con mucha más libertad, porque ya no permanece en una zona constantemente marcada, sino que llega al espacio cuando este se abre. Esto genera espacio tanto para él como para Braudilio.</span>
+          <span data-en>Later in the season the coaching staff moved him to a false right-winger role. When the team has the ball, he tucks inside as an interior, and together with the two 6s and Braudilio — who drops into that #10 space — he forms a diamond shape centrally. That positioning lets him receive with far more freedom, since he's no longer camped in a marked zone but arriving into space as it opens, which generates room not just for himself but for Braudilio as well.</span>
+        </p>
+      </div>
+    </div>
+ 
+    <div class="aporte">
+      <div class="idx">03</div>
+      <div>
+        <h3><span data-es>Recibir en superioridad, no en inferioridad</span><span data-en>Receiving In Superiority, Not Inferiority</span></h3>
+        <p>
+          <span data-es>El cambio de rol también le permite recibir con mucha mayor frecuencia en situaciones de superioridad posicional. Eso le da la plataforma para buscar disparos desde media distancia y tener una presencia considerablemente mayor dentro del área. Ya no es el jugador que debe generar el juego por sí solo: esa responsabilidad ahora se distribuye entre los jugadores que forman el rombo.</span>
+          <span data-en>The role change also lets him receive far more often in positional superiority, which in turn gives him the platform for shots from range and considerably more presence inside the box. He's no longer the one who has to single-handedly generate the team's play — that responsibility is now shared across the diamond that forms around him.</span>
+        </p>
+      </div>
+    </div>
+ 
+    <div class="aporte">
+      <div class="idx">04</div>
+      <div>
+        <h3><span data-es>Un costado que los defensores no pueden resolver</span><span data-en>A Flank Defenders Can't Solve</span></h3>
+        <p>
+          <span data-es>El movimiento también abre espacio real por fuera. El lateral rival ya no sabe si seguir a Firmino cuando se mete hacia dentro o mantener su posición y esperar la llegada del lateral propio en superposición. Esa duda es una segunda consecuencia del movimiento: la posición de Firmino no solo lo libera a él, sino que modifica las decisiones defensivas del rival.</span>
+          <span data-en>This shift also opens real space out wide, because the opposing full-back no longer knows whether to track Firmino as he tucks inside or hold his width and wait for the overlapping full-back to arrive.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="diagram-section">
+    <div class="diagram-inner">
+      <div class="pitch-wrap">
+        <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="4" width="392" height="232" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+          <line x1="200" y1="4" x2="200" y2="236" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+          <circle cx="200" cy="120" r="30" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+          <circle cx="200" cy="120" r="2" fill="#F5F1E9" fill-opacity="0.35"/>
+          <rect x="334" y="70" width="62" height="100" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+          <rect x="366" y="95" width="30" height="50" fill="none" stroke="#F5F1E9" stroke-opacity="0.35" stroke-width="1.5"/>
+ 
+          <polygon points="250,65 315,120 250,175 215,120" fill="rgba(61,220,90,0.05)" stroke="#3DDC5A" stroke-width="1.3" stroke-dasharray="6 5"/>
+ 
+          <circle cx="315" cy="120" r="6" fill="#F5F1E9"/>
+          <text x="315" y="108" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#F5F1E9" opacity="0.8">BRAUDILIO</text>
+ 
+          <circle cx="250" cy="65" r="7" fill="#3DDC5A"/>
+          <text x="250" y="52" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#3DDC5A">FIRMINO</text>
+ 
+          <circle cx="215" cy="120" r="6" fill="#F5F1E9"/>
+          <text x="215" y="140" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#F5F1E9" opacity="0.8">6</text>
+ 
+          <circle cx="250" cy="175" r="6" fill="#F5F1E9"/>
+          <text x="250" y="193" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#F5F1E9" opacity="0.8">6</text>
+ 
+          <line x1="250" y1="65" x2="350" y2="45" stroke="#3DDC5A" stroke-width="1" stroke-dasharray="4 4" opacity="0.7"/>
+          <text x="352" y="42" font-family="IBM Plex Mono" font-size="8" fill="#3DDC5A">WIDTH</text>
+        </svg>
+        <div class="legend">
+          <span><span class="dot" style="background:#3DDC5A"></span><span data-es>Posición interior de Firmino</span><span data-en>Firmino's interior position</span></span>
+        </div>
+      </div>
+      <div>
+        <h3><span data-es>Del extremo al interior</span><span data-en>From The Flank Into The Interior</span></h3>
+        <p>
+          <span data-es>El valor del movimiento está en la relación entre amplitud y ocupación interior. Firmino parte desde el costado derecho, pero su movimiento hacia dentro crea un rombo central junto a los dos 6 y Braudilio. Al mismo tiempo, mantiene una duda para el lateral rival: seguirlo hacia dentro o proteger el espacio exterior.</span>
+          <span data-en>The value of the movement comes from the relationship between width and interior occupation. Firmino starts from the right side, but his movement inside creates a central diamond with the two 6s and Braudilio. At the same time, it creates a decision for the opposing full-back: follow him inside or protect the outside space.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="callout">
+    <div class="callout-box">
+      <div class="tag"><span data-es>LECTURA TÁCTICA</span><span data-en>TACTICAL READ</span></div>
+      <h3><span data-es>Una modificación pequeña con efectos en cadena</span><span data-en>A Small Change With Chain-Reaction Effects</span></h3>
+      <p>
+        <span data-es>Firmino ya no necesita ser el jugador que recibe constantemente entre líneas y resuelve bajo presión. Al moverse desde el falso extremo derecho hacia posiciones interiores, puede llegar a espacios más favorables, mientras Braudilio ocupa el espacio del #10 y el equipo conserva amplitud por fuera.</span>
+        <span data-en>Firmino no longer needs to be the player constantly receiving between the lines and solving under pressure. By moving from the false right-wing position into interior spaces, he can arrive in more favorable areas while Braudilio occupies the #10 space and the team maintains width outside.</span>
+      </p>
+    </div>
+  </section>
+ 
+  <footer class="closing">
+    <blockquote>
+      <span data-es>“No cambió de posición para tener más el balón; cambió de posición para que el rival ya no supiera a quién marcar.”</span>
+      <span data-en>“He didn't change position to see more of the ball; he changed position so the opponent no longer knew who to mark.”</span>
+    </blockquote>
+    <div class="byline">— Silas Vance</div>
+  </footer>
+ 
+</div>
+ 
+<script>
+(function(){
+  var root = document.getElementById('firmino-micro');
+  var buttons = root.querySelectorAll('.lang-toggle button');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var lang = btn.getAttribute('data-set');
+      root.setAttribute('data-lang', lang);
+      buttons.forEach(function(b){ b.classList.toggle('active', b===btn); });
+    });
+  });
+ 
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){ entry.target.classList.add('visible'); }
+    });
+  }, {threshold:0.2});
+  root.querySelectorAll('.aporte').forEach(function(el){ observer.observe(el); });
+})();
+</script>
+</body>
+</html>
+ 

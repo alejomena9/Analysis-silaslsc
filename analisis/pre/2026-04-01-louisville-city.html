@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>April 1 — Silas Vance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* Silas Vance — Pre-Match · paleta del proyecto. Todo namespaced bajo #pm-2026-04-01-louisville-city */
+#pm-2026-04-01-louisville-city{
+  --green:#3DDC5A; --black:#111111; --bone:#F5F1E9;
+  --bg:#0B0F0C; --panel:#131A14; --line:rgba(245,241,233,.12); --muted:rgba(245,241,233,.62);
+  --display:'Oswald',sans-serif; --body:'Inter',sans-serif; --mono:'IBM Plex Mono',monospace;
+  background:var(--bg); color:var(--bone); font-family:var(--body); font-size:17px; line-height:1.65;
+  min-height:100vh; margin:0; -webkit-font-smoothing:antialiased;
+}
+#pm-2026-04-01-louisville-city *{box-sizing:border-box;}
+#pm-2026-04-01-louisville-city a{color:inherit;text-decoration:none;}
+#pm-2026-04-01-louisville-city .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+#pm-2026-04-01-louisville-city .display{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;}
+#pm-2026-04-01-louisville-city .mono{font-family:var(--mono);}
+#pm-2026-04-01-louisville-city .label{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:10px;}
+
+/* Nav */
+#pm-2026-04-01-louisville-city .site-nav{position:sticky;top:0;z-index:20;background:rgba(11,15,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+#pm-2026-04-01-louisville-city .nav-inner{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+#pm-2026-04-01-louisville-city .brand{display:flex;align-items:center;gap:12px;}
+#pm-2026-04-01-louisville-city .brand-mark{width:30px;height:30px;flex:none;}
+#pm-2026-04-01-louisville-city .brand-text .display{font-size:1.15rem;line-height:1;}
+#pm-2026-04-01-louisville-city .tagline{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-04-01-louisville-city .tabs{display:flex;gap:22px;}
+#pm-2026-04-01-louisville-city .tabs a{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
+#pm-2026-04-01-louisville-city .tabs a:hover{color:var(--green);}
+#pm-2026-04-01-louisville-city .nav-toggle{display:none;background:none;border:1px solid var(--line);color:var(--bone);font-size:1.1rem;padding:4px 10px;cursor:pointer;}
+
+/* Hero */
+#pm-2026-04-01-louisville-city .detail-hero{padding:56px 0 40px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(61,220,90,.07),transparent 70%);}
+#pm-2026-04-01-louisville-city .back-link{display:inline-block;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--muted);margin-bottom:26px;}
+#pm-2026-04-01-louisville-city .back-link:hover{color:var(--green);}
+#pm-2026-04-01-louisville-city .detail-kicker{display:block;font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);}
+#pm-2026-04-01-louisville-city .detail-hero h1{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(3rem,10vw,5.6rem);line-height:.95;margin:10px 0 22px;letter-spacing:.01em;}
+#pm-2026-04-01-louisville-city .detail-meta{display:flex;flex-wrap:wrap;gap:10px;}
+#pm-2026-04-01-louisville-city .badge{display:inline-block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--green);color:var(--green);border-radius:2px;}
+
+/* Body */
+#pm-2026-04-01-louisville-city .detail-body{padding:44px 0 60px;}
+#pm-2026-04-01-louisville-city .summary-card{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--green);padding:22px 24px;margin-bottom:40px;}
+#pm-2026-04-01-louisville-city .summary-card p{margin:0;font-size:1.12rem;font-weight:500;}
+#pm-2026-04-01-louisville-city .detail-article .block{padding:0 0 30px;margin-bottom:30px;border-bottom:1px solid var(--line);counter-increment:blk;}
+#pm-2026-04-01-louisville-city .detail-article{counter-reset:blk;}
+#pm-2026-04-01-louisville-city .detail-article h3{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.03em;font-size:1.55rem;margin:0 0 14px;line-height:1.15;}
+#pm-2026-04-01-louisville-city .detail-article h3::before{content:counter(blk,decimal-leading-zero);display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;color:var(--green);margin-bottom:6px;}
+#pm-2026-04-01-louisville-city .detail-article p{margin:0 0 14px;color:rgba(245,241,233,.88);}
+#pm-2026-04-01-louisville-city .detail-conclusion{background:var(--green);color:var(--black);padding:26px 26px;margin:10px 0 44px;}
+#pm-2026-04-01-louisville-city .detail-conclusion .label{color:var(--black);opacity:.75;}
+#pm-2026-04-01-louisville-city .detail-conclusion p{margin:0;font-size:1.1rem;font-weight:600;line-height:1.55;}
+
+/* Video */
+#pm-2026-04-01-louisville-city .video-section{margin-bottom:44px;}
+#pm-2026-04-01-louisville-city .video-links{display:grid;gap:10px;}
+#pm-2026-04-01-louisville-city .video-link-slot{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);padding:16px 18px;font-weight:500;transition:border-color .2s,color .2s;}
+#pm-2026-04-01-louisville-city a.video-link-slot:hover{border-color:var(--green);color:var(--green);}
+#pm-2026-04-01-louisville-city .platform{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);background:var(--bone);padding:4px 8px;min-width:88px;text-align:center;}
+
+#pm-2026-04-01-louisville-city .detail-nav-links{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;}
+#pm-2026-04-01-louisville-city .detail-nav-links a:hover{color:var(--green);}
+#pm-2026-04-01-louisville-city footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--muted);}
+
+/* Figures */
+#pm-2026-04-01-louisville-city .figure{background:var(--panel);border:1px solid var(--line);padding:16px 16px 12px;margin:22px 0 6px;}
+#pm-2026-04-01-louisville-city .figure svg{display:block;width:100%;height:auto;}
+#pm-2026-04-01-louisville-city .fig-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;}
+#pm-2026-04-01-louisville-city .fig-title{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);}
+#pm-2026-04-01-louisville-city .fig-dir{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+#pm-2026-04-01-louisville-city .figcaption{font-size:.86rem;color:var(--muted);margin:10px 0 0;line-height:1.5;}
+#pm-2026-04-01-louisville-city .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-04-01-louisville-city .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;}
+#pm-2026-04-01-louisville-city .figure .draw{stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1.3s ease .25s;}
+#pm-2026-04-01-louisville-city .figure .fade{opacity:0;transition:opacity .8s ease .9s;}
+#pm-2026-04-01-louisville-city .figure.in .draw{stroke-dashoffset:0;}
+#pm-2026-04-01-louisville-city .figure.in .fade{opacity:1;}
+#pm-2026-04-01-louisville-city .figure .grow{transform:scaleY(0);transform-box:fill-box;transform-origin:bottom;transition:transform .9s ease;}
+#pm-2026-04-01-louisville-city .figure.in .grow{transform:scaleY(1);}
+@media (prefers-reduced-motion:reduce){#pm-2026-04-01-louisville-city .figure .draw{stroke-dashoffset:0;transition:none}#pm-2026-04-01-louisville-city .figure .fade{opacity:1;transition:none}#pm-2026-04-01-louisville-city .figure .grow{transform:none;transition:none}}
+
+/* Phase grid */
+#pm-2026-04-01-louisville-city .phase-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:-30px 0 44px;}
+#pm-2026-04-01-louisville-city .phase{background:var(--panel);border:1px solid var(--line);padding:16px 18px;}
+#pm-2026-04-01-louisville-city .phase.alert{border-color:var(--bone);background:repeating-linear-gradient(45deg,rgba(245,241,233,.05) 0 6px,transparent 6px 12px),var(--panel);}
+#pm-2026-04-01-louisville-city .phase-n{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--green);}
+#pm-2026-04-01-louisville-city .phase h4{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-size:1.05rem;margin:4px 0 6px;}
+#pm-2026-04-01-louisville-city .phase p{margin:0;font-size:.9rem;color:rgba(245,241,233,.8);line-height:1.5;}
+
+@media (max-width:760px){
+  #pm-2026-04-01-louisville-city .phase-grid{grid-template-columns:1fr;}
+  #pm-2026-04-01-louisville-city .nav-toggle{display:block;}
+  #pm-2026-04-01-louisville-city .tabs{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);}
+  #pm-2026-04-01-louisville-city .tabs.open{display:flex;}
+  #pm-2026-04-01-louisville-city .tabs a{padding:14px 20px;border-top:1px solid var(--line);}
+  #pm-2026-04-01-louisville-city .detail-hero{padding:36px 0 30px;}
+  #pm-2026-04-01-louisville-city .detail-conclusion,#pm-2026-04-01-louisville-city .summary-card{padding:20px;}
+  #pm-2026-04-01-louisville-city .figure{margin-left:-20px !important;margin-right:-20px !important;padding:14px 8px 12px;border-left:0;border-right:0;}
+  #pm-2026-04-01-louisville-city .fig-head,#pm-2026-04-01-louisville-city .legend,#pm-2026-04-01-louisville-city .figcaption{padding:0 12px;}
+}
+</style>
+</head>
+<body id="pm-2026-04-01-louisville-city" style="margin:0;">
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">
+      <svg class="brand-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="26" height="26" rx="2" stroke="#3DDC5A" stroke-width="1.4"/>
+        <line x1="1" y1="14" x2="27" y2="14" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="14" r="4.2" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="6" r="1.6" fill="#F5F1E9"/>
+        <circle cx="8" cy="9" r="1.6" fill="#F5F1E9"/>
+        <circle cx="20" cy="9" r="1.6" fill="#F5F1E9"/>
+      </svg>
+      <span class="brand-text">
+        <span class="display" style="display:block;">SILAS VANCE</span>
+        <span class="tagline">Tactical Analysis</span>
+      </span>
+    </a>
+    <nav class="tabs" id="tabs">
+      <a href="../../index.html#individual">Player Focus</a>
+      <a href="../../index.html#team-tactics">Team Tactics</a>
+      <a href="../../index.html#pre-match">Pre-Match</a>
+      <a href="../../index.html#post-match">Post-Match</a>
+      <a href="../../index.html#about">About</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="detail-hero">
+  <div class="wrap">
+    <a class="back-link" href="../../index.html#pre-match">← Back to Pre-Match</a>
+    <span class="detail-kicker">Pre-Match · vs. Louisville City FC</span>
+    <h1>April 1</h1>
+    <div class="detail-meta">
+      <span class="badge badge-pre mono">High, overlapping full-backs</span>
+    </div>
+  </div>
+</section>
+
+<section class="detail-body">
+  <div class="wrap" style="max-width:760px;">
+
+    <div class="summary-card">
+      <span class="label">In One Line</span>
+      <p>Louisville live off crosses and second balls — winning those duels, and retreating as a full unit, is the difference in this game.</p>
+    </div>
+
+    <article class="detail-article">
+      <div class="block"><h3>Crossing Is Their Weapon Of Choice</h3><p>Louisville push both full-backs very high and constantly, and crossing is by far their most dangerous way of creating chances. That means real discipline is required against balls played in behind Lexington's own full-backs — Louisville will look to stretch the defense the same way they did against Rhode Island, pulling the back line apart until gaps open up wide enough for as many as six players to join the attack at once.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Full-backs high, crosses in</span><span class="fig-dir">LOU attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="Full-backs high, crosses in" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="c1ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="c1ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="c1hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><rect x="300" y="4" width="96" height="36" fill="url(#c1hatch)" stroke="#F5F1E9" stroke-opacity=".45" stroke-dasharray="3 3"/><rect x="300" y="200" width="96" height="36" fill="url(#c1hatch)" stroke="#F5F1E9" stroke-opacity=".45" stroke-dasharray="3 3"/><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="90" cy="90" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="90" cy="150" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="200" cy="30" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="200" y="32.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">FB</text><circle cx="200" cy="210" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="200" y="212.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">FB</text><path class="draw" d="M208 30 L352 22" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#c1ah-b)"/><path class="draw" d="M208 210 L352 218" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#c1ah-b)"/><circle cx="360" cy="24" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><path class="draw" d="M362 30 Q360 80 350 104" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#c1ah-g)"/><circle cx="346" cy="96" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="352" cy="122" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="344" cy="148" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="318" cy="110" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="318" cy="138" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="290" cy="124" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="262" y="96" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">UP TO 6 IN</text><text x="262" y="106" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">THE ATTACK</text><circle cx="330" cy="62" r="6" fill="#3DDC5A"/><circle cx="368" cy="108" r="6" fill="#3DDC5A"/><circle cx="368" cy="136" r="6" fill="#3DDC5A"/><circle cx="330" cy="178" r="6" fill="#3DDC5A"/><circle cx="388" cy="120" r="5.5" fill="#3DDC5A"/><text x="348" y="52" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">BEHIND LSC FB</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Louisville</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:repeating-linear-gradient(45deg,rgba(245,241,233,.45) 0 2px,transparent 2px 5px);border-radius:0"></i>Danger zone</span></div>
+<p class="figcaption">Both full-backs push very high and deliver. As the back line gets pulled wide (as it was against Rhode Island), up to six Louisville players arrive to attack the cross.</p>
+</figure></div><div class="block"><h3>The Team Has To Retreat Together</h3><p>The second key point is defensive shape on the retreat: when Lexington drops, it has to drop as a complete, coordinated unit. In the first meeting with Louisville — and again against San Antonio — Mike specifically did not complete his recovery run, which repeatedly left his side's full-back exposed to a 1v1 against the winger, or the near interior exposed to a 2v1. Jumping the press too early or too late creates exactly the gap Louisville is built to exploit.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">One unfinished run</span><span class="fig-dir">LOU attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="One unfinished run" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="c2ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="c2ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="c2hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><circle cx="338" cy="60" r="7" fill="#3DDC5A"/><text x="338" y="62.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">FB</text><circle cx="346" cy="102" r="7" fill="#3DDC5A"/><circle cx="346" cy="142" r="7" fill="#3DDC5A"/><circle cx="338" cy="184" r="7" fill="#3DDC5A"/><circle cx="388" cy="120" r="6.5" fill="#3DDC5A"/><circle cx="290" cy="110" r="7" fill="#3DDC5A"/><text x="290" y="112.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">INT</text><circle cx="290" cy="156" r="7" fill="#3DDC5A"/><circle cx="196" cy="44" r="7" fill="#3DDC5A"/><text x="196" y="46.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">M</text><path class="draw" d="M204 44 L244 44" stroke="#3DDC5A" stroke-width="1.8" stroke-dasharray="4 3" fill="none"/><g class="fade" stroke="#F5F1E9" stroke-width="2"><line x1="248" y1="38" x2="258" y2="50"/><line x1="258" y1="38" x2="248" y2="50"/></g><text x="196" y="64" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">RUN NOT FINISHED</text><circle cx="300" cy="34" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="300" y="36.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">W</text><circle cx="264" cy="86" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="306" cy="38" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><path class="fade" d="M270 80 L300 52" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#c2ah-b)"/><text x="354" y="30" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".6" fill="#F5F1E9">1V1</text><text x="250" y="120" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">2V1 ON</text><text x="250" y="130" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">THE INTERIOR</text><ellipse class="fade" cx="316" cy="46" rx="34" ry="22" fill="none" stroke="#F5F1E9" stroke-opacity=".6" stroke-dasharray="3 3"/></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Louisville</span><span><i style="background:#3DDC5A"></i>Lexington</span></div>
+<p class="figcaption">If one player (Mike, in the first meeting and against San Antonio) doesn't finish his recovery run, the full-back is left 1v1 with the winger or the near interior faces a 2v1. The whole unit has to drop together.</p>
+</figure></div><div class="block"><h3>Second Balls Decide Duels</h3><p>Third, expect a heavy volume of crossed and long balls, which means second-ball situations will happen constantly — and whoever wins those second balls gains a real edge. We saw this directly in the first match: Aaron collected a loose rebound and scored from distance, and Louisville's own second goal that day came from exactly the same kind of loose-ball situation.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Second balls decide it</span><span class="fig-dir">Every long ball / cross</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="Second balls decide it" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="c3ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="c3ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="c3hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><circle cx="90" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="96" cy="116" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><path class="fade" d="M98 112 Q190 40 280 102" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#c3ah-b)"/><circle cx="292" cy="104" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="302" cy="116" r="7" fill="#3DDC5A"/><text x="298" y="88" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#F5F1E9">AERIAL DUEL</text><circle class="fade" cx="244" cy="146" r="26" fill="rgba(61,220,90,.2)" stroke="#3DDC5A" stroke-dasharray="3 3"/><path class="fade" d="M296 118 Q270 134 250 142" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#c3ah-b)"/><circle cx="246" cy="146" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><text x="212" y="150" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#3DDC5A">SECOND BALL</text><circle cx="214" cy="194" r="7" fill="#3DDC5A"/><circle cx="282" cy="186" r="7" fill="#3DDC5A"/><circle cx="204" cy="118" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="272" cy="200" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><path class="draw" d="M218 188 L236 160" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#c3ah-g)"/><path class="draw" d="M278 182 L256 160" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#c3ah-g)"/><path class="draw" d="M208 124 L230 138" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#c3ah-b)"/><path class="draw" d="M270 194 L256 164" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#c3ah-b)"/><text x="120" y="200" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">BOTH TEAMS SCORED FROM</text><text x="120" y="210" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">THIS IN THE FIRST MEETING</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>Louisville</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:rgba(61,220,90,.35);border-radius:0"></i>Space to attack</span></div>
+<p class="figcaption">With this many crosses and long balls, the ball will drop loose constantly. In the first meeting Aaron scored from distance off a rebound, and Louisville's second goal came from the same kind of loose ball.</p>
+</figure></div>
+    </article>
+
+    <div class="detail-conclusion"><span class="label">Prediction</span><p>Win the crosses, win the second balls, and retreat as a complete unit — those three details are what separate a controlled performance from a repeat of the first meeting.</p></div><div class="phase-grid">
+<div class="phase"><span class="phase-n">01</span><h4>Win the crosses</h4><p>Discipline behind our full-backs; don't let the back line get stretched.</p></div>
+<div class="phase"><span class="phase-n">02</span><h4>Win the second balls</h4><p>Bodies around the drop zone on every long ball and cross.</p></div>
+<div class="phase alert" style="grid-column:1/-1;"><span class="phase-n">03</span><h4>Retreat as one unit</h4><p>Every recovery run finished, no early or late jumps on the press.</p></div>
+</div>
+
+    <div class="video-section">
+      <span class="label">Watch The Breakdown</span>
+      <div class="video-links">
+         <!-- INSTAGRAM: reemplaza PEGAR_ENLACE_INSTAGRAM -->
+        <a class="video-link-slot" href="https://www.instagram.com/reel/DWkAagzgcfb/?stkn=MWRlNXNiZmV4N3Q1eA==" target="_blank" rel="noopener"><span class="platform">Instagram</span> Watch the Reel →</a>
+        <!-- TIKTOK: reemplaza PEGAR_ENLACE_TIKTOK -->
+        <a class="video-link-slot" href="https://www.tiktok.com/t/ZTy5JABHU/" target="_blank" rel="noopener"><span class="platform">TikTok</span> Watch on TikTok →</a>
+      </div>
+    </div>
+
+    <div class="detail-nav-links">
+      <a href="../../index.html#pre-match">← All Pre-Match</a>
+      <a href="../../index.html">Home</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>SILAS VANCE — TACTICAL ANALYSIS</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const tabs = document.getElementById('tabs');
+  toggle.addEventListener('click', () => tabs.classList.toggle('open'));
+  const figs = document.querySelectorAll('.figure');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .35});
+    figs.forEach(f => io.observe(f));
+  } else { figs.forEach(f => f.classList.add('in')); }
+</script>
+</body>
+</html>

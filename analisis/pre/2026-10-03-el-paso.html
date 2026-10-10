@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>October 3 — Silas Vance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* Silas Vance — Pre-Match · paleta del proyecto. Todo namespaced bajo #pm-2026-10-03-el-paso */
+#pm-2026-10-03-el-paso{
+  --green:#3DDC5A; --black:#111111; --bone:#F5F1E9;
+  --bg:#0B0F0C; --panel:#131A14; --line:rgba(245,241,233,.12); --muted:rgba(245,241,233,.62);
+  --display:'Oswald',sans-serif; --body:'Inter',sans-serif; --mono:'IBM Plex Mono',monospace;
+  background:var(--bg); color:var(--bone); font-family:var(--body); font-size:17px; line-height:1.65;
+  min-height:100vh; margin:0; -webkit-font-smoothing:antialiased;
+}
+#pm-2026-10-03-el-paso *{box-sizing:border-box;}
+#pm-2026-10-03-el-paso a{color:inherit;text-decoration:none;}
+#pm-2026-10-03-el-paso .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+#pm-2026-10-03-el-paso .display{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;}
+#pm-2026-10-03-el-paso .mono{font-family:var(--mono);}
+#pm-2026-10-03-el-paso .label{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:10px;}
+
+/* Nav */
+#pm-2026-10-03-el-paso .site-nav{position:sticky;top:0;z-index:20;background:rgba(11,15,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+#pm-2026-10-03-el-paso .nav-inner{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+#pm-2026-10-03-el-paso .brand{display:flex;align-items:center;gap:12px;}
+#pm-2026-10-03-el-paso .brand-mark{width:30px;height:30px;flex:none;}
+#pm-2026-10-03-el-paso .brand-text .display{font-size:1.15rem;line-height:1;}
+#pm-2026-10-03-el-paso .tagline{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-10-03-el-paso .tabs{display:flex;gap:22px;}
+#pm-2026-10-03-el-paso .tabs a{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
+#pm-2026-10-03-el-paso .tabs a:hover{color:var(--green);}
+#pm-2026-10-03-el-paso .nav-toggle{display:none;background:none;border:1px solid var(--line);color:var(--bone);font-size:1.1rem;padding:4px 10px;cursor:pointer;}
+
+/* Hero */
+#pm-2026-10-03-el-paso .detail-hero{padding:56px 0 40px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(61,220,90,.07),transparent 70%);}
+#pm-2026-10-03-el-paso .back-link{display:inline-block;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--muted);margin-bottom:26px;}
+#pm-2026-10-03-el-paso .back-link:hover{color:var(--green);}
+#pm-2026-10-03-el-paso .detail-kicker{display:block;font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);}
+#pm-2026-10-03-el-paso .detail-hero h1{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(3rem,10vw,5.6rem);line-height:.95;margin:10px 0 22px;letter-spacing:.01em;}
+#pm-2026-10-03-el-paso .detail-meta{display:flex;flex-wrap:wrap;gap:10px;}
+#pm-2026-10-03-el-paso .badge{display:inline-block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--green);color:var(--green);border-radius:2px;}
+
+/* Body */
+#pm-2026-10-03-el-paso .detail-body{padding:44px 0 60px;}
+#pm-2026-10-03-el-paso .summary-card{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--green);padding:22px 24px;margin-bottom:40px;}
+#pm-2026-10-03-el-paso .summary-card p{margin:0;font-size:1.12rem;font-weight:500;}
+#pm-2026-10-03-el-paso .detail-article .block{padding:0 0 30px;margin-bottom:30px;border-bottom:1px solid var(--line);counter-increment:blk;}
+#pm-2026-10-03-el-paso .detail-article{counter-reset:blk;}
+#pm-2026-10-03-el-paso .detail-article h3{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.03em;font-size:1.55rem;margin:0 0 14px;line-height:1.15;}
+#pm-2026-10-03-el-paso .detail-article h3::before{content:counter(blk,decimal-leading-zero);display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;color:var(--green);margin-bottom:6px;}
+#pm-2026-10-03-el-paso .detail-article p{margin:0 0 14px;color:rgba(245,241,233,.88);}
+#pm-2026-10-03-el-paso .detail-conclusion{background:var(--green);color:var(--black);padding:26px 26px;margin:10px 0 44px;}
+#pm-2026-10-03-el-paso .detail-conclusion .label{color:var(--black);opacity:.75;}
+#pm-2026-10-03-el-paso .detail-conclusion p{margin:0;font-size:1.1rem;font-weight:600;line-height:1.55;}
+
+/* Video */
+#pm-2026-10-03-el-paso .video-section{margin-bottom:44px;}
+#pm-2026-10-03-el-paso .video-links{display:grid;gap:10px;}
+#pm-2026-10-03-el-paso .video-link-slot{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);padding:16px 18px;font-weight:500;transition:border-color .2s,color .2s;}
+#pm-2026-10-03-el-paso a.video-link-slot:hover{border-color:var(--green);color:var(--green);}
+#pm-2026-10-03-el-paso .platform{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);background:var(--bone);padding:4px 8px;min-width:88px;text-align:center;}
+
+#pm-2026-10-03-el-paso .detail-nav-links{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;}
+#pm-2026-10-03-el-paso .detail-nav-links a:hover{color:var(--green);}
+#pm-2026-10-03-el-paso footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--muted);}
+
+/* Figures */
+#pm-2026-10-03-el-paso .figure{background:var(--panel);border:1px solid var(--line);padding:16px 16px 12px;margin:22px 0 6px;}
+#pm-2026-10-03-el-paso .figure svg{display:block;width:100%;height:auto;}
+#pm-2026-10-03-el-paso .fig-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;}
+#pm-2026-10-03-el-paso .fig-title{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);}
+#pm-2026-10-03-el-paso .fig-dir{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+#pm-2026-10-03-el-paso .figcaption{font-size:.86rem;color:var(--muted);margin:10px 0 0;line-height:1.5;}
+#pm-2026-10-03-el-paso .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-10-03-el-paso .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;}
+#pm-2026-10-03-el-paso .figure .draw{stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1.3s ease .25s;}
+#pm-2026-10-03-el-paso .figure .fade{opacity:0;transition:opacity .8s ease .9s;}
+#pm-2026-10-03-el-paso .figure.in .draw{stroke-dashoffset:0;}
+#pm-2026-10-03-el-paso .figure.in .fade{opacity:1;}
+#pm-2026-10-03-el-paso .figure .grow{transform:scaleY(0);transform-box:fill-box;transform-origin:bottom;transition:transform .9s ease;}
+#pm-2026-10-03-el-paso .figure.in .grow{transform:scaleY(1);}
+@media (prefers-reduced-motion:reduce){#pm-2026-10-03-el-paso .figure .draw{stroke-dashoffset:0;transition:none}#pm-2026-10-03-el-paso .figure .fade{opacity:1;transition:none}#pm-2026-10-03-el-paso .figure .grow{transform:none;transition:none}}
+
+/* Phase grid */
+#pm-2026-10-03-el-paso .phase-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:-30px 0 44px;}
+#pm-2026-10-03-el-paso .phase{background:var(--panel);border:1px solid var(--line);padding:16px 18px;}
+#pm-2026-10-03-el-paso .phase.alert{border-color:var(--bone);background:repeating-linear-gradient(45deg,rgba(245,241,233,.05) 0 6px,transparent 6px 12px),var(--panel);}
+#pm-2026-10-03-el-paso .phase-n{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--green);}
+#pm-2026-10-03-el-paso .phase h4{font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-size:1.05rem;margin:4px 0 6px;}
+#pm-2026-10-03-el-paso .phase p{margin:0;font-size:.9rem;color:rgba(245,241,233,.8);line-height:1.5;}
+
+/* Extra components: stat row, callouts, player cards, match cards, form */
+#pm-2026-10-03-el-paso .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:-18px 0 40px;}
+#pm-2026-10-03-el-paso .stat-row div{background:var(--panel);padding:14px 10px;text-align:center;}
+#pm-2026-10-03-el-paso .stat-row b{display:block;font-family:var(--mono);font-size:1.3rem;color:var(--green);font-weight:600;line-height:1.2;}
+#pm-2026-10-03-el-paso .stat-row span{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-10-03-el-paso .callout{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--green);padding:14px 18px;margin:18px 0 6px;}
+#pm-2026-10-03-el-paso .callout.alert{border-left-color:var(--bone);}
+#pm-2026-10-03-el-paso .callout .label{margin-bottom:6px;}
+#pm-2026-10-03-el-paso .callout.alert .label{color:var(--bone);}
+#pm-2026-10-03-el-paso .callout p{margin:0;font-size:.95rem;}
+#pm-2026-10-03-el-paso .pcards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 6px;}
+#pm-2026-10-03-el-paso .pcard{background:var(--panel);border:1px solid var(--line);padding:14px 16px;}
+#pm-2026-10-03-el-paso .pcard h4{font-family:var(--display);text-transform:uppercase;font-size:1.05rem;margin:0;letter-spacing:.02em;}
+#pm-2026-10-03-el-paso .pcard .role{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;color:var(--green);text-transform:uppercase;display:block;margin:2px 0 8px;}
+#pm-2026-10-03-el-paso .pcard .nums{display:flex;gap:18px;margin-bottom:6px;}
+#pm-2026-10-03-el-paso .pcard .nums b{display:block;font-family:var(--mono);font-size:1.2rem;color:var(--green);}
+#pm-2026-10-03-el-paso .pcard .nums span{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-10-03-el-paso .pcard p{margin:0;font-size:.88rem;color:rgba(245,241,233,.78);line-height:1.5;}
+#pm-2026-10-03-el-paso .form-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 6px;}
+#pm-2026-10-03-el-paso .mcard{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--muted);padding:12px 14px;}
+#pm-2026-10-03-el-paso .mcard.w{border-top-color:var(--green);}
+#pm-2026-10-03-el-paso .mcard .res{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+#pm-2026-10-03-el-paso .mcard.w .res{color:var(--green);}
+#pm-2026-10-03-el-paso .mcard .score{font-family:var(--display);font-size:1.15rem;text-transform:uppercase;margin:2px 0 4px;}
+#pm-2026-10-03-el-paso .mcard p{margin:0;font-size:.78rem;color:var(--muted);line-height:1.4;}
+
+#pm-2026-10-03-el-paso .form-row.five{grid-template-columns:repeat(5,1fr);}
+#pm-2026-10-03-el-paso .form-row.five .score{font-size:.98rem;white-space:nowrap;}
+#pm-2026-10-03-el-paso .mcard.l{border-top-color:rgba(245,241,233,.28);}
+@media (max-width:760px){#pm-2026-10-03-el-paso .form-row.five{grid-template-columns:repeat(2,1fr);}}
+
+@media (max-width:760px){
+  #pm-2026-10-03-el-paso .stat-row{grid-template-columns:repeat(2,1fr);}
+  #pm-2026-10-03-el-paso .pcards{grid-template-columns:1fr;}
+  #pm-2026-10-03-el-paso .form-row{grid-template-columns:repeat(2,1fr);}
+  #pm-2026-10-03-el-paso .phase-grid{grid-template-columns:1fr;}
+  #pm-2026-10-03-el-paso .nav-toggle{display:block;}
+  #pm-2026-10-03-el-paso .tabs{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);}
+  #pm-2026-10-03-el-paso .tabs.open{display:flex;}
+  #pm-2026-10-03-el-paso .tabs a{padding:14px 20px;border-top:1px solid var(--line);}
+  #pm-2026-10-03-el-paso .detail-hero{padding:36px 0 30px;}
+  #pm-2026-10-03-el-paso .detail-conclusion,#pm-2026-10-03-el-paso .summary-card{padding:20px;}
+  #pm-2026-10-03-el-paso .figure{margin-left:-20px !important;margin-right:-20px !important;padding:14px 8px 12px;border-left:0;border-right:0;}
+  #pm-2026-10-03-el-paso .fig-head,#pm-2026-10-03-el-paso .legend,#pm-2026-10-03-el-paso .figcaption{padding:0 12px;}
+}
+</style>
+</head>
+<body id="pm-2026-10-03-el-paso" style="margin:0;">
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">
+      <svg class="brand-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="26" height="26" rx="2" stroke="#3DDC5A" stroke-width="1.4"/>
+        <line x1="1" y1="14" x2="27" y2="14" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="14" r="4.2" stroke="#3DDC5A" stroke-width="1.2"/>
+        <circle cx="14" cy="6" r="1.6" fill="#F5F1E9"/>
+        <circle cx="8" cy="9" r="1.6" fill="#F5F1E9"/>
+        <circle cx="20" cy="9" r="1.6" fill="#F5F1E9"/>
+      </svg>
+      <span class="brand-text">
+        <span class="display" style="display:block;">SILAS VANCE</span>
+        <span class="tagline">Tactical Analysis</span>
+      </span>
+    </a>
+    <nav class="tabs" id="tabs">
+      <a href="../../index.html#individual">Player Focus</a>
+      <a href="../../index.html#team-tactics">Team Tactics</a>
+      <a href="../../index.html#pre-match">Pre-Match</a>
+      <a href="../../index.html#post-match">Post-Match</a>
+      <a href="../../index.html#about">About</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="detail-hero">
+  <div class="wrap">
+    <a class="back-link" href="../../index.html#pre-match">← Back to Pre-Match</a>
+    <span class="detail-kicker">Pre-Match · vs. El Paso Locomotive FC</span>
+    <h1>October 3</h1>
+    <div class="detail-meta">
+      <span class="badge badge-pre mono">Home · 7 PM ET</span><span class="badge badge-pre mono">3-2-5 / 3-4-2-1</span><span class="badge badge-pre mono">Diagonals into zones 16 &amp; 18</span>
+    </div>
+  </div>
+</section>
+
+<section class="detail-body">
+  <div class="wrap" style="max-width:760px;">
+
+    <div class="summary-card">
+      <span class="label">In One Line</span>
+      <p>El Paso commit five forward and hunt zones 16 and 18 with diagonal runs from their interiors — that commitment leaves their centre-backs 1v1 and the space behind Torres open for a Lexington side riding Goodrum's form.</p>
+    </div>
+<div class="stat-row">
+<div><b>9</b><span>EP unbeaten run</span></div>
+<div><b>15</b><span>Goals · Rubín</span></div>
+<div><b>3</b><span>LSC straight wins</span></div>
+<div><b>7</b><span>Goodrum · last 3 games</span></div>
+</div>
+
+    <article class="detail-article">
+      <div class="block"><h3>Structure</h3><p>El Paso Locomotive defend in a 3-4-2-1 and attack in a 3-2-5. The wing-backs push as wide as possible while the interiors tuck in centrally, ready to burst diagonally into the wide channels of the final third.</p><p>Without the ball their high press is very well executed and forces mistakes — Lexington have to be clean in the first phase.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">In possession · 3-2-5</span><span class="fig-dir">EP attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="In possession · 3-2-5" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="e1ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="e1ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="e1hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><rect class="fade" x="331" y="4" width="65" height="77" fill="rgba(61,220,90,.16)" stroke="#3DDC5A" stroke-opacity=".6" stroke-dasharray="3 3"/><rect class="fade" x="331" y="159" width="65" height="77" fill="rgba(61,220,90,.16)" stroke="#3DDC5A" stroke-opacity=".6" stroke-dasharray="3 3"/><text x="363" y="76" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">ZONE 16</text><text x="363" y="170" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">ZONE 18</text><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="58" cy="78" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="58" y="80.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">93</text><circle cx="52" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="58" cy="162" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="58" y="164.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">15</text><circle cx="128" cy="100" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="128" cy="140" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="296" cy="18" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="296" y="20.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">16</text><circle cx="296" cy="222" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="262" cy="90" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="262" y="92.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">10</text><circle cx="262" cy="150" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="262" y="152.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">19</text><circle cx="308" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="308" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">14</text><line class="fade" x1="262" y1="18" x2="262" y2="222" stroke="#F5F1E9" stroke-opacity=".2" stroke-dasharray="2 4"/><text x="262" y="72" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">INTERIORS TUCK IN</text><text x="58" y="188" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".6" fill="rgba(245,241,233,.55)">3</text><text x="128" y="232" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".6" fill="rgba(245,241,233,.55)">2</text><text x="236" y="232" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".6" fill="rgba(245,241,233,.55)">5</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>El Paso</span><span><i style="background:rgba(61,220,90,.35);border-radius:0"></i>Zones 16 / 18</span></div>
+<p class="figcaption">Wing-backs as wide as the pitch allows, interiors tucked in behind Rubín. From there the interiors break diagonally towards zones 16 and 18.</p>
+</figure><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Out of possession · 3-4-2-1</span><span class="fig-dir">← LSC attack</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="Out of possession · 3-4-2-1" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="e2ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="e2ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="e2hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="54" cy="80" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="54" y="82.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">93</text><circle cx="48" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="54" cy="160" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="54" y="162.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">15</text><circle cx="104" cy="26" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="104" y="28.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">16</text><circle cx="110" cy="96" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="110" cy="144" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="104" cy="214" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="168" cy="86" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="168" y="88.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">10</text><circle cx="168" cy="154" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="168" y="156.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">19</text><circle cx="214" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="214" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">14</text><path class="fade" d="M176 84 L218 72" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#e2ah-b)"/><path class="fade" d="M176 156 L218 168" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#e2ah-b)"/><path class="fade" d="M222 118 L256 112" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#e2ah-b)"/><text x="250" y="58" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#F5F1E9">HIGH PRESS · FORCES ERRORS</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>El Paso</span></div>
+<p class="figcaption">The base shape without the ball, and a very well-executed high press from the front three that forces mistakes in the build-up.</p>
+</figure></div><div class="block"><h3>The Diagonal</h3><p>Their core attacking pattern is the inside-to-outside diagonal. The left interior, Amando Moreno (#10), starts centrally and breaks into the channel behind the opposing full-back — usually on El Paso's left, with Gabi Torres (#16) holding the width outside him. The target is zone 16 before the back line can reorganise.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">The diagonal into zone 16</span><span class="fig-dir">EP attack →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="The diagonal into zone 16" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="e3ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="e3ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="e3hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><rect class="fade" x="331" y="4" width="65" height="77" fill="rgba(61,220,90,.16)" stroke="#3DDC5A" stroke-opacity=".6" stroke-dasharray="3 3"/><rect class="fade" x="331" y="159" width="65" height="77" fill="rgba(61,220,90,.16)" stroke="#3DDC5A" stroke-opacity=".6" stroke-dasharray="3 3"/><text x="363" y="76" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">ZONE 16</text><text x="363" y="170" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">ZONE 18</text><circle cx="128" cy="100" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="136" cy="98" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><circle cx="296" cy="16" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="296" y="18.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">16</text><path class="fade" d="M302 18 L322 18" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#e3ah-b)"/><circle cx="322" cy="44" r="7" fill="#3DDC5A"/><text x="322" y="46.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">RB</text><circle cx="340" cy="96" r="7" fill="#3DDC5A"/><circle cx="340" cy="144" r="7" fill="#3DDC5A"/><circle cx="322" cy="196" r="7" fill="#3DDC5A"/><circle cx="388" cy="120" r="6.5" fill="#3DDC5A"/><circle cx="254" cy="100" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="254" y="102.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">10</text><path class="fade" d="M136 98 Q220 60 300 62" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#e3ah-b)"/><path class="draw" d="M260 94 Q300 70 352 60" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#e3ah-g)"/><circle cx="310" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="310" y="122.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">14</text><path class="fade" d="M318 118 L330 108" fill="none" stroke="#F5F1E9" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#e3ah-b)"/><text x="210" y="48" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">MORENO · INSIDE → OUT</text><text x="284" y="20" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="6" letter-spacing=".6" fill="#F5F1E9">TORRES PINS THE RB</text><text x="300" y="140" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6" letter-spacing=".6" fill="#F5F1E9">RUBÍN FIXES THE CBS</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>El Paso</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:#F5F1E9;width:7px;height:7px"></i>Ball</span></div>
+<p class="figcaption">Torres pins the full-back wide; Moreno starts inside and breaks diagonally into the channel between full-back and centre-back, arriving in zone 16 before the line can reorganise.</p>
+</figure></div><div class="block"><h3>Lexington's Plan</h3><p>Out of possession, a mid-block that protects the space behind our two pivots, with disciplined shifting across the pitch. In their build-up, take Tony Alfaro (#93) away — he's the one who plays through the inside lanes — and let Noah Dollenmayer (#15), the most limited on the ball, be the one who has it.</p><p>In possession, win it and break quickly into the space behind the wing-backs, above all behind Torres. With so many bodies committed forward, El Paso's centre-backs are left 1v1 — exactly the situation for Phillip Goodrum, who has seven goals in his last three matches.</p><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Press trap: Alfaro out, #15 on the ball</span><span class="fig-dir">EP build →</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="Press trap: Alfaro out, #15 on the ball" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="e4ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="e4ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="e4hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="22" cy="118" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><circle cx="58" cy="76" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="58" y="78.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">93</text><circle cx="50" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="58" cy="164" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="58" y="166.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">15</text><circle cx="120" cy="98" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="120" cy="142" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="94" cy="70" r="7" fill="#3DDC5A"/><text x="94" y="72.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">9</text><path class="draw" d="M88 72 L68 76" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#e4ah-g)"/><line class="fade" x1="28" y1="112" x2="52" y2="84" stroke="#F5F1E9" stroke-width="1.4" stroke-dasharray="3 3"/><g class="fade" stroke="#3DDC5A" stroke-width="2"><line x1="36" y1="94" x2="44" y2="102"/><line x1="44" y1="94" x2="36" y2="102"/></g><circle cx="92" cy="118" r="7" fill="#3DDC5A"/><text x="92" y="120.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">10</text><path class="fade" d="M86 118 L60 120" fill="none" stroke="#3DDC5A" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#e4ah-g)"/><circle cx="150" cy="98" r="7" fill="#3DDC5A"/><circle cx="150" cy="142" r="7" fill="#3DDC5A"/><path class="draw" d="M144 98 L130 98" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#e4ah-g)"/><path class="draw" d="M144 142 L130 142" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#e4ah-g)"/><circle class="fade" cx="58" cy="164" r="15" fill="none" stroke="#3DDC5A" stroke-dasharray="3 3"/><text x="80" y="196" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">#15 LEFT FREE · LET HIM CARRY IT</text><text x="100" y="56" text-anchor="start" font-family="IBM Plex Mono,monospace" font-size="6.5" letter-spacing=".6" fill="#3DDC5A">ALFARO OFF THE BALL</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>El Paso</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:#F5F1E9;width:7px;height:7px"></i>Ball</span></div>
+<p class="figcaption">Take away Alfaro, their best passer, and screen the pivots. Dollenmayer (#15) is the most limited on the ball, so he's the one we let start the build-up.</p>
+</figure><figure class="figure" style="margin-left:0;margin-right:0;">
+<div class="fig-head"><span class="fig-title">Win it and go behind Torres</span><span class="fig-dir">← LSC attack</span></div>
+<svg viewBox="0 0 400 240" role="img" aria-label="Win it and go behind Torres" xmlns="http://www.w3.org/2000/svg"><defs>
+<marker id="e5ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3DDC5A"/></marker>
+<marker id="e5ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F5F1E9"/></marker>
+<pattern id="e5hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F5F1E9" stroke-width="1.4" opacity=".35"/></pattern>
+</defs><g fill="none" stroke="rgba(245,241,233,.28)" stroke-width="1.2">
+<rect x="4" y="4" width="392" height="232"/>
+<line x1="200" y1="4" x2="200" y2="236"/>
+<circle cx="200" cy="120" r="33"/>
+<circle cx="200" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<rect x="4" y="51.3" width="61.6" height="137.4"/>
+<rect x="4" y="88.8" width="20.5" height="62.4"/>
+<circle cx="45" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M65.6 97.4 A33 33 0 0 1 65.6 142.6"/>
+<rect x="334.4" y="51.3" width="61.6" height="137.4"/>
+<rect x="375.5" y="88.8" width="20.5" height="62.4"/>
+<circle cx="355" cy="120" r="1.6" fill="rgba(245,241,233,.28)"/>
+<path d="M334.4 97.4 A33 33 0 0 0 334.4 142.6"/>
+<rect x="0" y="107.5" width="4" height="25"/>
+<rect x="396" y="107.5" width="4" height="25"/>
+</g><rect class="fade" x="66" y="4" width="130" height="58" fill="rgba(61,220,90,.22)" stroke="#3DDC5A" stroke-dasharray="3 3"/><text x="130" y="74" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#3DDC5A">SPACE BEHIND TORRES</text><circle cx="14" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="54" cy="80" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="54" y="82.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">93</text><circle cx="48" cy="120" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="54" cy="160" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="54" y="162.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">15</text><circle cx="258" cy="22" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><text x="258" y="24.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="600" fill="#F5F1E9">16</text><circle cx="262" cy="216" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="220" cy="96" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="222" cy="150" r="7" fill="#111111" stroke="#F5F1E9" stroke-width="1.3"/><circle cx="236" cy="124" r="7" fill="#3DDC5A"/><circle cx="230" cy="120" r="3.2" fill="#F5F1E9" stroke="#111111" stroke-width="1"/><text x="236" y="144" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6" letter-spacing=".6" fill="#3DDC5A">WON IN THE MID-BLOCK</text><path class="draw" d="M228 116 Q190 40 120 30" fill="none" stroke="#F5F1E9" stroke-width="1.8" marker-end="url(#e5ah-b)"/><circle cx="196" cy="58" r="7" fill="#3DDC5A"/><path class="draw" d="M190 54 L124 32" fill="none" stroke="#3DDC5A" stroke-width="1.8" marker-end="url(#e5ah-g)"/><circle cx="118" cy="110" r="7" fill="#3DDC5A"/><text x="118" y="112.8" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" font-weight="700" fill="#111111">GOO</text><path class="fade" d="M110 110 L66 116" fill="none" stroke="#3DDC5A" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#e5ah-g)"/><text x="118" y="132" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" letter-spacing=".6" fill="#3DDC5A">CB 1V1</text></svg>
+<div class="legend"><span><i style="background:#111111;box-shadow:0 0 0 1.3px #F5F1E9"></i>El Paso</span><span><i style="background:#3DDC5A"></i>Lexington</span><span><i style="background:rgba(61,220,90,.35);border-radius:0"></i>Space to attack</span></div>
+<p class="figcaption">With five committed forward, a turnover in our mid-block leaves the space behind Torres and El Paso's centre-backs 1v1. Goodrum, with seven goals in his last three matches, is the one to feed.</p>
+</figure><div class="pcards">
+<div class="pcard"><h4>Rubio Rubín</h4><span class="role">#14 · ST</span><div class="nums"><div><b>15</b><span>Goals</span></div></div><p>Golden Boot contender with elite movement in behind.</p></div>
+<div class="pcard"><h4>Amando Moreno</h4><span class="role">#10 · left interior</span><p>The engine of the inside-out diagonal into zone 16.</p></div>
+<div class="pcard"><h4>Gabi Torres</h4><span class="role">#16 · left wing-back</span><p>Gives the width outside Moreno — and leaves the space behind him when El Paso lose it.</p></div>
+<div class="pcard"><h4>Tony Alfaro</h4><span class="role">#93 · left centre-back</span><p>Their best passer out from the back, through the inside lanes, and their set-piece weapon.</p></div>
+</div>
+<div class="callout alert"><span class="label">Risk</span><p>El Paso's high press is very well executed and forces mistakes. Alfaro is also their main threat on set pieces.</p></div></div><div class="block"><h3>Recent Form</h3><p>Two of the league's form teams. Lexington have won three straight and moved up to 3rd in the West; El Paso set a club record with eight consecutive wins before a 1–1 draw with Tulsa, and arrive nine unbeaten.</p><span class="label" style="margin-top:22px;">Lexington · last five</span>
+<div class="form-row five">
+<div class="mcard l"><span class="res">L · Aug 29</span><div class="score">vs COS 0–1</div><p>Home</p></div>
+<div class="mcard l"><span class="res">L · Sep 5</span><div class="score">@ JAX 2–3</div><p>Two conceded late</p></div>
+<div class="mcard w"><span class="res">W · Sep 12</span><div class="score">@ OAK 4–1</div><p>Goodrum hat trick</p></div>
+<div class="mcard w"><span class="res">W · Sep 19</span><div class="score">vs OC 6–0</div><p>Goodrum hat trick</p></div>
+<div class="mcard w"><span class="res">W · Sep 26</span><div class="score">@ MB 3–2</div><p>Goodrum, Epps, Firmino</p></div>
+</div>
+<span class="label" style="margin-top:22px;">El Paso · recent</span>
+<div class="form-row">
+<div class="mcard w"><span class="res">W · Sep 19</span><div class="score">vs PHX 3–1</div><p>Club-record 8th straight win</p></div>
+<div class="mcard"><span class="res">D · Sep 25</span><div class="score">vs TUL 1–1</div><p>Home · win streak ends</p></div>
+<div class="mcard w"><span class="res">8 W · 1 D</span><div class="score">9 unbeaten</div><p>Heading to Lexington</p></div>
+<div class="mcard"><span class="res">Oct 3 · 7 PM ET</span><div class="score">@ LEX</div><p>Lexington SC Stadium</p></div>
+</div></div>
+    </article>
+
+    <div class="detail-conclusion"><span class="label">Game Plan</span><p>El Paso's unbeaten run shows up on paper. The space behind Torres shows up on the pitch — protect the pivots, take Alfaro away, and go.</p></div>
+
+    <div class="video-section">
+      <span class="label">Watch The Breakdown</span>
+      <div class="video-links">
+        <!-- INSTAGRAM: reemplaza PEGAR_ENLACE_INSTAGRAM -->
+        <a class="video-link-slot" href="https://www.instagram.com/reel/DeCN0GPRldb/?stkn=c3JmOWZ5ams2OWRj" target="_blank" rel="noopener"><span class="platform">Instagram</span> Watch the Reel →</a>
+        <!-- TIKTOK: reemplaza PEGAR_ENLACE_TIKTOK -->
+        <a class="video-link-slot" href="https://www.tiktok.com/t/ZPLeEeeps/" target="_blank" rel="noopener"><span class="platform">TikTok</span> Watch on TikTok →</a>
+      </div>
+    </div>
+
+    <div class="detail-nav-links">
+      <a href="../../index.html#pre-match">← All Pre-Match</a>
+      <a href="../../index.html">Home</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>SILAS VANCE — TACTICAL ANALYSIS</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const tabs = document.getElementById('tabs');
+  toggle.addEventListener('click', () => tabs.classList.toggle('open'));
+  const figs = document.querySelectorAll('.figure');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .35});
+    figs.forEach(f => io.observe(f));
+  } else { figs.forEach(f => f.classList.add('in')); }
+</script>
+</body>
+</html>

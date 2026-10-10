@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Molloy &amp; Ferri Variable — Silas Vance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #0B0F0C; }
+
+#lsc-tt-molloy-ferri {
+  --green: #3DDC5A;
+  --black: #111111;
+  --bone: #F5F1E9;
+  --bg: #0B0F0C;
+  --panel: #131A14;
+  --panel-2: #171F19;
+  --line: #263029;
+  --grey: #8B948D;
+
+  background: var(--bg);
+  color: var(--bone);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#lsc-tt-molloy-ferri * { box-sizing: border-box; }
+
+#lsc-tt-molloy-ferri h1, #lsc-tt-molloy-ferri h2, #lsc-tt-molloy-ferri h3 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+#lsc-tt-molloy-ferri .mono { font-family: 'IBM Plex Mono', monospace; }
+
+/* ---------- lang toggle ---------- */
+#lsc-tt-molloy-ferri [data-lang] { display: none; }
+#lsc-tt-molloy-ferri.lang-es [data-lang="es"] { display: block; }
+#lsc-tt-molloy-ferri.lang-en [data-lang="en"] { display: block; }
+#lsc-tt-molloy-ferri.lang-es span[data-lang="es"] { display: inline; }
+#lsc-tt-molloy-ferri.lang-en span[data-lang="en"] { display: inline; }
+
+#lsc-tt-molloy-ferri .lang-toggle {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(11,15,12,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 10px;
+}
+#lsc-tt-molloy-ferri .lang-toggle .back {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--grey);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color .2s ease;
+}
+#lsc-tt-molloy-ferri .lang-toggle .back:hover { color: var(--green); }
+#lsc-tt-molloy-ferri .lang-toggle .btns { display: flex; align-items: center; gap: 10px; }
+#lsc-tt-molloy-ferri .lang-toggle .btns > span {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--grey);
+  letter-spacing: 0.08em;
+}
+#lsc-tt-molloy-ferri .lang-toggle button {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--bone);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all .2s ease;
+  letter-spacing: 0.06em;
+}
+#lsc-tt-molloy-ferri .lang-toggle button.active {
+  background: var(--green);
+  color: var(--black);
+  border-color: var(--green);
+  font-weight: 600;
+}
+
+/* ---------- hero ---------- */
+#lsc-tt-molloy-ferri .hero {
+  padding: 64px 24px 40px;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+#lsc-tt-molloy-ferri .hero .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--green);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  margin-bottom: 14px;
+}
+#lsc-tt-molloy-ferri .hero h1 {
+  font-size: clamp(32px, 6vw, 58px);
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+#lsc-tt-molloy-ferri .hero h1 .accent { color: var(--green); }
+#lsc-tt-molloy-ferri .hero p.sub {
+  color: var(--grey);
+  font-size: 16px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* concept row (replaces scoreboard row) */
+#lsc-tt-molloy-ferri .scoreboard-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 980px;
+  margin: 36px auto 0;
+  padding: 0 24px;
+}
+#lsc-tt-molloy-ferri .score-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 14px;
+  text-align: center;
+}
+#lsc-tt-molloy-ferri .score-card .res {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+#lsc-tt-molloy-ferri .score-card .res.win { background: rgba(61,220,90,0.14); color: var(--green); }
+#lsc-tt-molloy-ferri .score-card .res.loss { background: rgba(245,241,233,0.08); color: var(--bone); }
+#lsc-tt-molloy-ferri .score-card .opp { font-size: 13px; color: var(--grey); margin-bottom: 6px; }
+#lsc-tt-molloy-ferri .score-card .sc { font-family: 'Oswald', sans-serif; font-size: 24px; font-weight: 600; text-transform: uppercase; line-height: 1.15; }
+#lsc-tt-molloy-ferri .score-card .sc.g { color: var(--green); }
+
+/* in-one-line summary */
+#lsc-tt-molloy-ferri .summary {
+  max-width: 760px;
+  margin: 36px auto 0;
+  padding: 0 24px;
+}
+#lsc-tt-molloy-ferri .summary .inner {
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--green);
+  background: var(--panel);
+  border-radius: 10px;
+  padding: 20px 24px;
+  text-align: left;
+}
+#lsc-tt-molloy-ferri .summary .lbl {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  margin-bottom: 6px;
+}
+#lsc-tt-molloy-ferri .summary p { margin: 0; font-size: 17px; color: var(--bone); }
+
+/* stat ticker */
+#lsc-tt-molloy-ferri .ticker {
+  display: flex;
+  overflow-x: auto;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin: 44px 0;
+  background: var(--panel);
+}
+#lsc-tt-molloy-ferri .ticker::-webkit-scrollbar { display: none; }
+#lsc-tt-molloy-ferri .tick {
+  flex: 1 0 150px;
+  text-align: center;
+  padding: 20px 12px;
+  border-right: 1px solid var(--line);
+}
+#lsc-tt-molloy-ferri .tick:last-child { border-right: none; }
+#lsc-tt-molloy-ferri .tick .num {
+  font-family: 'Oswald', sans-serif;
+  font-size: 26px;
+  color: var(--green);
+  font-weight: 600;
+}
+#lsc-tt-molloy-ferri .tick .lbl {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  color: var(--grey);
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+/* content container */
+#lsc-tt-molloy-ferri .wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+}
+
+/* moment sections */
+#lsc-tt-molloy-ferri .moment {
+  margin: 90px 0;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+#lsc-tt-molloy-ferri .moment.reveal { opacity: 1; transform: translateY(0); }
+
+#lsc-tt-molloy-ferri .moment-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+#lsc-tt-molloy-ferri .moment-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  color: var(--green);
+  border: 1px solid var(--green);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+#lsc-tt-molloy-ferri .moment-head h2 { font-size: clamp(22px, 4vw, 32px); }
+#lsc-tt-molloy-ferri .moment-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--grey);
+  font-size: 12.5px;
+  margin: 8px 0 26px 50px;
+  letter-spacing: 0.04em;
+}
+#lsc-tt-molloy-ferri .moment-meta .result-tag {
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 8px;
+  background: rgba(61,220,90,0.15);
+  color: var(--green);
+}
+
+#lsc-tt-molloy-ferri .moment-body { margin-left: 50px; }
+#lsc-tt-molloy-ferri .moment-body p { color: #D9D4C8; font-size: 16px; margin: 0 0 18px; }
+
+/* role cards */
+#lsc-tt-molloy-ferri .stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 20px 0 28px;
+}
+#lsc-tt-molloy-ferri .stat-card {
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+}
+#lsc-tt-molloy-ferri .stat-card .row { display: flex; justify-content: space-between; gap: 10px; font-size: 13px; padding: 3px 0; }
+#lsc-tt-molloy-ferri .stat-card .row .v { font-family: 'IBM Plex Mono', monospace; color: var(--green); text-align: right; }
+#lsc-tt-molloy-ferri .stat-card .row .v.dim { color: var(--grey); }
+#lsc-tt-molloy-ferri .stat-card .title { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--grey); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
+
+/* callouts */
+#lsc-tt-molloy-ferri .callout {
+  border-left: 3px solid var(--green);
+  background: rgba(61,220,90,0.06);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 22px 0;
+}
+#lsc-tt-molloy-ferri .callout.alert { border-left-color: var(--bone); background: rgba(245,241,233,0.05); }
+#lsc-tt-molloy-ferri .callout .lbl {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--green);
+  margin-bottom: 6px;
+}
+#lsc-tt-molloy-ferri .callout.alert .lbl { color: var(--bone); }
+#lsc-tt-molloy-ferri .callout p { margin: 0; font-size: 14.5px; color: #D9D4C8; }
+
+/* svg diagram */
+#lsc-tt-molloy-ferri .diagram-wrap {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+  margin: 24px 0;
+}
+#lsc-tt-molloy-ferri .diagram-wrap svg { width: 100%; height: auto; display: block; }
+#lsc-tt-molloy-ferri .diagram-cap {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--grey);
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: .03em;
+}
+#lsc-tt-molloy-ferri .legend {
+  display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;
+  font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--grey);
+  margin-top: 10px; letter-spacing: .04em;
+}
+#lsc-tt-molloy-ferri .legend i {
+  display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+  margin-right: 6px; vertical-align: -1px;
+}
+#lsc-tt-molloy-ferri .legend i.lsc { background: var(--green); }
+#lsc-tt-molloy-ferri .legend i.opp { background: var(--black); border: 1.5px solid var(--bone); }
+#lsc-tt-molloy-ferri .legend i.ghost { border: 1.5px dashed var(--grey); }
+
+/* svg animation: draw runs, fade in nodes once the moment is revealed */
+#lsc-tt-molloy-ferri .draw { stroke-dasharray: 1; stroke-dashoffset: 1; }
+#lsc-tt-molloy-ferri .moment.reveal .draw { animation: lscDraw 1.4s ease forwards; animation-delay: .5s; }
+#lsc-tt-molloy-ferri .moment.reveal .draw.d2 { animation-delay: 1.1s; }
+#lsc-tt-molloy-ferri .moment.reveal .draw.d3 { animation-delay: 1.7s; }
+#lsc-tt-molloy-ferri .pop { opacity: 0; transition: opacity .6s ease; }
+#lsc-tt-molloy-ferri .moment.reveal .pop { opacity: 1; transition-delay: 1.6s; }
+#lsc-tt-molloy-ferri .moment.reveal .pop.p2 { transition-delay: 2.3s; }
+#lsc-tt-molloy-ferri .spin { transform-origin: 290px 120px; }
+#lsc-tt-molloy-ferri .moment.reveal .spin { animation: lscSpin 9s linear infinite; animation-delay: 2.4s; }
+@keyframes lscDraw { to { stroke-dashoffset: 0; } }
+@keyframes lscSpin { to { transform: rotate(360deg); } }
+
+/* video section */
+#lsc-tt-molloy-ferri .video-section {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 40px 0 0;
+}
+#lsc-tt-molloy-ferri .video-section .lbl {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+#lsc-tt-molloy-ferri .video-links { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+#lsc-tt-molloy-ferri .video-link-slot {
+  background: var(--panel-2);
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 13px;
+  color: var(--grey);
+}
+#lsc-tt-molloy-ferri .video-link-slot .platform {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--bone);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+/* closing quote */
+#lsc-tt-molloy-ferri .closing {
+  max-width: 720px;
+  margin: 90px auto 40px;
+  text-align: center;
+  padding: 0 24px;
+}
+#lsc-tt-molloy-ferri .closing blockquote {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(22px, 3.4vw, 30px);
+  line-height: 1.3;
+  margin: 0 0 20px;
+  color: var(--bone);
+}
+#lsc-tt-molloy-ferri .closing blockquote .accent { color: var(--green); }
+#lsc-tt-molloy-ferri .closing .byline {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  color: var(--grey);
+  letter-spacing: 0.06em;
+}
+#lsc-tt-molloy-ferri .foot-nav {
+  display: flex; justify-content: center; gap: 24px;
+  padding: 0 24px 30px;
+}
+#lsc-tt-molloy-ferri .foot-nav a {
+  font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--grey);
+  text-decoration: none; letter-spacing: .06em;
+}
+#lsc-tt-molloy-ferri .foot-nav a:hover { color: var(--green); }
+#lsc-tt-molloy-ferri .foot {
+  text-align: center;
+  padding: 30px 24px 50px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--grey);
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 640px) {
+  #lsc-tt-molloy-ferri .moment-meta, #lsc-tt-molloy-ferri .moment-body { margin-left: 0; }
+  #lsc-tt-molloy-ferri .scoreboard-row { grid-template-columns: 1fr; }
+  #lsc-tt-molloy-ferri .video-links { grid-template-columns: 1fr; }
+  #lsc-tt-molloy-ferri .lang-toggle { padding: 12px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #lsc-tt-molloy-ferri .moment { opacity: 1; transform: none; transition: none; }
+  #lsc-tt-molloy-ferri .draw { stroke-dashoffset: 0; animation: none !important; }
+  #lsc-tt-molloy-ferri .pop { opacity: 1; transition: none; }
+  #lsc-tt-molloy-ferri .spin { animation: none !important; }
+}
+</style>
+</head>
+<body>
+<div id="lsc-tt-molloy-ferri" class="lang-es">
+
+  <div class="lang-toggle">
+    <a class="back" href="../../index.html#team-tactics">
+      <span data-lang="es">← TEAM TACTICS</span><span data-lang="en">← TEAM TACTICS</span>
+    </a>
+    <div class="btns">
+      <span>LANG</span>
+      <button id="btn-es" class="active" onclick="lscSetLang('es')">ES</button>
+      <button id="btn-en" onclick="lscSetLang('en')">EN</button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="eyebrow mono">TEAM TACTICS · LEXINGTON SC · 2026</div>
+    <h1 data-lang="es">La variable <span class="accent">Molloy</span> &amp; <span class="accent">Ferri</span></h1>
+    <h1 data-lang="en">The <span class="accent">Molloy</span> &amp; <span class="accent">Ferri</span> Variable</h1>
+    <p class="sub" data-lang="es">Un ajuste en el mediocampo — quitar el doble 6 fijo — que le dio a Lexington un rombo rotativo a la espalda de los pivotes rivales y, de paso, le abrió las bandas.</p>
+    <p class="sub" data-lang="en">One midfield adjustment — removing the fixed double-6 — that gave Lexington a rotating diamond behind the opposing pivots, and opened the flanks along the way.</p>
+
+    <div class="scoreboard-row">
+      <div class="score-card">
+        <div class="res loss mono" data-lang="es">ANTES</div>
+        <div class="res loss mono" data-lang="en">BEFORE</div>
+        <div class="opp" data-lang="es">Estructura</div>
+        <div class="opp" data-lang="en">Structure</div>
+        <div class="sc" data-lang="es">Doble 6 fijo</div>
+        <div class="sc" data-lang="en">Fixed double-6</div>
+      </div>
+      <div class="score-card">
+        <div class="res win mono" data-lang="es">AJUSTE</div>
+        <div class="res win mono" data-lang="en">ADJUSTMENT</div>
+        <div class="opp" data-lang="es">Molloy / Ferri</div>
+        <div class="opp" data-lang="en">Molloy / Ferri</div>
+        <div class="sc" data-lang="es">Uno sale, otro cubre</div>
+        <div class="sc" data-lang="en">One goes, one covers</div>
+      </div>
+      <div class="score-card">
+        <div class="res win mono" data-lang="es">RESULTADO</div>
+        <div class="res win mono" data-lang="en">RESULT</div>
+        <div class="opp" data-lang="es">Entre líneas</div>
+        <div class="opp" data-lang="en">Between the lines</div>
+        <div class="sc g" data-lang="es">Rombo rotativo</div>
+        <div class="sc g" data-lang="en">Rotating diamond</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IN ONE LINE -->
+  <div class="summary">
+    <div class="inner">
+      <div class="lbl" data-lang="es">EN UNA LÍNEA</div>
+      <div class="lbl" data-lang="en">IN ONE LINE</div>
+      <p data-lang="es">Eliminar el doble 6 fijo le dio al mediocampo de Lexington la libertad de formar un rombo rotativo a la espalda de los pivotes rivales — y ese rombo también está abriendo las bandas.</p>
+      <p data-lang="en">Dropping the fixed double-6 gave Lexington's midfield the freedom to form a rotating diamond behind the opposing pivots — and that diamond is opening the flanks too.</p>
+    </div>
+  </div>
+
+  <!-- TICKER (structural, not match stats) -->
+  <div class="ticker">
+    <div class="tick"><div class="num">2 → 1</div><div class="lbl mono" data-lang="es">6 FIJOS EN LA BASE</div><div class="lbl mono" data-lang="en">FIXED 6s AT THE BASE</div></div>
+    <div class="tick"><div class="num">4</div><div class="lbl mono" data-lang="es">VÉRTICES DEL ROMBO</div><div class="lbl mono" data-lang="en">DIAMOND POINTS</div></div>
+    <div class="tick"><div class="num">Z14</div><div class="lbl mono" data-lang="es">ZONA CREATIVA LIBERADA</div><div class="lbl mono" data-lang="en">CREATIVE ZONE FREED</div></div>
+    <div class="tick"><div class="num">2</div><div class="lbl mono" data-lang="es">BANDAS QUE SE ABREN</div><div class="lbl mono" data-lang="en">FLANKS OPENED</div></div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- MOMENT 1 -->
+    <section class="moment" id="m1">
+      <div class="moment-head">
+        <div class="moment-num mono">01</div>
+        <h2 data-lang="es">Adiós al doble 6 fijo</h2>
+        <h2 data-lang="en">Removing the fixed double-6</h2>
+      </div>
+      <div class="moment-meta">
+        <span class="result-tag mono" data-lang="es">AJUSTE</span><span class="result-tag mono" data-lang="en">ADJUSTMENT</span>
+        <span data-lang="es">Molloy · Ferri · alturas escalonadas</span>
+        <span data-lang="en">Molloy · Ferri · staggered heights</span>
+      </div>
+      <div class="moment-body">
+        <p data-lang="es">Uno de los ajustes más importantes del entrenador a lo largo de la temporada ha sido eliminar el doble 6 fijo en el mediocampo. Ferri y Aaron Molloy ya no ocupan la misma altura defensiva al mismo tiempo: cuando uno se suelta para sumarse al ataque, el otro se queda a cubrir.</p>
+        <p data-lang="en">One of the coach's most important adjustments across the season has been eliminating the fixed double-6 in midfield. Ferri and Aaron Molloy no longer occupy the same defensive height at the same time — when one of them drops off to join the attack, the other stays to cover.</p>
+
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Double-6 vs staggered pivot">
+            <defs>
+              <marker id="mf-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3DDC5A"/></marker>
+            </defs>
+            <!-- pitch -->
+            <g fill="none" stroke="#3DDC5A" stroke-opacity="0.45" stroke-width="1.5">
+              <rect x="4" y="4" width="392" height="232"/>
+              <line x1="200" y1="4" x2="200" y2="236"/>
+              <circle cx="200" cy="120" r="28"/>
+              <rect x="334" y="50" width="62" height="140"/>
+              <rect x="374" y="85" width="22" height="70"/>
+              <path d="M334 100 A 22 22 0 0 0 334 140"/>
+              <rect x="4" y="50" width="62" height="140" stroke-opacity="0.25"/>
+              <rect x="4" y="85" width="22" height="70" stroke-opacity="0.25"/>
+              <path d="M66 100 A 22 22 0 0 1 66 140" stroke-opacity="0.25"/>
+            </g>
+            <circle cx="200" cy="120" r="2" fill="#3DDC5A" fill-opacity="0.7"/>
+            <!-- Z14 space created -->
+            <rect class="pop" x="252" y="82" width="70" height="76" rx="4" fill="#3DDC5A" fill-opacity="0.1" stroke="#3DDC5A" stroke-opacity="0.5" stroke-dasharray="4,3"/>
+            <text class="pop" x="287" y="176" text-anchor="middle" fill="#3DDC5A" font-family="IBM Plex Mono, monospace" font-size="8.5">ZONA 14 / ZONE 14</text>
+            <!-- opposing double pivot -->
+            <circle cx="240" cy="95" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.5"/>
+            <circle cx="240" cy="145" r="6" fill="#111111" stroke="#F5F1E9" stroke-width="1.5"/>
+            <!-- ghost: old fixed double-6 -->
+            <circle cx="150" cy="95" r="7" fill="none" stroke="#8B948D" stroke-width="1.3" stroke-dasharray="3,3"/>
+            <circle cx="150" cy="145" r="7" fill="none" stroke="#8B948D" stroke-width="1.3" stroke-dasharray="3,3"/>
+            <line x1="150" y1="104" x2="150" y2="136" stroke="#8B948D" stroke-width="1" stroke-dasharray="2,3"/>
+            <text x="112" y="80" fill="#8B948D" font-family="IBM Plex Mono, monospace" font-size="8.5">DOBLE 6 / DOUBLE-6</text>
+            <!-- new: one covers, one goes -->
+            <circle cx="140" cy="125" r="7" fill="#3DDC5A"/>
+            <text x="140" y="146" text-anchor="middle" fill="#F5F1E9" font-family="IBM Plex Mono, monospace" font-size="8.5" font-weight="600">COVER</text>
+            <path class="draw" pathLength="1" d="M152 112 C 185 95, 230 110, 272 118" fill="none" stroke="#3DDC5A" stroke-width="2.5" marker-end="url(#mf-arr)"/>
+            <circle class="pop" cx="280" cy="120" r="7" fill="#3DDC5A"/>
+            <text class="pop" x="280" y="108" text-anchor="middle" fill="#F5F1E9" font-family="IBM Plex Mono, monospace" font-size="8.5" font-weight="600">GO</text>
+          </svg>
+          <div class="legend"><span><i class="lsc"></i>LSC</span><span><i class="opp"></i><span data-lang="es">Pivotes rivales</span><span data-lang="en">Opp. pivots</span></span><span><i class="ghost"></i><span data-lang="es">Doble 6 anterior</span><span data-lang="en">Old double-6</span></span></div>
+          <div class="diagram-cap" data-lang="es">UNO SALE, OTRO CUBRE — EL ESPACIO DETRÁS DEL DOBLE PIVOTE RIVAL SE ABRE</div>
+          <div class="diagram-cap" data-lang="en">ONE GOES, ONE COVERS — THE SPACE BEHIND THE OPPOSING DOUBLE PIVOT OPENS UP</div>
+        </div>
+
+        <p data-lang="es">Ese único cambio ha liberado espacio real en la zona creativa y le ha permitido al equipo generar más superioridad posicional justo a la espalda del doble pivote rival.</p>
+        <p data-lang="en">That single change has freed up real space in the creative zone and allowed the team to generate more positional superiority right behind the opposing double pivot.</p>
+
+        <div class="callout">
+          <div class="lbl mono" data-lang="es">EL PORQUÉ</div>
+          <div class="lbl mono" data-lang="en">THE WHY</div>
+          <p data-lang="es">Dos mediocentros a la misma altura se tapan entre sí y le dan al rival una sola línea que vigilar. Escalonarlos obliga a los pivotes rivales a elegir: seguir al que sale y dejar espacio atrás, o quedarse y conceder un hombre libre entre líneas.</p>
+          <p data-lang="en">Two midfielders at the same height screen each other and give the opponent a single line to watch. Staggering them forces the opposing pivots to choose: follow the one who steps up and leave space behind, or hold and concede a free man between the lines.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOMENT 2 -->
+    <section class="moment" id="m2">
+      <div class="moment-head">
+        <div class="moment-num mono">02</div>
+        <h2 data-lang="es">Un 9 móvil completa el cuadro</h2>
+        <h2 data-lang="en">A mobile forward completes the picture</h2>
+      </div>
+      <div class="moment-meta">
+        <span class="result-tag mono" data-lang="es">ROMBO</span><span class="result-tag mono" data-lang="en">DIAMOND</span>
+        <span data-lang="es">6 que sale · Firmino · Epps · Braudilio</span>
+        <span data-lang="en">Stepping 6 · Firmino · Epps · Braudilio</span>
+      </div>
+      <div class="moment-body">
+        <p data-lang="es">Sumar ese ajuste en el mediocampo a la llegada de un delantero más móvil como Braudilio Rodrigues completa el cuadro. A la espalda de los mediocentros de marca rivales, Lexington forma ahora un rombo rotativo: el 6 que se suelta, Firmino actuando como 10, el extremo que se cierra hacia adentro — normalmente Marcus Epps — y el propio Braudilio.</p>
+        <p data-lang="en">Pairing that midfield adjustment with the arrival of a more mobile forward like Braudilio Rodrigues completes the picture. Behind the opposing marking midfielders, Lexington now forms a rotating diamond made up of the stepping 6, Firmino operating as a 10, the winger who tucks inside — usually Marcus Epps — and Braudilio himself.</p>
+
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rotating diamond behind opposing pivots">
+            <defs>
+              <marker id="mf-arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3DDC5A"/></marker>
+            </defs>
+            <g fill="none" stroke="#3DDC5A" stroke-opacity="0.45" stroke-width="1.5">
+              <rect x="4" y="4" width="392" height="232"/>
+              <line x1="200" y1="4" x2="200" y2="236"/>
+              <circle cx="200" cy="120" r="28"/>
+              <rect x="334" y="50" width="62" height="140"/>
+              <rect x="374" y="85" width="22" height="70"/>
+              <path d="M334 100 A 22 22 0 0 0 334 140"/>
+            </g>
+            <circle cx="200" cy="120" r="2" fill="#3DDC5A" fill-opacity="0.7"/>
+            <!-- opposing back four + double pivot -->
+            <g fill="#111111" stroke="#F5F1E9" stroke-width="1.5">
+              <circle cx="336" cy="40" r="6"/><circle cx="330" cy="92" r="6"/>
+              <circle cx="330" cy="148" r="6"/><circle cx="336" cy="200" r="6"/>
+              <circle cx="238" cy="92" r="6"/><circle cx="238" cy="148" r="6"/>
+            </g>
+            <!-- rotation ring -->
+            <g class="spin pop p2">
+              <circle cx="290" cy="120" r="30" fill="none" stroke="#3DDC5A" stroke-opacity="0.35" stroke-width="1.2" stroke-dasharray="4,5"/>
+            </g>
+            <!-- entry runs -->
+            <path class="draw" pathLength="1" d="M160 120 C 200 128, 235 124, 254 121" fill="none" stroke="#3DDC5A" stroke-width="2.2" marker-end="url(#mf-arr2)"/>
+            <path class="draw d2" pathLength="1" d="M290 22 C 290 45, 290 62, 290 80" fill="none" stroke="#3DDC5A" stroke-width="2.2" marker-end="url(#mf-arr2)"/>
+            <path class="draw d3" pathLength="1" d="M355 128 C 345 126, 335 123, 327 121" fill="none" stroke="#3DDC5A" stroke-width="2.2" marker-end="url(#mf-arr2)"/>
+            <!-- diamond -->
+            <polygon class="pop" points="262,120 290,88 318,120 290,152" fill="#3DDC5A" fill-opacity="0.12" stroke="#3DDC5A" stroke-width="1.5"/>
+            <g class="pop">
+              <circle cx="262" cy="120" r="6.5" fill="#3DDC5A"/>
+              <circle cx="290" cy="88" r="6.5" fill="#3DDC5A"/>
+              <circle cx="318" cy="120" r="6.5" fill="#3DDC5A"/>
+              <circle cx="290" cy="152" r="6.5" fill="#3DDC5A"/>
+              <g font-family="IBM Plex Mono, monospace" font-size="8" fill="#F5F1E9" font-weight="600">
+                <text x="252" y="138" text-anchor="end">6</text>
+                <text x="303" y="80">EPPS</text>
+                <text x="326" y="110">BRAUDILIO</text>
+                <text x="290" y="170" text-anchor="middle">FIRMINO 10</text>
+              </g>
+            </g>
+            <text x="238" y="176" text-anchor="middle" fill="#8B948D" font-family="IBM Plex Mono, monospace" font-size="8">PIVOTES</text>
+          </svg>
+          <div class="legend"><span><i class="lsc"></i>LSC</span><span><i class="opp"></i><span data-lang="es">Rival</span><span data-lang="en">Opponent</span></span></div>
+          <div class="diagram-cap" data-lang="es">EL ROMBO ROTATIVO — CUATRO JUGADORES ENTRE EL DOBLE PIVOTE Y LA LÍNEA DE CUATRO</div>
+          <div class="diagram-cap" data-lang="en">THE ROTATING DIAMOND — FOUR PLAYERS BETWEEN THE DOUBLE PIVOT AND THE BACK FOUR</div>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="title" data-lang="es">VÉRTICE BAJO</div><div class="title" data-lang="en">BASE POINT</div>
+            <div class="row"><span data-lang="es">6 que sale</span><span data-lang="en">Stepping 6</span><span class="v">Molloy / Ferri</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="title" data-lang="es">VÉRTICE CREATIVO</div><div class="title" data-lang="en">CREATIVE POINT</div>
+            <div class="row"><span>10</span><span class="v">Firmino</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="title" data-lang="es">VÉRTICE INTERIOR</div><div class="title" data-lang="en">INSIDE POINT</div>
+            <div class="row"><span data-lang="es">Extremo cerrado</span><span data-lang="en">Inverted winger</span><span class="v">Epps</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="title" data-lang="es">VÉRTICE ALTO</div><div class="title" data-lang="en">TOP POINT</div>
+            <div class="row"><span data-lang="es">9 móvil</span><span data-lang="en">Mobile 9</span><span class="v">Braudilio</span></div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="lbl mono" data-lang="es">EL PORQUÉ</div>
+          <div class="lbl mono" data-lang="en">THE WHY</div>
+          <p data-lang="es">Un 9 fijo le da a los centrales una referencia clara. Un 9 que baja a ser vértice del rombo arrastra a un central fuera de línea o deja un cuarto hombre libre a la espalda de los pivotes — en ambos casos, Lexington gana superioridad donde más duele.</p>
+          <p data-lang="en">A static 9 gives the center backs a clear reference. A 9 who drops to become a point of the diamond either drags a center back out of the line or leaves a fourth free man behind the pivots — either way, Lexington gains superiority where it hurts most.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOMENT 3 -->
+    <section class="moment" id="m3">
+      <div class="moment-head">
+        <div class="moment-num mono">03</div>
+        <h2 data-lang="es">La superioridad interior abre las bandas</h2>
+        <h2 data-lang="en">Interior superiority opens the flanks</h2>
+      </div>
+      <div class="moment-meta">
+        <span class="result-tag mono" data-lang="es">CONSECUENCIA</span><span class="result-tag mono" data-lang="en">KNOCK-ON EFFECT</span>
+        <span data-lang="es">Bandas libres · transiciones más directas</span>
+        <span data-lang="en">Free flanks · more direct transitions</span>
+      </div>
+      <div class="moment-body">
+        <p data-lang="es">Esa superioridad interior no solo ayuda a construir por el centro: también libera las bandas y permite transiciones más rápidas y directas una vez que los interiores se proyectan hacia el espacio que crea el rombo.</p>
+        <p data-lang="en">That interior superiority does more than just help build-up play centrally — it also frees up the flanks and allows for faster, more direct transitions once the interior midfielders push forward into the space that diamond creates.</p>
+
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flanks opened by interior overload">
+            <defs>
+              <marker id="mf-arr3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3DDC5A"/></marker>
+              <marker id="mf-arr3b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#F5F1E9"/></marker>
+            </defs>
+            <g fill="none" stroke="#3DDC5A" stroke-opacity="0.45" stroke-width="1.5">
+              <rect x="4" y="4" width="392" height="232"/>
+              <line x1="200" y1="4" x2="200" y2="236"/>
+              <circle cx="200" cy="120" r="28"/>
+              <rect x="334" y="50" width="62" height="140"/>
+              <rect x="374" y="85" width="22" height="70"/>
+              <path d="M334 100 A 22 22 0 0 0 334 140"/>
+            </g>
+            <circle cx="200" cy="120" r="2" fill="#3DDC5A" fill-opacity="0.7"/>
+            <!-- freed flank corridors -->
+            <rect class="pop" x="220" y="6" width="174" height="34" fill="#3DDC5A" fill-opacity="0.1"/>
+            <rect class="pop" x="220" y="200" width="174" height="34" fill="#3DDC5A" fill-opacity="0.1"/>
+            <text class="pop" x="226" y="19" fill="#3DDC5A" font-family="IBM Plex Mono, monospace" font-size="8">BANDA LIBRE / FREE FLANK</text>
+            <text class="pop" x="226" y="229" fill="#3DDC5A" font-family="IBM Plex Mono, monospace" font-size="8">BANDA LIBRE / FREE FLANK</text>
+            <!-- central overload -->
+            <polygon points="262,120 290,92 318,120 290,148" fill="#3DDC5A" fill-opacity="0.12" stroke="#3DDC5A" stroke-width="1.2"/>
+            <g fill="#3DDC5A">
+              <circle cx="262" cy="120" r="5.5"/><circle cx="290" cy="92" r="5.5"/>
+              <circle cx="318" cy="120" r="5.5"/><circle cx="290" cy="148" r="5.5"/>
+            </g>
+            <!-- opponents pulled inside -->
+            <g fill="#111111" stroke="#F5F1E9" stroke-width="1.5">
+              <circle cx="322" cy="66" r="6"/><circle cx="326" cy="100" r="6"/>
+              <circle cx="326" cy="140" r="6"/><circle cx="322" cy="174" r="6"/>
+            </g>
+            <g stroke="#F5F1E9" stroke-opacity="0.6" stroke-width="1.3" fill="none">
+              <path class="draw" pathLength="1" d="M336 36 L 324 58" marker-end="url(#mf-arr3b)"/>
+              <path class="draw" pathLength="1" d="M336 204 L 324 182" marker-end="url(#mf-arr3b)"/>
+            </g>
+            <circle cx="336" cy="34" r="4" fill="none" stroke="#8B948D" stroke-dasharray="2,2"/>
+            <circle cx="336" cy="206" r="4" fill="none" stroke="#8B948D" stroke-dasharray="2,2"/>
+            <!-- wide runs exploiting space -->
+            <path class="draw d2" pathLength="1" d="M190 30 C 240 24, 300 22, 360 30" fill="none" stroke="#3DDC5A" stroke-width="2.5" marker-end="url(#mf-arr3)"/>
+            <path class="draw d2" pathLength="1" d="M190 210 C 240 216, 300 218, 360 210" fill="none" stroke="#3DDC5A" stroke-width="2.5" marker-end="url(#mf-arr3)"/>
+            <!-- interior push forward -->
+            <path class="draw d3" pathLength="1" d="M180 150 C 215 160, 240 160, 262 152" fill="none" stroke="#3DDC5A" stroke-width="1.8" stroke-opacity="0.8" marker-end="url(#mf-arr3)"/>
+            <text x="150" y="170" fill="#8B948D" font-family="IBM Plex Mono, monospace" font-size="8">INTERIOR</text>
+          </svg>
+          <div class="legend"><span><i class="lsc"></i>LSC</span><span><i class="opp"></i><span data-lang="es">Rival cerrado hacia adentro</span><span data-lang="en">Opponent pulled inside</span></span></div>
+          <div class="diagram-cap" data-lang="es">EL RIVAL SE CIERRA PARA FRENAR EL ROMBO — Y LAS BANDAS QUEDAN LIBRES</div>
+          <div class="diagram-cap" data-lang="en">THE OPPONENT NARROWS TO STOP THE DIAMOND — AND THE FLANKS OPEN UP</div>
+        </div>
+
+        <div class="callout alert">
+          <div class="lbl mono" data-lang="es">A VIGILAR</div>
+          <div class="lbl mono" data-lang="en">WATCH FOR</div>
+          <p data-lang="es">Todo el mecanismo depende de que el 6 que se queda lea bien cuándo cubrir. Si Molloy y Ferri salen a la vez, el equipo vuelve a quedar partido — pero ahora sin nadie frente a la defensa.</p>
+          <p data-lang="en">The whole mechanism depends on the holding 6 reading when to cover. If Molloy and Ferri both step up at once, the team is split again — only this time with nobody in front of the back line.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <div class="video-section">
+      <div class="lbl" data-lang="es">MIRA EL ANÁLISIS</div>
+      <div class="lbl" data-lang="en">WATCH THE BREAKDOWN</div>
+      <div class="video-links">
+        <div class="video-link-slot"><span class="platform">Instagram</span>[ Paste the Reel link here ]</div>
+        <div class="video-link-slot"><span class="platform">TikTok</span>[ Paste the TikTok link here ]</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CLOSING -->
+  <section class="closing">
+    <blockquote data-lang="es">Menos altura <span class="accent">compartida</span> atrás, más <span class="accent">superioridad</span> adelante.</blockquote>
+    <blockquote data-lang="en">Less <span class="accent">shared</span> height at the back, more <span class="accent">superiority</span> up front.</blockquote>
+    <div class="byline" data-lang="es">— SILAS VANCE, ANÁLISIS TÁCTICO</div>
+    <div class="byline" data-lang="en">— SILAS VANCE, TACTICAL ANALYSIS</div>
+  </section>
+
+  <div class="foot-nav">
+    <a href="../../index.html#team-tactics"><span data-lang="es">← Todo Team Tactics</span><span data-lang="en">← All Team Tactics</span></a>
+    <a href="../../index.html">Home</a>
+  </div>
+
+  <div class="foot mono">SILAS VANCE — TEAM TACTICS · THE MOLLOY &amp; FERRI VARIABLE · 2026</div>
+
+</div>
+
+<script>
+(function() {
+  window.lscSetLang = function(lang) {
+    var root = document.getElementById('lsc-tt-molloy-ferri');
+    root.classList.remove('lang-es', 'lang-en');
+    root.classList.add('lang-' + lang);
+    document.documentElement.lang = lang;
+    document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  };
+
+  var moments = document.querySelectorAll('#lsc-tt-molloy-ferri .moment');
+  if (!('IntersectionObserver' in window)) {
+    moments.forEach(function(m) { m.classList.add('reveal'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('reveal');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  moments.forEach(function(m) { io.observe(m); });
+})();
+</script>
+</body>
+</html>
